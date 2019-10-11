@@ -1,0 +1,53 @@
+﻿@model SearchModel
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
+    if (canonicalUrlsEnabled)
+    {
+        Html.AddCanonicalUrlParts(Request.Url.AbsoluteUri);
+    }
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Search").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-search-page");
+    Html.AddCssFileParts("~/Themes/Ipharmachine/Content/css/pages/productList.css");
+
+}
+@using Nop.Web.Models.Catalog;
+
+<div class="goods-introduce">
+    <h1 class="introduce-name">@T("Search")</h1>
+</div>
+
+
+@if (Model.Products.Count > 0)
+{
+    @Html.Widget("productsearch_page_before_results")
+
+    <div class="goods-shopping-wrapper">
+        <div class="row shopping-row">
+            @foreach (var product in Model.Products)
+            {
+                @Html.Partial("_ProductBox", product)
+            }
+        </div>
+    </div>
+    var pager = Html.Pager(Model.PagingFilteringContext).QueryParam("pagenumber").BooleanParameterName("adv").BooleanParameterName("isc").BooleanParameterName("sid").RenderEmptyParameters(true);
+    if (!pager.IsEmpty())
+    {
+        <div class="pager">
+            @pager
+        </div>
+    }
+}
+@if (Model.Products.Count < 5)
+{
+    @Html.Widget("productsearch_google_results")
+
+}
+@Html.Widget("productsearch_page_after_results")
+

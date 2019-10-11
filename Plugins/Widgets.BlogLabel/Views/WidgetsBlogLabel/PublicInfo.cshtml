@@ -1,0 +1,16 @@
+﻿@model Nop.Plugin.Widgets.BlogLabel.Models.BlogLabelViewModel
+@{
+    Layout = "";
+}
+@using Nop.Web.Framework.UI
+
+@{
+    Html.AddTitleParts(Model.MetaTitle);
+    Html.AddMetaDescriptionParts(Model.MetaDescription);
+    Html.AddMetaKeywordParts(Model.MetaKeywords);
+}
+@if (!string.IsNullOrEmpty(Model.Content))
+{
+    <a href="@Url.RouteUrl("BlogRSS", new { languageId = Model.LanguageId })" class="link-rss" title="@T("Blog.RSS.Hint")">@T("Blog.RSS")</a>
+}
+@Html.Raw(Model.Content)

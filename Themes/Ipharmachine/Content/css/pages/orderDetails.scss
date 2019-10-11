@@ -1,0 +1,763 @@
+@import "../bootstrap/bootstrap/variables";
+@import "../bootstrap/bootstrap/mixins";
+
+@import "../extend/variable";
+@import "../extend/order";
+@import "../extend/accountNumber";
+
+.order {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.order-title {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $bo-l-s-title;
+
+    @media (max-width : $screen-sm-max) {
+        font-size: $fs-sm-l-s-title;
+    }
+
+    @media (max-width : $screen-xs-max) {
+        font-size: $fs-xs-l-s-title;
+    }
+}
+
+#accordion {
+    font-size: 14px;
+
+    .panel {
+        border-radius: 0;
+    }
+
+    .panel-heading {
+        padding: 0;
+    }
+
+    .panel-collapse.active { 
+        display: block;
+    }
+
+    .panel-link {
+        display: block;
+        font-weight: bold;
+        padding: 10px 15px;
+
+        .number {
+            font-weight: normal;
+            padding-right: 10px;
+        }
+    }
+
+    .address-label {
+        display: block;
+        margin: 0 0 10px;
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .address-select {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    .description {
+        font-size: 14px;
+    }
+}
+
+.account-number {
+    .form-container {
+        background: none;
+        border: none;
+        box-shadow:none;
+        padding: 0 0 20px;
+    }
+
+    .buttons {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+.buttons {
+    min-width: 140px;
+    height: 35px;
+    padding: 0 20px;
+    line-height: 17px;
+    display: block;
+    margin: 0 auto;
+    background-color: $main-color;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+
+    &:hover {
+        background-color: $b-l-s-buttons-hover;
+    }
+}
+
+.button-gray {
+    background-color: #ddd;
+    color: #333;
+
+    &:hover {
+        background-color: #eee;
+    }
+}
+
+.button-group {
+    text-align: center;
+    font-size: 0;
+
+    .buttons {
+        display: inline-block;
+        font-size: 14px;
+
+        @media(min-width:$screen-sm-min) {
+            + .buttons {
+                margin-left: 20px;
+            }
+        }
+
+        @media(max-width:$screen-xs-max) {
+            min-width: 0;
+            padding: 0 10px;
+        }
+    }
+}
+
+#shipping-address-select,
+#billing-address-select {
+    margin-bottom: 20px;
+}
+
+
+.single-pickup-point ul {
+    padding: 0;
+    list-style: none;
+}
+
+.image-options {
+    margin-bottom:20px;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        min-height: 100px;
+        text-align: center;
+    }
+
+    .method-description {
+        line-height: 20px;
+        font-size: 14px;
+    }
+}
+
+.payment-info .info {
+    padding: 30px 15px;
+    color: #444;
+
+    tr {
+        display: block;
+        margin: 0 0 15px;
+        font-size: 0;
+    }
+
+    td {
+        display: inline-block;
+        width: 100% !important;
+        max-width: 400px !important;
+        font-size: 14px;
+        /*reset zeroing*/
+        &:first-child {
+            text-align: right;
+            padding: 0 10px 0 0;
+        }
+
+        &:only-child {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        select, input {
+            height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+            padding: $padding-base-vertical $padding-base-horizontal;
+            font-size: $font-size-base;
+            line-height: $line-height-base;
+            color: $input-color;
+            background-color: $input-bg;
+            background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+            border: 1px solid $input-border;
+            @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+            @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+            // Customize the `:focus` state to imitate native WebKit styles.
+            @include form-control-focus;
+            // Placeholder
+            @include placeholder;
+        }
+
+        input {
+            width: 100%;
+            display: block;
+
+            &[type="text"] {
+                width: 100% !important;
+            }
+
+            &[name="CardCode"] {
+                width: 65px !important;
+            }
+        }
+
+        select {
+            min-width: 70px;
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+.order-information-container {
+    margin-bottom: 30px;
+}
+
+.myOrderDetails-title {
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    border-bottom: 1px solid $bo-l-s-title;
+
+    .container {
+        position: relative;
+    }
+
+    h1 {
+        font-size: 30px;
+
+        @media (max-width : $screen-sm-max) {
+            font-size: $fs-sm-l-s-title;
+        }
+
+        @media (max-width : $screen-xs-max) {
+            font-size: $fs-xs-l-s-title;
+        }
+    }
+
+    .comms {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 5px;
+
+        @media(max-width:$screen-xs-max) {
+            position: static;
+        }
+
+        a {
+            color: #333;
+            display: inline-block;
+            margin: 8px 0 0 20px;
+            border: none;
+            padding: 0 0 0 20px;
+            font-size: 14px;
+            height: 20px;
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+
+        .print-order-button {
+            background: url(/Themes/Ipharmachine/Content/images/print.png) left center no-repeat;
+        }
+
+        .pdf-invoice-button {
+            background: url(/Themes/Ipharmachine/Content/images/pdf.png) left center no-repeat;
+        }
+    }
+}
+.shipping-info ,.order-information {
+    font-size: 14px;
+    margin-top: 15px;
+
+    > ul {
+        padding:0;
+        list-style: none;
+
+        li {
+            line-height: 24px;
+        }
+    }
+
+    @media(max-width:$screen-xs-max) {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .information-title {
+        font-size: 20px;
+        margin: 5px 0;
+        display: block;
+        font-weight: bold;
+    }
+}
+.ship-to-same-address {
+    display: none;
+}
+.cart-table-inner {
+    margin-bottom: 0;
+    -webkit-box-shadow: $bx-cart-boxshadow;
+    box-shadow: $bx-cart-boxshadow;
+
+    > thead > tr > th {
+        background-color: $b-cart-table-inner;
+    }
+
+    > tbody > tr > td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .cart-number {
+        vertical-align: middle;
+        text-align: center;
+
+        @media(max-width:$screen-xs-max) {
+            width: 90px;
+        }
+
+        .iconfont {
+            cursor: pointer;
+            display: none;
+
+            @media(max-width:$screen-xs-max) {
+                display: block;
+            }
+        }
+    }
+
+    .cart-total {
+        font-size: 14px;
+        color: $main-color;
+    }
+
+    .icon-icondel, .icon-gouwucheman {
+        cursor: pointer;
+        font-size: 18px;
+    }
+    //hide title start
+    .cart-hide-infomation {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .cart-infomation {
+        text-align: left;
+
+        .cart-name {
+        }
+
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .cart-detail-infomation {
+        font-size: 14px;
+    }
+
+    .message-error {
+        color: $brand-danger;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    //hide title end
+    //hide discount start
+    .cart-hide-discount {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .cart-discount {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+    //hide discount end
+    // hide price star
+    .cart-hide-price {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .cart-price {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+    //hide price end
+    //hide remove start
+    .cart-hide-remove {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .cart-remove, .add-to-cart {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .del-input, .add-input {
+        display: none;
+    }
+    //hide remove end
+    .cart-picture {
+        width: 78px;
+        height: 78px;
+    }
+
+    .cart-name {
+        font-size: 16px;
+        color: $c-cart-name;
+        padding-bottom: 5px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .cart-discount {
+        font-size: 14px;
+    }
+
+    .cart-sum {
+        font-size: 14px;
+
+        input, select {
+            margin-top: 20px; /*¾ÓÖÐÏÔÊ¾*/
+            width: 50px;
+            text-align: center;
+            height: 36px;
+            border: 1px solid #c9c9c9;
+            padding: 8px;
+            vertical-align: middle;
+            background: #fff;
+        }
+    }
+
+    .cart-detail {
+        display: none;
+
+        @media(min-width:$screen-xs-max) {
+            display: none !important;
+        }
+
+        > tr > td {
+            text-align: left !important;
+            vertical-align: top !important;
+        }
+
+        * {
+            border: none;
+        }
+
+        .cart-name {
+            font-size: 14px;
+        }
+    }
+}
+
+.cart-footer {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    -webkit-box-shadow: $bx-cart-boxshadow;
+    box-shadow: $bx-cart-boxshadow;
+
+    .totals-container {
+        float: right;
+
+        @media(max-width:$screen-md-min) {
+            float: none;
+        }
+
+        .cart-totals > div {
+            float: right;
+            clear: both;
+
+            @media (max-width:$screen-md-min) {
+                float: none;
+            }
+        }
+
+        .totals-info {           
+            float: right;
+
+            @media (max-width:$screen-md-min) {
+                max-width: none;
+                float: none;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            vertical-align: top;
+            line-height: 25px;
+            width: 50%;
+            text-align: right;
+        }
+
+        @media(max-width:$screen-sm-max) {
+            td {
+            }
+
+            td:last-child {
+                text-align: left;
+                padding-left: 5px;
+            }
+        }
+
+        .totals-info {
+            font-size: 14px;
+            text-align: right;
+
+            label {
+                font-size: 16px;
+                font-weight: normal;
+            }
+
+            .totals-total-weight {
+                > label {
+                    font-weight: bold;
+                }
+            }
+
+            .totals-total-price {
+                font-size: 18px;
+                color: $main-color;
+            }
+        }
+    }
+
+    .totals-btn {
+        text-align: right;
+        margin: 10px 0;
+
+        @media (max-width: $screen-sm-max) {
+            text-align: center;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .btns {
+            border: 1px solid $bo-shipping-btn;
+            background-color: $b-shipping-btn;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            padding: 8px 32px;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:hover {
+                border-color: saturate(darken($bo-shipping-btn,10%),10%);
+                background-color: saturate(darken($bo-shipping-btn,10%),10%);
+            }
+        }
+    }
+
+    .collaterals-deals {
+        width: 315px;
+
+        @media (max-width:$screen-md-min) {
+            margin: 10px auto;
+            float: none;
+            text-align: center;
+        }
+
+        .deals-box {
+            margin-bottom: 8px;
+        }
+
+        .coupon-code {
+            font-size: 0;
+
+            .code-input {
+                font-size: 13px;
+                display: inline-block;
+                width: 58%;
+                height: 34px;
+                margin: 0 -1px 0 0;
+                text-indent: 12px;
+                vertical-align: top;
+
+                @media (max-width:$screen-md-min) {
+                    width: 35%;
+                    height: 30px;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .code-btn {
+                background-color: $b-collaterals-deals-code-btn;
+                border: 1px solid $bo-collaterals-deals-code-btn;
+                color: $c-collaterals-deals-code-btn;
+                -webkit-box-shadow: $bx-collaterals-deals-code-btn;
+                box-shadow: $bx-collaterals-deals-code-btn;
+                display: inline-block;
+                padding: 8px 16px;
+                font-size: 14px;
+                height: 33px;
+                line-height: 12px;
+                vertical-align: top;
+
+                @media (max-width:$screen-md-min) {
+                    font-size: 12px;
+                    padding: 8px;
+                    height: 30px;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        .message-failure {
+            color: $brand-danger;
+        }
+    }
+
+    .collaterals-shipping {
+        /*width: 375px;*/
+        @media (max-width:$screen-md-min) {
+            clear: both;
+            width: 315px;
+            margin-top: 30px;
+            margin-left: 0;
+        }
+
+        @media (max-width:$screen-md-min) {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .shipping-options {
+            .inputs {
+                text-align: center;
+                margin: 10px 0;
+
+                label {
+                    width: 125px;
+                    font-size: 14px;
+                    font-weight: normal;
+                    padding-right: 10px;
+                    text-align: right;
+
+                    @media (max-width:$screen-md-max) {
+                        text-align: center;
+                    }
+                }
+
+                .inputs-select {
+                    width: 235px;
+                    height: 35px;
+                    padding-left: 12px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .inputs-text {
+                    width: 235px;
+                    height: 35px;
+                    padding-left: 12px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .inputs-btn {
+                    background-color: $b-collaterals-deals-code-btn;
+                    border: 1px solid $bo-collaterals-deals-code-btn;
+                    color: $c-collaterals-deals-code-btn;
+                    padding: 8px 16px;
+                    font-size: 14px;
+
+                    @media (min-width:$screen-md-min) {
+                        margin-left: 40px;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .error {
+                    color: $c-shipping-options-strong;
+                }
+            }
+        }
+    }
+
+    .title {
+        margin: 0 0 5px;
+        font-size: 16px;
+        font-weight: normal;
+
+        @media(max-width:$screen-xs-max) {
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+    .hint {
+        font-size: 14px;
+        margin: 0 0 5px;
+
+        @media(max-width:$screen-xs-max) {
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+}

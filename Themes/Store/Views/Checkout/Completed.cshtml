@@ -1,0 +1,72 @@
+﻿@model CheckoutCompletedModel
+@using Nop.Core.Domain
+@using Nop.Core.Infrastructure
+@using Nop.Services.Orders
+@using Nop.Web.Models.Checkout;
+@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Checkout").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-checkout-page");
+    Html.AppendPageCssClassParts("html-order-completed-page");
+    Html.AddCssFileParts("~/Themes/Store/Content/css/pages/customer.css");
+
+    Response.Cache.SetCacheability(HttpCacheability.NoCache);
+    //Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1));
+}
+
+<div class="account-number">
+    @if (!Model.OnePageCheckoutEnabled)
+    {
+        @Html.Action("CheckoutProgress", "Checkout", new { step = CheckoutProgressStep.Complete })
+    }
+    <h1 class="account-title">@T("Checkout.ThankYou")</h1>
+    <div class="container page-body">
+        @Html.Widget("checkout_completed_top", Model.OrderId)
+        <div class="section order-completed">
+            <div class="title">
+                <strong>@T("Checkout.YourOrderHasBeenSuccessfullyProcessed")</strong>
+            </div>
+            <div class="details">
+                <div class="order-number">
+                    <strong>@T("Checkout.OrderNumber"): @Model.CustomOrderNumber</strong>
+                </div>
+                <div class="details-link">
+                    <a href="@Url.RouteUrl("OrderDetails", new { orderID = Model.OrderId })">@T("Checkout.PlacedOrderDetails")</a>
+                </div>
+            </div>
+            <input type="button" value="@T("Checkout.ThankYou.Continue")" class="buttons" onclick="setLocation('@Url.RouteUrl("HomePage")')" />
+        </div>
+        @Html.Widget("checkout_completed_bottom", Model.OrderId)
+        @{
+            var orderService = EngineContext.Current.Resolve<IOrderService>();
+            var order = orderService.GetOrderById(Model.OrderId);
+            //.First().Product.Gtin
+        }
+        <script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+        <script>
+            window.renderOptIn = function() {
+                window.gapi.load('surveyoptin', function() {
+                    window.gapi.surveyoptin.render(
+                        {
+                            // REQUIRED FIELDS
+                            "merchant_id": 130758629,
+                            "order_id": "@Model.OrderId",
+                            "email": "@order.BillingAddress.Email",
+                            "delivery_country": "@order.BillingAddress.Country.TwoLetterIsoCode",
+                            "estimated_delivery_date": "@DateTime.Now.AddDays(4).ToString("yyyy-MM-dd")"
+                            @if (order.OrderItems.Any(oi => oi.Product.Gtin != ""))
+                             {
+                                 <text>
+                                ,"products": [@order.OrderItems.Aggregate("", (seed, oi) => seed + (string.IsNullOrEmpty(oi.Product.Gtin) ? "" : "{\"gtin\":\"" + oi.Product.Gtin + "\"},")).TrimEnd(',')]
+                                 </text>
+                            }
+                        });
+                });
+            }
+        </script>
+    </div>
+</div>
+

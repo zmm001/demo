@@ -1,0 +1,13 @@
+﻿@model LogoModel
+@using Nop.Web.Models.Common;
+@if (HttpContext.Current.Request.RawUrl == Url.RouteUrl("HomePage")) {
+    <h1 class="header-logo-wrapper">
+        <span  class="logo-inner">@Model.StoreName</span>
+    </h1>
+}
+else
+{
+    <div class="header-logo-wrapper">
+        <a href="@Url.RouteUrl("HomePage")" class="logo-inner">@Model.StoreName</a>
+    </div>
+}

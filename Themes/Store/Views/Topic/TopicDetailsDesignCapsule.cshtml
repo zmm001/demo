@@ -1,0 +1,133 @@
+﻿@model TopicModel
+@using Nop.Core.Domain.Seo
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Common
+@using Nop.Web.Models.Topics;
+@using Nop.Core
+@using Nop.Services.Customers
+@{
+    var isPopup = ViewBag.IsPopup;
+    if (isPopup == null || isPopup == false)
+    {
+        Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    }
+
+    if (!Model.IsPasswordProtected)
+    {
+        //title
+        Html.AddTitleParts(!String.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Title);
+        //meta
+        Html.AddMetaDescriptionParts(Model.MetaDescription);
+        Html.AddMetaKeywordParts(Model.MetaKeywords);
+    }
+
+    var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
+    if (canonicalUrlsEnabled)
+    {
+        var topicUrl = Url.RouteUrl("Topic", new { SeName = Model.SeName }, this.Request.Url.Scheme);
+        Html.AddCanonicalUrlParts(topicUrl);
+    }
+    Html.AddCssFileParts("~/Themes/Store/Content/css/pages/articleDetails.css");
+    Html.AddCssFileParts("~/Themes/Store/Content/js/extend/design-capsule/capsule.css");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/design-capsule/capsule.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/design-capsule/jscolor.js");
+    Html.AddScriptParts(ResourceLocation.Head, "~/Themes/Store/Content/js/extend/design-capsule/pako.js");
+    //page class
+
+}
+
+<link href="" rel="stylesheet" />
+<div class="article-details">
+    <h1 class="topic-title">@Model.Title</h1>
+</div>
+<div class="article-content container">
+    <div class="article-body">
+        @Html.Raw(Model.Body)
+    </div>
+    <div id="capsule_demo">
+        <div class="canvasbox">
+            <canvas id="capsule_canvas" width="1000" height="1000">
+                your browser doesn't support canvas!
+            </canvas>
+        </div>
+    </div>
+    <div id="capsule_options" class="capsule-options">
+        <div class="option" id="size_option">
+            <div class="option-title">Capsule size:</div>
+            <div class="option-control">
+                <label><input type="radio" name="size" id="000" data-value="000" value="000"><span>000</span></label>
+                <label><input type="radio" name="size" id="00" data-value="00" value="00" checked=""><span>00</span></label>
+                <label><input type="radio" name="size" id="0" data-value="0" value="0"><span>0</span></label>
+                <label><input type="radio" name="size" id="1" data-value="1" value="1"><span>1</span></label>
+                <label><input type="radio" name="size" id="2" data-value="2" value="2"><span>2</span></label>
+                <label><input type="radio" name="size" id="3" data-value="3" value="3"><span>3</span></label>
+                <label><input type="radio" name="size" id="4" data-value="4" value="4"><span>4</span></label>
+                <label><input type="radio" name="size" id="5" data-value="5" value="5"><span>5</span></label>
+            </div>
+        </div>
+        <div class="option" id="type_option">
+            <div class="option-title">Capsule type:</div>
+            <div class="option-control">
+                <label><input type="radio" name="type" id="gel" value="Gelatin" data-value="gel" checked=""><span>Gelatin</span></label>
+                <label><input type="radio" name="type" id="metia" value="Metia" data-value="metia"><span>Metallic</span></label>
+                <label><input type="radio" name="type" id="veg" value="Vegetarian" data-value="veg"><span>Vegetarian</span></label>
+                <label><input type="radio" name="type" id="pul" value="Pulullan" data-value="pul"><span>Pulullan</span></label>
+                <label><input type="radio" name="type" id="ent" value="Entric" data-value="ent"><span>Entric</span></label>
+            </div>
+        </div>
+        <div class="option color-option">
+            <div class="option-title">Color:</div>
+            <div class="option-control">
+                <label>
+                    <input type="hidden" id="cap-value" value="103685">
+                    <button class="jscolor {valueElement:'cap-value', onFineChange:'onCapChange(this)'}">&nbsp;</button>
+                </label><label>
+                    <input type="hidden" id="body-value" value="90c42f">
+                    <button class="jscolor {valueElement:'body-value', onFineChange:'onBodyChange(this)'}">&nbsp;</button>
+                </label>
+            </div>
+        </div>
+        <div class="option file-option" style="position:relative;">
+            <div class="option-title">Cap Image:</div>
+            <div class="option-control">
+                <label>
+                    <input type="file" id="capImage" name="capImage" accept="image/png">
+                </label>
+            </div>
+            <div class="jscolorchange">
+                <label class="changeColor">
+                    <input type="hidden" id="capimg-value" value="FFFFFF">
+                    <button style="height:36px;width: 50px;" class="jscolor {valueElement:'capimg-value', onFineChange:'onCapImg(this)'}">&nbsp;</button>
+                </label>
+            </div>
+        </div>
+        <div class="option file-option">
+            <div class="option-title">Body Image:</div>
+            <div class="option-control">
+                <label>
+                    <input type="file" id="bodyImage" name="bodyImage" accept="image/png">
+                </label>
+            </div>
+            <div class="jscolorchange">
+                <label class="changeColor">
+                    <input type="hidden" id="bodyimg-value" value="FFFFFF">
+                    <button style="height:36px;width: 50px;" class="jscolor {valueElement:'bodyimg-value', onFineChange:'onBodyImg(this)'}">&nbsp;</button>
+                </label>
+            </div>
+        </div>
+    </div>
+    @{
+        var _commonSettings = EngineContext.Current.Resolve<Nop.Core.Domain.Common.CommonSettings>();
+        var _captchaSettings = EngineContext.Current.Resolve<CaptchaSettings>();
+        var workContext = EngineContext.Current.Resolve<IWorkContext>();
+        var contactUsModel = new ContactUsModel
+        {
+            Email = workContext.CurrentCustomer.Email,
+            FullName = workContext.CurrentCustomer.GetFullName(),
+            SubjectEnabled = _commonSettings.SubjectFieldOnContactUsForm,
+            DisplayCaptcha = _captchaSettings.Enabled && _captchaSettings.ShowOnContactUsPage
+        };
+    }
+    @Html.Partial("~/Themes/Store/Views/Topic/PartialContactUs.cshtml", contactUsModel)
+</div>
+

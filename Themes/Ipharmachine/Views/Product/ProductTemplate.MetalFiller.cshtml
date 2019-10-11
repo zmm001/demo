@@ -1,0 +1,214 @@
+﻿@model ProductDetailsModel
+@using System.Globalization
+@using Nop.Core
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Directory
+@using Nop.Web.Models.Catalog;
+@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+
+    //title
+    Html.AddTitleParts(!String.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Name);
+    //meta
+    Html.AddMetaDescriptionParts(Model.MetaDescription);
+    Html.AddMetaKeywordParts(Model.MetaKeywords);
+    //page class
+    Html.AppendPageCssClassParts("html-product-details-page");
+
+    var seoSettings = EngineContext.Current.Resolve<SeoSettings>();
+
+    //canonical URL
+    var categoryUrl = Url.RouteUrl("Category", new { SeName = Model.SeName }, this.Request.Url.Scheme);
+    Html.AddCanonicalUrlParts(categoryUrl.ToLower().Replace("ipharmachine","capsulcn"));
+
+
+    //open graph META tags
+    if (seoSettings.OpenGraphMetaTags)
+    {
+        Html.AddHeadCustomParts("<meta property=\"og:type\" content=\"product\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:title\" content=\"" + Html.Encode(Model.Name) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:description\" content=\"" + Html.Encode(Nop.Core.Html.HtmlHelper.StripTags(Model.MetaDescription)) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:image\" content=\"" + Model.DefaultPictureModel.ImageUrl + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:url\" content=\"" + Request.Url.AbsoluteUri + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:site_name\" content=\"" + Html.Encode(Model.CurrentStoreName) + "\" />");
+    }
+
+    //Twitter META tags
+    if (seoSettings.TwitterMetaTags)
+    {
+        Html.AddHeadCustomParts("<meta property=\"twitter:card\" content=\"summary\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:site\" content=\"" + Html.Encode(Model.CurrentStoreName) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:title\" content=\"" + Html.Encode(Model.Name) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:description\" content=\"" + Html.Encode(Nop.Core.Html.HtmlHelper.StripTags(Model.MetaDescription)) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:image\" content=\"" + Model.DefaultPictureModel.ImageUrl + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:url\" content=\"" + Request.Url.AbsoluteUri + "\" />");
+    }
+
+
+
+
+    Html.AddCssFileParts("~/Themes/Ipharmachine/Content/css/pages/productDetails.css");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/pages/productDetails.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/extend/photoswipe.min.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/extend/photoswipe-ui-default.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/extend/photoswipe-custom.js");
+
+}
+
+<!--product breadcrumb-->
+<script>
+    gtag('event', 'page_view', {
+        'send_to': 'AW-783243987',
+        'ecomm_pagetype': 'productDetail',
+        'ecomm_prodid': 'u@(Model.Id)'
+    });
+</script>
+
+
+
+<div class="product-details">
+    <div class="container">
+        <div class="main-product-infomation">
+            @Html.Partial("_ProductBreadcrumb", Model.Breadcrumb)
+            @Html.Widget("productdetails_after_breadcrumb", Model.Id)
+            <div class="row">
+                <div class="col-md-4 product-picture">
+                    @Html.Widget("productdetails_before_pictures", Model.Id)
+                    @Html.Partial("_ProductDetailsPictures", Model)
+                    @Html.Widget("productdetails_after_pictures", Model.Id)
+                </div>
+                @using (Html.BeginRouteForm("Product", new { SeName = Model.SeName }, FormMethod.Post, new { id = "product-details-form" }))
+                {
+                    <div class="col-md-8 product-inner" id="capsuleSelect">
+                        @*            @Html.Partial("_Discontinued", Model)*@
+
+                        <h1 class="shopping-product-heading">@Model.Name</h1>
+                        <p class="shopping-product-text">@Html.Raw(Model.ShortDescription)</p>
+                        <!--product reviews-->
+                        @Html.Partial("_ProductReviewOverview", Model.ProductReviewOverview)
+
+                        @Html.Widget("productdetails_overview_top", Model.Id)
+
+
+                        <!--manufacturers-->
+                        @*            @Html.Partial("_ProductManufacturers", Model.ProductManufacturers)*@
+                        <!--availability-->
+                        @*            @Html.Partial("_Availability", Model)*@
+                        <!--SKU, MAN, GTIN, vendor-->
+                        @*            @Html.Partial("_SKU_Man_GTIN_Ven", Model)*@
+                        <!--delivery-->
+                        @*            @Html.Partial("_DeliveryInfo", Model)*@
+                        <!--sample download-->
+                        @*            @Html.Partial("_DownloadSample", Model)*@
+                        @if (!Model.AddToCart.CustomerEntersPrice)
+                        {
+                            <div class="shopping-product-price">
+                                <div class="price">
+                                    @if (Model.ProductPrice.CallForPrice)
+                                    {
+                                        <div class="actual-price">
+                                            @T("Products.CallForPrice")
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="actual-price">
+                                            @if (Model.IsRental)
+                                            {
+                                                @T("Products.Price.RentalPrice")<text>: </text>
+                                                <span class="revise-sum @("price-value-" + Model.Id)">@Model.ProductPrice.RentalPrice</span>
+                                                @Model.ProductPrice.CurrencyCode
+                                            }
+                                            else
+                                            {
+                                                <span class="revise-sum @("price-value-" + Model.Id)">@Model.ProductPrice.Price</span>
+                                                @Model.ProductPrice.CurrencyCode
+                                            }
+                                            @if (String.IsNullOrWhiteSpace(Model.ProductPrice.OldPrice))
+                                            {
+                                                <span class="old-price @("old-price-" + Model.Id)">@Model.ProductPrice.OldPrice</span>
+                                            }
+                                        </div>
+                                    }
+
+                                </div>
+                                @if (Model.TierPrices.Count > 0 && !(Model.TierPrices.Count == 1 && Model.TierPrices[0].Quantity <= 1))
+                                {
+                                    <div class="discount">
+
+                                        @for (var i = 0; i < Model.TierPrices.Count; i++)
+                                        {
+                                            if (i == Model.TierPrices.Count - 1)
+                                            {
+                                                <div>@T("products.tierprices.price.formater", Model.TierPrices[i].Quantity + "+", Model.TierPrices[i].Price)</div>
+                                            }
+                                            else
+                                            {
+                                                var q = Model.TierPrices[i].Quantity == Model.TierPrices[i + 1].Quantity - 1 ? Model.TierPrices[i].Quantity + "" : Model.TierPrices[i].Quantity + " - " + (Model.TierPrices[i + 1].Quantity - 1);
+                                                <div>@T("products.tierprices.price.formater", q, Model.TierPrices[i].Price)</div>
+
+                                            }
+                                        }
+                                    </div>
+                                }
+
+                            </div>
+                        }
+
+                        @*                    todo: 没有礼品卷, 没有租赁功能*@<!--attributes-->
+
+                        @if (Model.ProductPrice.CallForPrice)
+                        {
+                            <div class="shopping-product-btn">
+                                <a class="btn-add-contact" href="@Url.RouteUrl("ContactUs")"><span class="iconfont icon-youxiang"></span> <span>@T("Products.CallForPrice")</span></a>
+                            </div>
+                        }
+                        else
+                        {
+                            if (Model.ProductAttributes.Count == 0)
+                            {
+                                <input type="hidden" class="no-attributes"
+                                       data-id="@Model.Id"
+                                       data-instock="@T("products.availability.instock")"
+                                       data-url="@Url.Action("productdetails_attributechange", "shoppingcart", new {productId = Model.Id, validateAttributeConditions = false, loadPicture = false})" />
+                            }
+                            var dataDictAttributes = new ViewDataDictionary();
+                            dataDictAttributes.TemplateInfo.HtmlFieldPrefix = string.Format("attributes_{0}", Model.Id);
+                            @Html.Partial("_ProductAttributes", Model.ProductAttributes, dataDictAttributes)
+                            //加入购物车
+                            var dataDictAddToCart = new ViewDataDictionary();
+                            dataDictAddToCart.TemplateInfo.HtmlFieldPrefix = string.Format("addtocart_{0}", Model.Id);
+                            @Html.Partial("_AddToCart", Model.AddToCart, dataDictAddToCart)}
+
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="main-detail-container">
+            <div class="row">
+                <div class="col-md-10 product-left-box">
+                    @Html.Action("RelatedProducts", "Product", new { productId = Model.Id })
+                    @if (!String.IsNullOrEmpty(Model.FullDescription))
+                    {
+                        <div class="detail-article">
+                            @Html.Raw(Model.FullDescription)
+                        </div>
+                    }
+                    <div class="detail-article">
+                        @Html.Action("TopicBlock", "Topic", new { systemName = "MetailFillerDetail" })
+
+                    </div>
+                    @if (Model.ProductReviewOverview.AllowCustomerReviews)
+                    {
+                        @Html.Action("ProductReviews", "Product", new { productId = Model.Id })
+                    }
+                </div>
+                <div class="col-md-2 product-right-box" data-toggle="fixing" data-fixing='{"marginTop":38}'>
+                    @Html.Action("ProductsAlsoPurchased", "Product", new { productId = Model.Id })
+                    @Html.Action("TopicBlock", "Topic", new { systemName = "LeftAdvisement" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

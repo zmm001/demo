@@ -1,0 +1,8 @@
+﻿Group: Promotion feeds
+FriendlyName: Google Shopping (formely Google Product Search)
+SystemName: PromotionFeed.GoogleShopping
+Version: 1.81
+SupportedVersions: 3.90
+Author: nopCommerce team, CapsulCN.IT
+DisplayOrder: 1
+FileName: Nop.Plugin.Feed.Froogle.dll

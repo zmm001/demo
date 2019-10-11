@@ -1,0 +1,44 @@
+﻿@using Nop.Web.Models.Common;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI
+@using Nop.Web.Models.Catalog;
+@using Nop.Core
+@using Nop.Core.Domain.Seo;
+@using System.Globalization
+@using Nop.Core.Infrastructure;
+@using Newtonsoft.Json;
+@using System;
+@using Nop.Services.Directory
+@model Nop.Plugin.Widgets.GoogleSearch.Models.RequestModel
+
+@*谷歌搜索 站点链接搜索框*@
+    <script type="application/ld+json">
+        {
+        "@@context": "https://schema.org",
+        "@@type": "WebSite",
+        "url": "https://www.@(Model.WebSiteUrl).com/",
+        "potentialAction": [{
+        "@@type": "SearchAction",
+        "target": "https://www.@(Model.WebSiteUrl).com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+        }]
+        }
+    </script>
+
+@*谷歌搜索 企业联系方式+徽标*@
+<script type="application/ld+json">
+    {
+    "@@context": "https://schema.org",
+    "@@type": "Organization",
+    "url": "https://www.@(Model.WebSiteUrl).com/",
+    "logo": "https://cdn.capsulcn.com/Themes/@(Model.WebSiteUrl=="capsulcn"?"store":Model.WebSiteUrl)/Content/img/logo.png",
+    "contactPoint": [{
+    "@@type": "ContactPoint",
+    "telephone": "+ 86-18858877122",
+    "contactType": "customer service"
+    }]
+    }
+</script>
+
+
+

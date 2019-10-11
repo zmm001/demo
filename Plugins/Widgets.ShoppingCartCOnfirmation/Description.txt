@@ -1,0 +1,9 @@
+﻿Group: Widgets
+FriendlyName: Shopping Cart COnfirmation
+SystemName: Widgets.ShoppingCartCOnfirmation
+Version: 1.21
+SupportedVersions: 3.90
+Author: Capsulcn team
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.ShoppingCartCOnfirmation.dll
+Description: This plugin is mainly used to click on the shopping cart popup window.

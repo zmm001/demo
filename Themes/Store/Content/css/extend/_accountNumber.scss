@@ -1,0 +1,126 @@
+.account-number {
+
+    .account-title {
+        text-align: center;
+        font-size: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $bo-l-s-title;
+
+        @media (max-width : $screen-sm-max) {
+            font-size: $fs-sm-l-s-title;
+        }
+
+        @media (max-width : $screen-xs-max) {
+            font-size: $fs-xs-l-s-title;
+        }
+    }
+
+    .row {
+        @media(max-width:$screen-sm-max) {
+            margin: 0 -10px;
+        }
+    }
+
+    .mycol {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .box-title {
+        display: block;
+        font-size: $fs-l-s-box-title;
+        font-weight: normal;
+        margin: 15px 0;
+
+        @media (max-width : $screen-xs-max) {
+            font-size: $fs-ms-l-s-box-title;
+        }
+    }
+
+    .form-container {
+        background-color: $b-l-s-box-container;
+        padding: 30px 0 25px;
+        box-shadow: 0 0 2px rgba(0,0,0,.3);
+        border-radius: 2px;
+    }
+
+    .form-group {
+        @media (max-width : $screen-xs-max) {
+            padding: 0 8px;
+        }
+
+        .control-label {
+            font-size: 14px;
+        }
+
+        .radio-inner {
+            font-size: 14px;
+            text-align: left;
+
+            @media (max-width:$screen-xs-max) {
+                text-align: center;
+            }
+        }
+
+        .checkbox {
+            font-size: 14px;
+        }
+
+        .inputs {
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+
+            @media(max-width:$screen-xs-max) {
+                text-align: center;
+            }
+        }
+
+        .selects {
+            width: 30%;
+            display: inline-block;
+            float: left;
+
+            + .selects {
+                margin-left: 5%;
+            }
+        }
+
+        input[type="checkbox"] {
+            margin-left: 0;
+        }
+    }
+
+
+    .buttons {
+        min-width: 140px;
+        padding: 0 20px;
+        height: 35px;
+        line-height: 17px;
+        display: block;
+        margin: 20px auto;
+        background-color: $b-l-s-buttons;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 14px;
+
+        &:hover {
+            background-color: $b-l-s-buttons-hover;
+        }
+    }
+
+    .error, .required {
+        color: $c-l-s-strong;
+        text-align: center;
+    }
+
+    .border-error {
+        border: 1px solid $b-l-s-strong;
+    }
+}

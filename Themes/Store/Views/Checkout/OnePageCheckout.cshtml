@@ -1,0 +1,239 @@
+﻿@model OnePageCheckoutModel
+@using Nop.Web.Models.Checkout;
+@using Nop.Core.Infrastructure;
+@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+
+    //scripts
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Scripts/public.onepagecheckout.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Scripts/public.accordion.js");
+
+    var storeLocation = EngineContext.Current.Resolve<Nop.Core.IWebHelper>().GetStoreLocation();
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Checkout").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-checkout-page");
+
+    Html.AddCssFileParts("~/Themes/Store/Content/css/pages/orderDetails.css");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/pages/onepagecheckout.js");
+}
+@{
+    //step numbers
+    int billingAddressStepNumber = 1;
+    int shippingAddressStepNumber = 2;
+    int shippingMethodStepNumber = 3;
+    int paymentMethodStepNumber = 4;
+    int paymentInfoStepNumber = 5;
+    int confirmOrderStepNumber = 6;
+    if (!Model.ShippingRequired)
+    {
+        paymentMethodStepNumber = paymentMethodStepNumber - 2;
+        paymentInfoStepNumber = paymentInfoStepNumber - 2;
+        confirmOrderStepNumber = confirmOrderStepNumber - 2;
+    }
+    if (Model.DisableBillingAddressCheckoutStep)
+    {
+        shippingAddressStepNumber--;
+        shippingMethodStepNumber--;
+        paymentMethodStepNumber--;
+        paymentInfoStepNumber--;
+        confirmOrderStepNumber--;
+    }
+    
+    {
+        shippingAddressStepNumber--;
+        shippingMethodStepNumber--;
+        paymentMethodStepNumber--;
+        paymentInfoStepNumber--;
+        confirmOrderStepNumber--;
+    }
+}
+
+<div class="order" id="cart" data-url="@(storeLocation)cart/">
+    <h1 class="order-title">@T("Checkout")</h1>
+    <div class="container">
+        @Html.Widget("opc_content_before")
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div id="opc-billing" class="panel panel-default tab-section allow">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a class="panel-link" role="button">
+                            <span class="number">@billingAddressStepNumber.</span>@T("Checkout.BillingAddress")
+                        </a>
+                    </h4>
+                </div>
+                <div id="checkout-step-billing" class="panel-collapse a-item collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <form id="co-billing-form"
+                          class="form-horizontal"
+                          data-url="@(storeLocation)checkout/OpcSaveBilling/"
+                          data-step="@(Model.DisableBillingAddressCheckoutStep.ToString().ToLowerInvariant())"
+                          action="">
+                        <div class="panel-body">
+                            @Html.Action("OpcBillingForm", "Checkout")
+                            <input type="button" title="@T("Common.Continue")"
+                                   class="buttons"
+                                   role="button"
+                                   onclick="Billing.save()"
+                                   value="@T("Common.Continue")" />
+                            <span class="please-wait" id="billing-please-wait" style="display: none;">@T("Common.LoadingNextStep")</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            @if (Model.ShippingRequired)
+            {
+                if (false)
+                {
+                    <div id="opc-shipping" class="panel panel-default tab-section">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="panel-link collapsed" role="button"
+                                   aria-expanded="false" aria-controls="collapseTwo">
+                                    <span class="number">@shippingAddressStepNumber.</span>@T("Checkout.ShippingAddress")
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="checkout-step-shipping" class="panel-collapse a-item collapse" role="tabpanel">
+                            <form action="" id="co-shipping-form"
+                                  class="form-horizontal"
+                                  data-url="@(storeLocation)checkout/OpcSaveShipping/">
+                                <div class="panel-body">
+                                    <div id="checkout-shipping-load"></div>
+                                    <div class="button-group">
+                                        @if (!Model.DisableBillingAddressCheckoutStep)
+                                        {
+                                            <button class="buttons button-gray" onclick="Checkout.back();return false; "><small>&laquo; </small>@T("Common.Back")</button>
+                                        }
+                                        <input type="button" class="buttons" title="@T("Common.Continue")" onclick="Shipping.save()" value="@T("Common.Continue")" />
+                                    </div>
+                                </div>
+                                <span id="shipping-please-wait" class="please-wait" style="display: none;"> @T("Common.LoadingNextStep")</span>
+                            </form>
+                        </div>
+                    </div>
+                }
+
+                <div id="opc-shipping_method" class="panel panel-default tab-section">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="panel-link collapsed" role="button"
+                               aria-expanded="false" aria-controls="collapseThree"><span class="number">@shippingMethodStepNumber.</span>@T("Checkout.ShippingMethod")</a>
+                        </h4>
+                    </div>
+                    <div class="panel-collapse a-item collapse" role="tabpanel">
+                        <form id="co-shipping-method-form"
+                              class="form-horizontal"
+                              data-url="@(storeLocation)checkout/OpcSaveShippingMethod/" action="">
+                            <div class="panel-body">
+                                <div id="checkout-shipping-method-load">
+                                    @*                                    <div class="row">*@
+                                    @*                                        <div class="col-md-3 col-xs-6">*@
+                                    @*                                            <label id="PPSeletor" class="payment">*@
+                                    @*                                                <input type="radio" name="PaymentSeletor" value="#PPButton" checked="checked"/>*@
+                                    @*                                            </label>*@
+                                    @*                                        </div>*@
+                                    @*                                        <div class="col-md-3 col-xs-6">*@
+                                    @*                                            <label id="MGSeletor" class="payment">*@
+                                    @*                                                <input type="radio" name="PaymentSeletor" value="#MGSeletor"/>*@
+                                    @*                                            </label>*@
+                                    @*                                        </div>*@
+                                    @*                                        <div class="col-md-3 col-xs-6">*@
+                                    @*                                            <label id="WUSeletor" class="payment">*@
+                                    @*                                                <input type="radio" name="PaymentSeletor" value="#WUSeletor"/>*@
+                                    @*                                            </label>*@
+                                    @*                                        </div>*@
+                                    @*                                        <div class="col-md-3 col-xs-6">*@
+                                    @*                                            <label id="BTCSeletor" class="payment">*@
+                                    @*                                                <input type="radio" name="PaymentSeletor" value="#BTCSeletor"/>*@
+                                    @*                                            </label>*@
+                                    @*                                        </div>*@
+                                    @*                                    </div>*@
+                                </div>
+                                <div class="button-group" id="shipping-method-buttons-container">
+                                    <button class="buttons button-gray" onclick="Checkout.back(); return false;"><small>&laquo; </small>@T("Common.Back")</button>
+                                    <input type="button" class="buttons" onclick="ShippingMethod.save()" value="@T("Common.Continue")" />
+                                </div>
+                                <span id="shipping-method-please-wait" class="please-wait" style="display: none;">@T("Common.LoadingNextStep")</span>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            }
+
+            <div id="opc-payment_method" class="panel panel-default tab-section">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                        <a class="panel-link collapsed" role="button"
+                           aria-expanded="false" aria-controls="collapseThree"><span class="number">@paymentMethodStepNumber.</span>@T("Checkout.PaymentMethod")</a>
+                    </h4>
+                </div>
+                <div id="checkout-step-payment-method" class="panel-collapse a-item collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <form action="" id="co-payment-method-form" data-url="@(storeLocation)checkout/OpcSavePaymentMethod/">
+                        <div class="panel-body">
+                            <div id="checkout-payment-method-load">
+                                Payment is not required
+                            </div>
+                            <div class="button-group" id="shipping-method-buttons-container">
+                                <button class="buttons button-gray" onclick="Checkout.back(); return false;"><small>&laquo; </small>@T("Common.Back")</button>
+                                <input type="button" class="buttons" onclick="PaymentMethod.save()" value="@T("Common.Continue")" />
+                            </div>
+                            <span id="shipping-method-please-wait" class="please-wait" style="display: none;">@T("Common.LoadingNextStep")</span>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="opc-payment_info" class="panel panel-default tab-section">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="panel-link collapsed" role="button"
+                           aria-expanded="false" aria-controls="collapseThree"><span class="number">@paymentInfoStepNumber.</span>@T("Checkout.PaymentInfo")</a>
+                    </h4>
+                </div>
+                <div id="checkout-step-payment-info" class="panel-collapse a-item collapse" role="tabpanel">
+                    <form action="" id="co-payment-info-form" data-url="@(storeLocation)checkout/OpcSavePaymentInfo/">
+                        <div class="panel-body">
+                            <div id="checkout-payment-info-load">
+                                Payment is not required
+                            </div>
+                            <div class="button-group" id="payment-info-buttons-container">
+                                <button class="buttons button-gray" onclick="Checkout.back(); return false;"><small>&laquo; </small>@T("Common.Back")</button>
+                                <input type="button" class="buttons" onclick="PaymentInfo.save()" value="@T("Common.Continue")" />
+                            </div>
+                            <span class="please-wait" id="payment-info-please-wait" style="display: none;">@T("Common.LoadingNextStep")</span>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div id="opc-confirm_order" class="panel panel-default tab-section">
+                <div class="panel-heading" role="tab" id="headingFour">
+                    <h4 class="panel-title">
+                        <a class="panel-link collapsed" role="button"
+                           aria-expanded="false" aria-controls="collapseFour"><span class="number">@confirmOrderStepNumber.</span>@T("Checkout.ConfirmOrder")</a>
+                    </h4>
+                </div>
+                <div id="checkout-step-confirm-order" 
+                     data-url1="@(storeLocation)checkout/OpcConfirmOrder/"
+                     data-url2="@(storeLocation)checkout/completed/"
+                     class="panel-collapse a-item collapse" role="tabpanel">
+                    <div class="panel-body myOrderDetails">
+                        <div id="checkout-confirm-order-load">
+                            @*confirm order content will be loaded here*@
+                        </div>
+                       
+                        <div class="button-group" id="confirm-order-buttons-container">
+                           <button class="buttons button-gray" onclick="Checkout.back(); return false;"><small>&laquo; </small>@T("Common.Back")</button>
+                            <input type="button" class="buttons" onclick="ConfirmOrder.save()" value="@T("Common.Confirm")" />
+                        </div>
+                        <span class="please-wait" id="confirm-order-please-wait" style="display: none;">@T("Checkout.SubmittingOrder")</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

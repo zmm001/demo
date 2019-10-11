@@ -1,0 +1,57 @@
+@import "../bootstrap/bootstrap/variables";
+@import "../extend/variable";
+@import "../extend/toggle";
+@import "../extend/my";
+.myOrderList{
+  .mycol{
+    @media (max-width: 768px) and (min-width: 530px) {
+      width: 252px;
+      position: relative;
+      left: 50%;
+      margin-bottom: 2px;
+      @include translateX(-100%);
+    }
+  }
+}
+.account-title{
+  border-bottom: 1px solid $bo-account-title;
+  padding-bottom: 10px;
+}
+.order-list{
+  text-align: left;
+  font-size: 14px;
+  .order-item{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: $bx-address-item;
+    margin-top: 8px;
+    .item-title{
+      font-size: 18px;
+      margin: 0 0 5px;
+      font-weight: 300;
+      @media(max-width:$screen-md-max){
+        font-size: 15px;
+      }
+    }
+    .item-info{
+      list-style: none;
+      padding-left: 0;
+      line-height: 20px;
+    }
+    .info-buttons{
+      input[type="button"]{
+        display: inline-block;
+        padding: 5px 10px;
+        margin-right: 3px;
+        background-color: $b-info-buttons;
+        border: 1px solid $bo-info-buttons;
+        border-top: 0;
+        transition: all .2s ease-in-out;
+        &:hover,&:focus{
+          outline: none;
+          opacity: .8;
+        }
+      }
+    }
+  }
+}

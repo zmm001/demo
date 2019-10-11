@@ -1,0 +1,137 @@
+﻿@model FooterModel
+@using Nop.Core
+@using Nop.Core.Domain.Tax
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Common;
+
+
+<footer class="footer">
+    <!--footer-top start-->
+    <div class="footer-top">
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-md-4 col-sm-6">
+                    @Html.Action("TopicBlock", "Topic", new { systemName = "IpharmachineContactInformation" })
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    @Html.Action("TopicBlock", "Topic", new { systemName = "IpharmachineAboutUsInFooter" })
+                </div>
+                <div class="col-md-4 col-sm-6 clear-both">
+                    
+                    <h3 class="top-title greens">@T("Footer.FollowUs")</h3>
+                    @Html.Action("Social", "Common")
+
+                </div>
+                <div class="col-md-4 col-sm-6 flr">
+                    @Html.Action("NewsletterBox", "Newsletter")
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-top end-->
+    <!--footer-middle start-->
+    <div class="footer-middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <h3 class="middle-title">@T("Footer.Information")</h3>
+                    <ul class="middle-list">
+                        
+                        @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn1).ToList())
+                        {
+                            <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                        }
+                       
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <h3 class="middle-title">@T("Footer.CustomerService")</h3>
+                    <ul class="middle-list">
+                        <li><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a></li>
+                        @if (Model.NewsEnabled)
+                        {
+                            <li><a href="@Url.RouteUrl("NewsArchive")">@T("News")</a></li>
+                        }
+                        @if (Model.BlogEnabled)
+                        {
+                            <li><a href="@Url.RouteUrl("Blog")">@T("Blog")</a></li>
+                        }
+                        @if (Model.ForumEnabled)
+                        {
+                            <li><a href="@Url.RouteUrl("Boards")">@T("Forum.Forums")</a></li>
+                        }
+                        @if (Model.SitemapEnabled)
+                        {
+                            <li><a href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>
+                        }
+                       
+                        @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn2).ToList())
+                        {
+                            <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <h3 class="middle-title">@T("Footer.MyAccount")</h3>
+                    <ul class="middle-list">
+                        <li><a href="@Url.RouteUrl("CustomerInfo")">@T("Account.MyAccount")</a></li>
+                        <li><a href="@Url.RouteUrl("CustomerOrders")">@T("Account.CustomerOrders")</a></li>
+@*                        <li><a href="@Url.RouteUrl("CustomerAddresses")">@T("Account.CustomerAddresses")</a></li>*@
+                        @if (Model.ShoppingCartEnabled)
+                        {
+                            <li><a href="@Url.RouteUrl("ShoppingCart")">@T("ShoppingCart")</a></li>
+                        }
+                        @if (Model.WishlistEnabled)
+                        {
+                            <li><a href="@Url.RouteUrl("Wishlist")">@T("Wishlist")</a></li>
+                        }
+                        @if (Model.AllowCustomersToApplyForVendorAccount)
+                        {
+                            <li><a href="@Url.RouteUrl("ApplyVendorAccount")">@T("Vendors.ApplyAccount")</a></li>
+                        }
+                        @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn3).ToList())
+                        {
+                            <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <h3 class="middle-title">@T("Footer.OurOffers")</h3>
+                    <ul class="middle-list">
+                        @if (Model.NewProductsEnabled)
+                        {
+                            <li><a href="@Url.RouteUrl("NewProducts")">@T("Products.NewProducts")</a></li>
+                        }
+                        @if (Model.RecentlyViewedProductsEnabled)
+                        {
+                            <li><a href="@Url.RouteUrl("RecentlyViewedProducts")">@T("Products.RecentlyViewedProducts")</a></li>
+                        }
+                        @if (Model.CompareProductsEnabled)
+                        {
+                            <li><a href="@Url.RouteUrl("CompareProducts")">@T("Products.Compare.List")</a></li>
+                        }
+                        <li><a href="@Url.RouteUrl("ProductSearch")">@T("Search")</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-middle end-->
+    <!--footer-bottom start-->
+    <div class="footer-bottom">
+        <div class="container">
+            <ul class="bottom-buy list-inline">
+                <li class="buy-2"></li>
+                <li class="buy-3"></li>
+                <li class="buy-4"></li>
+                <li class="buy-5"></li>
+                <li class="buy-6"></li>
+            </ul>
+            <div class="bottom-copy">Copyright ©2005-@DateTime.Now.Year CapsulCN International Co.,Ltd, All Right Reserved
+               | <a href="https://www.nopCommerce.com" rel="nofollow">powered by nopCommerce</a>
+            </div>
+        </div>
+    </div>
+    <!--footer-bottom end-->
+</footer>
+

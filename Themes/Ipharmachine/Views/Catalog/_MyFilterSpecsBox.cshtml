@@ -1,0 +1,195 @@
+﻿@model CategoryModel
+
+@using Nop.Core
+@using Nop.Core.Caching
+@using Nop.Core.Domain.Catalog
+@using Nop.Web.Framework.UI
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Catalog
+@using Nop.Services.Customers
+@using Nop.Services.Directory
+@using Nop.Services.Localization
+@using Nop.Web.Infrastructure.Cache
+@using Nop.Web.Models.Catalog;
+@functions
+{
+    private const string Querystringparam = "specs";
+
+
+    List<int> GetChildCategoryIds(int parentCategoryId)
+    {
+        var workContext = EngineContext.Current.Resolve<IWorkContext>();
+        var storeContext = EngineContext.Current.Resolve<IStoreContext>();
+        var cacheManager = EngineContext.Current.Resolve<ICacheManager>();
+        string cacheKey = string.Format(ModelCacheEventConsumer.CATEGORY_CHILD_IDENTIFIERS_MODEL_KEY,
+            parentCategoryId,
+            string.Join(",", workContext.CurrentCustomer.GetCustomerRoleIds()),
+            storeContext.CurrentStore.Id);
+        return cacheManager.Get(cacheKey, () =>
+        {
+            var categoryService = EngineContext.Current.Resolve<ICategoryService>();
+
+            var categoriesIds = new List<int>();
+            var categories = categoryService.GetAllCategoriesByParentCategoryId(parentCategoryId);
+            foreach (var category in categories)
+            {
+                categoriesIds.Add(category.Id);
+                categoriesIds.AddRange(GetChildCategoryIds(category.Id));
+            }
+            return categoriesIds;
+        });
+    }
+    string GenerateFilteredSpecQueryParam(IList<int> optionIds)
+    {
+        if (optionIds == null)
+            return "";
+
+        string result = string.Join(",", optionIds);
+        return result;
+    }
+    string ExcludeQueryStringParams(string url, IWebHelper webHelper)
+    {
+        //comma separated list of parameters to exclude
+        const string excludedQueryStringParams = "pagenumber";
+        var excludedQueryStringParamsSplitted = excludedQueryStringParams.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+        foreach (string exclude in excludedQueryStringParamsSplitted)
+            url = webHelper.RemoveQueryString(url, exclude);
+        return url;
+    }
+    string GetUrl(int attributeId, int optionId, IList<int> alreadyFilteredSpecOptionIds, IList<SpecificationAttributeOption> allOption, IWebHelper webHelper)
+    {
+
+
+        IList<int> ids;
+        if (alreadyFilteredSpecOptionIds.Contains(optionId))
+        {
+            ids = alreadyFilteredSpecOptionIds.Where(id => id != optionId).ToList();
+        }
+        else
+        {
+            var thisAttributeId = (from option in allOption
+                                   where option.SpecificationAttributeId == attributeId
+                                   select option.Id).ToArray();
+            ids = (from id in alreadyFilteredSpecOptionIds
+                   where !thisAttributeId.Contains(id)
+                   select id).Concat(new[] { optionId }).ToList();
+        }
+        var queryString = string.Format("{0}={1}", Querystringparam, GenerateFilteredSpecQueryParam(ids));
+        if (ids.Count == 0)
+        {
+            return Model.PagingFilteringContext.SpecificationFilter.RemoveFilterUrl;
+        }
+
+        var filterUrl = webHelper.ModifyQueryString(webHelper.GetThisPageUrl(true), queryString, null);
+        return ExcludeQueryStringParams(filterUrl, webHelper);
+    }
+
+    IList<IGrouping<int, MySepecificationModel>> GetOptions()
+    {
+
+        var cacheManager = EngineContext.Current.Resolve<ICacheManager>();
+        var catalogSettings = EngineContext.Current.Resolve<CatalogSettings>();
+        var productService = EngineContext.Current.Resolve<IProductService>();
+        var storeContext = EngineContext.Current.Resolve<IStoreContext>();
+        var webHelper = EngineContext.Current.Resolve<IWebHelper>();
+        var workContext = EngineContext.Current.Resolve<IWorkContext>();
+        var specificationAttributeService = EngineContext.Current.Resolve<ISpecificationAttributeService>();
+        IList<int> alreadyFilteredSpecOptionIds = Model.PagingFilteringContext.SpecificationFilter.GetAlreadyFilteredSpecOptionIds(webHelper);
+
+        var key = string.Format("Nop.pres.filter.specs-my-{0}-{1}-{2}-{3}", 
+            Model.Id, workContext.WorkingLanguage.Id,storeContext.CurrentStore.Id,alreadyFilteredSpecOptionIds);
+        return cacheManager.Get(key,() =>
+        {
+            var categoryIds = new List<int> {Model.Id};
+
+            if (catalogSettings.ShowProductsFromSubcategories)
+            {
+    //include subcategories
+                categoryIds.AddRange(GetChildCategoryIds(Model.Id));
+            }
+
+    //products
+            IList<int> filterableSpecificationAttributeOptionIds;
+            productService.SearchProducts(out filterableSpecificationAttributeOptionIds,
+                true,
+                categoryIds: categoryIds,
+                storeId: storeContext.CurrentStore.Id,
+                visibleIndividuallyOnly: true,
+                featuredProducts: catalogSettings.IncludeFeaturedProductsInNormalLists ? null : (bool?)false
+                );
+            if (filterableSpecificationAttributeOptionIds == null) return null;
+
+            var allOption = specificationAttributeService.GetSpecificationAttributeOptionsByIds(filterableSpecificationAttributeOptionIds.ToArray());
+            return (from item in allOption
+                select new MySepecificationModel
+                {
+                    SpecificationAttributeOptionName = item.GetLocalized(x => x.Name, workContext.WorkingLanguage.Id),
+                    SpecificationAttributeName = item.SpecificationAttribute.GetLocalized(x => x.Name, workContext.WorkingLanguage.Id),
+                    FilterUrl = GetUrl(item.SpecificationAttributeId, item.Id, alreadyFilteredSpecOptionIds, allOption, webHelper),
+                    Id = item.Id,
+                    AuttributeId = item.SpecificationAttributeId,
+                    DisplayOrder = item.DisplayOrder,
+                    IsActive = alreadyFilteredSpecOptionIds.Contains(item.Id),
+                    AuttributeDisplayOrder = item.SpecificationAttribute.DisplayOrder
+                }
+                ).OrderBy(x => x.DisplayOrder).GroupBy(x => x.AuttributeId).OrderBy(x => x.First().AuttributeDisplayOrder).ToList();
+        });
+        
+
+    }
+
+    class MySepecificationModel
+    {
+        public string SpecificationAttributeOptionName {set;get;}
+        public string SpecificationAttributeName {set;get;}
+        public string FilterUrl {set;get;}
+        public int Id {set;get;}
+        public int AuttributeId {set;get;}
+        public int DisplayOrder {set;get;}
+        public bool IsActive {set;get;}
+        public int AuttributeDisplayOrder {set;get;}
+    }
+}
+@{
+
+
+
+    var notFilteredItemsGroups = GetOptions();
+
+}
+@if (Model.PagingFilteringContext.SpecificationFilter.Enabled)
+{
+
+    foreach (var group in notFilteredItemsGroups)
+    {
+        var groupList = group.ToList();
+        var thisOption = groupList.FirstOrDefault(x => x.IsActive);
+        <div class="product-toggle hidden-sm hidden-xs" data-toggle="leftbox">
+            <div class="toggle-title">
+
+
+                @if (thisOption != null)
+                {
+                    string title = groupList[0].SpecificationAttributeName + ": " + thisOption.SpecificationAttributeOptionName;
+                    Html.AddTitleParts(title);
+                    Html.AddMetaDescriptionParts(title);
+                    <strong class="toggle-strong">@groupList[0].SpecificationAttributeName: @thisOption.SpecificationAttributeOptionName</strong>
+                    <a class="iconfont icon-icondel" href="@thisOption.FilterUrl"></a>
+                }
+                else
+                {
+                    <strong class="toggle-strong">@groupList[0].SpecificationAttributeName</strong>
+                }
+            </div>
+            <ul class="toggle-list">
+
+                @foreach (var spec in groupList)
+                {
+                    <li @Html.Raw(spec.IsActive ? "class=\"active\"" : "")><a href="@spec.FilterUrl">@spec.SpecificationAttributeOptionName</a></li>
+                }
+            </ul>
+        </div>
+    }
+
+
+}

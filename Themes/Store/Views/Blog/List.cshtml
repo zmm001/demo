@@ -1,0 +1,124 @@
+﻿@model BlogPostListModel
+@using Nop.Core.Domain.Common
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Blogs;
+@using Nop.Core.Domain.Seo;
+@{
+    var title = "";
+    if (String.IsNullOrEmpty(Model.PagingFilteringContext.Tag))
+    {
+        if (Model.PagingFilteringContext.GetParsedMonth().HasValue)
+        {
+            title = String.Format(T("Blog.FilteredByMonth").Text, Model.PagingFilteringContext.GetParsedMonth().Value.Year, Model.PagingFilteringContext.GetParsedMonth().Value.ToString("MMMM"));
+        }
+        else
+        {
+            title = T("Blog").Text;
+        }
+        var descript = T("blog.descript.store").Text;
+        if (!string.Equals(descript, "blog.descript.store"))
+        {
+            Html.AddMetaDescriptionParts(descript);
+        }
+    }
+    else
+    {
+        //title = String.Format(T("Blog.TaggedWith").Text, Model.PagingFilteringContext.Tag);
+    }
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
+    if (canonicalUrlsEnabled)
+    {
+        Html.AddCanonicalUrlParts(string.IsNullOrEmpty(Request.Url.Query) ? Request.Url.AbsoluteUri : Request.Url.AbsoluteUri.Replace(Request.Url.Query, ""));
+    }
+
+    //title
+    Html.AddTitleParts(title);
+
+    //page class
+    Html.AppendPageCssClassParts("html-blog-page");
+
+    //css js
+    Html.AddCssFileParts("~/Themes/Store/Content/css/pages/articleList.css");
+    var breadcrumbDelimiter = EngineContext.Current.Resolve<CommonSettings>().BreadcrumbDelimiter;
+}
+@section left {
+    @Html.Widget("left_side_column_blog_before")
+    @*@Html.Action("BlogMonths", "Blog")*@
+    @Html.Widget("left_side_column_after_blog_archive")
+    @Html.Action("BlogTags", "Blog")
+    @Html.Widget("left_side_column_blog_after")
+    @Html.Action("TopicBlock", "Topic", new { systemName = "LeftAdvisement" })
+
+}
+
+
+<!--article-crumbs start-->
+@*    <ul class="crumbs list-inline">*@
+@*        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">*@
+@*            <a itemprop="url" href="@Url.RouteUrl("HomePage")" title="@T("Categories.Breadcrumb.Top")" class="link"><span itemprop="title">@T("Categories.Breadcrumb.Top")</span></a>*@
+@*            <span class="delimiter">@breadcrumbDelimiter</span>*@
+@*        </li>*@
+@**@
+@*        <li>Blog</li>*@
+@*    </ul>*@
+<div class="page-title">
+    <a href="@Url.RouteUrl("BlogRSS", new { languageId = Model.WorkingLanguageId })" class="link-rss" title="@T("Blog.RSS.Hint")">@T("Blog.RSS")</a>
+    <h1>@title</h1>
+    @Html.Widget("blogsbytag_top", Model.PagingFilteringContext.Tag)
+</div>
+
+<!--article-crumbs end-->
+<div>
+    @Html.Widget("bloglist_page_before_posts")
+    @foreach (var item in Model.BlogPosts)
+    {
+        @Html.Widget("bloglist_page_before_post", item.Id)
+        <div class="article-lists">
+            <div class="lists-head">
+                <a class="lists-title" href="@Url.RouteUrl("BlogPost", new {SeName = item.SeName})">@item.Title</a>
+                <span class="lists-date">-@item.CreatedOn.ToString("D")</span>
+            </div>
+            @Html.Widget("bloglist_page_before_post_body", item.Id)
+            <div class="lists-content">
+                <div class="lists-body">@Html.Raw(!String.IsNullOrEmpty(item.BodyOverview) ? item.BodyOverview : item.Body)</div>
+                @Html.Widget("bloglist_page_after_post_body", item.Id)
+                <div class="lists-tags">
+                    <label>@T("Blog.Tags"):</label>
+                    <ul class="list-inline">
+                        @for (int i = 0; i < item.Tags.Count; i++)
+                        {
+                            var tag = item.Tags[i];
+                            <li><a href="@Url.RouteUrl("BlogByTag", new {tag = tag})">@tag</a></li>
+                            @*                            if (i != item.Tags.Count - 1)*@
+                            @*                            {*@
+                            @*                                <li class="separator">,</li>*@
+                            @*                            }*@
+                        }
+                    </ul>
+                </div>
+                <div class="lists-buttons">
+                    @*                    @if (item.AllowComments)*@
+                    @*                    {*@
+                    @*                        <a href="@Url.RouteUrl("BlogPost", new {SeName = item.SeName})#comments" role="button" class="comments">@string.Format(T("Blog.CommentsLink").Text, item.NumberOfComments)</a>*@
+                    @*                    }*@
+                    <a href="@Url.RouteUrl("BlogPost", new {SeName = item.SeName})" class="more">@T("Blog.MoreInfo")</a>
+                </div>
+                @Html.Widget("bloglist_page_inside_post", item.Id)
+            </div>
+        </div>
+        @Html.Widget("bloglist_page_after_post", item.Id)
+    }
+</div>
+@{
+    var pager = Html.Pager(Model.PagingFilteringContext).QueryParam("pagenumber");
+}
+@if (!pager.IsEmpty())
+{
+    <div class="pager">
+        @pager
+    </div>
+}
+@Html.Widget("bloglist_page_after_posts")
+

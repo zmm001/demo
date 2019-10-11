@@ -1,0 +1,53 @@
+﻿@model CustomerOrderListModel
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Account").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-account-page");
+    Html.AppendPageCssClassParts("html-order-list-page");
+    Html.AddCssFileParts("~/Themes/Store/Content/css/pages/customer.css");
+}
+@using Nop.Web.Models.Customer
+@using Nop.Web.Models.Order;
+@section left
+{
+    @Html.Action("CustomerNavigation", "Customer", new { selectedTabId = CustomerNavigationEnum.Orders })
+}
+
+<div class="account-number">
+    <h1 class="account-title">@T("Account.MyAccount") - @T("Account.CustomerOrders")</h1>
+    @if (Model.Orders.Count > 0)
+    {
+        <div class="order-list">
+            @foreach (var order in Model.Orders)
+            {
+                <div class="section order-item">
+                    <div class="title">
+                        <strong>@T("Account.CustomerOrders.OrderNumber"): @order.CustomOrderNumber</strong>
+                    </div>
+                    <ul class="info">
+                        <li>@T("Account.CustomerOrders.OrderStatus"): <span class="order-status @order.OrderStatusEnum.ToString().ToLowerInvariant()">@order.OrderStatus</span></li>
+                        <li>@T("Account.CustomerOrders.OrderDate"): <span class="order-date">@order.CreatedOn.ToString()</span></li>
+                        <li>@T("Account.CustomerOrders.OrderTotal"): <span class="order-total">@order.OrderTotal</span></li>
+                    </ul>
+                    <div class="comms">
+                        @if (order.IsReturnRequestAllowed)
+                        {
+                            <input type="button" value="@T("Account.CustomerOrders.ReturnItems")" class="button-2 return-items-button" onclick="setLocation('@Url.RouteUrl("ReturnRequest", new { orderId = order.Id })')" />
+                        }
+                        <input type="button" value="@T("Account.CustomerOrders.OrderDetails")" class="button-2 order-details-button" onclick="setLocation('@Url.RouteUrl("OrderDetails", new { orderId = order.Id })')" />
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="no-data">
+            @T("Account.CustomerOrders.NoOrders")
+        </div>
+    }
+</div>
+

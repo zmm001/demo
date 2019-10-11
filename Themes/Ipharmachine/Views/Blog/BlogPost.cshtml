@@ -1,0 +1,141 @@
+﻿@model BlogPostModel
+@using Nop.Web.Models.Blogs;
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
+    if (canonicalUrlsEnabled)
+    {
+        Html.AddCanonicalUrlParts(string.IsNullOrEmpty(Request.Url.Query) ? Request.Url.AbsoluteUri : Request.Url.AbsoluteUri.Replace(Request.Url.Query, ""));
+    }
+
+    //title
+    Html.AddTitleParts(!String.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Title);
+    //meta
+    Html.AddMetaDescriptionParts(Model.MetaDescription);
+    Html.AddMetaKeywordParts(Model.MetaKeywords);
+    //page class
+    Html.AppendPageCssClassParts("html-blogpost-page");
+
+    Html.AddCssFileParts("~/Themes/Ipharmachine/Content/css/pages/articleDetails.css");
+
+}
+@section left {
+    @Html.Widget("left_side_column_blog_before")
+    @* @Html.Action("BlogMonths", "Blog") *@
+    @Html.Widget("left_side_column_after_blog_archive")
+    @Html.Action("BlogTags", "Blog")
+    @Html.Widget("left_side_column_blog_after")
+    @Html.Action("TopicBlock", "Topic", new { systemName = "LeftAdvisement" })
+}
+
+
+
+@Html.Widget("blogpost_page_top", Model.Id)
+<div class="article-details">
+    <h1 class="details-title">@Model.Title</h1>
+    <span class="details-date">-@Model.CreatedOn.ToString("D")</span>
+</div>
+<div class="article-content">
+    @Html.Widget("blogpost_page_before_body", Model.Id)
+    <div class="article-body">
+        @Html.Raw(Model.Body)
+    </div>
+    <div class="details-tags">
+        <label>@T("Blog.Tags"):</label>
+        <ul class="list-inline">
+            @for (int i = 0; i < Model.Tags.Count; i++)
+            {
+                var tag = Model.Tags[i];
+                <li><a href="@Url.RouteUrl("BlogByTag", new {tag = tag})">@tag</a></li>
+            }
+        </ul>
+    </div>
+
+</div>
+@Html.Widget("blogpost_page_before_comments", Model.Id)
+@if (Model.AllowComments)
+{
+    <div class="account-number form-horizontal" id="review-box">
+        @using (Html.BeginForm())
+        {
+            <h4 class="review-box-title">@T("reviews.Write") </h4>
+            <div class="write-review form-container" id="review-form">
+                @Html.AntiForgeryToken()
+                @{
+                    var validationSummary = Html.ValidationSummary(true);
+                    if (!MvcHtmlString.IsNullOrEmpty(validationSummary))
+                    {
+                        <div class="message-error no-repost">@validationSummary</div>
+                    }
+                }
+                <div class="form-group">
+                    <label for="@Html.IdFor(m => m.AddNewComment.CommentText)" class="col-sm-4 control-label">@Html.RequiredHint() @Html.DisplayNameFor(m => m.AddNewComment.CommentText):</label>
+                    <div class="col-sm-4">
+                        @Html.TextAreaFor(model => model.AddNewComment.CommentText, Model.AllowComments ? (object)(new { @class = "review-text form-control inputs" }) : (object)(new { @class = "review-text form-control inputs", disabled = "disabled" }))
+                        <div class="error tips">@Html.ValidationMessageFor(model => model.AddNewComment.CommentText)</div>
+                    </div>
+                </div>
+
+                @if (Model.AddNewComment.DisplayCaptcha)
+                {
+                    <div class="form-group">
+                        <div class="captcha-box col-sm-8 col-sm-push-4">
+                            @Html.Raw(Html.GenerateCaptcha())
+                        </div>
+                    </div>
+                }
+                <input type="submit" name="add-comment" class="buttons" value="@T("Blog.Comments.SubmitButton")" />
+            </div>
+        }
+        @if (Model.Comments.Count > 0)
+        {
+            <h4 class="review-box-title">@T("Blog.Comments")</h4>
+            <div class="review-box-wrapper" id="review-content">
+
+                @foreach (var review in Model.Comments)
+                {
+                    <div class="product-review-item">
+                        <div class="review-content">
+                            <div class="review-text">
+                                @Html.Raw(Nop.Core.Html.HtmlHelper.FormatText(review.CommentText, false, true, false, false, false, false))
+                            </div>
+                            <div class="review-info">
+                                <span class="user">
+                                    <label>@T("Reviews.From"):</label>
+                                    @if (review.AllowViewingProfiles)
+                                    {
+                                        <a href="@Url.RouteUrl("CustomerProfile", new {id = review.CustomerId})">@(review.CustomerName)</a>
+                                    }
+                                    else
+                                    {
+                                        @review.CustomerName
+                                    }
+                                </span>
+                                <span class="separator">|</span>
+                                <span class="date">
+                                    <label>@T("Reviews.Date"):</label>
+                                    <span>@review.CreatedOn.ToString("g")</span>
+                                </span>
+                            </div>
+                            @Html.Widget("blogpost_page_inside_comment", review.Id)
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+
+        @Html.Widget("blogpost_page_after_comments", Model.Id)
+    </div>
+
+}
+@Html.Widget("blogpost_page_bottom", Model.Id)
+@*    <div class="jump-article clearfix">*@
+@*        <a href="javascript:;" class="jump-previous">Previous article</a>*@
+@*        <a href="javascript:;" class="jump-next">Next article</a>*@
+@*    </div>*@
+@*    todo 前一篇文章, 后一篇文章*@
+

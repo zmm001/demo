@@ -1,0 +1,161 @@
+﻿@{
+    Layout = "";
+
+    var defaultGridPageSize = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().DefaultGridPageSize;
+    var gridPageSizes = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().GridPageSizes;
+
+}
+@model ShippingCapsulCNListModel
+@using Nop.Plugin.Shipping.CapsulCN.Models;
+@using Nop.Web.Framework;
+@using Nop.Core.Infrastructure;
+@using (Html.BeginForm("ConfigureProvider", "Shipping", new { systemName = "Shipping.CapsulCN" }, FormMethod.Post, new {Id = "shipping-CapsulCN-form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="clearfix">
+        <div class="pull-right">
+            <a href="@Url.Action("Methods", "Shipping", new {area = "Admin"})" class="btn bg-blue">
+                <i class="fa fa-truck"></i>
+                @T("Admin.Configuration.Shipping.Methods.Manage")
+            </a>
+            <a href="@Url.Action("Restrictions", "Shipping", new {area = "Admin"})" class="btn bg-blue">
+                <i class="fa fa-globe"></i>
+                @T("Admin.Configuration.Shipping.Restrictions.Manage")
+            </a>
+        </div>
+    </div>
+
+    <div class="panel-group advanced-setting">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="shipping-CapsulCN-grid"></div>
+                <script>
+                    $(function () {
+                        $("#shipping-CapsulCN-grid").kendoGrid({
+                            dataSource: {
+                                type: "json",
+                                transport: {
+                                    read: {
+                                        url: "@Html.Raw(Url.Action("RatesList", "ShippingCapsulCN", new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Shipping.CapsulCN.Controllers" }, { "area", "" } }))",
+                                        type: "POST",
+                                        dataType: "json",
+                                        data: addAntiForgeryToken
+                                    }
+                                },
+                                schema: {
+                                    data: "Data",
+                                    total: "Total",
+                                    errors: "Errors",
+                                    model: {
+                                        id: "Id"
+                                    }
+                                },
+                                requestEnd: function (e) {
+                                    if (e.type == "update") {
+                                        this.read();
+                                    }
+                                },
+                                error: function (e) {
+                                    display_kendoui_grid_error(e);
+                                    // Cancel the changes
+                                    this.cancelChanges();
+                                },
+                                pageSize: @(defaultGridPageSize),
+                                serverPaging: true,
+                                serverFiltering: true,
+                                serverSorting: true
+                            },
+                            pageable: {
+                                refresh: true,
+                                pageSizes: [@(gridPageSizes)],
+                                @Html.Partial("~/Administration/Views/Shared/_GridPagerMessages.cshtml")
+                            },
+                            editable: {
+                                confirmation: "@T("Admin.Common.DeleteConfirmation")",
+                                mode: "inline"
+                            },
+                            scrollable: false,
+                            columns: [{
+                                field: "ShippingMethodName",
+                                title: "@T("Plugins.Shipping.CapsulCN.Fields.ShippingMethodName")",
+                                width: 200
+                            }, {
+                                field: "AdditionalPercentage",
+                                title: "@T("Plugins.Shipping.CapsulCN.Fields.AdditionalPercentage")",
+                                width: 200
+                            }, {
+                                field: "Fuel",
+                                title: "@T("Plugins.Shipping.CapsulCN.Fields.Fuel")",
+                                width: 200
+                            }, {
+                                field: "Discount",
+                                title: "@T("Plugins.Shipping.CapsulCN.Fields.Discount")",
+                                width: 200
+                            }, {
+                                field: "AllowedSkuRegex",
+                                title: "@T("Plugins.Shipping.CapsulCN.Fields.AllowedSkuRegex")",
+                                width: 200
+                            }, {
+                                field: "BanedSkuRegex",
+                                title: "@T("Plugins.Shipping.CapsulCN.Fields.BanedSkuRegex")",
+                                width: 200
+                            }, {
+                                field: "Express",
+                                title: "@T("Plugins.Shipping.CapsulCN.Fields.Express")",
+                                width: 200
+                            }, {
+                                field: "ShowInMixedOption",
+                                title: "@T("Plugins.Shipping.CapsulCN.Fields.ShowInMixedOption")",
+                                width: 200
+                            }, {
+                                field: "ShowAsIndependentOption",
+                                title: "@T("Plugins.Shipping.CapsulCN.Fields.ShowAsIndependentOption")",
+                                width: 200
+                            }, {
+                                field: "ShippingMethodId",
+                                title: "@T("Admin.Common.Edit")",
+                                width: 100,
+                                template: "<button onclick=\"javascript:OpenWindow('@Url.RouteUrl("Plugin.Shipping.CapsulCN.EditPopup")?shippingMethodId=#=ShippingMethodId#&btnId=btnRefresh&formId=shipping-CapsulCN-form', 800, 400, true); return false;\" class='btn btn-default'><i class=\"fa fa-pencil\"></i>@T("Admin.Common.Edit")</button>"
+                            }]
+                        });
+                    });
+                </script>
+                <input type="submit" id="btnRefresh" style="display: none" />
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#btnRefresh').click(function () {
+                            //refresh grid
+                            var grid = $("#shipping-CapsulCN-grid").data('kendoGrid');
+                            //grid.dataSource.page(1); //new search. Set page size to 1
+                            grid.dataSource.read();
+
+                            //return false to don't reload a page
+                            return false;
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.NopLabelFor(model => model.ShowMixed)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.ShowMixed)
+                        @Html.ValidationMessageFor(model => model.ShowMixed)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-9">
+                        <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

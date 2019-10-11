@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_Root.Head.cshtml";
+}
+@Html.Widget("body_start_html_tag_after")
+@Html.Partial("_Notifications")
+@Html.Action("JavaScriptDisabledWarning", "Common")
+@Html.Partial("OldInternetExplorerWarning")
+
+@Html.Partial("Header")
+@Html.Action("TopMenu", "Catalog")
+@RenderBody()
+@Html.Action("Footer", "Common")
+
+@Html.Action("EuCookieLaw", "Common")
+@Html.Widget("body_end_html_tag_before")

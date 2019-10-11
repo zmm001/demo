@@ -1,0 +1,8 @@
+﻿Group: Shipping rate computation
+FriendlyName: Shipping By Chinese Local Express.
+SystemName: Shipping.CapsulCN
+Version: 2.20
+SupportedVersions: 3.90
+Author: nopCommerce team
+DisplayOrder: 1
+FileName: Nop.Plugin.Shipping.CapsulCN.dll

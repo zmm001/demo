@@ -1,0 +1,132 @@
+﻿@model ProductDetailsModel.AddToCartModel
+@using Nop.Core
+@using Nop.Web.Models.Catalog;
+@using Nop.Core.Domain.Orders;
+@using Nop.Core.Infrastructure
+@using Nop.Services.Catalog
+@using Nop.Services.Directory
+
+@{
+
+    var workContent = EngineContext.Current.Resolve<IWorkContext>();
+
+}
+
+
+@if (Model.UpdatedShoppingCartItemId > 0)
+{
+    @Html.HiddenFor(x => x.UpdatedShoppingCartItemId)
+}
+@if (!Model.DisableBuyButton || Model.CustomerEntersPrice)
+{
+
+    if (Model.CustomerEntersPrice)
+    {
+        <div class="shopping-product-qty">
+            @Html.LabelFor(model => model.CustomerEnteredPrice, new { @class = "spans" }, ":")
+            @Html.TextBox("CustomerEnteredPrice", Convert.ToInt32(Math.Ceiling(Model.CustomerEnteredPrice)), new
+       {
+           @class = "enter-int-input qty-input",
+           type = "tel",
+
+       })
+            <span class="qty-currency">@workContent.WorkingCurrency.CurrencyCode</span>
+        </div>
+    }
+    if (!String.IsNullOrEmpty(Model.MinimumQuantityNotification))
+    {
+        <div class="min-qty-notification">@Model.MinimumQuantityNotification</div>
+    }
+    if (!Model.DisableBuyButton)
+    {
+        <div class="shopping-product-qty">
+            @Html.LabelFor(model => model.EnteredQuantity, new { @class = "spans" }, ":")
+            <div style="display:inline-block;position:relative;">
+                @if (Model.AllowedQuantities.Count > 0)
+                {
+                    @Html.DropDownListFor(model => model.EnteredQuantity, Model.AllowedQuantities, new { @class = "qty-dropdown" })
+
+                }
+                else
+                {
+                    @Html.TextBoxFor(model => model.EnteredQuantity, new
+               {
+                   @class = "qty-input enter-int-input",
+                   type = "tel"
+               })
+                    <ul class="qty-btn">
+                        <li class="qty-up"><span class="iconfont icon-jia"></span></li>
+                        <li class="qty-down"><span class="iconfont icon-jian"></span></li>
+                    </ul>
+                }
+                @{
+                    var productServer = EngineContext.Current.Resolve<IProductService>();
+                    var product = productServer.GetProductById(Model.ProductId);
+                }
+                @if (product.BasepriceEnabled)
+                {
+
+                    var unitServer = EngineContext.Current.Resolve<IMeasureService>();
+                    <span class="qty-x">x</span>
+                    <p class="qty-pcs">@product.BasepriceAmount.ToString("N0") @unitServer.GetMeasureWeightById(product.BasepriceBaseUnitId).Name</p>
+                }
+                <div class="qty-instock ">
+                    (<span id="stock-availability-value-@Model.ProductId"></span>)
+                </div>
+            </div>
+        </div>
+
+                var addToCartText = "";
+                if (Model.UpdatedShoppingCartItemId > 0
+                    && Model.UpdateShoppingCartItemType.HasValue
+                    && Model.UpdateShoppingCartItemType.Value == ShoppingCartType.ShoppingCart)
+                {
+                    addToCartText = T("ShoppingCart.UpdateCart").Text;
+                }
+                else
+                {
+                    addToCartText = T("ShoppingCart").Text;
+                    if (Model.IsRental)
+                    {
+                        addToCartText = T("ShoppingCart.Rent").Text;
+                    }
+                    if (Model.AvailableForPreOrder)
+                    {
+                        addToCartText = T("ShoppingCart.PreOrder").Text;
+                    }
+                }
+                <div class="shopping-product-btn">
+                    <a data-productid="@Model.ProductId"
+                       id="product-buy-@Model.ProductId"
+                       class="btn-add-buy hide-dialog"
+                       data-url="@Url.RouteUrl("AddProductToCart-Details", new {productId = Model.ProductId, shoppingCartTypeId = (int) ShoppingCartType.ShoppingCart})"
+                       href="javascript:;">
+                        <span class="iconfont icon-gouwucheman"></span><span> @addToCartText</span>
+                    </a>@if (!Model.DisableWishlistButton)
+                    {
+                        var addToWishlistText = "";
+                        if (Model.UpdatedShoppingCartItemId > 0 && Model.UpdateShoppingCartItemType.HasValue && Model.UpdateShoppingCartItemType.Value == ShoppingCartType.Wishlist)
+                        {
+                            addToWishlistText = T("Products.Wishlist.AddToWishlist.Update").Text;
+                        }
+                        else
+                        {
+                            addToWishlistText = T("Products.Wishlist.AddToWishlist").Text;
+                        }<a id="add-to-wishlist-button-@Model.ProductId"
+                            class="btn-add-cart hide-dialog"
+                            data-productid="@Model.ProductId"
+                            data-url="@Url.RouteUrl("AddProductToCart-Details", new {productId = Model.ProductId, shoppingCartTypeId = (int) ShoppingCartType.Wishlist})"
+                            href="javascript:;">
+                        <span class="iconfont icon-xinyuandan"></span><span> @addToWishlistText</span>
+                    </a>
+                    }
+
+                </div>
+                }
+                @Html.Widget("productdetails_add_info", Model.ProductId)
+
+                }
+@*                todo 比较和发邮件给朋友*@
+@*@Html.Partial("_CompareProductsButton", Model)*@
+@*@Html.Partial("_ProductEmailAFriendButton", Model)*@
+@Html.Widget("productdetails_inside_overview_buttons_after", Model.ProductId)

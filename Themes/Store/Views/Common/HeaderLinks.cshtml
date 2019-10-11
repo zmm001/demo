@@ -1,0 +1,44 @@
+﻿@model HeaderLinksModel
+@using Nop.Web.Models.Common;
+
+
+
+        @Html.Widget("header_links_before")
+        @if (Model.IsAuthenticated)
+        {
+            <li><a href="@Url.RouteUrl("CustomerInfo")"><span class="iconfont icon-yonghu"></span> <span class="links">@T("Account.MyAccount")</span></a></li>
+            <li><a href="@Url.RouteUrl("Logout")"><span class="iconfont icon-tuichu"></span> <span class="links">@T("Account.Logout")</span></a></li>
+
+        }
+        else
+        {
+            <li><a href="@Url.RouteUrl("Register")"><span class="iconfont icon-zhucezhuanhuan-copy"></span> <span class="links">@T("Account.Register")</span></a></li>
+            <li><a href="@Url.RouteUrl("Login")"><span class="iconfont icon-a526"></span> <span class="links">@T("Account.Login")</span></a></li>
+        }
+        @if (Model.AllowPrivateMessages)
+        {
+            <li>
+                <a href="@Url.RouteUrl("PrivateMessages", new {tab = ""})">
+                    <span class="iconfont icon-zhucezhuanhuan-copy"></span> @*todo 未读消息图标未设置*@
+                    <span class="links">
+                        <span class="links-label">@T("PrivateMessages.Inbox")</span>
+                        <span class="links-sum">@Model.UnreadPrivateMessages</span>
+                    </span>
+                </a>
+            </li>
+        }
+        @if (Model.WishlistEnabled)
+        {
+            <li>
+                <a href="@Url.RouteUrl("Wishlist")">
+                    <span class="iconfont icon-xinyuandan"></span>
+                    <span class="links">
+                        <span class="links-label">@T("Wishlist")</span>
+                        <span class="links-sum">@T("Wishlist.HeaderQuantity", Model.WishlistItems)</span>
+                    </span>
+
+                </a>
+            </li>
+        }
+        @Html.Widget("header_links_after")
+

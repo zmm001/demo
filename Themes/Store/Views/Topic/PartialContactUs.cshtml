@@ -1,0 +1,84 @@
+﻿@model ContactUsModel
+@using Nop.Web.Models.Common
+@{
+       Html.AddCssFileParts("~/Themes/Store/Content/css/pages/contactUs.css");
+    }
+    <div class="register account-number">
+        <div class="container contactus">
+            @Html.Widget("contactus_top")
+            @if (Model.SuccessfullySent)
+            {
+                <div class="result no-repost">
+                    @Model.Result
+                </div>
+                Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/pages/contactUs.js");
+            }
+            <div class="row">
+                <div class="mycol col-xs-12">
+                    <div class="account-box-container">      
+                        <!--form start-->
+                        @using (Html.BeginForm("ContactUs", "Common", FormMethod.Post, new { @class = "form-horizontal account-submit" }))
+                        {
+                            <div class="form-container">
+                                @Html.AntiForgeryToken()
+                                @{
+                                    var validationSummary = Html.ValidationSummary(true);
+                                    if (!MvcHtmlString.IsNullOrEmpty(validationSummary))
+                                    {
+                                        <div class="message-error">@validationSummary</div>
+                                    }
+                                }
+                                <div class="form-group">
+
+                                    <label for="@Html.IdFor(model => model.FullName)" class="col-sm-4 control-label">
+                                        @Html.RequiredHint()
+                                        @Html.DisplayNameFor(model => model.FullName)
+                                    </label>
+                                    <div class="col-sm-4">
+                                        @Html.TextBoxFor(model => model.FullName, new { @class = "form-control inputs", placeholder = T("ContactUs.FullName.Hint") })
+                                        <div class="error" data-valmsg-for="@Html.NameFor(model=>model.FullName)" data-valmsg-replace="true">@Html.ValidationMessageFor(model => model.FullName)</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="@Html.IdFor(model => model.Email)" class="col-sm-4 control-label">
+                                        @Html.RequiredHint()
+                                        @Html.DisplayNameFor(model => model.Email)
+                                    </label>
+                                    <div class="col-sm-4">
+                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control inputs", type = "email", placeholder = T("ContactUs.Email.Hint") })
+                                        <div class="error" data-valmsg-for="@Html.NameFor(model=>model.Email)" data-valmsg-replace="true">@Html.ValidationMessageFor(model => model.Email)</div>
+                                    </div>
+                                </div>
+                                @if (Model.SubjectEnabled)
+                                {
+                                    <div class="form-group">
+                                        <label for="@Html.IdFor(model => model.Subject)" class="col-sm-4 control-label">
+                                            @Html.RequiredHint()
+                                            @Html.DisplayNameFor(model => model.Subject)
+                                        </label>
+                                        <div class="col-sm-4">
+                                            @Html.TextBoxFor(model => model.Subject, new { @class = "form-control inputs", placeholder = T("ContactUs.Subject.Hint") })
+                                            <div class="error" data-valmsg-for="@Html.NameFor(model=>model.Subject)" data-valmsg-replace="true">@Html.ValidationMessageFor(model => model.Subject)</div>
+                                        </div>
+                                    </div>
+                                }
+                                <div class="form-group">
+                                    <label for="@Html.IdFor(model => model.Enquiry)" class="col-sm-4 control-label">
+                                        @Html.RequiredHint()
+                                        @Html.DisplayNameFor(model => model.Enquiry)
+                                    </label>
+                                    <div class="col-sm-4">
+                                        @Html.TextAreaFor(model => model.Enquiry, new { @class = "form-control inputs textarea", placeholder = T("ContactUs.Enquiry.Hint") })
+                                        <div class="error" data-valmsg-for="@Html.NameFor(model=>model.Enquiry)" data-valmsg-replace="true">@Html.ValidationMessageFor(model => model.Enquiry)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" id="submit" name="send-email" class="buttons" role="button" value="@T("ContactUs.Button")" />
+                        }
+                    </div>
+                </div>
+            </div>
+            @Html.Widget("contactus_bottom")
+        </div>
+    </div>
+

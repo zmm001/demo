@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.PageNotFound").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-not-found-page");
+
+    Html.AddCssFileParts("~/Themes/Store/Content/css/pages/articleDetails.css");
+
+}
+
+<div class="article-details">
+    <h1 class="topic-title">@T("PageTitle.PageNotFound")</h1>
+</div>
+<div class="article-content container">
+    <div class="article-body">
+        @Html.Action("TopicBlock", "Topic", new { systemName = "PageNotFound" })
+    </div>
+</div>
+

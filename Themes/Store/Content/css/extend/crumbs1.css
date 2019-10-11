@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/*
+ *  b- 为background
+ *  c- 为color
+ *  bo- 为border-color
+ *  r- 为  rotate
+ *  br- 为 border-radius
+ *  bx- 为 box-shadow
+ *  mb- 为 margin-bottom
+ *  fs- 为 font-size
+ * */
+/*
+ * login
+ * register
+ * giveme
+ * my系列
+ * l-s
+ */
+/*$ribbon-bckaground-color: rgba(231, 76, 60, 1);
+$ribbon-color: #fff;
+$ribbon-line-height: 2.4;
+
+$ribbon-padding: 0 1.6em;
+$item-ribbon-line-height: 30px;
+$item-ribbon-w: $item-ribbon-line-height * 4;*/
+.crumbs {
+  font-size: 14px;
+  margin-bottom: 0; }
+  @media (max-width: 992px) {
+    .crumbs > li {
+      padding-top: 10px;
+      padding-bottom: 10px; } }
+  .crumbs .link {
+    color: #27ae60; }
+    .crumbs .link:hover {
+      text-decoration: underline; }
+  .crumbs .delimiter {
+    margin-left: 5px; }

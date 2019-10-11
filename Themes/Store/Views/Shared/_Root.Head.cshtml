@@ -1,0 +1,113 @@
+﻿@using Nop.Core
+@using Nop.Core.Domain;
+@using Nop.Core.Domain.Common;
+@using Nop.Core.Domain.Seo
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Customers
+@using Nop.Services.Logging
+@using Nop.Services.Security;
+
+@{
+    var storeSettings = EngineContext.Current.Resolve<StoreInformationSettings>();
+    var permissionService = EngineContext.Current.Resolve<IPermissionService>();
+    var displayMiniProfiler = storeSettings.DisplayMiniProfilerInPublicStore
+        && (!storeSettings.DisplayMiniProfilerForAdminOnly || permissionService.Authorize(StandardPermissionProvider.AccessAdminPanel));
+    var workContent = EngineContext.Current.Resolve<IWorkContext>();
+
+    if (workContent.CurrentCustomer.Id == 7 && workContent.WorkingCurrency.CurrencyCode.ToLower() != "usd" && Request.Url != null)
+    {
+        Response.Redirect("/changecurrency/1?returnurl=" + Url.Encode(Request.Url.AbsolutePath));
+    }
+    if (Request.Url != null && (Request.UrlReferrer == null || Request.UrlReferrer.Host != Request.Url.Host))
+    {
+        var customerActivityService = EngineContext.Current.Resolve<ICustomerActivityService>();
+        //var c = work.CurrentCustomer;
+        customerActivityService.InsertActivity("AddNewCustomerAttribute", "LandPage: " + Request.Url.AbsoluteUri);
+        if (Request.UrlReferrer != null)
+        {
+            customerActivityService.InsertActivity("AddNewCustomerAttribute", "ReferrerPage: " + Request.UrlReferrer.AbsoluteUri);
+        }
+    }
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/common.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/jquery.lazyload.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/scrollTop.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Scripts/public.ajaxcart.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Scripts/public.common.js");
+    //    Html.AppendScriptParts(ResourceLocation.Foot, "~/Scripts/jquery-ui-1.10.3.custom.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Scripts/jquery.validate.unobtrusive.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Scripts/jquery.validate.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/Fixing.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/swiper.jquery.min.js");
+    Html.AppendCssFileParts("~/Themes/Store/Content/css/base.css");
+    Html.AppendCssFileParts(ResourceLocation.Foot, "~/Themes/Store/Content/css/lazy-load.css");
+    //    Html.AppendCssFileParts("~/Themes/Store/Content/css/preload.css");
+
+
+    Html.AppendCssFileParts("~/Themes/Store/Content/css/pages/productDetails.css");
+    Html.AppendCssFileParts("~/Themes/Store/Content/css/pages/productDialogDetails.css");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/pages/productDetails.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/photoswipe-ui-default.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/photoswipe.min.js");
+    Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/pages/productDialogDetails.js");
+
+    //ResourceLocation.Foot,
+    //X-UA-Compatible tag
+    var commonSettings = EngineContext.Current.Resolve<CommonSettings>();
+    if (commonSettings.RenderXuaCompatible)
+    {
+        Html.AppendHeadCustomParts(string.Format("<meta http-equiv=\"X-UA-Compatible\" content=\"{0}\"/>", commonSettings.XuaCompatibleValue));
+    }
+    //custom tag(s)
+    var seoSettings = EngineContext.Current.Resolve<SeoSettings>();
+    if (!string.IsNullOrEmpty(seoSettings.CustomHeadTags))
+    {
+        Html.AppendHeadCustomParts(seoSettings.CustomHeadTags);
+    }
+}
+<!DOCTYPE html>
+<html @(this.ShouldUseRtlTheme() ? Html.Raw(" dir=\"rtl\"") : null) @Html.NopPageCssClasses()>
+<head>
+    <title>@Html.NopTitle()</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="description" content="@(Html.NopMetaDescription())" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    @Html.NopHeadCustom()
+    @Html.Partial("Head")
+    @Html.Widget("head_html_tag")
+    @Html.NopCssFiles(this.Url, ResourceLocation.Head)
+    @Html.NopScripts(this.Url, ResourceLocation.Head)
+    @Html.NopCanonicalUrls()
+    @Html.Action("RssHeaderLink", "News")
+    @Html.Action("RssHeaderLink", "Blog")
+    @Html.Action("Favicon", "Common")
+    @if (displayMiniProfiler)
+    {
+        @StackExchange.Profiling.MiniProfiler.RenderIncludes()
+    }
+</head>
+<body>
+    @RenderBody()
+    <noscript id="deferred-styles">
+        @Html.NopCssFiles(this.Url, ResourceLocation.Foot)
+        <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    </noscript>
+    <script>
+        var loadDeferredStyles = function () {
+            var addStylesNode = document.getElementById("deferred-styles");
+            var replacement = document.createElement("div");
+            replacement.innerHTML = addStylesNode.textContent;
+            document.body.appendChild(replacement)
+            addStylesNode.parentElement.removeChild(addStylesNode);
+        };
+        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        if (raf) raf(function () { window.setTimeout(loadDeferredStyles, 0); });
+        else window.addEventListener('load', loadDeferredStyles);
+    </script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw=" crossorigin="anonymous"></script>
+    @* <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> *@
+    @Html.NopScripts(this.Url, ResourceLocation.Foot)
+</body>
+</html>

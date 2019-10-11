@@ -1,0 +1,12 @@
+﻿Group: Widgets
+FriendlyName: BlogLabel
+SystemName: Widgets.BlogLabel
+Version: 1.21
+SupportedVersions: 3.90
+Author: Capsulcn team
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.BlogLabel.dll
+Description: This plugin allows you to change the blog tab
+
+Version: 1.21
+修复编辑blog标签出错问题，出错原因是因为语言包问题，字段为空报错

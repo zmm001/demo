@@ -1,0 +1,8 @@
+﻿Group: Misc
+FriendlyName: MaxCdn 插件, 无UI
+SystemName: Misc.Maxcdn
+Version: 0.10
+SupportedVersions: 3.90
+Author: CapsulCN IT
+DisplayOrder: 1
+FileName: Nop.Plugin.Misc.Maxcdn.dll

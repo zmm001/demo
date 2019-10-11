@@ -1,0 +1,8 @@
+﻿Group: Widgets
+FriendlyName: Customized Your Widgets for any widget system keywords.
+SystemName: Widgets.Customized
+Version: 1.3
+SupportedVersions: 3.90
+Author: CapsulCN.IT
+DisplayOrder: 0
+FileName: Nop.Plugin.Widgets.Customized.dll

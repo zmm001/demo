@@ -1,0 +1,34 @@
+﻿@model IList<PollModel>
+@using Nop.Web.Models.Polls;
+@if (Model.Count > 0)
+{
+    <div class="home-page-polls">
+        <div class="title">
+            <strong>@T("Polls.Title")</strong>
+        </div>
+        @foreach (var poll in Model)
+        { 
+            @Html.Partial("_Poll", poll)
+        }
+    </div>
+
+
+    <div class="main-news-wrapper">
+        <div class="container">
+            <div class="main-title">@T("Polls.Title")</div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="mycol col-xs-12 col-sm-6 col-md-4">
+
+                        <div class="news-box">
+                            <a class="news-title" href="@Url.RouteUrl("NewsItem", new { SeName = item.SeName })">@item.Title</a>
+                            <p class="new-date">-@item.CreatedOn.ToString("D")</p>
+                            <p class="news-inner">@Html.Raw(item.Short)</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

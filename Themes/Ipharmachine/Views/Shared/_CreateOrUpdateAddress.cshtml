@@ -1,0 +1,176 @@
+﻿@model AddressModel
+@using Nop.Web.Models.Common;
+
+@Html.HiddenFor(model => model.Id)
+
+<div class="form-container">
+    <div class="form-group">
+        <label for="@Html.IdFor(m=>m.FirstName)" class="col-sm-4 control-label">@Html.RequiredHint() @Html.DisplayNameFor(m => m.FirstName):</label>
+        <div class="col-sm-4">
+            @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control inputs" })
+            <div class="error tips">@Html.ValidationMessageFor(model => model.FirstName)</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="@Html.IdFor(m=>m.LastName)" class="col-sm-4 control-label">@Html.RequiredHint() @Html.DisplayNameFor(m => m.LastName):</label>
+        <div class="col-sm-4">
+            @Html.TextBoxFor(model => model.LastName, new { @class = "form-control inputs" })
+            <div class="error tips">@Html.ValidationMessageFor(model => model.LastName)</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="@Html.IdFor(m=>m.Email)" class="col-sm-4 control-label">@Html.RequiredHint() @Html.DisplayNameFor(m => m.Email):</label>
+        <div class="col-sm-4">
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control inputs" })
+            <div class="error tips">@Html.ValidationMessageFor(model => model.Email)</div>
+        </div>
+    </div>
+    @if (Model.CompanyEnabled)
+    {
+        <div class="form-group">
+            <label for="@Html.IdFor(m => m.Company)" class="col-sm-4 control-label">
+                @if (Model.CompanyRequired)
+                {
+                    @Html.RequiredHint()
+                }
+                @Html.DisplayNameFor(m => m.Company):
+            </label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(model => model.Company, new { @class = "form-control inputs" })
+                <div class="error tips">@Html.ValidationMessageFor(model => model.Company)</div>
+            </div>
+        </div>
+    }
+    @if (Model.CountryEnabled)
+    {
+        <div class="form-group">
+            <label for="@Html.IdFor(m => m.CountryId)" class="col-sm-4 control-label">
+                @Html.RequiredHint()
+                @Html.DisplayNameFor(m => m.CountryId):
+            </label>
+            <div class="col-sm-4">
+                @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries, new Dictionary<string, object> {
+                {"class","form-control inputs" },
+                {"data-state",Html.IdFor(m => m.StateProvinceId) },
+                {"data-url", Url.RouteUrl("GetStatesByCountryId")}
+            })
+                <div class="error tips">@Html.ValidationMessageFor(model => model.CountryId)</div>
+            </div>
+        </div>
+    }
+    @if (Model.CountryEnabled && Model.StateProvinceEnabled)
+    {
+        Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/extend/CountryState.js");
+        <div class="form-group">
+            <label for="@Html.IdFor(m => m.StateProvinceId)" class="col-sm-4 control-label">
+                @Html.RequiredHint()
+                @Html.DisplayNameFor(m => m.StateProvinceId):
+            </label>
+            <div class="col-sm-4">
+                @Html.DropDownListFor(model => model.StateProvinceId, Model.AvailableStates, new { @class = "form-control inputs" })
+                <div class="error tips">@Html.ValidationMessageFor(model => model.StateProvinceId)</div>
+            </div>
+        </div>
+    }
+    @if (Model.CityEnabled)
+    {
+        <div class="form-group">
+            <label for="@Html.IdFor(m => m.City)" class="col-sm-4 control-label">
+                @if (Model.CityRequired)
+                {
+                    @Html.RequiredHint()
+                }
+                @Html.DisplayNameFor(m => m.City):
+            </label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(model => model.City, new { @class = "form-control inputs" })
+                <div class="error tips">@Html.ValidationMessageFor(model => model.City)</div>
+            </div>
+        </div>
+    }
+    @if (Model.StreetAddressEnabled)
+    {
+        <div class="form-group">
+            <label for="@Html.IdFor(m => m.Address1)" class="col-sm-4 control-label">
+                @if (Model.StreetAddressRequired)
+                {
+                    @Html.RequiredHint()
+                }
+                @Html.DisplayNameFor(m => m.Address1):
+            </label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(model => model.Address1, new { @class = "form-control inputs" })
+                <div class="error tips">@Html.ValidationMessageFor(model => model.Address1)</div>
+            </div>
+        </div>
+    }
+    @if (Model.StreetAddress2Enabled)
+    {
+        <div class="form-group">
+            <label for="@Html.IdFor(m => m.Address2)" class="col-sm-4 control-label">
+                @if (Model.StreetAddress2Required)
+                {
+                    @Html.RequiredHint()
+                }
+                @Html.DisplayNameFor(m => m.Address2):
+            </label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(model => model.Address2, new { @class = "form-control inputs" })
+                <div class="error tips">@Html.ValidationMessageFor(model => model.Address2)</div>
+            </div>
+        </div>
+    }
+    @if (Model.ZipPostalCodeEnabled)
+    {
+        <div class="form-group">
+            <label for="@Html.IdFor(m => m.ZipPostalCode)" class="col-sm-4 control-label">
+                @if (Model.ZipPostalCodeRequired)
+                {
+                    @Html.RequiredHint()
+                }
+                @Html.DisplayNameFor(m => m.ZipPostalCode):
+            </label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(model => model.ZipPostalCode, new { @class = "form-control inputs" })
+                <div class="error tips">@Html.ValidationMessageFor(model => model.ZipPostalCode)</div>
+            </div>
+        </div>
+    }
+    @if (Model.PhoneEnabled)
+    {
+        <div class="form-group">
+            <label for="@Html.IdFor(m => m.PhoneNumber)" class="col-sm-4 control-label">
+                @if (Model.PhoneRequired)
+                {
+                    @Html.RequiredHint()
+                }
+                @Html.DisplayNameFor(m => m.PhoneNumber):
+            </label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control inputs" })
+                <div class="error tips">@Html.ValidationMessageFor(model => model.PhoneNumber)</div>
+            </div>
+        </div>
+    }
+    @if (Model.FaxEnabled)
+    {
+        <div class="form-group">
+            <label for="@Html.IdFor(m => m.FaxNumber)" class="col-sm-4 control-label">
+                @if (Model.FaxRequired)
+                {
+                    @Html.RequiredHint()
+                }
+                @Html.DisplayNameFor(m => m.FaxNumber):
+            </label>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(model => model.FaxNumber, new { @class = "form-control inputs" })
+                <div class="error tips">@Html.ValidationMessageFor(model => model.FaxNumber)</div>
+            </div>
+        </div>
+    }
+    @if (Model.CustomAddressAttributes.Count > 0)
+    {
+        @Html.Partial("_AddressAttributes", Model.CustomAddressAttributes)
+    }
+</div>

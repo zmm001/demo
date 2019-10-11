@@ -1,0 +1,16 @@
+﻿Group: Payment methods
+FriendlyName: Bitcoin
+SystemName: Payments.Bitcoin
+Version: 1.0
+SupportedVersions: 3.90
+Author: Shahdat Hosain
+DisplayOrder: 1
+FileName: Nop.Plugin.Payments.Bitcoin.dll
+
+v.1.1
+通过blockchain的api 实现付款后订单状态改为已付款
+1.为每个订单生成唯一比特币付款地址
+2.二维码更新时触发一次 余额更新查询接口
+余额更新查询接口
+付款成功-改变对应订单付款状态
+付款失败-不改变

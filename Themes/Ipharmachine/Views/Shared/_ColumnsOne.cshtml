@@ -1,0 +1,10 @@
+﻿@{
+    Layout = "~/Views/Shared/_Root.cshtml";
+}
+@if (IsSectionDefined("Breadcrumb"))
+{
+    @RenderSection("Breadcrumb")
+}
+@Html.Widget("main_column_before")
+@RenderBody()
+@Html.Widget("main_column_after")

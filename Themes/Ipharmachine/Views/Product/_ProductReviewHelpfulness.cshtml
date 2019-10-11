@@ -1,0 +1,13 @@
+﻿@model ProductReviewHelpfulnessModel
+@using Nop.Web.Models.Catalog;
+<div class="product-review-helpfulness">
+    <span class="question">@T("Reviews.Helpfulness.WasHelpful?")</span>
+    <span class="vote-options">
+        <span class="vote vote-yes" data-id="@Model.ProductReviewId">@T("Common.Yes")</span>
+        <span class="vote vote-no" data-id="@Model.ProductReviewId">@T("Common.No")</span>
+    </span>
+    <span class="vote-stats">
+        (<span id="helpfulness-vote-yes-@(Model.ProductReviewId)">@(Model.HelpfulYesTotal)</span>/<span id="helpfulness-vote-no-@(Model.ProductReviewId)">@(Model.HelpfulNoTotal)</span>)
+    </span>
+    <span id="helpfulness-vote-result-@(Model.ProductReviewId)" class="result"></span>
+</div>

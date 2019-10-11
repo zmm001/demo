@@ -1,0 +1,398 @@
+{
+  "1": [
+    {
+      "UnitPrice": 0.6,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 15.4
+    }
+  ],
+  "2": [
+    {
+      "UnitPrice": 0.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 47.5
+    }
+  ],
+  "3": [
+    {
+      "UnitPrice": 4,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 56
+    }
+  ],
+  "4": [
+    {
+      "UnitPrice": 3,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 66
+    }
+  ],
+  "5": [
+    {
+      "UnitPrice": 1.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 33.5
+    }
+  ],
+  "6": [
+    {
+      "UnitPrice": 1.2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 33.8
+    }
+  ],
+  "7": [
+    {
+      "UnitPrice": 1.2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 68.8
+    }
+  ],
+  "8": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 68
+    }
+  ],
+  "9": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 103
+    }
+  ],
+  "10": [
+    {
+      "UnitPrice": 4,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 111
+    }
+  ],
+  "11": [
+    {
+      "UnitPrice": 2.2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 82.8
+    }
+  ],
+  "12": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 89
+    }
+  ],
+  "13": [
+    {
+      "UnitPrice": 3,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 102
+    }
+  ],
+  "14": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 117.5
+    }
+  ],
+  "15": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 117.5
+    }
+  ],
+  "17": [
+    {
+      "UnitPrice": 3.6,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 74
+    }
+  ],
+  "16": [
+    {
+      "UnitPrice": 1.2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 70
+    }
+  ],
+  "18": [
+    {
+      "UnitPrice": 1.2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 75
+    }
+  ],
+  "19": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 60
+    }
+  ],
+  "20": [
+    {
+      "UnitPrice": 1.2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 60
+    }
+  ],
+  "21": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 50
+    }
+  ],
+  "22": [
+    {
+      "UnitPrice": 3,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 105
+    }
+  ],
+  "23": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 90
+    }
+  ],
+  "24": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 130
+    }
+  ],
+  "25": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 85
+    }
+  ],
+  "26": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 120
+    }
+  ],
+  "27": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 45
+    }
+  ],
+  "28": [
+    {
+      "UnitPrice": 3,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 90
+    }
+  ],
+  "29": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 130
+    }
+  ],
+  "30": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 90
+    }
+  ],
+  "31": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 105
+    }
+  ],
+  "32": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 130
+    }
+  ],
+  "33": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 140
+    }
+  ],
+  "34": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 90
+    }
+  ],
+  "35": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 90
+    }
+  ],
+  "36": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 130
+    }
+  ],
+  "37": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 130
+    }
+  ],
+  "38": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 130
+    }
+  ],
+  "39": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 100
+    }
+  ],
+  "40": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 100
+    }
+  ],
+  "41": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 160
+    }
+  ],
+  "42": [
+    {
+      "UnitPrice": 2,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 160
+    }
+  ],
+  "43": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 160
+    }
+  ],
+  "44": [
+    {
+      "UnitPrice": 2.5,
+      "MinWeight": 0,
+      "MaxWeight": 30000,
+      "Unit": 50,
+      "FixedPrice": 90
+    }
+  ]
+}

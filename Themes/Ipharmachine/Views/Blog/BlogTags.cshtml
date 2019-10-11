@@ -1,0 +1,23 @@
+﻿@model BlogPostTagListModel
+@using System.Text.RegularExpressions
+@using Nop.Core
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Blogs
+@if (Model.Tags.Count > 0)
+{
+    var webhelper = EngineContext.Current.Resolve<IWebHelper>();
+
+    <div class="product-toggle hidden-sm hidden-xs" data-toggle="leftbox">
+        <div class="toggle-title">
+            <strong class="toggle-strong">@T("Blog.TagCloud")</strong>
+        </div>
+        <ul class="toggle-list-line">
+            @foreach (var item in Model.Tags)
+            {
+                <li @Html.Raw(new Regex(@"blog/tag/" + item.Name + "/?$" ,RegexOptions.IgnoreCase).IsMatch(webhelper.GetThisPageUrl(false))?"class=\"active\"":"")>
+                    <a href="@(Url.RouteUrl("BlogByTag", new { tag = item.Name }))" style="font-size:@(Model.GetFontSize(item))%;">@item.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+}

@@ -1,0 +1,12 @@
+﻿Group: Widgets
+FriendlyName: WebHook
+SystemName: Widgets.WebHook
+Version: 1.0
+SupportedVersions: 3.90
+Author: Capsulcn team
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.WebHook.dll
+Description: After git syncs the update, an event is logged in the Windows Event Manager. Through the window's tasks and schedules, the check event triggers the local git sync remote.
+
+v.1.0
+git同步更新后, 在windows 事件管理器中记录有个事件, 通过window的任务和计划, 检查事件 触发本地git同步远端.

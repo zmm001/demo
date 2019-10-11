@@ -1,0 +1,105 @@
+﻿@model ShippingCapsulCNModel
+@using Nop.Plugin.Shipping.CapsulCN.Models;
+@using Nop.Web.Framework;
+@Html.ValidationSummary(false)
+@Html.HiddenFor(model => model.Id)
+
+@if (ViewBag.RefreshPage == true)
+{
+    <script type="text/javascript">
+        try {window.opener.document.forms['@(ViewBag.formId)'].@(ViewBag.btnId).click();}
+        catch (e){}
+        window.close();
+    </script>
+}
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.NopLabelFor(model => model.ShippingMethodId)
+                </div>
+                <div class="col-sm-9">
+                    @Html.DisplayFor(model => model.ShippingMethodName)
+                    @Html.HiddenFor(model => model.ShippingMethodId)
+                    @Html.ValidationMessageFor(model => model.ShippingMethodId)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.NopLabelFor(model => model.Express)
+                </div>
+                <div class="col-sm-9">
+                    @Html.NopDropDownListFor(model => model.Express, Model.AvailableExpress)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.NopLabelFor(model => model.AdditionalPercentage)
+                </div>
+                <div class="col-sm-9">
+                    @Html.NopEditorFor(model => model.AdditionalPercentage,"%")
+                    @Html.ValidationMessageFor(model => model.AdditionalPercentage)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.NopLabelFor(model => model.Fuel)
+                </div>
+                <div class="col-sm-9">
+                    @Html.NopEditorFor(model => model.Fuel, "%")
+                    @Html.ValidationMessageFor(model => model.Fuel)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.NopLabelFor(model => model.Discount)
+                        
+                </div>
+                <div class="col-sm-9">
+                    @Html.NopEditorFor(model => model.Discount, "% off")
+                    @Html.ValidationMessageFor(model => model.Discount)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.NopLabelFor(model => model.AllowedSkuRegex)
+                </div>
+                <div class="col-sm-9">
+                    @Html.NopEditorFor(model => model.AllowedSkuRegex)
+                    @Html.ValidationMessageFor(model => model.AllowedSkuRegex)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.NopLabelFor(model => model.BanedSkuRegex)
+                </div>
+                <div class="col-sm-9">
+                    @Html.NopEditorFor(model => model.BanedSkuRegex)
+                    @Html.ValidationMessageFor(model => model.BanedSkuRegex)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.NopLabelFor(model => model.ShowInMixedOption)
+                </div>
+                <div class="col-sm-9">
+                    @Html.NopEditorFor(model => model.ShowInMixedOption)
+                    @Html.ValidationMessageFor(model => model.ShowInMixedOption)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.NopLabelFor(model => model.ShowAsIndependentOption)
+                </div>
+                <div class="col-sm-9">
+                    @Html.NopEditorFor(model => model.ShowAsIndependentOption)
+                    @Html.ValidationMessageFor(model => model.ShowAsIndependentOption)
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

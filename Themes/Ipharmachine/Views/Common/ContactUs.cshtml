@@ -1,0 +1,383 @@
+﻿@model ContactUsModel
+@using Nop.Web.Models.Common;
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure
+@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+
+    var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
+    if (canonicalUrlsEnabled)
+    {
+        Html.AddCanonicalUrlParts(string.IsNullOrEmpty(Request.Url.Query) ? Request.Url.AbsoluteUri : Request.Url.AbsoluteUri.Replace(Request.Url.Query, ""));
+    }
+
+    //title
+    Html.AddTitleParts(T("PageTitle.ContactUs").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-contact-page");
+
+    Html.AddCssFileParts("~/Themes/Ipharmachine/Content/css/pages/contactUs.css");
+    //    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/extend/verification.js");
+}
+<script>
+        document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+        window.onresize = window.onorientationchange = function () {
+            document.documentElement.style.fontSize = 100 * ((document.documentElement.clientWidth) / 750) + "px";
+        }
+</script>
+
+<div class="register account-number">
+    <div class="container-fluid">
+
+        <div class="result no-repost">
+            @Model.Result
+        </div>
+
+        @* 上 *@
+        <div class="row shang">
+
+            <div class="mycol col-lg-12 col-sm-12 col-xs-12 main">
+                <div class="left-contact">
+                    <div class="contact-top ">
+                        <p class="text-uppercase text-left p1">contact us</p>
+                        <p class="text-uppercase text-left p2">get in touch !</p>
+                        <p class="text-left p3">
+                            We're happy to answer your questions, you can contact us in the following ways:
+                        </p>
+                    </div>
+                    <div class="lianxifangshi">
+                        <ul>
+                            <li>
+                                <div class="inline-block mg-right">
+                                    <div class="inline-block sHeight"><span class="icon_contactus icon_contactus-shouji-banping"></span></div>
+                                    <div class="inline-block">
+                                        <div class="font-align textcolor-top">Cellphone</div>
+                                        <div class="font-align textcolor-bottom">+86 -188 5887 7122</div>
+                                    </div>
+                                </div>
+                                <div class="inline-block">
+                                    <div class="inline-block sHeight"><span class="icon_contactus icon_contactus-youjian01"></span></div>
+                                    <div class="inline-block">
+                                        <div class="font-align textcolor-top">Email Adress</div>
+                                        <div class="font-align textcolor-bottom">fff@capsulcn.com</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inline-block mg-right">
+                                    <div class="inline-block sHeight"><span class="icon_contactus icon_contactus-dianhua02"></span></div>
+                                    <div class="inline-block">
+                                        <div class="font-align textcolor-top">Telephone</div>
+                                        <div class="font-align textcolor-bottom">+86 - 577 6515 5521</div>
+                                    </div>
+                                </div>
+                                <div class="inline-block">
+                                    <div class="inline-block sHeight"><span class="icon_contactus icon_contactus-skype1"></span></div>
+                                    <div class="inline-block">
+                                        <div class="font-align textcolor-top">Skype</div>
+                                        <div class="font-align textcolor-bottom">live:capsulcn.order</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="account-box-container">
+                        <!--form start-->
+                        @using (Html.BeginForm("ContactUs", "Common", FormMethod.Post, new { @class = "form-horizontal account-submit" }))
+                        {
+                            <div class="form-container">
+                                @Html.AntiForgeryToken() @{ var validationSummary = Html.ValidationSummary(true); if (!MvcHtmlString.IsNullOrEmpty(validationSummary))
+                                    {
+                                        <div class="message-error">@validationSummary</div>
+                                    } }
+                                <div class="form-group">
+
+                                    <label for="@Html.IdFor(model => model.FullName)" class="control-label tipfont fullname">
+                                        @Html.RequiredHint()
+                                        @Html.DisplayNameFor(model => model.FullName)
+                                    </label>
+                                    <div>
+                                        @Html.TextBoxFor(model => model.FullName, new { @class = "form-control inputs fullname-input", placeholder = T("ContactUs.FullName.Hint") })
+                                        <div class="error" data-valmsg-for="@Html.NameFor(model=>model.FullName)" data-valmsg-replace="true">@Html.ValidationMessageFor(model => model.FullName)</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="@Html.IdFor(model => model.Email)" class="control-label tipfont youxiang">
+                                        @Html.RequiredHint()
+                                        @Html.DisplayNameFor(model => model.Email)
+                                    </label>
+                                    <div>
+                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control inputs youxiang-input", type = "email", placeholder = T("ContactUs.Email.Hint") })
+                                        <div class="error" data-valmsg-for="@Html.NameFor(model=>model.Email)" data-valmsg-replace="true">@Html.ValidationMessageFor(model => model.Email)</div>
+                                    </div>
+                                </div>
+                                @if (Model.SubjectEnabled)
+                                {
+                                    <div class="form-group">
+                                        <label for="@Html.IdFor(model => model.Subject)" class="control-label tipfont">
+                                            @Html.RequiredHint()
+                                            @Html.DisplayNameFor(model => model.Subject)
+                                        </label>
+                                        <div>
+                                            @Html.TextBoxFor(model => model.Subject, new { @class = "form-control inputs", placeholder = T("ContactUs.Subject.Hint") })
+                                            <div class="error" data-valmsg-for="@Html.NameFor(model=>model.Subject)" data-valmsg-replace="true">@Html.ValidationMessageFor(model => model.Subject)</div>
+                                        </div>
+                                    </div>
+                                }
+                                <div class="form-group">
+                                    <label for="@Html.IdFor(model => model.Enquiry)" class="control-label tipfont enquiry">
+                                        @Html.RequiredHint()
+                                        @Html.DisplayNameFor(model => model.Enquiry)
+                                    </label>
+                                    <div>
+                                        @Html.TextAreaFor(model => model.Enquiry, new { @class = "form-control inputs enquiry-input", placeholder = T("ContactUs.Enquiry.Hint") })
+                                        <div class="error" data-valmsg-for="@Html.NameFor(model=>model.Enquiry)" data-valmsg-replace="true">@Html.ValidationMessageFor(model => model.Enquiry)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" id="submit" name="send-email" class="buttons sumitButton" role="button" value="@T(" ContactUs.Button ")" />}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        @Html.Action("TopicBlock", "Topic", new { systemName = "ContactUs" })
+        @*<div class="row zhong main">
+                <div>
+                    <div class="mg-top-bottom col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="text-uppercase text-left p1">skyper us</p>
+                        <p class="text-uppercase text-left p2">get in touch !</p>
+                        <p class="text-left p3">
+                            We will provide the most sincere service in the future.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="mycol col-lg-3 col-sm-3 col-xs-6">
+                            <div class="box-item">
+                                <div class="item-pic">
+                                    <div>
+                                        <img class="img-responsive" src="~/Themes/Ipharmachine/Content/images/contactus/1920/author.png" />
+                                    </div>
+                                </div>
+                                <div class="item-inner">
+                                    <p class="text-left">
+                                        16 years as an expert in pharmac-eutical and harmaceutical packaging Provide solutions for hundreds of pharmaceutical and health roduct manufacturers Visit customers, get customer praise.
+                                    </p>
+                                </div>
+                                <div class="item-label">
+                                    <span class="item-text">7x12h</span>
+                                </div>
+                                <div class="item-contact">
+                                    <ul class="top-menu">
+                                        <li>
+                                            <span class="icon_contactus icon_contactus-network">&nbsp;</span><span class="aligement">
+                                                Language: English
+                                            </span>
+                                        </li>
+                                        <li class="email">
+                                            <a href="mailto:fff@capsulcn.com" target="_blank">
+                                                <span class="show480">Email:</span>
+                                                <span class="icon_contactus icon_contactus-youjian03">&nbsp;</span><span class="aligement">fff@capsulcn.com</span>
+                                            </a>
+                                        </li>
+                                        <li class="skype">
+                                            <a href="tel:+8623131231231" target="_blank">
+                                                <span class="show480">Mobile phone/whatsapp:</span>
+                                                <span class="hide-icon"><span class="icon_contactus icon_contactus-skype3">&nbsp;</span><span class="icon_contactus icon_contactus-test">&nbsp;</span></span><span class="aligement">+8623131231231</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mycol col-lg-3 col-sm-3 col-xs-6">
+                            <div class="box-item">
+                                <div class="item-pic">
+                                    <div>
+                                        <img class="img-responsive" src="~/Themes/Ipharmachine/Content/images/contactus/1920/author.png" />
+                                    </div>
+                                </div>
+                                <div class="item-inner">
+                                    <p class="text-left">
+                                        16 years as an expert in pharmac-eutical and harmaceutical packaging Provide solutions for hundreds of pharmaceutical and health roduct manufacturers Visit customers, get customer praise.
+                                    </p>
+                                </div>
+                                <div class="item-label">
+                                    <span class="item-text">7x12h</span>
+                                </div>
+                                <div class="item-contact">
+                                    <ul class="top-menu">
+                                        <li>
+                                            <span class="icon_contactus icon_contactus-network">&nbsp;</span><span class="aligement">
+                                                Language: English
+                                            </span>
+                                        </li>
+                                        <li class="email">
+                                            <a href="mailto:fff@capsulcn.com" target="_blank">
+                                                <span class="show480">Email:</span>
+                                                <span class="icon_contactus icon_contactus-youjian03">&nbsp;</span><span class="aligement">fff@capsulcn.com</span>
+                                            </a>
+                                        </li>
+                                        <li class="skype">
+                                            <a href="tel:+8623131231231" target="_blank">
+                                                <span class="show480">Mobile phone/whatsapp:</span>
+                                                <span class="hide-icon"><span class="icon_contactus icon_contactus-skype3">&nbsp;</span><span class="icon_contactus icon_contactus-test">&nbsp;</span></span><span class="aligement">+8623131231231</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mycol col-lg-3 col-sm-3 col-xs-6">
+                            <div class="box-item">
+                                <div class="item-pic">
+                                    <div>
+                                        <img class="img-responsive" src="~/Themes/Ipharmachine/Content/images/contactus/1920/author.png" />
+                                    </div>
+                                </div>
+                                <div class="item-inner">
+                                    <p class="text-left">
+                                        16 years as an expert in pharmac-eutical and harmaceutical packaging Provide solutions for hundreds of pharmaceutical and health roduct manufacturers Visit customers, get customer praise.
+                                    </p>
+                                </div>
+                                <div class="item-label">
+                                    <span class="item-text">7x12h</span>
+                                </div>
+                                <div class="item-contact">
+                                    <ul class="top-menu">
+                                        <li>
+                                            <span class="icon_contactus icon_contactus-network">&nbsp;</span><span class="aligement">
+                                                Language: English
+                                            </span>
+                                        </li>
+                                        <li class="email">
+                                            <a href="mailto:fff@capsulcn.com" target="_blank">
+                                                <span class="show480">Email:</span>
+                                                <span class="icon_contactus icon_contactus-youjian03">&nbsp;</span><span class="aligement">fff@capsulcn.com</span>
+                                            </a>
+                                        </li>
+                                        <li class="skype">
+                                            <a href="tel:+8623131231231" target="_blank">
+                                                <span class="show480">Mobile phone/whatsapp:</span>
+                                                <span class="hide-icon"><span class="icon_contactus icon_contactus-skype3">&nbsp;</span><span class="icon_contactus icon_contactus-test">&nbsp;</span></span><span class="aligement">+8623131231231</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mycol col-lg-3 col-sm-3 col-xs-6">
+                            <div class="box-item">
+                                <div class="item-pic">
+                                    <div>
+                                        <img class="img-responsive" src="~/Themes/Ipharmachine/Content/images/contactus/1920/author.png" />
+                                    </div>
+                                </div>
+                                <div class="item-inner">
+                                    <p class="text-left">
+                                        16 years as an expert in pharmac-eutical and harmaceutical packaging Provide solutions for hundreds of pharmaceutical and health roduct manufacturers Visit customers, get customer praise.
+                                    </p>
+                                </div>
+                                <div class="item-label">
+                                    <span class="item-text">7x12h</span>
+                                </div>
+                                <div class="item-contact">
+                                    <ul class="top-menu">
+                                        <li>
+                                            <span class="icon_contactus icon_contactus-network">&nbsp;</span><span class="aligement">
+                                                Language: English
+                                            </span>
+                                        </li>
+                                        <li class="email">
+                                            <a href="mailto:fff@capsulcn.com" target="_blank">
+                                                <span class="show480">Email:</span>
+                                                <span class="icon_contactus icon_contactus-youjian03">&nbsp;</span><span class="aligement">fff@capsulcn.com</span>
+                                            </a>
+                                        </li>
+                                        <li class="skype">
+                                            <a href="tel:+8623131231231" target="_blank">
+                                                <span class="show480">Mobile phone/whatsapp:</span>
+                                                <span class="hide-icon"><span class="icon_contactus icon_contactus-skype3">&nbsp;</span><span class="icon_contactus icon_contactus-test">&nbsp;</span></span><span class="aligement">+8623131231231</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="row xia ">
+                <div class="mycol col-lg-12 col-sm-12 col-xs-12 main">
+                    <div class="findme col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="text-uppercase text-left">FIND ME !</p>
+                    </div>
+                    <div class="row">
+                        <div class="mycol col-lg-6 col-sm-6 col-xs-6">
+                            <div class="contactinformation">
+                                <div class="country">
+                                    <img class="img-responsive" src="~/Themes/Ipharmachine/Content/images/contactus/1920/ameracat.png" />
+                                </div>
+                                <ul>
+                                    <li>
+                                        <p class="text-uppercase text-left ustext">United States office</p>
+                                    </li>
+                                    <li class="contact-hide">
+                                        <a href="mailto:us5566e@capsulcn.com" target="_blank" style="color: #333;">
+                                            <span class="icon_contactus icon_contactus-youjian-blue"></span><span class="text-aligement">us5566e@capsulcn.com</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:+0816-123 45 66 7" target="_blank" style="color: #333;">
+                                            <span class="icon_contactus icon_contactus-dianhua-blue"></span><span class="text-aligement">0816-123 45 66 7</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:+0816-123 45 66 7" target="_blank" style="color: #333;">
+                                            <span class="icon_contactus icon_contactus-weizhi-blue"></span><span class="text-aligement">xxxxxxxxxxxxx</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mycol col-lg-6 col-sm-6 col-xs-6">
+                            <div class="contactinformation">
+                                <div class="country">
+                                    <img class="img-responsive" src="~/Themes/Ipharmachine/Content/images/contactus/1920/china.png" />
+                                </div>
+                                <ul>
+                                    <li>
+                                        <p class="text-uppercase text-left chinatext">
+                                            Machinery production<br /> in China
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:us@capsulcn.com" target="_blank" style="color: #333;">
+                                            <span class="icon_contactus icon_contactus-youjian-red"></span><span class="text-aligement">us@capsulcn.com</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:+12345667" target="_blank" style="color: #333;">
+                                            <span class="icon_contactus icon_contactus-dianhua-red"></span><span class="text-aligement">12345667</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="xxxxxxxxxxxxx" target="_blank" style="color: #333;">
+                                            <span class="icon_contactus icon_contactus-weizhi-red"></span><span class="text-aligement">xxxxxxxxxxxxx</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>*@
+
+
+    </div>
+</div>

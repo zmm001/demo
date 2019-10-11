@@ -1,0 +1,163 @@
+﻿@model ProductOverviewModel
+@using Nop.Core
+@using Nop.Core.Caching
+@using Nop.Core.Domain.Catalog
+@using Nop.Core.Domain.Orders
+@using Nop.Core.Domain.Tax
+@using Nop.Core.Infrastructure
+@using Nop.Services.Catalog
+@using Nop.Services.Directory
+@using Nop.Services.Discounts
+@using Nop.Web.Models.Catalog;
+@using Nop.Services.Configuration;
+@using System.Text.RegularExpressions;
+@{
+    //prepare "Add to cart" AJAX link
+    string addtocartlink = "";
+    var shoppingCartTypeId = (int)ShoppingCartType.ShoppingCart;
+    var quantity = 1;
+    if (Model.ProductPrice.ForceRedirectionAfterAddingToCart)
+    {
+        addtocartlink = Url.RouteUrl("AddProductToCart-Catalog", new { productId = Model.Id, shoppingCartTypeId = shoppingCartTypeId, quantity = quantity, forceredirection = Model.ProductPrice.ForceRedirectionAfterAddingToCart });
+    }
+    else
+    {
+        addtocartlink = Url.RouteUrl("AddProductToCart-Catalog", new { productId = Model.Id, shoppingCartTypeId = shoppingCartTypeId, quantity = quantity });
+    }
+
+    var addtowishlistlink = Url.RouteUrl("AddProductToCart-Catalog", new { productId = Model.Id, shoppingCartTypeId = (int)ShoppingCartType.Wishlist, quantity = quantity });
+    var addtocomparelink = Url.RouteUrl("AddProductToCompare", new { productId = Model.Id });
+    var pc = EngineContext.Current.Resolve<IPriceCalculationService>();
+    var cache = EngineContext.Current.Resolve<ICacheManager>();
+
+    var workContext = EngineContext.Current.Resolve<IWorkContext>();
+    var currencyService = EngineContext.Current.Resolve<ICurrencyService>();
+    var productService = EngineContext.Current.Resolve<IProductService>();
+    var priceFormatter = EngineContext.Current.Resolve<IPriceFormatter>();
+    var key2 = string.Format("Nop.pres.product.item-istock-{0}", Model.Id);
+
+    var p = productService.GetProductById(Model.Id);
+    var discountName = "";
+
+
+    List<DiscountForCaching> dl;
+    decimal a;
+    string price;
+    var isStock = true;
+    if (!p.CallForPrice)
+    {
+        price = priceFormatter.FormatPrice(
+            currencyService.ConvertFromPrimaryStoreCurrency(pc.GetFinalPrice(p, workContext.CurrentCustomer, 0M, true, 1, null, null, out a, out dl), workContext.WorkingCurrency));
+        if (dl != null && dl.Count > 0)
+        {
+            discountName = dl[0].Name;
+        }
+
+        isStock = cache.Get(key2, () =>
+        {
+            var product = productService.GetProductById(Model.Id);
+            switch (product.ManageInventoryMethod)
+            {
+                case ManageInventoryMethod.DontManageStock:
+                    return true;
+                case ManageInventoryMethod.ManageStock:
+                    return product.GetTotalStockQuantity() > 0;
+                case ManageInventoryMethod.ManageStockByAttributes:
+                    return product.ProductAttributeCombinations.Any(pac => pac.StockQuantity > 0 || pac.AllowOutOfStockOrders);
+            }
+            return true;
+        });
+    }
+    else
+    {
+        price = Model.ProductPrice.Price;
+    }
+
+}
+
+<div class="mycol col-md-12 col-xs-6">
+    <!--shopping-item start-->
+    <div class="row shopping-item">
+        <div class="col-md-2">
+            @{
+                var settingService = EngineContext.Current.Resolve<ISettingService>();
+                var cdnAddress = settingService.GetSetting("maxcdnsetting.cdnaddress").Value;
+            }
+            <a href="@Url.RouteUrl("Product", new { SeName = Model.SeName })" title="@Model.DefaultPictureModel.Title" class="shopping-picture">
+                <img alt="@Model.DefaultPictureModel.AlternateText" class="lazyload" src="@(cdnAddress==""?"":cdnAddress)/Themes/Store/Content/images/loading.gif" data-original="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title" />
+                @if (discountName != null)
+                {
+                    <div class="item-ribbon"><span>@discountName</span></div>
+                }
+            </a>
+        </div>
+        <div class="col-md-10">
+            <div class="shopping-infomation-container clearfix">
+                <div class="shopping-infomation-details">
+                    <a href="@Url.RouteUrl("Product", new { SeName = Model.SeName })" title="@Model.DefaultPictureModel.Title" class="infomation-title">@Model.Name</a>
+                    <p class="infomation-text">@Html.Raw(Model.ShortDescription)</p>
+                </div>
+                <div class="shopping-infomation-price">
+                    <div class="price actual">
+                        <span class="actual-price">@price</span>
+                        @if (!String.IsNullOrEmpty(Model.ProductPrice.OldPrice))
+                        {
+                            if (decimal.Compare(decimal.Parse(Regex.Replace(Model.ProductPrice.OldPrice, @"[^\d.\d]", "")), decimal.Parse(Regex.Replace(Model.ProductPrice.Price, @"[^\d.\d]", ""))) > 0)
+                            {
+                                <span class="old-price">@Model.ProductPrice.OldPrice</span>
+                            }
+
+                        }
+                        @if (!String.IsNullOrEmpty(Model.ProductPrice.BasePricePAngV))
+                        {
+                            <span class="price-pangv">
+                                @Model.ProductPrice.BasePricePAngV
+                            </span>
+                        }
+                        @Html.Widget("productbox_addinfo_after", Model.Id)
+                    </div>
+                    @if (Model.ReviewOverviewModel.AllowCustomerReviews)
+                    {
+                        int ratingPercent = 100;
+                        if (Model.ReviewOverviewModel.TotalReviews != 0)
+                        {
+                            ratingPercent = ((Model.ReviewOverviewModel.RatingSum * 100) / Model.ReviewOverviewModel.TotalReviews) / 5;
+                        }
+                        <div class="product-rating-box" title="@string.Format(T("Reviews.TotalReviews").Text, Model.ReviewOverviewModel.TotalReviews)">
+                            <div class="rating" style="width: @(ratingPercent)%"></div>
+                        </div>
+                    }
+                </div>
+                <div class="infomation-btn">
+                    @if (!Model.ProductPrice.DisableBuyButton)
+                    {
+                        var addToCartText = T("ShoppingCart.AddToCart").Text;
+                        if (Model.ProductPrice.IsRental)
+                        {
+                            addToCartText = T("ShoppingCart.Rent").Text;
+                        }
+                        if (Model.ProductPrice.AvailableForPreOrder)
+                        {
+                            addToCartText = T("ShoppingCart.PreOrder").Text;
+                        }
+                        @*<a data-abc="123" href="javascript:AjaxCart.addproducttocart_catalog('@addtocartlink');" title="@addToCartText" class="btn-buy@(isStock?"":" outsotck")" role="button"><span class="iconfont icon-gouwucheman"></span><span class="btn-txt">@(addToCartText)</span></a>*@
+                        <a href="javascript:AjaxCart.confirmDialog('@addtocartlink',@Model.Id,1);" title="@addToCartText" class="btn-buy@(isStock?"":" outsotck")" role="button"><span class="iconfont icon-gouwucheman"></span><span class="btn-txt">@(addToCartText)</span></a>
+                    }
+                    @*todo: 没有比较图标*@
+                    @if (!Model.ProductPrice.DisableAddToCompareListButton)
+                    {
+                        <a href="javascript:AjaxCart.addproducttocomparelist('@addtocomparelink');" title="@T("ShoppingCart.AddToCompareList")" class="btn-buy" role="button"><span class="iconfont icon-gouwucheman"></span><span class="btn-txt">@T("ShoppingCart.AddToCompareList")</span></a>
+                    }
+                    @if (!Model.ProductPrice.DisableWishlistButton)
+                    {
+                        <a href="javascript:AjaxCart.confirmDialog('@addtowishlistlink',@Model.Id,2);" title="@T("ShoppingCart.AddToWishlist")" class="btn-buy" role="button"><span class="iconfont icon-xinyuandan"></span><span class="btn-txt">@T("ShoppingCart.AddToWishlist")</span></a>
+
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--shopping-item end-->
+</div>

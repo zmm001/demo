@@ -1,0 +1,342 @@
+/*
+ *  b- 为background
+ *  c- 为color
+ *  bo- 为border-color
+ *  r- 为  rotate
+ *  br- 为 border-radius
+ *  bx- 为 box-shadow
+ *  mb- 为 margin-bottom
+ *  fs- 为 font-size
+ * */
+//背景颜色
+
+$body-background: #f0f0f0;
+//input
+$bo-input: 1px solid #bbb;
+
+//global
+$main-color:#27ae60;
+$auxiliary-color: #2d2f31;
+
+//header
+$c-header-shoping-icon: #daf4e7;
+$c-header-shopping-cart: #505050;
+$bo-header-shopping-cart: #d3d3d3;
+$bo-header-shoping-pictures: #ececec;
+$c-header-shopping-name: #505050;
+
+$c-header-links: #333;
+$c-header-links-icon: #111;
+
+$c-header-selectors: #c9c9c9;
+$b-header-selectors-bg: #f0f0f0;
+$bo-header-selectors: #3b3b3b;
+$header-selector-Arrow: 6px;
+
+
+$b-header-list-hover: #797979;
+$header-height: 32px;
+$header-padding: 4px;
+
+
+
+//nav
+$bx-pc-navigation-linkage: 0 3px 3px rgba(0,0,0,.5);
+$bo-pc-navigation-linkage-iconnext: #fff;
+
+$b-nav-extend: rgba(0,0,0,.4);
+$bo-extend-navigation-list-li: #e6e6e6;
+$c-extend-navigation-list-a: #505050;
+
+$c-extend-navigation-next: #b2b2b2;
+$bo-extend-navigation-next: #e6e6e6;
+
+$extend-navigation-w: 280px;
+$nav-height: 38px;
+$nav-mobile-height: 38px;
+$nav-next-size: 6px;
+$nav-top-padding: 30px;
+$nav-top-padding-small: 20px;
+$nav-li-padding: 15px;
+//footer
+$c-footer-top: #505050;
+$b-footer-top: #eee;
+$b-footer-top-after: #b3b3b3;
+$r-footer-top-after: rotate(.7deg);
+$bo-footer-top-search: #e2e2e2;
+$c-footer-top-body-a: #505050;
+
+$c-footer-greens: #505050;
+
+
+$b-footer-middle-before: #636363;
+$r-footer-middle-before: rotate(1.5deg);
+$c-footer-middle-title: #969696;
+$c-footer-middle-list-a: #c9c9c9;
+
+$c-footer-bottom: #969696;
+
+//swiper
+$swipper-w: 1920px;
+$swipper-h: 550px;
+$b-swiper-pagination-bullet: #d2d2d2;
+$br-swiper-pagination-bullet: 10px;
+$b-swiper-pagination-bullet-active: $main-color;
+$r-swiper-pagination-bullet-active: rotate(180deg);
+$b-swiper-pagination-bullet-active-after: darken($main-color,10%); // #19764c;
+$br-swiper-pagination-bullet-active-after: 0 10px 10px 0;
+
+//index
+$mb-content-goods-catalogs-title: 10px;
+$fs-content-goods-catalogs-title: 24px;
+$mb-content-goods-products-title: 10px;
+$fs-content-goods-products-title: 24px;
+
+$c-content-goods-item-name-a: #505050;
+
+$c-content-goods-item-inner-actual-price: #ea4334;
+
+$fs-content-goods-item-inner-smail-price: 12px;
+$fs-content-goods-item-inner-big-price: 16px;
+
+$bx-news-box: 0 1px 3px 1px rgba(0,0,0,.15);
+$c-news-title-a: #333;
+
+//advertise
+$br-advertise-wrapper: 5px;
+
+/*
+ * login
+ * register
+ * giveme
+ * my系列
+ * l-s
+ */
+$bo-l-s-title: #e1e1e1;
+$fs-sm-l-s-title: 24px;
+$fs-xs-l-s-title: 20px;
+
+$fs-l-s-box-title: 20px;
+$fs-ms-l-s-box-title: 18px;
+
+$b-l-s-box-container: #fff;
+$bo-l-s-box-container: #e8e8e8;
+
+$b-l-s-buttons: $main-color;
+$b-l-s-buttons-hover: rgba($main-color,.7);
+
+$c-l-s-strong: #ea4334;
+$b-l-s-strong: #ea4334;
+//cart
+$c-cart-name: #333;
+
+$bx-cart-boxshadow: 0 1px 3px 1px rgba(0,0,0,.15);
+
+$b-cart-table-inner: #eee;
+
+
+$c-cart-buttons-strong: #ea4334;
+
+$c-collaterals-deals-code-btn: #505050;
+$bo-collaterals-deals-code-btn: #d3d3d3;
+$b-collaterals-deals-code-btn: #dcdcdc;
+$bx-collaterals-deals-code-btn: 0 1px 0 0 #bbb;
+
+$c-shipping-options-strong: #ea4334;
+
+$bo-shipping-btn: #ff5920;
+$b-shipping-btn: #ff5920;
+
+$c-order-name: #333;
+//order
+$bx-order-boxshadow: 0 1px 3px 1px rgba(0,0,0,.15);
+
+$b-order-table-inner: #eee;
+//products-list
+$b-product-slide-title: $main-color; //#22a86c;
+$b-product-slide-title-icon: darken($main-color,10%);
+
+$b-product-slide-list: #fff;
+$br-product-slide-list-li: 5px;
+$c-product-slide-list-li: #2d2f31;
+$bo-product-slide-list-li: #eee;
+$bo-product-slide-list-li-a: #666;
+
+$c-shopping-infomation-text: #666;
+
+$c-shopping-infomation-actual-price: #ea4334;
+
+//products-details
+$bx-product-details-infomation: 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+$bo-product-details-big-picture: #e4e2e2;
+$bo-product-details-smail-picture: #e4e2e2;
+
+$c-product-details-inner-heading: #7f8d80;
+$b-product-details-inner-price: $main-color;
+$bo-product-details-inner-price: darken($main-color,10%);
+
+$c-product-details-inner-discount-price: #eee;
+$c-product-details-inner-old-price: #ff0;
+$c-product-details-inner-actual-price: #ff0;
+
+$c-shopping-product-select: #95a5a6;
+$c-shopping-product-select-a: #666;
+$b-shopping-product-select-a: #c7cccf;
+$b-shopping-product-select-selected: $main-color; // #27ae60;
+$c-shopping-product-select-selected: $main-color; // #27ae60;
+$b-shopping-product-select-enabled: #dedede;
+$c-shopping-product-select-enabled: #dedede;
+
+$c-shopping-product-qty: $main-color; // #27ae60;
+$bo-shopping-product-qty: #c7cccf;
+
+$b-shopping-product-btn-buy: #e74c3c;
+$b-shopping-product-btn-cart: $main-color; // #27ae60;
+
+$bo-product-details-bought-slide: #e5e5e5;
+
+$bo-product-details-also-bought: #e5e5e5;
+$c-product-details-also-linkage: #505050;
+
+$bo-product-details-related-picture: #e5e5e5;
+$b-product-details-related-inner: #e5e5e5;
+$c-product-details-related-linkage: #505050;
+
+
+$bx-product-detail-artcle: 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+$b-product-detail-artcle-first-td: #eee;
+$b-product-detail-artcle-last-td: #f9f9f9;
+
+$bo-product-detail-zoom-div: #e4e2e2;
+//shop
+$bo-goods-box-item: #e5e5e5;
+$b-goods-box-item: #e5e5e5;
+
+$bo-goods-shopping-picture: #e5e5e5;
+
+$b-goods-shopping-bg: #e5e5e5;
+
+/*$ribbon-bckaground-color: rgba(231, 76, 60, 1);
+$ribbon-color: #fff;
+$ribbon-line-height: 2.4;
+
+$ribbon-padding: 0 1.6em;
+$item-ribbon-line-height: 30px;
+$item-ribbon-w: $item-ribbon-line-height * 4;*/
+@mixin ribbon($font-size: 12px) {
+    position: absolute;
+    display: inline-block;
+    font-size: $font-size;
+    padding: 0 1.6em;
+    line-height: 2;
+    background: rgba(231, 76, 60, 1);
+    color: #fff; 
+    white-space: nowrap;
+    min-width: 8em;
+    text-align: center;
+    top: 0;
+    left: 0;
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    -webkit-transform: translate(-29.28932188%,-100%) rotate(-45deg); // 1-(2)^-0.5/2
+    -moz-transform: translate(-29.28932188%,-100%) rotate(-45deg); // 1-(2)^-0.5/2
+    -ms-transform: translate(-29.28932188%,-100%) rotate(-45deg); // 1-(2)^-0.5/2
+    -o-transform: translate(-29.28932188%,-100%) rotate(-45deg); // 1-(2)^-0.5/2
+    transform: translate(-29.28932188%,-100%) rotate(-45deg); // 1-(2)^-0.5/2
+    box-shadow: 0 5px 10px -3px rgba(0,0,0,.5);
+}
+
+@mixin ribbon-min($font-size: 12px,$percent: 0.8) {
+    line-height: 2;
+    -moz-transform: scale($percent) translate( percentage(1 - $percent * 1.41421356237 / 2) * -1 / $percent,-100% / $percent) rotate(-45deg);
+    -webkit-transform: scale($percent) translate( percentage(1 - $percent * 1.41421356237 / 2) * -1 / $percent,-100% / $percent) rotate(-45deg);
+    -o-transform: scale($percent) translate( percentage(1 - $percent * 1.41421356237 / 2) * -1 / $percent,-100% / $percent) rotate(-45deg);
+    -ms-transform: scale($percent) translate( percentage(1 - $percent * 1.41421356237 / 2) * -1 / $percent,-100% / $percent) rotate(-45deg);
+    transform: scale($percent) translate( percentage(1 - $percent * 1.41421356237 / 2) * -1 / $percent,-100% / $percent) rotate(-45deg);
+}
+
+@mixin ribbon-box($box-class,$font-size: 12px) {
+    overflow: hidden;
+    position: relative;
+
+    #{$box-class} {
+        @include ribbon($font-size);
+    }
+}
+
+
+//articleList
+$c-article-lists-date: #888;
+$bx-article-lists-content: 0 1px 3px 1px rgba(0,0,0,.15);
+
+$c-article-lists-body: #858585;
+
+//articleDetails
+$bo-article-details-title: #e1e1e1;
+$c-article-details-date: #888;
+
+//myOrderDetails
+$c-products-title: #969696;
+
+//giveme
+$c-giveme-a: #7f8c8d;
+
+//myAddressList
+$bx-address-item: 0 1px 3px 1px rgba(0,0,0,.15);
+$bo-account-title: #e1e1e1;
+$b-info-buttons: #dcdcdc;
+$bo-info-buttons: #d3d3d3;
+//分页
+
+$pager-height: 28px;
+
+@mixin rotateZ($degrees) {
+    -webkit-transform: rotateZ($degrees);
+    -ms-transform: rotateZ($degrees); // IE9 only
+    -o-transform: rotateZ($degrees);
+    transform: rotateZ($degrees);
+}
+
+@mixin translateX($translate) {
+    -webkit-transform: translateX($translate);
+    -ms-transform: translateX($translate);
+    -ms-transform: translateX($translate);
+    -o-transform: translateX($translate);
+    transform: translateX($translate);
+}
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -ms-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+@mixin image-box($width,$height: 0) {
+    position: relative;
+    width: $width;
+    height: 0;
+    background: #fff;
+
+    @if $height==0 {
+        padding-bottom: $width;
+    }
+    @else {
+        padding-bottom: $height;
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

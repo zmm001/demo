@@ -1,0 +1,2 @@
+DataProvider: sqlserver
+DataConnectionString: Data Source=47.90.249.67,6673;Initial Catalog=capsulcn;Integrated Security=False;Persist Security Info=False;User ID=capsulcn_sql;Password=sql!19820628

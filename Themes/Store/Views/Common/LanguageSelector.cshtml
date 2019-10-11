@@ -1,0 +1,68 @@
+﻿@model LanguageSelectorModel
+@using Nop.Web.Models.Common;
+@using Nop.Core;
+@using Nop.Core.Caching
+@using Nop.Core.Domain.Customers
+@using Nop.Core.Domain.Localization
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Localization
+@using Nop.Services.Stores
+@using Nop.Web.Infrastructure.Cache
+@if (Model.AvailableLanguages.Count > 1)
+{
+    var webHelper = EngineContext.Current.Resolve<IWebHelper>();
+    var workContext = EngineContext.Current.Resolve<IWorkContext>();
+    var storeService = EngineContext.Current.Resolve<IStoreService>();
+    var languageService = EngineContext.Current.Resolve<ILanguageService>();
+    var cacheManager = EngineContext.Current.Resolve<ICacheManager>();
+    var localizationSettings = EngineContext.Current.Resolve<LocalizationSettings>();
+    var allStore = storeService.GetAllStores();
+    if (allStore.Count > 1 && !workContext.CurrentCustomer.IsSearchEngineAccount()) {
+        //todo 显示国旗的功能未添加
+        <div class="selectors-select">
+            <span class="selectros-text">@workContext.WorkingLanguage.Name</span>
+            <ul class="selectros-list">
+                @foreach (var store in allStore)
+                {
+
+                    var language = languageService.GetLanguageById(store.DefaultLanguageId);
+                    LanguageModel languageModel;
+                    if (language == null) {
+                        var availableLanguages = cacheManager.Get(string.Format(ModelCacheEventConsumer.AVAILABLE_LANGUAGES_MODEL_KEY, store.Id), () =>
+                        {
+                            var result = languageService
+                                .GetAllLanguages(storeId: store.Id)
+                                .Select(x => new Nop.Web.Models.Common.LanguageModel
+                                {
+                                    Id = x.Id,
+                                    Name = x.Name,
+                                    FlagImageFileName = x.FlagImageFileName,
+                                })
+                                .ToList();
+                            return result;
+                        });
+
+                        languageModel = availableLanguages.FirstOrDefault();
+                    } else {
+                        languageModel = new LanguageModel() {
+                            Id = language.Id,
+                            Name = language.Name,
+                            FlagImageFileName = language.FlagImageFileName,
+                        };
+                    }
+
+                    if (languageModel == null) { continue; }
+                    <li>
+                        <a href="@(store.Url.TrimEnd('/') + webHelper.ModifyQueryString(Url.RouteUrl("ChangeLanguage", new {langid = languageModel.Id}), "returnurl=" + HttpUtility.UrlEncode(HttpContext.Current.Request.RawUrl), null))" rel="nofollow">
+                            @if (localizationSettings.UseImagesForLanguageSelection)
+                            {
+                                <img title='@languageModel.Name' alt='@languageModel.Name' src="@Url.Content("~/Content/Images/flags/" + languageModel.FlagImageFileName)" />
+                            }
+                            @store.Name
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+}

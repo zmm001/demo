@@ -1,0 +1,142 @@
+﻿//bootstrap
+@import "bootstrap/bootstrap/variables";
+@import "bootstrap/bootstrap/mixins";
+body {
+    margin: 0;
+}
+* {
+    @include box-sizing(border-box);
+}
+
+*:before,
+*:after {
+    @include box-sizing(border-box);
+}
+
+ul,ol {
+    margin-top: 0;
+    margin-bottom: ($line-height-computed / 2);
+
+    ul,
+    ol {
+        margin-bottom: 0;
+    }
+}
+.list-inline {
+    list-style: none;
+
+    > li {
+        display: inline-block;
+    }
+}
+/*@import "bootstrap/bootstrap/type";*/
+@import "bootstrap/bootstrap/grid";
+
+@import "extend/variable";
+.header {
+    margin-top: 32px;
+    box-shadow: 0 -32px 0 $auxiliary-color;
+}
+.header-top{
+    margin-top:-32px;
+}
+.bar-notification, .header-top, .header-search-wrapper, .big-box {
+    display: none;
+}
+.header-bottom {
+    padding: 5px 0;
+}
+.header-logo-wrapper {
+    margin: 0;
+
+    .logo-inner {
+        width: 176px;
+        height: 91px;
+        display: block;
+        background: url(../img/logo.png) no-repeat center top;
+        text-indent: -9999px;
+
+        @media (max-width: $screen-sm-max) {
+            margin: 0 auto;
+            height: 60px;
+            background-size: contain;
+        }
+    }
+}
+/*@import "extend/header";*/
+.nav {
+    // min-height: 35px;
+    line-height: $nav-height;
+    background-color: $main-color;
+}
+.pc-navigation {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+
+    @media (max-width: $screen-sm-max) {
+        display: none;
+    }
+    > li {
+        font-size: 14px;
+        position: relative;
+
+        > a {
+            color: #fff;
+        }
+
+        &:hover {
+            > a {
+                color: #ff0;
+            }
+        }
+    }
+
+    ul {
+        display: none;
+    }
+}
+
+.mini-navigation {
+    display: none;
+    line-height: $nav-mobile-height;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 0;
+
+    @media (max-width: $screen-sm-max) {
+        display: block;
+    }
+    .mini-text {
+        color: #fff;
+        font-size: 18px;
+        vertical-align: middle;
+    }
+}
+.nav-extend{
+    display:none;
+}
+/*@import "extend/nav";*/
+a {
+    text-decoration: none;
+}
+.product-list {
+    @media(max-width:$screen-xs-max) {
+        overflow: hidden;
+    }
+}
+
+.col-left {
+    @include make-md-column(2.5);
+    padding-top: $grid-gutter-width;
+}
+
+.col-right {
+    @include make-md-column(9.5);
+    float: right !important;
+    padding-top: $grid-gutter-width;
+}
+image{
+    max-width:100%;
+}

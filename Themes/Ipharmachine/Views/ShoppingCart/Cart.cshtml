@@ -1,0 +1,28 @@
+﻿@model ShoppingCartModel
+@using Nop.Web.Models.Checkout
+@using Nop.Web.Models.ShoppingCart;
+@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    //title
+    Html.AddTitleParts(T("PageTitle.ShoppingCart").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-shopping-cart-page");
+
+    Html.AddCssFileParts("~/Themes/Ipharmachine/Content/css/pages/cart.css");
+
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/extend/sweetalert.min.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/pages/cart.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Scripts/public.ajaxcart.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/pages/productDialogDetails.js");
+
+}
+@if (!Model.OnePageCheckoutEnabled)
+{
+    @Html.Action("CheckoutProgress", "Checkout", new {step = CheckoutProgressStep.Cart})
+}
+<div class="cart">
+    <h1 class="cart-title">@T("ShoppingCart")</h1>
+    <div class="container">
+        @Html.Partial("OrderSummary", Model)
+    </div>
+</div>

@@ -1,0 +1,90 @@
+﻿@model IList<ProductOverviewModel>
+
+@using Nop.Core
+@using Nop.Core.Caching
+@using Nop.Core.Infrastructure
+@using Nop.Services.Catalog
+@using Nop.Services.Directory
+@using Nop.Services.Discounts
+@using Nop.Web.Models.Catalog;
+@using Nop.Services.Configuration;
+@if (Model.Count > 0)
+{
+    var pc = EngineContext.Current.Resolve<IPriceCalculationService>();
+    var cache = EngineContext.Current.Resolve<ICacheManager>();
+    var priceFormatter = EngineContext.Current.Resolve<IPriceFormatter>();
+    var currencyService = EngineContext.Current.Resolve<ICurrencyService>();
+    var product = EngineContext.Current.Resolve<IProductService>();
+    var workContext = EngineContext.Current.Resolve<IWorkContext>();
+
+    <div class="detail-related">
+        <h4 class="related-title">@T("Products.RelatedProducts")</h4>
+        <div class="swiper-container related-container">
+            <div class="swiper-wrapper">
+                @foreach (var item in Model)
+                {
+                    var key = string.Format("Nop.pres.product.item-promotion-{0}-{1}", item.Id, workContext.CurrentCustomer.Id);
+
+                    var p = product.GetProductById(item.Id);
+                    List<DiscountForCaching> dl;
+                    decimal a;
+
+                    string discountName = null;
+                    string price;
+                    if (!p.CallForPrice)
+                    {
+                        price = priceFormatter.FormatPrice(
+                            currencyService.ConvertFromPrimaryStoreCurrency(pc.GetFinalPrice(p, workContext.CurrentCustomer, 0M, true, 1, null, null, out a, out dl), workContext.WorkingCurrency));
+                        if (dl != null && dl.Count > 0)
+                        {
+                            discountName = dl[0].Name;
+                        }
+                    }
+                    else
+                    {
+                        price = item.ProductPrice.Price;
+                    }
+
+
+
+                    <div class="swiper-slide">
+                        <div class="related-picture">
+                            @{
+                               var settingService = EngineContext.Current.Resolve<ISettingService>();
+                               var cdnAddress = settingService.GetSetting("maxcdnsetting.cdnaddress").Value;
+                            }
+                            <a href="@Url.RouteUrl("Product", new {SeName = item.SeName})" title="@item.DefaultPictureModel.Title">
+                                <img alt="@item.DefaultPictureModel.AlternateText" class="lazyload" src="@(cdnAddress==""?"":cdnAddress)/Themes/Store/Content/images/loading.gif" data-original="@item.DefaultPictureModel.ImageUrl" title="@item.DefaultPictureModel.Title" />
+                            </a>
+                        </div>
+                        <div class="related-inner">
+                            <a href="@Url.RouteUrl("Product", new {SeName = item.SeName})" class="related-linkage">@item.Name</a>
+                            <p class="related-price">
+                                @Html.Raw(string.IsNullOrWhiteSpace(price) ? "&nbsp;" : price)
+                                @if (!String.IsNullOrEmpty(item.ProductPrice.OldPrice))
+                                {
+                                    <span class="old-price">@item.ProductPrice.OldPrice</span>
+                                }
+                            </p>
+
+                        </div>
+                        @if (discountName != null)
+                        {
+                            <div class="item-ribbon">
+                                <span>@discountName</span>
+                            </div>
+                        }
+                    </div>
+                }
+
+            </div>
+            <div class="swiper-button-prev swiper-button">
+                <img src="~/Themes/Store/Content/img/swiper-button-prev.png" />
+            </div>
+            <div class="swiper-button-next swiper-button">
+                <img src="~/Themes/Store/Content/img/swiper-button-next.png" />
+            </div>
+        </div>
+    </div>
+
+}

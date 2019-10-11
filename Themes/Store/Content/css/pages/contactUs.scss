@@ -1,0 +1,26 @@
+@import "../bootstrap/bootstrap/variables";
+@import "../extend/variable";
+@import "../extend/accountNumber";
+.textarea{
+  min-height: 150px;
+}
+.result{
+    font-size:14px;
+    text-align:center;
+    margin:0 auto 10px 0;
+    line-height:2em;
+}
+.contactus {
+
+    @media(min-width:$screen-md-min) {
+        width: 950px;
+    }
+
+    @media (min-width:$screen-sm-min) {
+        width: 730px;
+    }
+
+    @media (min-width:$screen-lg-min) {
+        width: 1240px;
+    }
+}

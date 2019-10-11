@@ -1,0 +1,194 @@
+@import "../bootstrap/bootstrap/variables";
+@import "../extend/variable";
+@import "../extend/advertise";
+@import "../extend/crumbs";
+@import "../extend/toggle";
+@import "../extend/pageTitle";
+
+
+
+.advertise-wrapper {
+    @media (max-width: $screen-sm-max) {
+        display: none;  
+    }
+}
+
+.article-content {
+    .article-crumbs {
+        font-size: 16px;
+        margin-bottom: 0;
+
+        @media(max-width:$screen-md-min) {
+            > li {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+
+        .link {
+            color: $main-color;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .delimiter {
+            margin-left: 5px;
+        }
+    }
+}
+
+.article-lists {
+    margin: 15px auto 0;
+
+    .lists-head {
+        margin: 0 0 15px;
+
+        .lists-title {
+            display: block;
+            margin: 0 0 5px;
+            font-size: 22px;
+            position: relative;
+            color: #666;
+            padding: 0 0 0 15px;
+            text-align: left;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            @media (max-width:$screen-md-max) {
+                font-size: 20px;
+            }
+
+            @media(max-width:$screen-xs-max) {
+                font-size: 18px;
+            }
+
+            &:hover {
+                color: #000;
+            }
+
+            &:before {
+                content: " ";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -12px;
+                width: 5px;
+                height: 23px;
+                background: $main-color;
+            }
+        }
+
+        .lists-date {
+            display: block;
+            text-align: left;
+            font-size: 12px;
+            color: $c-article-lists-date;
+            margin: 0 0 5px;
+        }
+    }
+
+    .lists-content {
+        box-shadow: $bx-article-lists-content;
+        padding: 10px;
+        background-color: #fff;
+
+        .lists-body {
+            font-size: 14px;
+            line-height: 1.5;
+            color: $c-article-lists-body;
+
+            p {
+                margin: 0 0 10px;
+            }
+        }
+
+        .lists-tags {
+            > label {
+                font-size: 14px;
+                font-weight: 700;
+                position: relative;
+                display: inline-block;
+                padding: 0 0 0 15px;
+                margin: 5px 0 15px;
+                color: #000;
+                text-align: left;
+
+                &:before {
+                    content: " ";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -12px;
+                    width: 5px;
+                    height: 23px;
+                    background: $main-color;
+                }
+            }
+
+            > ul {
+                display: inline-block;
+                font-size: 14px;
+                padding-left: 5px;
+            }
+        }
+
+        .lists-buttons {
+            .comments {
+                font-size: 14px;
+                font-weight: 700;
+                position: relative;
+                display: inline-block;
+                padding: 0 0 0 15px;
+                margin: 5px 0 15px;
+                color: #000;
+                text-align: left;
+
+                &:before {
+                    content: " ";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -12px;
+                    width: 5px;
+                    height: 23px;
+                    background: $main-color;
+                }
+            }
+
+            .more {
+                display: block;
+                width: 90px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 16px !important;
+                background-color: $main-color;
+                text-align: center;
+                color: #fff;
+                font-size: 14px;
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+.pager {
+    margin: 10px 0 5px;
+
+    li {
+        > a, > span {
+            line-height: $pager-height - 2px;
+            padding: 0 15px;
+            min-width: $pager-height*2;
+            border-radius: $pager-height;
+        }
+
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

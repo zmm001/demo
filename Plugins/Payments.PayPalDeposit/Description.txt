@@ -1,0 +1,9 @@
+﻿Group: Payment methods
+FriendlyName: Pay Deposit
+SystemName: Payments.PayPalDeposit
+Version: 1.351
+SupportedVersions: 3.90
+Author: nopCommerce team CapsulCN.IT
+DisplayOrder: 1
+FileName: Nop.Plugin.Payments.PayPalDeposit.dll
+Description: Pay deposits using PayPal and a dedicated customer manager will follow up your order on a weekday to help you complete your order faster.

@@ -1,0 +1,331 @@
+.cart-table-inner {
+    box-shadow: 0 0 2px rgba(0,0,0,.3);
+    border-radius: 2px;
+    background: #fff;
+    margin-bottom: 0;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,.3);
+    box-shadow: $bx-cart-boxshadow;
+
+    > thead > tr > th {
+        background-color: $b-cart-table-inner;
+        text-align: center
+    }
+
+    > tbody > tr > td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .cart-total {
+        font-size: 14px;
+        color: $main-color;
+    }
+
+    .icon-icondel {
+        cursor: pointer;
+        font-size: 18px;
+    }
+    //hide number start
+    .cart-hide-number {
+        display: none;
+
+        @media (max-width:$screen-xs-max) {
+            display: table-cell;
+        }
+    }
+
+    .cart-number {
+        vertical-align: middle;
+        text-align: center;
+        display: none;
+
+        @media(max-width:$screen-xs-max) {
+            width: 90px;
+            display: table-cell;
+        }
+
+        .iconfont {
+            cursor: pointer;
+            display: none;
+
+            @media(max-width:$screen-xs-max) {
+                display: block;
+            }
+        }
+    }
+    //hide number end
+    //hide title start
+    .cart-hide-infomation {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .cart-infomation {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .cart-detail-infomation {
+        .cart-name {
+            font-size: 14px;
+        }
+
+        .cart-specifications {
+            font-size: 12px;
+        }
+    }
+    //hide title end
+    //hide discount start
+    .cart-hide-discount {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .cart-discount {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+    //hide discount end
+    // hide price star
+    .cart-hide-price {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .cart-price {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+    //hide price end
+    //hide remove start
+    .cart-hide-remove {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .cart-remove {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+    //hide remove end
+    .cart-picture {
+        width: 78px;
+        height: 78px;
+    }
+
+    .cart-name {
+        font-size: 16px;
+        color: $c-cart-name;
+        padding-bottom: 5px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .cart-discount {
+        font-size: 14px;
+    }
+
+    .cart-sum {
+        font-size: 14px;
+    }
+
+    .cart-detail {
+        display: none;
+
+        @media(min-width:$screen-xs-max) {
+            display: none !important;
+        }
+
+        > tr > td {
+            text-align: left !important;
+            vertical-align: top !important;
+        }
+
+        * {
+            border: none;
+        }
+
+        .cart-name {
+            font-size: 14px;
+        }
+    }
+}
+
+.total-details {
+    margin: 15px 0;
+    font-size: 14px;
+    float: right;
+
+    .info {
+        max-width: 350px;
+        text-align: right;
+
+        label {
+            font-size: 16px;
+            font-weight: normal;
+            padding-right: 40px;
+        }
+
+        .cart-total-left, .totals-weight {
+            > label {
+                font-weight: bold;
+            }
+        }
+
+        .cart-total-right,
+        .totals-price {
+            font-size: 18px;
+            color: $main-color;
+        }
+    }
+}
+
+.order-table-inner {
+    margin-bottom: 0;
+    -webkit-box-shadow: $bx-order-boxshadow;
+    box-shadow: $bx-order-boxshadow;
+
+    > thead > tr > th {
+        background-color: $b-order-table-inner;
+    }
+
+    > tbody > tr > td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .order-number {
+        vertical-align: middle;
+        text-align: center;
+
+        @media(max-width:$screen-xs-max) {
+            width: 114px;
+        }
+
+        .iconfont {
+            cursor: pointer;
+            display: none;
+
+            @media(max-width:$screen-xs-max) {
+                display: block;
+            }
+        }
+    }
+
+    .order-total {
+        font-size: 14px;
+        color: $main-color;
+    }
+
+    .icon-icondel {
+        cursor: pointer;
+        font-size: 18px;
+    }
+    //hide title start
+    .order-title-infomation {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .order-infomation {
+        text-align: left;
+
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .order-detail-infomation {
+        .order-name {
+            font-size: 14px;
+        }
+
+        .order-specifications {
+            font-size: 12px;
+        }
+    }
+    //hide title end
+    // hide price star
+    .order-hide-price {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .order-price {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+    //hide price end
+    //hide discount start
+    .order-hide-discount {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+
+    .order-discount {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+    //hide discount end
+    //hide remove start
+    .order-hide-remove {
+        @media (max-width : $screen-xs-max) {
+            display: none;
+        }
+    }
+    //hide remove end
+    .order-picture {
+        width: 78px;
+        height: 78px;
+    }
+
+    .order-name {
+        font-size: 16px;
+        color: $c-order-name;
+        padding-bottom: 5px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .order-sum {
+        font-size: 14px;
+    }
+
+    .order-detail {
+        display: none;
+
+        @media(min-width:$screen-xs-max) {
+            display: none !important;
+        }
+
+        > tr > td {
+            text-align: left !important;
+            vertical-align: top !important;
+        }
+
+        * {
+            border: none;
+        }
+
+        .order-name {
+            font-size: 14px;
+        }
+    }
+}

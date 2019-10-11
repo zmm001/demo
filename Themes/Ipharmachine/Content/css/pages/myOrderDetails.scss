@@ -1,0 +1,139 @@
+@import "../bootstrap/bootstrap/variables";
+@import "../extend/variable";
+@import "../extend/order";
+
+.myOrderDetails {
+    .order-information-container {
+        margin-bottom: 30px;
+    }
+
+    .myOrderDetails-title {
+        text-align: center;
+        padding-bottom: 10px;
+        margin-bottom: 0;
+        border-bottom: 1px solid $bo-l-s-title;
+
+        .container {
+            position: relative;
+        }
+
+        h1 {
+            font-size: 30px;
+
+            @media (max-width : $screen-sm-max) {
+                font-size: $fs-sm-l-s-title;
+            }
+
+            @media (max-width : $screen-xs-max) {
+                font-size: $fs-xs-l-s-title;
+            }
+        }
+
+        .comms {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-bottom: 5px;
+
+            @media(max-width:$screen-xs-max) {
+                position: static;
+            }
+
+            a {
+                color: #333;
+                display: inline-block;
+                margin: 8px 0 0 20px;
+                border: none;
+                padding: 0 0 0 20px;
+                font-size: 14px;
+                height: 20px;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+
+            .print-order-button {
+                background: url(/Themes/Ipharmachine/Content/images/print.png) left center no-repeat;
+            }
+
+            .pdf-invoice-button {
+                background: url(/Themes/Ipharmachine/Content/images/pdf.png) left center no-repeat;
+            }
+        }
+    }
+
+    .order-information {
+        font-size: 14px;
+        margin-top: 15px;
+
+        > ul {
+            padding: 0;
+            list-style: none;
+
+            li {
+                line-height: 24px;
+            }
+        }
+
+        @media(max-width:$screen-xs-max) {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .information-title {
+            font-size: 20px;
+            margin: 5px 0;
+            display: block;
+            font-weight: bold;
+        }
+    }
+
+    .cart-products {
+        .title {
+            font-size: 18px;
+            color: $c-products-title;
+            padding-left: 16px;
+            margin-bottom: 15px;
+            position: relative;
+
+            &:before {
+                content: " ";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -13px;
+                width: 5px;
+                height: 25px;
+                background: $main-color;
+            }
+        }
+    }
+
+    .cart-total {
+        margin: 15px 0;
+        font-size: 14px;
+
+        .info {
+            max-width: 400px;
+            text-align: right;
+
+            label {
+                font-size: 16px;
+                font-weight: normal;
+                padding-right: 40px;
+            }
+
+            .totals-total-weight {
+                > label {
+                    font-weight: bold;
+                }
+            }
+
+            .totals-total-price {
+                font-size: 18px;
+                color: $main-color;
+            }
+        }
+    }
+}

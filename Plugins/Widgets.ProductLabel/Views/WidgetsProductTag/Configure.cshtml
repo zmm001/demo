@@ -1,0 +1,115 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Routing
+@using Nop.Core.Infrastructure
+
+@{
+    Layout = "";
+
+}
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "widgets-productlabel-form" }))
+{
+
+    @Html.AntiForgeryToken()
+
+
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="widgets-productlabel-grid"></div>
+                <script>
+                    $(function() {
+                        $("#widgets-productlabel-grid").kendoGrid({
+                            dataSource: {
+                                type: "json",
+                                transport: {
+                                    read: {
+                                        url: "@Html.Raw(Url.Action("ListRecords", "WidgetsProductLabel", new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Widgets.ProductLabel.Controllers" }, { "area", "" } }))",
+                                        type: "POST",
+                                        dataType: "json",
+                                        data: addAntiForgeryToken
+                                    },
+                                    destroy: {
+                                        url: "@Html.Raw(Url.Action("DeleteRecord", "WidgetsProductLabel", new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Widgets.ProductLabel.Controllers" }, { "area", "" } }))",
+                                        type: "POST",
+                                        dataType: "json",
+                                        data: addAntiForgeryToken
+                                    }
+                                },
+                                schema: {
+                                    model: {
+                                        id: "Id",
+                                    }
+                                },
+                                requestEnd: function (e) {
+                                    if (e.type == "update") {
+                                        this.read();
+                                    }
+                                },
+                                error: function (e) {
+                                    display_kendoui_grid_error(e);
+                                    // Cancel the changes
+                                    this.cancelChanges();
+                                },
+                                serverPaging: true,
+                                serverFiltering: true,
+                                serverSorting: false
+                            },
+                            editable: {
+                                confirmation:false,// "@T("Admin.Common.DeleteConfirmation")",
+                                mode: "inline"
+                            },
+                            scrollable: false,
+                            columns: [{
+                                field: "Name",
+                                title: "@T("Admin.Catalog.Categories.Fields.Name")",
+                                headerAttributes: { style: "text-align:center" },
+                                        attributes: { style: "text-align:center" },
+                                width: 300
+                            }, {
+                                field: "MetaDescription",
+                                    title: "@T("Admin.Catalog.Categories.Fields.MetaDescription")",
+                                   headerAttributes: { style: "text-align:center" },
+                                        attributes: { style: "text-align:center" },
+                                width: 300
+                            }, {
+                                field: "MetaTitle",
+                                    title: "@T("Admin.Catalog.Categories.Fields.MetaTitle")",
+                                headerAttributes: { style: "text-align:center" },
+                                        attributes: { style: "text-align:center" },
+                                width: 200
+                            }, {
+                                field: "Id",
+                                title: "@T("Admin.Common.Edit")",
+                                    width: 100,
+                                    headerAttributes: { style: "text-align:center" },
+                                attributes: { style: "text-align:center" },
+                                template: "<button onclick=\"javascript:OpenWindow('@Url.RouteUrl("Plugin.Widgets.ProductLabel.EditRecord")?id=#=Id#&btnId=btnRefresh&formId=widgets-productlabel-form', 800, 450, true); return false;\" class='btn btn-default'><i class=\"fa fa-pencil\"></i>@T("Admin.Common.Edit")</button>"
+
+                            },  {
+                                command: { name: "destroy", text: "@T("Admin.Common.Delete")" },
+                                    title: "@T("Admin.Common.Delete")",
+                                headerAttributes: { style: "text-align:center" },
+                                        attributes: { style: "text-align:center" },
+                                width: 100
+                            }]
+                        });
+                    });
+                </script>
+            </div>
+            <div class="panel-footer">
+                <input type="submit" id="btnRefresh" style="display: none" />
+                <script type="text/javascript">
+                    $(function () {
+                        $('#btnRefresh').click(function () {
+                            //refresh grid
+                            var grid = $("#widgets-productlabel-grid").data('kendoGrid');
+                            grid.dataSource.read();
+                            return false;
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+}

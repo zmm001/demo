@@ -1,0 +1,21 @@
+﻿@model VendorNavigationModel
+@using Nop.Web.Models.Catalog;
+@if (Model.Vendors.Count > 0)
+{
+
+    <div class="product-toggle hidden-sm hidden-xs" data-toggle="leftbox">
+        <div class="toggle-title">
+            <strong class="toggle-strong">@T("Manufacturers")</strong>
+            <span class="iconfont icon-jia"></span>
+        </div>
+        <ul class="toggle-list">
+            @foreach (var manufacturer in Model.Vendors)
+            {
+                <li>
+                    <a href="@Url.RouteUrl("Vendor", new {SeName = manufacturer.SeName})">@manufacturer.Name</a>
+                </li>
+            }
+            <li><a href="@Url.RouteUrl("VendorList")">@T("Vendors.ViewAll")</a></li>
+        </ul>
+    </div>
+}

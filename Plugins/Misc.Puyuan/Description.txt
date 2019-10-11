@@ -1,0 +1,8 @@
+﻿Group: Misc
+FriendlyName: 普源数据自动同步插件.
+SystemName: Misc.Puyuan
+Version: 1.00
+SupportedVersions: 3.90
+Author: CapsulCN IT
+DisplayOrder: 1
+FileName: Nop.Plugin.Misc.Puyuan.dll

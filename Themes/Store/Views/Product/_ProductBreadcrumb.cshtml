@@ -1,0 +1,42 @@
+﻿@model ProductDetailsModel.ProductBreadcrumbModel
+@using Nop.Core.Domain.Common;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Models.Catalog;
+@{
+    var breadcrumbDelimiter = EngineContext.Current.Resolve<CommonSettings>().BreadcrumbDelimiter;
+}
+@if (Model.Enabled)
+{
+
+    <ul class="crumbs  list-inline hidden-sm hidden-xs">
+        @Html.Widget("productbreadcrumb_before", Model.ProductId)
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a itemprop="url" href="@Url.RouteUrl("HomePage")" title="@T("Categories.Breadcrumb.Top")"><span itemprop="title">@T("Categories.Breadcrumb.Top")</span></a>
+            <span class="delimiter">@breadcrumbDelimiter</span>
+        </li>
+        @foreach (var cat in Model.CategoryBreadcrumb)
+        {
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="@Url.RouteUrl("Category", new {SeName = cat.SeName})" title="@cat.Name" itemprop="url"><span itemprop="title">@cat.Name</span></a><span class="delimiter">@breadcrumbDelimiter</span></li>
+        }
+        <li>
+            <strong class="current-item">@Model.ProductName</strong>
+            @Html.Widget("productbreadcrumb_after", Model.ProductId)
+        </li>
+    </ul>
+    if (this.Request != null && this.Request.UrlReferrer != null && this.Request.UrlReferrer.DnsSafeHost == this.Request.Url.DnsSafeHost)
+     {
+         <a id="goBack" class="visible-sm-inline-block visible-xs-inline-block" onclick="window.history.back();"></a>
+     }
+     else
+     {
+         var last = Model.CategoryBreadcrumb.Skip(Model.CategoryBreadcrumb.Count - 1).FirstOrDefault();
+         if (last != null && Model.CategoryBreadcrumb.Count > 1)
+         {
+             <a id="goBack" class="visible-sm-inline-block visible-xs-inline-block" href="@Url.RouteUrl("Category", new {SeName = last.SeName})" title="@last.Name"></a>
+         }
+         else
+         {
+             <a id="goBack" class="home visible-sm-inline-block visible-xs-inline-block" href="@Url.RouteUrl("HomePage")" title="@T("Categories.Breadcrumb.Top")"></a>
+         }
+     }
+}

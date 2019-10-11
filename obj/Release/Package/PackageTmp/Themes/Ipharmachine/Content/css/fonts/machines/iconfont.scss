@@ -1,0 +1,161 @@
+
+@font-face {
+    font-family: "machine_icon";
+    src: url('iconfont.eot?t=1904011'); /* IE9*/
+    src: url('iconfont.eot?t=1904011#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff2?t=1904011') format('woff2'), url('iconfont.woff?t=1904011') format('woff'), url('iconfont.ttf?t=1904011') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('iconfont.svg?t=1904011#font_family') format('svg'); /* iOS 4.1- */
+}
+
+.icon_machine:before {
+	font-family: "machine_icon" !important;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 22px;
+	line-height: 22px;
+}
+.pc-navigation-linkage .icon_machine:before {
+	font-size: 28px;
+	line-height: 28px;
+}
+.icon_machine-contact:before {
+	content: "\e605";
+}
+
+//blister sheet
+.icon_machine-60:before {
+	content: "\e606";
+}
+
+//blister
+.icon_machine-59:before {
+	content: "\e607";
+}
+
+//counter
+.icon_machine-48:before {
+	content: "\e608";
+}
+
+//induction sealer
+.icon_machine-69:before {
+	content: "\e609";
+}
+
+//capper
+.icon_machine-76:before {
+	content: "\e60a";
+}
+
+//polisher
+.icon_machine-53:before {
+	content: "\e60b";
+}
+
+//filler
+.icon_machine-90:before {
+	content: "\e60c";
+}
+
+//njp
+.icon_machine-77:before {
+	content: "\e60d";
+}
+
+//jtj
+.icon_machine-89:before {
+	content: "\e60e";
+}
+
+//powder filler
+.icon_machine-73:before {
+	content: "\e60f";
+}
+
+//auger filler
+.icon_machine-91:before {
+	content: "\e610";
+}
+
+//mixer
+.icon_machine-47:before {
+	content: "\e611";
+}
+
+//grinder
+.icon_machine-50:before {
+	content: "\e612";
+}
+
+//sifter
+.icon_machine-52:before {
+	content: "\e613";
+}
+
+//desuter
+.icon_machine-88:before {
+	content: "\e614";
+}
+
+//sealer
+.icon_machine-71:before {
+	content: "\e615";
+}
+
+//vacuum conveyor
+.icon_machine-78:before {
+	content: "\e616";
+}
+
+//coder
+.icon_machine-75:before {
+	content: "\e617";
+}
+
+//shrink wrap
+.icon_machine-72:before {
+	content: "\e618";
+}
+
+//labeling
+.icon_machine-74:before {
+	content: "\e619";
+}
+
+//home
+.icon_machine-home:before {
+	content: "\e61a";
+}
+
+//multi function
+.icon_machine-80:before {
+	content: "\e61b";
+}
+
+//granulator
+.icon_machine-51:before {
+	content: "\e61c";
+}
+
+//liquid filler
+.icon_machine-liquid-filler:before {
+	content: "\e61d";
+}
+
+//coater
+.icon_machine-49:before {
+	content: "\e61e";
+}
+//liquid capsule filler
+.icon_machine-93:before {
+    content: "\e61f";
+}
+//counter machine
+.icon_machine-111:before {
+    content: "\e620";
+}
+//tube sealer
+.icon_machine-70:before {
+    content: "\e621";
+}

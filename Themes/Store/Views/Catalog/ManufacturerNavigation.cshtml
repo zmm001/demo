@@ -1,0 +1,21 @@
+﻿@model ManufacturerNavigationModel
+@using Nop.Web.Models.Catalog;
+@if (Model.Manufacturers.Count > 0)
+{
+
+    <div class="product-toggle hidden-sm hidden-xs" data-toggle="leftbox">
+        <div class="toggle-title">
+            <strong class="toggle-strong">@T("Manufacturers")</strong>
+            <span class="iconfont icon-jia"></span>
+        </div>
+        <ul class="toggle-list">
+            @foreach (var manufacturer in Model.Manufacturers)
+            {
+                <li@(Html.Raw(manufacturer.IsActive? " class=\"active\"":""))>
+                    <a href="@Url.RouteUrl("Category", new { SeName = manufacturer.SeName })">@manufacturer.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+    
+}

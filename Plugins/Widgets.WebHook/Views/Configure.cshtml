@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "";
+}
+@model Nop.Plugin.Widgets.WebHook.Models.Configuration
+@using Nop.Web.Framework;
+
+@Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-default">
+        <div class="panel-body">
+            @T("Plugins.Widgets.GoogleSearch.Note")
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.OverrideStoreCheckboxFor(model => model.Brand_OverrideForStore, model => model.Brand, Model.ActiveStoreScopeConfiguration)
+                    @Html.NopLabelFor(model => model.Brand)
+                </div>
+                <div class="col-md-9">
+                    @Html.NopEditorFor(model => model.Brand)
+                    @Html.ValidationMessageFor(model => model.Brand)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-9">
+                    <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" />
+                </div>
+            </div>
+        </div>
+    </div>
+}

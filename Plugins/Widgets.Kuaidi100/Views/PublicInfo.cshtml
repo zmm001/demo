@@ -1,0 +1,57 @@
+﻿@using Nop.Web.Models.Common;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI
+@using Nop.Web.Models.Catalog;
+@using Nop.Core
+@using Nop.Core.Domain.Seo;
+@using System.Globalization
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Directory;
+@using Nop.Plugin.Widgets.Kuaidi100.Service.Models;
+@model AssemblyData
+@{
+
+    Html.AddCssFileParts("~/Plugins/Widgets.Kuaidi100/Content/Kuaidi100.css");
+
+}
+
+<!--product breadcrumb-->
+@if (Model == null || Model.expresses.Count == 0)
+{
+    
+}
+else
+{
+    foreach (var item in Model.expresses)
+    {
+        var datetimeHelper = EngineContext.Current.Resolve<Nop.Services.Helpers.IDateTimeHelper>();
+        var workContext = EngineContext.Current.Resolve<IWorkContext>();
+        var currentCulture = new CultureInfo(workContext.WorkingLanguage.LanguageCulture);
+        <div id="KuaidiDetail">
+            @if (item.Data != null)
+            {
+                <table class="table table-hover table-bordered" style="margin-top: 10px;">
+                    <tbody>
+                        @foreach (var express in item.Data)
+                        {
+                            <tr>
+                                <td>
+                                    @datetimeHelper.ConvertToUserTime(express.Time).ToString("f", currentCulture)
+                                </td>
+                                <td>@express.Context</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div>@T("Widgets.Kuaidi100.ShowErrorMsg")</div>
+            }
+        </div>
+    }
+}
+
+
+
+

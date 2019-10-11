@@ -1,0 +1,60 @@
+﻿@model IList<CategoryModel>
+
+@using Nop.Web.Models.Catalog;
+@if (Model.Count > 0)
+{
+    var col = Model.Count % 4 == 0 ? 3 : (Model.Count == 2 ? 6 : 4);
+    var da = new[] {
+        new[]{12,12},
+        new[]{6,6,12,12},
+        new[]{4,4,4,12,6,6},
+        new[]{3,3,3,3,12,6,6,12},
+        new[]{6,6,4,4,4,12,6,6,6,6},
+        new[]{4,4,4,4,4,4,12,6,6,12,6,6},
+        new[]{4,4,4,3,3,3,3,12,6,6,12,6,6,12},
+        new[]{3,3,3,3,3,3,3,3,12,6,6,6,6,12,6,6},
+        new[]{6,6,4,4,4,3,3,3,3,12,6,6,12,6,6,12,6,6},
+        new[]{6,6,3,3,3,3,3,3,3,3,12,6,6,6,6,12,6,6,6,6},
+        new[]{4,4,4,3,3,3,3,3,3,3,3,12,6,6,6,6,12,6,6,12,6,6},
+        new[]{3,3,3,3,3,3,3,3,3,3,3,3,12,6,6,12,6,6,12,6,6,12,6,6},
+        new[]{6,6,4,4,4,3,3,3,3,3,3,3,3,12,6,6,6,6,12,6,6,6,6,12,6,6},
+    };
+    int[] cols;
+    if (Model.Count <= da.Length)
+    {
+        cols = da[Model.Count - 1];
+    }
+    else
+    {
+        cols = new int[Model.Count * 2];
+        for (var i = 0; i < Model.Count; i++)
+        {
+            cols[i] = col;
+            cols[i + Model.Count] = 6;
+        }
+    }
+    var index = 0;
+    <div class="goods-catalogs">
+        <div class="catalogs-title">@T("HomePage.Categories")</div>
+        <div class="catalogs-box-wrapper">
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="mycol col-md-@cols[index] col-xs-@cols[index + Model.Count]">
+                        <div class="box-item">
+                            <a href="@Url.RouteUrl("Category", new {SeName = item.SeName})" title="@item.PictureModel.Title" class="item-container">
+                                <div class="item-pic">
+                                    <img alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title" />
+                                </div>
+                                <h3 class="item-title">@item.Name</h3>
+                            </a>
+                        </div>
+                    </div>
+                    index++;
+                }
+            </div>
+        </div>
+    </div>
+}

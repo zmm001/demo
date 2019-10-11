@@ -1,0 +1,85 @@
+﻿@model IList<ProductOverviewModel>
+@using Nop.Core
+@using Nop.Core.Caching
+@using Nop.Core.Infrastructure
+@using Nop.Services.Catalog
+@using Nop.Services.Directory
+@using Nop.Services.Discounts
+@using Nop.Services.Localization
+@using Nop.Web.Models.Catalog;
+@using Nop.Services.Configuration;
+@if (Model.Count > 0)
+{
+
+    <div class="left-product-box hidden-xs hidden-sm">
+        <a class="bought-title">@T("Products.RecentlyViewedProducts")</a>
+        <div class="bought-box-wrapper">
+            <div class="row box-row">
+                @foreach (var product in Model)
+                {
+                    var pc = EngineContext.Current.Resolve<IPriceCalculationService>();
+                    var currencyService = EngineContext.Current.Resolve<ICurrencyService>();
+                    var priceFormatter = EngineContext.Current.Resolve<IPriceFormatter>();
+                    //                    var cache = EngineContext.Current.Resolve<ICacheManager>();
+                    var productService = EngineContext.Current.Resolve<IProductService>();
+                    var localizationService = EngineContext.Current.Resolve<ILocalizationService>();
+                    var workContext = EngineContext.Current.Resolve<IWorkContext>();
+                    //                    var key = string.Format("Nop.pres.product.item-price-{0}-{1}", product.Id, _workContext.CurrentCustomer.Id);
+
+
+                    var p = productService.GetProductById(product.Id);
+                    var discountName = "";
+                    List<DiscountForCaching> dl;
+                    decimal a;
+                    string price;
+                    if (!p.CallForPrice)
+                    {
+                        price = priceFormatter.FormatPrice(currencyService.ConvertFromPrimaryStoreCurrency(pc.GetFinalPrice(p, workContext.CurrentCustomer, 0M, true, 1, null, null, out a, out dl), workContext.WorkingCurrency));
+                        if (dl != null && dl.Count > 0)
+                        {
+                            discountName = dl[0].Name;
+                        }
+                    }
+                    else
+                    {
+                        price = ""; //localizationService.GetResource("Products.CallForPrice");
+                    }
+
+
+                    <div class="mycol col-md-12 col-xs-4">
+                        <div class="row box-item">
+                            @if (!String.IsNullOrEmpty(product.DefaultPictureModel.ImageUrl))
+                            {
+                            <div class="col-md-5 box-picture">
+                                @{
+                                    var settingService = EngineContext.Current.Resolve<ISettingService>();
+                                    var cdnAddress = settingService.GetSetting("maxcdnsetting.cdnaddress").Value;
+                                }
+                                <a href="@Url.RouteUrl("Product", new { SeName = product.SeName })" title="@product.DefaultPictureModel.Title" style="display: block;position: relative;width: 100%;    height: 0;background: #fff;padding-bottom: 100%;">
+                                    <img style="position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: auto;max-width: 100%;max-height: 100%;width: unset;height: unset;" alt="@product.DefaultPictureModel.AlternateText" class="lazyload " src="@(cdnAddress==""?"":cdnAddress)/Themes/Ipharmachine/Content/images/loading.gif" data-original="@product.DefaultPictureModel.ImageUrl" title="@product.DefaultPictureModel.Title" />
+                                </a>
+                            </div>
+                            }
+                            else
+                            {
+                                <div class="col-md-5 box-picture">
+
+                                </div>
+                            }
+                            <div class="col-md-7 box-inner">
+                                <a class="box-linkage" href="@Url.RouteUrl("Product", new { SeName = product.SeName })">@product.Name</a>
+                                <div class="box-price">@price</div>
+                            </div>
+                            @if (!string.IsNullOrWhiteSpace(discountName))
+                            {
+                                <div class="item-ribbon"><span>@discountName</span></div>
+
+                            }
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+}

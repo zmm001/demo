@@ -1,0 +1,108 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Routing
+@using Nop.Core.Infrastructure
+
+
+@{
+    Layout = "";
+
+}
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "widgets-customized-form" }))
+{
+
+    @Html.AntiForgeryToken()
+
+
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="widgets-customized-grid"></div>
+                <script>
+                    $(function() {
+                        $("#widgets-customized-grid").kendoGrid({
+                            dataSource: {
+                                type: "json",
+                                transport: {
+                                    read: {
+                                        url: "@Html.Raw(Url.Action("ListRecords", "WidgetsCustomized", new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Widgets.Customized.Controllers" }, { "area", "" } }))",
+                                        type: "POST",
+                                        dataType: "json",
+                                        data: addAntiForgeryToken
+                                    },
+                                    destroy: {
+                                        url: "@Html.Raw(Url.Action("DeleteRecord", "WidgetsCustomized", new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Widgets.Customized.Controllers" }, { "area", "" } }))",
+                                        type: "POST",
+                                        dataType: "json",
+                                        data: addAntiForgeryToken
+                                    }
+                                },
+                                schema: {
+
+                                    model: {
+                                        id: "Id"
+                                    }
+                                },
+                                requestEnd: function (e) {
+                                    if (e.type == "update") {
+                                        this.read();
+                                    }
+                                },
+                                error: function (e) {
+                                    display_kendoui_grid_error(e);
+                                    // Cancel the changes
+                                    this.cancelChanges();
+                                },
+                                serverPaging: true,
+                                serverFiltering: true,
+                                serverSorting: false
+                            },
+                            editable: {
+                                confirmation: false,
+                                mode: "inline"
+                            },
+                            scrollable: false,
+                            columns: [{
+                                field: "WidgetZone",
+                                title: "@T("Plugins.Widgets.Customized.WidgetZone")",
+                                width: 300
+                            }, {
+                                field: "StoreName",
+                                title: "@T("Plugins.Widgets.Customized.StoreId")",
+                                width: 300
+                            }, {
+                                field: "LanguageName",
+                                title: "@T("Plugins.Widgets.Customized.LanguageId")",
+                                width: 200
+                            },{
+                                field: "Id",
+                                title: "@T("Admin.Common.Edit")",
+                                width: 100,
+                                template: "<button onclick=\"javascript:OpenWindow('@Url.RouteUrl("Plugin.Widgets.Customized.EditRecord")?id=#=Id#&btnId=btnRefresh&formId=widgets-customized-form', 800, 450, true); return false;\" class='btn btn-default'><i class=\"fa fa-pencil\"></i>@T("Admin.Common.Edit")</button>"
+
+                            },  {
+                                command: { name: "destroy", text: "@T("Admin.Common.Delete")" },
+                                title: "@T("Admin.Common.Delete")",
+                                width: 100
+                            }]
+                        });
+                    });
+                </script>
+            </div>
+            <div class="panel-footer">
+                <input type="submit" id="btnAddNewOption" value="@T("Plugins.Widgets.Customized.AddRecord")" onclick="javascript:OpenWindow('@Url.RouteUrl("Plugin.Widgets.Customized.AddRecord")?btnId=btnRefresh&amp;formId=widgets-customized-form', 800, 450, true); return false;" class="btn btn-primary" />
+                <input type="submit" id="btnRefresh" style="display: none" />
+                <script type="text/javascript">
+                    $(function () {
+                        $('#btnRefresh').click(function () {
+                            //refresh grid
+                            var grid = $("#widgets-customized-grid").data('kendoGrid');
+                            grid.dataSource.read();
+                            return false;
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,37 @@
+﻿@model IList<ProductOverviewModel>
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
+    if (canonicalUrlsEnabled)
+    {
+        Html.AddCanonicalUrlParts(string.IsNullOrEmpty(Request.Url.Query) ? Request.Url.AbsoluteUri : Request.Url.AbsoluteUri.Replace(Request.Url.Query, ""));
+    }
+
+    //title
+    Html.AddTitleParts(T("PageTitle.RecentlyViewedProducts").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-recently-viewed-products-page");
+    Html.AddCssFileParts("~/Themes/Store/Content/css/pages/productList.css");
+
+}
+@using Nop.Web.Models.Catalog;
+
+
+<div class="page-title">
+    <h1>@T("Products.RecentlyViewedProducts")</h1>
+</div>
+
+@if (Model.Count > 0)
+{
+    <div class="goods-shopping-wrapper">
+        <div class="row shopping-row">
+            @foreach (var product in Model)
+            {
+                @Html.Partial("_ProductBox", product)
+            }
+        </div>
+    </div>
+}

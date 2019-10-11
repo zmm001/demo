@@ -1,0 +1,24 @@
+﻿@using Nop.Core.Domain;
+@using Nop.Core.Domain.Common;
+@using Nop.Core.Domain.Seo
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Customers
+@using Nop.Services.Logging
+@using Nop.Services.Security;
+
+@{
+    Html.AddCssFileParts("~/Themes/Store/Content/css/pages/productDetails.css");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/pages/productDetails.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/photoswipe.min.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/swiper.jquery.min.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/photoswipe-ui-default.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Store/Content/js/extend/photoswipe-custom.js");
+}
+    <html>
+<head></head>
+<body>
+    @RenderBody()
+
+    @Html.NopScripts(this.Url, ResourceLocation.Foot)
+</body>
+    </html>

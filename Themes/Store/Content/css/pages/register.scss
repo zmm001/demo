@@ -1,0 +1,12 @@
+@import "../bootstrap/bootstrap/variables";
+@import "../extend/variable";
+@import "../extend/accountNumber";
+.result {
+    font-size: 14px;
+    padding: 10px 20px;
+    box-shadow: 0 0 2px rgba(0,0,0,.3);
+    border-radius: 2px;
+    background:#fff;
+    margin-bottom:10px;
+    text-align:center;
+}

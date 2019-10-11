@@ -1,0 +1,15 @@
+﻿@model TaxTypeSelectorModel
+@using Nop.Core;
+@using Nop.Core.Domain.Tax;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Models.Common;
+@{
+    var webHelper = EngineContext.Current.Resolve<IWebHelper>();
+    }
+<div class="selectors-select">
+    <span class="selectros-text">@(Model.CurrentTaxType== TaxDisplayType.IncludingTax? T("Tax.Inclusive"): T("Tax.Exclusive"))</span>
+    <ul class="selectros-list">
+        <li><a href="@webHelper.ModifyQueryString(Url.RouteUrl("ChangeTaxType", new { customertaxtype = ((int)TaxDisplayType.IncludingTax) }), "returnurl=" + HttpUtility.UrlEncode(HttpContext.Current.Request.RawUrl), null)">@T("Tax.Inclusive")</a></li>
+        <li><a href="@webHelper.ModifyQueryString(Url.RouteUrl("ChangeTaxType", new { customertaxtype = ((int)TaxDisplayType.ExcludingTax) }), "returnurl=" + HttpUtility.UrlEncode(HttpContext.Current.Request.RawUrl), null)">@T("Tax.Exclusive")</a></li>
+    </ul>
+</div>

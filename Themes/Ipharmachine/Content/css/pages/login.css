@@ -1,0 +1,117 @@
+﻿@charset "UTF-8";
+/*
+ *  b- 为background
+ *  c- 为color
+ *  bo- 为border-color
+ *  r- 为  rotate
+ *  br- 为 border-radius
+ *  bx- 为 box-shadow
+ *  mb- 为 margin-bottom
+ *  fs- 为 font-size
+ * */
+/*
+ * login
+ * register
+ * giveme
+ * my系列
+ * l-s
+ */
+/*$ribbon-bckaground-color: rgba(231, 76, 60, 1);
+$ribbon-color: #fff;
+$ribbon-line-height: 2.4;
+
+$ribbon-padding: 0 1.6em;
+$item-ribbon-line-height: 30px;
+$item-ribbon-w: $item-ribbon-line-height * 4;*/
+.login {
+  overflow: hidden; }
+
+.login-title {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1; }
+  @media (max-width: 991px) {
+    .login-title {
+      font-size: 24px; } }
+  @media (max-width: 767px) {
+    .login-title {
+      font-size: 20px; } }
+
+@media (max-width: 991px) {
+  .row {
+    margin: 0 -10px; } }
+
+.mycol {
+  padding: 5px;
+  text-align: center; }
+
+.box-title {
+  display: block;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 10px 0; }
+  @media (max-width: 767px) {
+    .box-title {
+      font-size: 20px; } }
+
+.login-box-container {
+  min-height: 195px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  background: #fff;
+  margin: 10px 0 30px;
+  padding: 40px 30px 10px;
+  font-size: 14px;
+  text-align: left;
+  min-height: 220px; }
+
+.login-submit .form-group {
+  margin-bottom: 25px; }
+  @media (max-width: 767px) {
+    .login-submit .form-group {
+      padding: 0 8px; } }
+  .login-submit .form-group .control-label {
+    font-size: 14px; }
+  .login-submit .form-group .inputs {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0; }
+    .login-submit .form-group .inputs:focus {
+      outline: none;
+      box-shadow: none; }
+    @media (max-width: 767px) {
+      .login-submit .form-group .inputs {
+        text-align: center; } }
+  .login-submit .form-group .checkbox {
+    font-size: 14px; }
+
+.buttons {
+  width: 140px;
+  height: 35px;
+  line-height: 17px;
+  margin: 0 auto;
+  background-color: #21a5ae;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px; }
+  .buttons:hover {
+    background-color: rgba(33, 165, 174, 0.7); }
+
+.login-registration-info h2 {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1; }
+  @media (max-width: 991px) {
+    .login-registration-info h2 {
+      font-size: 24px; } }
+  @media (max-width: 767px) {
+    .login-registration-info h2 {
+      font-size: 20px; } }
+
+.login-registration-info p {
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 10px 40px; }

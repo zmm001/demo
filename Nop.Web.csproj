@@ -1,0 +1,2722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F1F649C-1020-45BE-A487-F416D9297FF3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nop.Web</RootNamespace>
+    <AssemblyName>Nop.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>f94c814a</NuGetPackageImportStamp>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=4.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.4.4.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Mvc5.4.0.1\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.SqlServerCompact.6.1.3\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.6.4.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.MVC5.6.4.0\lib\Net45\FluentValidation.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaxMind.Db, Version=2.0.0.0, Culture=neutral, PublicKeyToken=66afa4cc5ae853ac, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MaxMind.Db.2.1.3\lib\net45\MaxMind.Db.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaxMind.GeoIP2, Version=2.6.0.0, Culture=neutral, PublicKeyToken=66afa4cc5ae853ac, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MaxMind.GeoIP2.2.7.2\lib\net45\MaxMind.GeoIP2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.8.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.8.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Services.Client.5.8.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.RedisSessionStateProvider, Version=2.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.RedisSessionStateProvider.2.2.3\lib\net40\Microsoft.Web.RedisSessionStateProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=3.2.0.157, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\MiniProfiler.3.2.0.157\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Mvc">
+      <HintPath>..\..\packages\MiniProfiler.MVC4.3.0.11\lib\net40\MiniProfiler.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis.StrongName, Version=1.2.1.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\StackExchange.Redis.StrongName.1.2.1\lib\net45\StackExchange.Redis.StrongName.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BasePublicController.cs" />
+    <Compile Include="Controllers\BoardsController.cs" />
+    <Compile Include="Controllers\BackInStockSubscriptionController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\BackwardCompatibility1XController.cs" />
+    <Compile Include="Controllers\BackwardCompatibility2XController.cs" />
+    <Compile Include="Controllers\VendorController.cs" />
+    <Compile Include="Controllers\ReturnRequestController.cs" />
+    <Compile Include="Controllers\KeepAliveController.cs" />
+    <Compile Include="Controllers\ExternalAuthenticationController.cs" />
+    <Compile Include="Controllers\InstallController.cs" />
+    <Compile Include="Controllers\PollController.cs" />
+    <Compile Include="Controllers\WidgetController.cs" />
+    <Compile Include="Controllers\PrivateMessagesController.cs" />
+    <Compile Include="Controllers\TopicController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\NewsletterController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\DownloadController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\AttributeParserHelper.cs" />
+    <Compile Include="Extensions\HtmlExtensions.cs" />
+    <Compile Include="Extensions\MappingExtensions.cs" />
+    <Compile Include="Factories\IAddressModelFactory.cs" />
+    <Compile Include="Factories\AddressModelFactory.cs" />
+    <Compile Include="Factories\ICheckoutModelFactory.cs" />
+    <Compile Include="Factories\CheckoutModelFactory.cs" />
+    <Compile Include="Factories\ICustomerModelFactory.cs" />
+    <Compile Include="Factories\CustomerModelFactory.cs" />
+    <Compile Include="Factories\ICatalogModelFactory.cs" />
+    <Compile Include="Factories\CatalogModelFactory.cs" />
+    <Compile Include="Factories\ICommonModelFactory.cs" />
+    <Compile Include="Factories\IExternalAuthenticationModelFactory.cs" />
+    <Compile Include="Factories\ExternalAuthenticationModelFactory.cs" />
+    <Compile Include="Factories\ICountryModelFactory.cs" />
+    <Compile Include="Factories\CountryModelFactory.cs" />
+    <Compile Include="Factories\IForumModelFactory.cs" />
+    <Compile Include="Factories\ForumModelFactory.cs" />
+    <Compile Include="Factories\IBlogModelFactory.cs" />
+    <Compile Include="Factories\BlogModelFactory.cs" />
+    <Compile Include="Factories\IOrderModelFactory.cs" />
+    <Compile Include="Factories\INewsletterModelFactory.cs" />
+    <Compile Include="Factories\INewsModelFactory.cs" />
+    <Compile Include="Factories\NewsModelFactory.cs" />
+    <Compile Include="Factories\NewsletterModelFactory.cs" />
+    <Compile Include="Factories\OrderModelFactory.cs" />
+    <Compile Include="Factories\IProfileModelFactory.cs" />
+    <Compile Include="Factories\IPrivateMessagesModelFactory.cs" />
+    <Compile Include="Factories\IPollModelFactory.cs" />
+    <Compile Include="Factories\PollModelFactory.cs" />
+    <Compile Include="Factories\PrivateMessagesModelFactory.cs" />
+    <Compile Include="Factories\IProductModelFactory.cs" />
+    <Compile Include="Factories\ProductModelFactory.cs" />
+    <Compile Include="Factories\ProfileModelFactory.cs" />
+    <Compile Include="Factories\IReturnRequestModelFactory.cs" />
+    <Compile Include="Factories\ReturnRequestModelFactory.cs" />
+    <Compile Include="Factories\IWidgetModelFactory.cs" />
+    <Compile Include="Factories\IVendorModelFactory.cs" />
+    <Compile Include="Factories\ITopicModelFactory.cs" />
+    <Compile Include="Factories\IShoppingCartModelFactory.cs" />
+    <Compile Include="Factories\ShoppingCartModelFactory.cs" />
+    <Compile Include="Factories\TopicModelFactory.cs" />
+    <Compile Include="Factories\VendorModelFactory.cs" />
+    <Compile Include="Factories\WidgetModelFactory.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Cache\ModelCacheEventConsumer.cs" />
+    <Compile Include="Infrastructure\BackwardCompatibility2XRouteProvider.cs" />
+    <Compile Include="Factories\CommonModelFactory.cs" />
+    <Compile Include="Infrastructure\GenericUrlRouteProvider.cs" />
+    <Compile Include="Infrastructure\Installation\IInstallationLocalizationService.cs" />
+    <Compile Include="Infrastructure\Installation\InstallationLanguage.cs" />
+    <Compile Include="Infrastructure\Installation\InstallationLocalizationService.cs" />
+    <Compile Include="Infrastructure\DependencyRegistrar.cs" />
+    <Compile Include="Infrastructure\BackwardCompatibility1XRouteProvider.cs" />
+    <Compile Include="Infrastructure\RouteProvider.cs" />
+    <Compile Include="Models\Blogs\BlogPostListModel.cs" />
+    <Compile Include="Models\Blogs\BlogPagingFilteringModel.cs" />
+    <Compile Include="Models\Blogs\BlogPostTagModel.cs" />
+    <Compile Include="Models\Blogs\BlogPostModel.cs" />
+    <Compile Include="Models\Blogs\BlogCommentModel.cs" />
+    <Compile Include="Models\Blogs\BlogPostYearMonthModel.cs" />
+    <Compile Include="Models\Blogs\AddBlogCommentModel.cs" />
+    <Compile Include="Models\Blogs\BlogPostTagListModel.cs" />
+    <Compile Include="Models\Boards\ActiveDiscussionsModel.cs" />
+    <Compile Include="Models\Boards\BoardsIndexModel.cs" />
+    <Compile Include="Models\Boards\ForumRowModel.cs" />
+    <Compile Include="Models\Boards\ForumTopicRowModel.cs" />
+    <Compile Include="Models\Boards\EditForumPostModel.cs" />
+    <Compile Include="Models\Boards\ForumBreadcrumbModel.cs" />
+    <Compile Include="Models\Boards\ForumGroupModel.cs" />
+    <Compile Include="Models\Boards\ForumPageModel.cs" />
+    <Compile Include="Models\Boards\ForumPostModel.cs" />
+    <Compile Include="Models\Boards\EditForumTopicModel.cs" />
+    <Compile Include="Models\Boards\ForumTopicPageModel.cs" />
+    <Compile Include="Models\Boards\LastPostModel.cs" />
+    <Compile Include="Models\Boards\SearchModel.cs" />
+    <Compile Include="Models\Boards\TopicMoveModel.cs" />
+    <Compile Include="Models\Catalog\BackInStockSubscribeModel.cs" />
+    <Compile Include="Models\Catalog\CategorySimpleModel.cs" />
+    <Compile Include="Models\Catalog\CompareProductsModel.cs" />
+    <Compile Include="Models\Catalog\CustomerProductReviewModel.cs" />
+    <Compile Include="Models\Catalog\VendorModel.cs" />
+    <Compile Include="Models\Catalog\VendorNavigationModel.cs" />
+    <Compile Include="Models\Catalog\ProductOverviewModel.cs" />
+    <Compile Include="Models\Catalog\SearchBoxModel.cs" />
+    <Compile Include="Models\Catalog\SearchModel.cs" />
+    <Compile Include="Models\Catalog\ProductsByTagModel.cs" />
+    <Compile Include="Models\Catalog\PopularProductTagsModel.cs" />
+    <Compile Include="Models\Catalog\CategoryModel.cs" />
+    <Compile Include="Models\Catalog\CategoryNavigationModel.cs" />
+    <Compile Include="Models\Catalog\ProductTagModel.cs" />
+    <Compile Include="Models\Catalog\ProductEmailAFriendModel.cs" />
+    <Compile Include="Models\Catalog\ProductSpecificationModel.cs" />
+    <Compile Include="Models\Catalog\ProductReviewModel.cs" />
+    <Compile Include="Models\Catalog\ManufacturerModel.cs" />
+    <Compile Include="Models\Catalog\ManufacturerNavigationModel.cs" />
+    <Compile Include="Models\Catalog\ProductDetailsModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutPickupPointModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutShippingAddressModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutProgressModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutBillingAddressModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutShippingMethodModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutPaymentMethodModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutPaymentInfoModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutConfirmModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutCompletedModel.cs" />
+    <Compile Include="Models\Checkout\OnePageCheckoutModel.cs" />
+    <Compile Include="Models\Checkout\UpdateSectionJsonModel.cs" />
+    <Compile Include="Models\Common\AddressModel.cs" />
+    <Compile Include="Models\Common\AdminHeaderLinksModel.cs" />
+    <Compile Include="Models\Common\AddressAttributeModel.cs" />
+    <Compile Include="Models\Common\ContactVendorModel.cs" />
+    <Compile Include="Models\Common\FooterModel.cs" />
+    <Compile Include="Models\Common\FaviconModel.cs" />
+    <Compile Include="Models\Common\LogoModel.cs" />
+    <Compile Include="Models\Common\PagerModel.cs" />
+    <Compile Include="Models\Common\SocialModel.cs" />
+    <Compile Include="Models\Common\StoreThemeModel.cs" />
+    <Compile Include="Models\Common\LanguageSelectorModel.cs" />
+    <Compile Include="Models\Common\SitemapModel.cs" />
+    <Compile Include="Models\Customer\EmailRevalidationModel.cs" />
+    <Compile Include="Models\Vendors\ApplyVendorModel.cs" />
+    <Compile Include="Models\Customer\CustomerAttributeModel.cs" />
+    <Compile Include="Models\Catalog\CustomerBackInStockSubscriptionsModel.cs" />
+    <Compile Include="Models\Boards\CustomerForumSubscriptionsModel.cs" />
+    <Compile Include="Models\Customer\ExternalAuthenticationMethodModel.cs" />
+    <Compile Include="Models\Install\InstallModel.cs" />
+    <Compile Include="Models\Cms\RenderWidgetModel.cs" />
+    <Compile Include="Models\News\AddNewsCommentModel.cs" />
+    <Compile Include="Models\News\HomePageNewsItemsModel.cs" />
+    <Compile Include="Models\News\NewsCommentModel.cs" />
+    <Compile Include="Models\News\NewsPagingFilteringModel.cs" />
+    <Compile Include="Models\News\NewsItemListModel.cs" />
+    <Compile Include="Models\News\NewsItemModel.cs" />
+    <Compile Include="Models\Customer\AccountActivationModel.cs" />
+    <Compile Include="Models\Newsletter\SubscriptionActivationModel.cs" />
+    <Compile Include="Models\Newsletter\NewsletterBoxModel.cs" />
+    <Compile Include="Models\Customer\ChangePasswordModel.cs" />
+    <Compile Include="Models\Customer\PasswordRecoveryConfirmModel.cs" />
+    <Compile Include="Models\Customer\PaswordRecoveryModel.cs" />
+    <Compile Include="Models\Order\CustomerReturnRequestsModel.cs" />
+    <Compile Include="Models\Customer\CustomerDownloadableProductsModel.cs" />
+    <Compile Include="Models\Order\CustomerOrderListModel.cs" />
+    <Compile Include="Models\Customer\CustomerAvatarModel.cs" />
+    <Compile Include="Models\Customer\CustomerAddressEditModel.cs" />
+    <Compile Include="Models\Customer\CustomerAddressListModel.cs" />
+    <Compile Include="Models\Order\CustomerRewardPointsModel.cs" />
+    <Compile Include="Models\Customer\CustomerNavigationModel.cs" />
+    <Compile Include="Models\Customer\CustomerInfoModel.cs" />
+    <Compile Include="Models\Customer\RegisterResultModel.cs" />
+    <Compile Include="Models\Customer\RegisterModel.cs" />
+    <Compile Include="Models\Customer\LoginModel.cs" />
+    <Compile Include="Models\Catalog\TopMenuModel.cs" />
+    <Compile Include="Models\Common\ContactUsModel.cs" />
+    <Compile Include="Models\Common\TaxTypeSelectorModel.cs" />
+    <Compile Include="Models\Common\CurrencyModel.cs" />
+    <Compile Include="Models\Common\CurrencySelectorModel.cs" />
+    <Compile Include="Models\Common\HeaderLinksModel.cs" />
+    <Compile Include="Models\Common\LanguageModel.cs" />
+    <Compile Include="Models\Common\StoreThemeSelectorModel.cs" />
+    <Compile Include="Models\Catalog\CatalogPagingFilteringModel.cs" />
+    <Compile Include="Models\Media\PictureModel.cs" />
+    <Compile Include="Models\Order\ShipmentDetailsModel.cs" />
+    <Compile Include="Models\Order\SubmitReturnRequestModel.cs" />
+    <Compile Include="Models\Order\OrderDetailsModel.cs" />
+    <Compile Include="Models\Polls\PollModel.cs" />
+    <Compile Include="Models\PrivateMessages\SendPrivateMessageModel.cs" />
+    <Compile Include="Models\PrivateMessages\PrivateMessageIndexModel.cs" />
+    <Compile Include="Models\PrivateMessages\PrivateMessageListModel.cs" />
+    <Compile Include="Models\PrivateMessages\PrivateMessageModel.cs" />
+    <Compile Include="Models\Profile\ProfileInfoModel.cs" />
+    <Compile Include="Models\Profile\ProfileIndexModel.cs" />
+    <Compile Include="Models\Profile\PostsModel.cs" />
+    <Compile Include="Models\Profile\ProfilePostsModel.cs" />
+    <Compile Include="Models\ShoppingCart\MiniShoppingCartModel.cs" />
+    <Compile Include="Models\ShoppingCart\WishlistEmailAFriendModel.cs" />
+    <Compile Include="Models\ShoppingCart\WishlistModel.cs" />
+    <Compile Include="Models\ShoppingCart\OrderTotalsModel.cs" />
+    <Compile Include="Models\ShoppingCart\EstimateShippingModel.cs" />
+    <Compile Include="Models\ShoppingCart\ShoppingCartModel.cs" />
+    <Compile Include="Models\Topics\TopicModel.cs" />
+    <Compile Include="Models\Vendors\VendorInfoModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\Blogs\BlogPostValidator.cs" />
+    <Compile Include="Validators\Boards\EditForumPostValidator.cs" />
+    <Compile Include="Validators\Boards\EditForumTopicValidator.cs" />
+    <Compile Include="Validators\Catalog\ProductEmailAFriendValidator.cs" />
+    <Compile Include="Validators\Catalog\ProductReviewsValidator.cs" />
+    <Compile Include="Validators\Common\AddressValidator.cs" />
+    <Compile Include="Validators\Common\ContactUsValidator.cs" />
+    <Compile Include="Validators\Common\ContactVendorValidator.cs" />
+    <Compile Include="Validators\Customer\ChangePasswordValidator.cs" />
+    <Compile Include="Validators\Customer\CustomerInfoValidator.cs" />
+    <Compile Include="Validators\Customer\LoginValidator.cs" />
+    <Compile Include="Validators\Customer\PasswordRecoveryConfirmValidator.cs" />
+    <Compile Include="Validators\Customer\PasswordRecoveryValidator.cs" />
+    <Compile Include="Validators\Customer\RegisterValidator.cs" />
+    <Compile Include="Validators\Install\InstallValidator.cs" />
+    <Compile Include="Validators\News\NewsItemValidator.cs" />
+    <Compile Include="Validators\PrivateMessages\SendPrivateMessageValidator.cs" />
+    <Compile Include="Validators\ShoppingCart\WishlistEmailAFriendValidator.cs" />
+    <Compile Include="Validators\Vendors\ApplyVendorValidator.cs" />
+    <Compile Include="Validators\Vendors\VendorInfoValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\browscap.crawlersonly.xml" />
+    <Content Include="App_Data\browscap.xml" />
+    <Content Include="App_Data\InstalledPlugins.txt" />
+    <Content Include="App_Data\Install\Fast\create_required_data.sql" />
+    <Content Include="App_Data\Install\Fast\create_sample_data.sql" />
+    <Content Include="App_Data\Install\Fast\readme.txt" />
+    <Content Include="App_Data\Localization\Installation\installation.ar.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.bg.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.bn-bd.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.bs-Latn-BA.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.cz.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.da.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.de.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.fr.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.gr.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.he.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.hi.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.hr-HR.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.hu.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.hy-am.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.id.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.is.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.it.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.jp.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.lt.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.nl.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.pl.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.pt-br.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.ro.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.ru.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Localization\Installation\installation.en.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Localization\Installation\installation.sk.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.sp.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.sv.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.tr.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.ur.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.vi.xml" />
+    <Content Include="App_Data\Localization\Installation\installation.zhs.xml" />
+    <Content Include="App_Data\Install\SqlServer.StoredProcedures.sql" />
+    <Content Include="App_Data\Localization\defaultResources.nopres.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Install\SqlServer.Indexes.sql" />
+    <Content Include="App_Data\Nop.Db.sdf" />
+    <Content Include="App_Data\Settings.txt" />
+    <Content Include="App_Data\Settings1.txt" />
+    <Content Include="Content\BBEditor\ed.js" />
+    <Content Include="Content\BBEditor\images\bold.gif" />
+    <Content Include="Content\BBEditor\images\code.gif" />
+    <Content Include="Content\BBEditor\images\italic.gif" />
+    <Content Include="Content\BBEditor\images\link.gif" />
+    <Content Include="Content\BBEditor\images\ordered.gif" />
+    <Content Include="Content\BBEditor\images\picture.gif" />
+    <Content Include="Content\BBEditor\images\quote.gif" />
+    <Content Include="Content\BBEditor\images\underline.gif" />
+    <Content Include="Content\BBEditor\images\unlink.gif" />
+    <Content Include="Content\BBEditor\images\unordered.gif" />
+    <Content Include="Content\files\ExportImport\Index.htm" />
+    <Content Include="Content\files\Index.htm" />
+    <Content Include="Content\Images\default-image.png" />
+    <Content Include="Content\install\images\logo.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\animated-overlay.gif" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\jquery-ui-themes\smoothness\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Content\jquery-ui-themes\smoothness\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="Content\magnific-popup\magnific-popup.css" />
+    <Content Include="Content\samples\category_accessories.jpg" />
+    <Content Include="Content\samples\category_apparel.jpeg" />
+    <Content Include="Content\samples\category_apparel_accessories.jpg" />
+    <Content Include="Content\samples\category_book.jpeg" />
+    <Content Include="Content\samples\category_camera_photo.jpeg" />
+    <Content Include="Content\samples\category_cell_phones.jpeg" />
+    <Content Include="Content\samples\category_clothing.jpeg" />
+    <Content Include="Content\samples\category_computers.jpeg" />
+    <Content Include="Content\samples\category_desktops.jpg" />
+    <Content Include="Content\samples\category_digital_downloads.jpeg" />
+    <Content Include="Content\samples\category_electronics.jpeg" />
+    <Content Include="Content\samples\category_gift_cards.jpeg" />
+    <Content Include="Content\samples\category_jewelry.jpeg" />
+    <Content Include="Content\samples\category_notebooks.jpg" />
+    <Content Include="Content\samples\category_shoes.jpeg" />
+    <Content Include="Content\samples\category_software.jpg" />
+    <Content Include="Content\samples\manufacturer_apple.jpg" />
+    <Content Include="Content\samples\manufacturer_hp.jpg" />
+    <Content Include="Content\samples\manufacturer_nike.jpg" />
+    <Content Include="Content\samples\product_100giftcart.jpeg" />
+    <Content Include="Content\samples\product_25giftcart.jpeg" />
+    <Content Include="Content\samples\product_50giftcart.jpeg" />
+    <Content Include="Content\samples\product_adidas.jpg" />
+    <Content Include="Content\samples\product_adidas_2.jpg" />
+    <Content Include="Content\samples\product_adidas_3.jpg" />
+    <Content Include="Content\samples\product_AdobePhotoshop.jpeg" />
+    <Content Include="Content\samples\product_asuspc_N551JK.jpeg" />
+    <Content Include="Content\samples\product_Belt.jpeg" />
+    <Content Include="Content\samples\product_CustomTShirt.jpeg" />
+    <Content Include="Content\samples\product_Desktops_1.jpeg" />
+    <Content Include="Content\samples\product_Desktops_2.jpeg" />
+    <Content Include="Content\samples\product_DigitalStorm.jpeg" />
+    <Content Include="Content\samples\product_EngagementRing_1.jpg" />
+    <Content Include="Content\samples\product_Fahrenheit451.jpeg" />
+    <Content Include="Content\samples\product_FirstPrizePies.jpeg" />
+    <Content Include="Content\samples\product_FlowerBracelet.jpg" />
+    <Content Include="Content\samples\product_GemstoneNecklaces.jpg" />
+    <Content Include="Content\samples\product_hat.jpg" />
+    <Content Include="Content\samples\product_HpEnvy6.jpeg" />
+    <Content Include="Content\samples\product_HPSpectreXT_1.jpeg" />
+    <Content Include="Content\samples\product_HPSpectreXT_2.jpeg" />
+    <Content Include="Content\samples\product_HTC_One_M8.jpeg" />
+    <Content Include="Content\samples\product_HTC_One_Mini_1.jpeg" />
+    <Content Include="Content\samples\product_HTC_One_Mini_2.jpeg" />
+    <Content Include="Content\samples\product_iCam.jpeg" />
+    <Content Include="Content\samples\product_IfYouWait.jpeg" />
+    <Content Include="Content\samples\product_IfYouWait_2.txt" />
+    <Content Include="Content\samples\product_LeicaT.jpeg" />
+    <Content Include="Content\samples\product_LenovoIdeaCentre.jpeg" />
+    <Content Include="Content\samples\product_LenovoThinkpad.jpeg" />
+    <Content Include="Content\samples\product_LeviJeans_1.jpg" />
+    <Content Include="Content\samples\product_LeviJeans_2.jpg" />
+    <Content Include="Content\samples\product_Lumia1020.jpeg" />
+    <Content Include="Content\samples\product_macbook_1.jpeg" />
+    <Content Include="Content\samples\product_macbook_2.jpeg" />
+    <Content Include="Content\samples\product_NightVisions.jpeg" />
+    <Content Include="Content\samples\product_NightVision_2.txt" />
+    <Content Include="Content\samples\product_NikeFloralShoe_1.jpg" />
+    <Content Include="Content\samples\product_NikeFloralShoe_2.jpg" />
+    <Content Include="Content\samples\product_NikeShirt.jpg" />
+    <Content Include="Content\samples\product_NikeZoom.jpg" />
+    <Content Include="Content\samples\product_NikonCamera_1.jpeg" />
+    <Content Include="Content\samples\product_NikonCamera_2.jpeg" />
+    <Content Include="Content\samples\product_NikonCamera_black.jpeg" />
+    <Content Include="Content\samples\product_NikonCamera_red.jpeg" />
+    <Content Include="Content\samples\product_PillBeats_1.jpeg" />
+    <Content Include="Content\samples\product_PillBeats_2.jpeg" />
+    <Content Include="Content\samples\product_PrideAndPrejudice.jpeg" />
+    <Content Include="Content\samples\product_SamsungNP900X4C.jpeg" />
+    <Content Include="Content\samples\product_ScienceAndFaith.jpeg" />
+    <Content Include="Content\samples\product_SoundForge.jpeg" />
+    <Content Include="Content\samples\product_Speakers.jpeg" />
+    <Content Include="Content\samples\product_Sunglasses.jpg" />
+    <Content Include="Content\samples\product_TabletCover.jpeg" />
+    <Content Include="Content\samples\product_Windows8.jpeg" />
+    <Content Include="Content\samples\product_WomenTShirt.jpg" />
+    <Content Include="Content\samples\p_attribute_print_1.jpg" />
+    <Content Include="Content\samples\p_attribute_print_2.jpg" />
+    <Content Include="Scripts\fineuploader\edit.gif" />
+    <Content Include="Scripts\fineuploader\fineuploader-4.2.2.css" />
+    <Content Include="Scripts\fineuploader\fineuploader-4.2.2.min.css" />
+    <Content Include="Scripts\fineuploader\loading.gif" />
+    <Content Include="Scripts\fineuploader\placeholders\not_available-generic.png" />
+    <Content Include="Scripts\fineuploader\placeholders\waiting-generic.png" />
+    <Content Include="Scripts\fineuploader\processing.gif" />
+    <Content Include="Scripts\fineuploader\templates\default.html" />
+    <Content Include="Scripts\fineuploader\templates\simple-thumbnails.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="Scripts\fineuploader\LICENSE" />
+    <Content Include="Content\samples\product_IfYouWait_1.zip" />
+    <Content Include="Content\samples\product_NightVision_1.zip" />
+    <Content Include="Content\samples\product_ScienceAndFaith_1.zip" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Plugins\Widgets.NivoSlider\Views\WidgetsNivoSlider\PublicInfo.cshtml" />
+    <Content Include="Plugins\Widgets.NivoSlider\Views\PublicInfo.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\fineuploader\iframe.xss.response-4.2.2.js" />
+    <Content Include="Scripts\fineuploader\jquery.fineuploader-4.2.2.js" />
+    <Content Include="Scripts\fineuploader\jquery.fineuploader-4.2.2.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\jquery.magnific-popup.js" />
+    <Content Include="Scripts\jquery.magnific-popup.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\selectivizr.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Themes\DefaultClean\Content\css\ie8.css" />
+    <Content Include="Themes\DefaultClean\Content\css\styles.css" />
+    <Content Include="Themes\DefaultClean\Content\css\styles.rtl.css" />
+    <Content Include="Themes\DefaultClean\Content\images\ajax-loader-small.gif" />
+    <Content Include="Themes\DefaultClean\Content\images\back-button.png" />
+    <Content Include="Themes\DefaultClean\Content\images\calendar-next.png" />
+    <Content Include="Themes\DefaultClean\Content\images\calendar-prev.png" />
+    <Content Include="Themes\DefaultClean\Content\images\close.png" />
+    <Content Include="Themes\DefaultClean\Content\images\compare-button.png" />
+    <Content Include="Themes\DefaultClean\Content\images\details.png" />
+    <Content Include="Themes\DefaultClean\Content\images\discontinued-product-icon.png" />
+    <Content Include="Themes\DefaultClean\Content\images\download-button.png" />
+    <Content Include="Themes\DefaultClean\Content\images\edit.png" />
+    <Content Include="Themes\DefaultClean\Content\images\edit_.png" />
+    <Content Include="Themes\DefaultClean\Content\images\email-button.png" />
+    <Content Include="Themes\DefaultClean\Content\images\first.png" />
+    <Content Include="Themes\DefaultClean\Content\images\ie_warning.jpg" />
+    <Content Include="Themes\DefaultClean\Content\images\last.png" />
+    <Content Include="Themes\DefaultClean\Content\images\loading.gif" />
+    <Content Include="Themes\DefaultClean\Content\images\logo.png" />
+    <Content Include="Themes\DefaultClean\Content\images\menu-icon.png" />
+    <Content Include="Themes\DefaultClean\Content\images\move.png" />
+    <Content Include="Themes\DefaultClean\Content\images\new.png" />
+    <Content Include="Themes\DefaultClean\Content\images\next.png" />
+    <Content Include="Themes\DefaultClean\Content\images\pointer.png" />
+    <Content Include="Themes\DefaultClean\Content\images\prev.png" />
+    <Content Include="Themes\DefaultClean\Content\images\rating1.png" />
+    <Content Include="Themes\DefaultClean\Content\images\rating2.png" />
+    <Content Include="Themes\DefaultClean\Content\images\remove.png" />
+    <Content Include="Themes\DefaultClean\Content\images\remove_.png" />
+    <Content Include="Themes\DefaultClean\Content\images\reply.png" />
+    <Content Include="Themes\DefaultClean\Content\images\retry.png" />
+    <Content Include="Themes\DefaultClean\Content\images\return.png" />
+    <Content Include="Themes\DefaultClean\Content\images\rss.png" />
+    <Content Include="Themes\DefaultClean\Content\images\shipping.png" />
+    <Content Include="Themes\DefaultClean\Content\images\shopping-bag.png" />
+    <Content Include="Themes\DefaultClean\Content\images\social-sprite.png" />
+    <Content Include="Themes\DefaultClean\Content\images\subscribe-button.png" />
+    <Content Include="Themes\DefaultClean\Content\images\toggle-black.png" />
+    <Content Include="Themes\DefaultClean\Content\images\toggle-gray.png" />
+    <Content Include="Themes\DefaultClean\Content\images\toggle-white.png" />
+    <Content Include="Themes\DefaultClean\Content\images\topic-type1.png" />
+    <Content Include="Themes\DefaultClean\Content\images\topic-type2.png" />
+    <Content Include="Themes\DefaultClean\Content\images\topic-type3.png" />
+    <Content Include="Themes\DefaultClean\Content\images\view-grid.png" />
+    <Content Include="Themes\DefaultClean\Content\images\view-list.png" />
+    <Content Include="Themes\DefaultClean\Content\images\vote-down.png" />
+    <Content Include="Themes\DefaultClean\Content\images\vote-down-selected.png" />
+    <Content Include="Themes\DefaultClean\Content\images\vote-up.png" />
+    <Content Include="Themes\DefaultClean\Content\images\vote-up-selected.png" />
+    <Content Include="Themes\DefaultClean\Content\images\watch.png" />
+    <Content Include="Themes\DefaultClean\Content\images\wishlist-button.png" />
+    <Content Include="Themes\DefaultClean\preview.jpg" />
+    <Content Include="Content\Images\default-avatar.jpg" />
+    <Content Include="Content\Images\flags\ad.png" />
+    <Content Include="Content\Images\flags\ae.png" />
+    <Content Include="Content\Images\flags\af.png" />
+    <Content Include="Content\Images\flags\ag.png" />
+    <Content Include="Content\Images\flags\ai.png" />
+    <Content Include="Content\Images\flags\al.png" />
+    <Content Include="Content\Images\flags\am.png" />
+    <Content Include="Content\Images\flags\an.png" />
+    <Content Include="Content\Images\flags\ao.png" />
+    <Content Include="Content\Images\flags\ar.png" />
+    <Content Include="Content\Images\flags\as.png" />
+    <Content Include="Content\Images\flags\at.png" />
+    <Content Include="Content\Images\flags\au.png" />
+    <Content Include="Content\Images\flags\aw.png" />
+    <Content Include="Content\Images\flags\ax.png" />
+    <Content Include="Content\Images\flags\az.png" />
+    <Content Include="Content\Images\flags\ba.png" />
+    <Content Include="Content\Images\flags\bb.png" />
+    <Content Include="Content\Images\flags\bd.png" />
+    <Content Include="Content\Images\flags\be.png" />
+    <Content Include="Content\Images\flags\bf.png" />
+    <Content Include="Content\Images\flags\bg.png" />
+    <Content Include="Content\Images\flags\bh.png" />
+    <Content Include="Content\Images\flags\bi.png" />
+    <Content Include="Content\Images\flags\bj.png" />
+    <Content Include="Content\Images\flags\bm.png" />
+    <Content Include="Content\Images\flags\bn.png" />
+    <Content Include="Content\Images\flags\bo.png" />
+    <Content Include="Content\Images\flags\br.png" />
+    <Content Include="Content\Images\flags\bs.png" />
+    <Content Include="Content\Images\flags\bt.png" />
+    <Content Include="Content\Images\flags\bv.png" />
+    <Content Include="Content\Images\flags\bw.png" />
+    <Content Include="Content\Images\flags\by.png" />
+    <Content Include="Content\Images\flags\bz.png" />
+    <Content Include="Content\Images\flags\ca.png" />
+    <Content Include="Content\Images\flags\catalonia.png" />
+    <Content Include="Content\Images\flags\cc.png" />
+    <Content Include="Content\Images\flags\cd.png" />
+    <Content Include="Content\Images\flags\cf.png" />
+    <Content Include="Content\Images\flags\cg.png" />
+    <Content Include="Content\Images\flags\ch.png" />
+    <Content Include="Content\Images\flags\ci.png" />
+    <Content Include="Content\Images\flags\ck.png" />
+    <Content Include="Content\Images\flags\cl.png" />
+    <Content Include="Content\Images\flags\cm.png" />
+    <Content Include="Content\Images\flags\cn.png" />
+    <Content Include="Content\Images\flags\co.png" />
+    <Content Include="Content\Images\flags\cr.png" />
+    <Content Include="Content\Images\flags\cs.png" />
+    <Content Include="Content\Images\flags\cu.png" />
+    <Content Include="Content\Images\flags\cv.png" />
+    <Content Include="Content\Images\flags\cx.png" />
+    <Content Include="Content\Images\flags\cy.png" />
+    <Content Include="Content\Images\flags\cz.png" />
+    <Content Include="Content\Images\flags\de.png" />
+    <Content Include="Content\Images\flags\dj.png" />
+    <Content Include="Content\Images\flags\dk.png" />
+    <Content Include="Content\Images\flags\dm.png" />
+    <Content Include="Content\Images\flags\do.png" />
+    <Content Include="Content\Images\flags\dz.png" />
+    <Content Include="Content\Images\flags\ec.png" />
+    <Content Include="Content\Images\flags\ee.png" />
+    <Content Include="Content\Images\flags\eg.png" />
+    <Content Include="Content\Images\flags\eh.png" />
+    <Content Include="Content\Images\flags\england.png" />
+    <Content Include="Content\Images\flags\er.png" />
+    <Content Include="Content\Images\flags\es.png" />
+    <Content Include="Content\Images\flags\et.png" />
+    <Content Include="Content\Images\flags\europeanunion.png" />
+    <Content Include="Content\Images\flags\fam.png" />
+    <Content Include="Content\Images\flags\fi.png" />
+    <Content Include="Content\Images\flags\fj.png" />
+    <Content Include="Content\Images\flags\fk.png" />
+    <Content Include="Content\Images\flags\fm.png" />
+    <Content Include="Content\Images\flags\fo.png" />
+    <Content Include="Content\Images\flags\fr.png" />
+    <Content Include="Content\Images\flags\ga.png" />
+    <Content Include="Content\Images\flags\gb.png" />
+    <Content Include="Content\Images\flags\gd.png" />
+    <Content Include="Content\Images\flags\ge.png" />
+    <Content Include="Content\Images\flags\gf.png" />
+    <Content Include="Content\Images\flags\gh.png" />
+    <Content Include="Content\Images\flags\gi.png" />
+    <Content Include="Content\Images\flags\gl.png" />
+    <Content Include="Content\Images\flags\gm.png" />
+    <Content Include="Content\Images\flags\gn.png" />
+    <Content Include="Content\Images\flags\gp.png" />
+    <Content Include="Content\Images\flags\gq.png" />
+    <Content Include="Content\Images\flags\gr.png" />
+    <Content Include="Content\Images\flags\gs.png" />
+    <Content Include="Content\Images\flags\gt.png" />
+    <Content Include="Content\Images\flags\gu.png" />
+    <Content Include="Content\Images\flags\gw.png" />
+    <Content Include="Content\Images\flags\gy.png" />
+    <Content Include="Content\Images\flags\hk.png" />
+    <Content Include="Content\Images\flags\hm.png" />
+    <Content Include="Content\Images\flags\hn.png" />
+    <Content Include="Content\Images\flags\hr.png" />
+    <Content Include="Content\Images\flags\ht.png" />
+    <Content Include="Content\Images\flags\hu.png" />
+    <Content Include="Content\Images\flags\id.png" />
+    <Content Include="Content\Images\flags\ie.png" />
+    <Content Include="Content\Images\flags\il.png" />
+    <Content Include="Content\Images\flags\in.png" />
+    <Content Include="Content\Images\flags\io.png" />
+    <Content Include="Content\Images\flags\iq.png" />
+    <Content Include="Content\Images\flags\ir.png" />
+    <Content Include="Content\Images\flags\is.png" />
+    <Content Include="Content\Images\flags\it.png" />
+    <Content Include="Content\Images\flags\jm.png" />
+    <Content Include="Content\Images\flags\jo.png" />
+    <Content Include="Content\Images\flags\jp.png" />
+    <Content Include="Content\Images\flags\ke.png" />
+    <Content Include="Content\Images\flags\kg.png" />
+    <Content Include="Content\Images\flags\kh.png" />
+    <Content Include="Content\Images\flags\ki.png" />
+    <Content Include="Content\Images\flags\km.png" />
+    <Content Include="Content\Images\flags\kn.png" />
+    <Content Include="Content\Images\flags\kp.png" />
+    <Content Include="Content\Images\flags\kr.png" />
+    <Content Include="Content\Images\flags\kw.png" />
+    <Content Include="Content\Images\flags\ky.png" />
+    <Content Include="Content\Images\flags\kz.png" />
+    <Content Include="Content\Images\flags\la.png" />
+    <Content Include="Content\Images\flags\lb.png" />
+    <Content Include="Content\Images\flags\lc.png" />
+    <Content Include="Content\Images\flags\li.png" />
+    <Content Include="Content\Images\flags\lk.png" />
+    <Content Include="Content\Images\flags\lr.png" />
+    <Content Include="Content\Images\flags\ls.png" />
+    <Content Include="Content\Images\flags\lt.png" />
+    <Content Include="Content\Images\flags\lu.png" />
+    <Content Include="Content\Images\flags\lv.png" />
+    <Content Include="Content\Images\flags\ly.png" />
+    <Content Include="Content\Images\flags\ma.png" />
+    <Content Include="Content\Images\flags\mc.png" />
+    <Content Include="Content\Images\flags\md.png" />
+    <Content Include="Content\Images\flags\me.png" />
+    <Content Include="Content\Images\flags\mg.png" />
+    <Content Include="Content\Images\flags\mh.png" />
+    <Content Include="Content\Images\flags\mk.png" />
+    <Content Include="Content\Images\flags\ml.png" />
+    <Content Include="Content\Images\flags\mm.png" />
+    <Content Include="Content\Images\flags\mn.png" />
+    <Content Include="Content\Images\flags\mo.png" />
+    <Content Include="Content\Images\flags\mp.png" />
+    <Content Include="Content\Images\flags\mq.png" />
+    <Content Include="Content\Images\flags\mr.png" />
+    <Content Include="Content\Images\flags\ms.png" />
+    <Content Include="Content\Images\flags\mt.png" />
+    <Content Include="Content\Images\flags\mu.png" />
+    <Content Include="Content\Images\flags\mv.png" />
+    <Content Include="Content\Images\flags\mw.png" />
+    <Content Include="Content\Images\flags\mx.png" />
+    <Content Include="Content\Images\flags\my.png" />
+    <Content Include="Content\Images\flags\mz.png" />
+    <Content Include="Content\Images\flags\na.png" />
+    <Content Include="Content\Images\flags\nc.png" />
+    <Content Include="Content\Images\flags\ne.png" />
+    <Content Include="Content\Images\flags\nf.png" />
+    <Content Include="Content\Images\flags\ng.png" />
+    <Content Include="Content\Images\flags\ni.png" />
+    <Content Include="Content\Images\flags\nl.png" />
+    <Content Include="Content\Images\flags\no.png" />
+    <Content Include="Content\Images\flags\np.png" />
+    <Content Include="Content\Images\flags\nr.png" />
+    <Content Include="Content\Images\flags\nu.png" />
+    <Content Include="Content\Images\flags\nz.png" />
+    <Content Include="Content\Images\flags\om.png" />
+    <Content Include="Content\Images\flags\pa.png" />
+    <Content Include="Content\Images\flags\pe.png" />
+    <Content Include="Content\Images\flags\pf.png" />
+    <Content Include="Content\Images\flags\pg.png" />
+    <Content Include="Content\Images\flags\ph.png" />
+    <Content Include="Content\Images\flags\pk.png" />
+    <Content Include="Content\Images\flags\pl.png" />
+    <Content Include="Content\Images\flags\pm.png" />
+    <Content Include="Content\Images\flags\pn.png" />
+    <Content Include="Content\Images\flags\pr.png" />
+    <Content Include="Content\Images\flags\ps.png" />
+    <Content Include="Content\Images\flags\pt.png" />
+    <Content Include="Content\Images\flags\pw.png" />
+    <Content Include="Content\Images\flags\py.png" />
+    <Content Include="Content\Images\flags\qa.png" />
+    <Content Include="Content\Images\flags\re.png" />
+    <Content Include="Content\Images\flags\ro.png" />
+    <Content Include="Content\Images\flags\rs.png" />
+    <Content Include="Content\Images\flags\ru.png" />
+    <Content Include="Content\Images\flags\rw.png" />
+    <Content Include="Content\Images\flags\sa.png" />
+    <Content Include="Content\Images\flags\sb.png" />
+    <Content Include="Content\Images\flags\sc.png" />
+    <Content Include="Content\Images\flags\scotland.png" />
+    <Content Include="Content\Images\flags\sd.png" />
+    <Content Include="Content\Images\flags\se.png" />
+    <Content Include="Content\Images\flags\sg.png" />
+    <Content Include="Content\Images\flags\sh.png" />
+    <Content Include="Content\Images\flags\si.png" />
+    <Content Include="Content\Images\flags\sj.png" />
+    <Content Include="Content\Images\flags\sk.png" />
+    <Content Include="Content\Images\flags\sl.png" />
+    <Content Include="Content\Images\flags\sm.png" />
+    <Content Include="Content\Images\flags\sn.png" />
+    <Content Include="Content\Images\flags\so.png" />
+    <Content Include="Content\Images\flags\sr.png" />
+    <Content Include="Content\Images\flags\st.png" />
+    <Content Include="Content\Images\flags\sv.png" />
+    <Content Include="Content\Images\flags\sy.png" />
+    <Content Include="Content\Images\flags\sz.png" />
+    <Content Include="Content\Images\flags\tc.png" />
+    <Content Include="Content\Images\flags\td.png" />
+    <Content Include="Content\Images\flags\tf.png" />
+    <Content Include="Content\Images\flags\tg.png" />
+    <Content Include="Content\Images\flags\th.png" />
+    <Content Include="Content\Images\flags\tj.png" />
+    <Content Include="Content\Images\flags\tk.png" />
+    <Content Include="Content\Images\flags\tl.png" />
+    <Content Include="Content\Images\flags\tm.png" />
+    <Content Include="Content\Images\flags\tn.png" />
+    <Content Include="Content\Images\flags\to.png" />
+    <Content Include="Content\Images\flags\tr.png" />
+    <Content Include="Content\Images\flags\tt.png" />
+    <Content Include="Content\Images\flags\tv.png" />
+    <Content Include="Content\Images\flags\tw.png" />
+    <Content Include="Content\Images\flags\tz.png" />
+    <Content Include="Content\Images\flags\ua.png" />
+    <Content Include="Content\Images\flags\ug.png" />
+    <Content Include="Content\Images\flags\um.png" />
+    <Content Include="Content\Images\flags\us.png" />
+    <Content Include="Content\Images\flags\uy.png" />
+    <Content Include="Content\Images\flags\uz.png" />
+    <Content Include="Content\Images\flags\va.png" />
+    <Content Include="Content\Images\flags\vc.png" />
+    <Content Include="Content\Images\flags\ve.png" />
+    <Content Include="Content\Images\flags\vg.png" />
+    <Content Include="Content\Images\flags\vi.png" />
+    <Content Include="Content\Images\flags\vn.png" />
+    <Content Include="Content\Images\flags\vu.png" />
+    <Content Include="Content\Images\flags\wales.png" />
+    <Content Include="Content\Images\flags\wf.png" />
+    <Content Include="Content\Images\flags\ws.png" />
+    <Content Include="Content\Images\flags\ye.png" />
+    <Content Include="Content\Images\flags\yt.png" />
+    <Content Include="Content\Images\flags\za.png" />
+    <Content Include="Content\Images\flags\zm.png" />
+    <Content Include="Content\Images\flags\zw.png" />
+    <Content Include="Content\Images\default-image.gif" />
+    <Content Include="Content\install\images\install-synchronizing.gif" />
+    <Content Include="Content\Images\uploaded\placeholder.txt" />
+    <Content Include="Content\install\style.css" />
+    <Content Include="Content\install\style.rtl.css" />
+    <Content Include="Content\Images\Thumbs\placeholder.txt" />
+    <Content Include="ErrorPage.htm" />
+    <Content Include="FileNotFound.htm" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\public.ajaxcart.js" />
+    <Content Include="Scripts\public.accordion.js" />
+    <Content Include="Scripts\public.onepagecheckout.js" />
+    <Content Include="Scripts\public.common.js" />
+    <Content Include="Themes\DefaultClean\Content\css\print.css" />
+    <Content Include="Themes\Ipharmachine\Content\css\base.css">
+      <DependentUpon>base.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\base.min.css">
+      <DependentUpon>base.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\bebas.css">
+      <DependentUpon>bebas.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\bebas.min.css">
+      <DependentUpon>bebas.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\demo_fontclass.html" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\demo_symbol.html" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\iconfont.js" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\iconfont.svg" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\iconfont.woff2" />
+    <None Include="Themes\Ipharmachine\Content\css\fonts\machines\iconfont.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\machines\iconfont.css">
+      <DependentUpon>iconfont.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\machines\iconfont.min.css">
+      <DependentUpon>iconfont.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\machines\iconfont.svg" />
+    <Content Include="Themes\Ipharmachine\Content\css\lazy-load.css">
+      <DependentUpon>lazy-load.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\lazy-load.min.css">
+      <DependentUpon>lazy-load.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\left.css">
+      <DependentUpon>left.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\left.min.css">
+      <DependentUpon>left.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\aboutUs.css">
+      <DependentUpon>aboutUs.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\aboutUs.min.css">
+      <DependentUpon>aboutUs.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\articleDetails.css">
+      <DependentUpon>articleDetails.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\articleDetails.min.css">
+      <DependentUpon>articleDetails.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\articleDetailsSwiper.css">
+      <DependentUpon>articleDetailsswiper.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\articleDetailsSwiper.min.css">
+      <DependentUpon>articleDetailsSwiper.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\articleList.css">
+      <DependentUpon>articleList.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\articleList.min.css">
+      <DependentUpon>articleList.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\cart.css">
+      <DependentUpon>cart.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\cart.min.css">
+      <DependentUpon>cart.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\contactUs.css">
+      <DependentUpon>contactUs.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\contactUs.min.css">
+      <DependentUpon>contactUs.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\Customer.css">
+      <DependentUpon>Customer.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\Customer.min.css">
+      <DependentUpon>Customer.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\index.css">
+      <DependentUpon>index.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\index.min.css">
+      <DependentUpon>index.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\login.css">
+      <DependentUpon>login.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\login.min.css">
+      <DependentUpon>login.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myAddressDetails.css">
+      <DependentUpon>myAddressDetails.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myAddressDetails.min.css">
+      <DependentUpon>myAddressDetails.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myAddressList.css">
+      <DependentUpon>myAddressList.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myAddressList.min.css">
+      <DependentUpon>myAddressList.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myChangePassword.css">
+      <DependentUpon>myChangePassword.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myChangePassword.min.css">
+      <DependentUpon>myChangePassword.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myInformation.css">
+      <DependentUpon>myInformation.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myInformation.min.css">
+      <DependentUpon>myInformation.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myOrderDetails.css">
+      <DependentUpon>myOrderDetails.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myOrderDetails.min.css">
+      <DependentUpon>myOrderDetails.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myOrderList.css">
+      <DependentUpon>myOrderList.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myOrderList.min.css">
+      <DependentUpon>myOrderList.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\newPassword.css">
+      <DependentUpon>newPassword.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\newPassword.min.css">
+      <DependentUpon>newPassword.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\orderDetails.css">
+      <DependentUpon>orderDetails.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\orderDetails.min.css">
+      <DependentUpon>orderDetails.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\productDetails.css">
+      <DependentUpon>productDetails.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\productDetails.min.css">
+      <DependentUpon>productDetails.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\productDialogDetails.css" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\productList.css">
+      <DependentUpon>productList.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\productList.min.css">
+      <DependentUpon>productList.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\register.css">
+      <DependentUpon>register.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\register.min.css">
+      <DependentUpon>register.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\sitemap.css">
+      <DependentUpon>sitemap.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\pages\sitemap.min.css">
+      <DependentUpon>sitemap.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\preload.css">
+      <DependentUpon>preload.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\css\preload.min.css">
+      <DependentUpon>preload.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\images\ajax-loader-small.gif" />
+    <Content Include="Themes\Ipharmachine\Content\images\back-button.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\calendar-next.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\calendar-prev.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\close.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\compare-button.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\ameracat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\author.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\china.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\chinatext.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\contactus.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\findme.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\map.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\nipic_bg.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\phone.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\skyus.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\1920\ustext.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\bg.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\bg1.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\bg2.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\china.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\chinastate.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\contactup-bg.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\findme.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\map.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\people.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\skyus.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\us.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\contactus\usstate.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\details.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\discontinued-product-icon.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\download-button.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\edit.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\edit_.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\email-button.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\first.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\ie_warning.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\images\last.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\loading.gif" />
+    <Content Include="Themes\Ipharmachine\Content\images\logo.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\menu-icon.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\move.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\new.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\next.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\pdf.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\pointer.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\prev.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\print.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\rating1.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\rating2.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\remove.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\remove_.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\reply.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\retry.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\return.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\rss.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\shipping.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\shopping-bag.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\social-sprite.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\subscribe-button.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\toggle-black.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\toggle-gray.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\toggle-white.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\topic-type1.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\topic-type2.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\topic-type3.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\view-grid.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\view-list.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\vote-down-selected.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\vote-down.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\vote-up-selected.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\vote-up.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\watch.png" />
+    <Content Include="Themes\Ipharmachine\Content\images\wishlist-button.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\665.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\back.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\big-picture.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\bigpic.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\btc.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\cartInformation.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\categories.jpeg" />
+    <Content Include="Themes\Ipharmachine\Content\img\close.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\company.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\default-skin.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\default-skin.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\favicon.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\footer-bg.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\home.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\icon-cellphone.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\icon-mail.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\icon-phone.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\icon-skype.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\ie_warning.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\logo.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\mask.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\mg.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\move.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\OptionIco.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\pattern-nav.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\payment_sprite.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\PayPal.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\pc-icon-1.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\pc-icon-2.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\preloader.gif" />
+    <Content Include="Themes\Ipharmachine\Content\img\return-top.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\rss-icon.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\selects.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\shadow.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\shop1.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\slide-1.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\slide-2.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\smailpic.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\small-picture.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\social-sprite.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\subscribe.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-1.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-2.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-3.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-4.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-45.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-button-next.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-button-next.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-button-next0.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-button-next1.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-button-next2.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-button-prev.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-button-prev.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-button-prev0.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-button-prev1.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-button-prev2.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-preloader.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\swiper-preloader0.svg" />
+    <Content Include="Themes\Ipharmachine\Content\img\tm_mainpic_player_loader.swf" />
+    <Content Include="Themes\Ipharmachine\Content\img\website.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\wechat.png" />
+    <Content Include="Themes\Ipharmachine\Content\img\western_union.jpg" />
+    <Content Include="Themes\Ipharmachine\Content\img\xiezi.jpeg" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap-sprockets.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap.min.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\affix.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\alert.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\button.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\carousel.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\collapse.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\dropdown.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\modal.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\popover.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\scrollspy.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\tab.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\tooltip.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\bootstrap\bootstrap\transition.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\common.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\echo.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\CountryState.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\delayClick.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\Fixing.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\jquery.lazyload.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\jquery.min.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\jquery.pin.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\photoswipe-custom.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\photoswipe-ui-default.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\photoswipe.min.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\print.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\scrollTop.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\sweetalert.min.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\swiper.jquery.min.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\uploader.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\extend\verification.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\aboutUs.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\Addresses.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\articleDetailsSwiper.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\blogDetails.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\blogList.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\cart.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\contact.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\contactUs.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\CustomerSubscriptions.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\euCookieLaw.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\index.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\login.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\myAddressDetails.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\myAddressList.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\myChangePassword.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\myInformation.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\myOrderDetails.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\myOrderList.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\newPassword.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\onepagecheckout.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\orderDetails.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\productDetails.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\productDialogDetails.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\productList.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\register.js" />
+    <Content Include="Themes\Ipharmachine\Content\js\pages\wishlist.js" />
+    <Content Include="Themes\Ipharmachine\preview.jpg" />
+    <Content Include="Themes\Store\Content\css\base.css">
+      <DependentUpon>base.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\base.min.css">
+      <DependentUpon>base.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\fonts\demo_fontclass.html" />
+    <Content Include="Themes\Store\Content\css\fonts\iconfont.js" />
+    <Content Include="Themes\Store\Content\css\fonts\iconfont.svg" />
+    <Content Include="Themes\Store\Content\css\lazy-load.css">
+      <DependentUpon>lazy-load.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\lazy-load.min.css">
+      <DependentUpon>lazy-load.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\left.css">
+      <DependentUpon>left.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\left.min.css">
+      <DependentUpon>left.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\aboutUs.css" />
+    <Content Include="Themes\Store\Content\css\pages\articleDetails.css" />
+    <Content Include="Themes\Store\Content\css\pages\articleDetails.min.css">
+      <DependentUpon>articleDetails.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\articleDetailsSwiper.css">
+      <DependentUpon>articleDetailsSwiper.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\articleDetailsSwiper.min.css">
+      <DependentUpon>articleDetailsSwiper.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\articleList.css" />
+    <Content Include="Themes\Store\Content\css\pages\articleList.min.css">
+      <DependentUpon>articleList.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\cart.css">
+      <DependentUpon>cart.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\cart.min.css">
+      <DependentUpon>cart.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\contactUs.css" />
+    <Content Include="Themes\Store\Content\css\pages\contactUs.min.css">
+      <DependentUpon>contactUs.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\Customer.css">
+      <DependentUpon>Customer.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\Customer.min.css">
+      <DependentUpon>Customer.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\index.css" />
+    <Content Include="Themes\Store\Content\css\pages\index.min.css" />
+    <Content Include="Themes\Store\Content\css\pages\login.css">
+      <DependentUpon>login.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\login.min.css">
+      <DependentUpon>login.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\myAddressDetails.css" />
+    <Content Include="Themes\Store\Content\css\pages\myAddressList.css" />
+    <Content Include="Themes\Store\Content\css\pages\myChangePassword.css" />
+    <Content Include="Themes\Store\Content\css\pages\myInformation.css" />
+    <Content Include="Themes\Store\Content\css\pages\myOrderDetails.css">
+      <DependentUpon>myOrderDetails.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\myOrderDetails.min.css">
+      <DependentUpon>myOrderDetails.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\myOrderList.css" />
+    <Content Include="Themes\Store\Content\css\pages\newPassword.css" />
+    <Content Include="Themes\Store\Content\css\pages\orderDetails.css">
+      <DependentUpon>orderDetails.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\orderDetails.min.css">
+      <DependentUpon>orderDetails.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\productDetails.css" />
+    <Content Include="Themes\Store\Content\css\pages\productDetails.min.css">
+      <DependentUpon>productDetails.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\productDialogDetails.css" />
+    <Content Include="Themes\Store\Content\css\pages\productList.css">
+      <DependentUpon>productList.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\productList.min.css">
+      <DependentUpon>productList.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\register.css">
+      <DependentUpon>register.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\register.min.css">
+      <DependentUpon>register.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\sitemap.css">
+      <DependentUpon>sitemap.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\pages\sitemap.min.css">
+      <DependentUpon>sitemap.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\preload.css">
+      <DependentUpon>preload.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\css\preload.min.css">
+      <DependentUpon>preload.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\images\ajax-loader-small.gif" />
+    <Content Include="Themes\Store\Content\images\back-button.png" />
+    <Content Include="Themes\Store\Content\images\calendar-next.png" />
+    <Content Include="Themes\Store\Content\images\calendar-prev.png" />
+    <Content Include="Themes\Store\Content\images\close.png" />
+    <Content Include="Themes\Store\Content\images\compare-button.png" />
+    <Content Include="Themes\Store\Content\images\details.png" />
+    <Content Include="Themes\Store\Content\images\discontinued-product-icon.png" />
+    <Content Include="Themes\Store\Content\images\download-button.png" />
+    <Content Include="Themes\Store\Content\images\edit.png" />
+    <Content Include="Themes\Store\Content\images\edit_.png" />
+    <Content Include="Themes\Store\Content\images\email-button.png" />
+    <Content Include="Themes\Store\Content\images\first.png" />
+    <Content Include="Themes\Store\Content\images\ie_warning.jpg" />
+    <Content Include="Themes\Store\Content\images\last.png" />
+    <Content Include="Themes\Store\Content\images\loading.gif" />
+    <Content Include="Themes\Store\Content\images\logo.png" />
+    <Content Include="Themes\Store\Content\images\menu-icon.png" />
+    <Content Include="Themes\Store\Content\images\move.png" />
+    <Content Include="Themes\Store\Content\images\new.png" />
+    <Content Include="Themes\Store\Content\images\next.png" />
+    <Content Include="Themes\Store\Content\images\pdf.png" />
+    <Content Include="Themes\Store\Content\images\pointer.png" />
+    <Content Include="Themes\Store\Content\images\prev.png" />
+    <Content Include="Themes\Store\Content\images\print.png" />
+    <Content Include="Themes\Store\Content\images\rating1.png" />
+    <Content Include="Themes\Store\Content\images\rating2.png" />
+    <Content Include="Themes\Store\Content\images\remove.png" />
+    <Content Include="Themes\Store\Content\images\remove_.png" />
+    <Content Include="Themes\Store\Content\images\reply.png" />
+    <Content Include="Themes\Store\Content\images\retry.png" />
+    <Content Include="Themes\Store\Content\images\return.png" />
+    <Content Include="Themes\Store\Content\images\rss.png" />
+    <Content Include="Themes\Store\Content\images\shipping.png" />
+    <Content Include="Themes\Store\Content\images\shopping-bag.png" />
+    <Content Include="Themes\Store\Content\images\social-sprite.png" />
+    <Content Include="Themes\Store\Content\images\subscribe-button.png" />
+    <Content Include="Themes\Store\Content\images\toggle-black.png" />
+    <Content Include="Themes\Store\Content\images\toggle-gray.png" />
+    <Content Include="Themes\Store\Content\images\toggle-white.png" />
+    <Content Include="Themes\Store\Content\images\topic-type1.png" />
+    <Content Include="Themes\Store\Content\images\topic-type2.png" />
+    <Content Include="Themes\Store\Content\images\topic-type3.png" />
+    <Content Include="Themes\Store\Content\images\view-grid.png" />
+    <Content Include="Themes\Store\Content\images\view-list.png" />
+    <Content Include="Themes\Store\Content\images\vote-down-selected.png" />
+    <Content Include="Themes\Store\Content\images\vote-down.png" />
+    <Content Include="Themes\Store\Content\images\vote-up-selected.png" />
+    <Content Include="Themes\Store\Content\images\vote-up.png" />
+    <Content Include="Themes\Store\Content\images\watch.png" />
+    <Content Include="Themes\Store\Content\images\wishlist-button.png" />
+    <Content Include="Themes\Store\Content\img\665.jpg" />
+    <Content Include="Themes\Store\Content\img\big-picture.jpg" />
+    <Content Include="Themes\Store\Content\img\bigpic.jpg" />
+    <Content Include="Themes\Store\Content\img\btc.png" />
+    <Content Include="Themes\Store\Content\img\cartInformation.png" />
+    <Content Include="Themes\Store\Content\img\categories.jpeg" />
+    <Content Include="Themes\Store\Content\img\close.png" />
+    <Content Include="Themes\Store\Content\img\company.jpg" />
+    <Content Include="Themes\Store\Content\img\default-skin.png" />
+    <Content Include="Themes\Store\Content\img\default-skin.svg" />
+    <Content Include="Themes\Store\Content\img\favicon.png" />
+    <Content Include="Themes\Store\Content\img\footer-bg.jpg" />
+    <Content Include="Themes\Store\Content\img\back.png" />
+    <Content Include="Themes\Store\Content\img\home.png" />
+    <Content Include="Themes\Store\Content\img\icon-cellphone.png" />
+    <Content Include="Themes\Store\Content\img\icon-mail.png" />
+    <Content Include="Themes\Store\Content\img\icon-phone.png" />
+    <Content Include="Themes\Store\Content\img\icon-skype.png" />
+    <Content Include="Themes\Store\Content\img\ie_warning.jpg" />
+    <Content Include="Themes\Store\Content\img\logo.png" />
+    <Content Include="Themes\Store\Content\img\mask.png" />
+    <Content Include="Themes\Store\Content\img\mg.png" />
+    <Content Include="Themes\Store\Content\img\move.png" />
+    <Content Include="Themes\Store\Content\img\OptionIco.jpg" />
+    <Content Include="Themes\Store\Content\img\pattern-nav.png" />
+    <Content Include="Themes\Store\Content\img\payment_sprite.png" />
+    <Content Include="Themes\Store\Content\img\PayPal.jpg" />
+    <Content Include="Themes\Store\Content\img\pc-icon-1.png" />
+    <Content Include="Themes\Store\Content\img\pc-icon-2.png" />
+    <Content Include="Themes\Store\Content\img\preloader.gif" />
+    <Content Include="Themes\Store\Content\img\return-top.png" />
+    <Content Include="Themes\Store\Content\img\rss-icon.png" />
+    <Content Include="Themes\Store\Content\img\selects.png" />
+    <Content Include="Themes\Store\Content\img\shadow.png" />
+    <Content Include="Themes\Store\Content\img\shop1.jpg" />
+    <Content Include="Themes\Store\Content\img\slide-1.jpg" />
+    <Content Include="Themes\Store\Content\img\slide-2.jpg" />
+    <Content Include="Themes\Store\Content\img\smailpic.jpg" />
+    <Content Include="Themes\Store\Content\img\small-picture.jpg" />
+    <Content Include="Themes\Store\Content\img\social-sprite.jpg" />
+    <Content Include="Themes\Store\Content\img\subscribe.png" />
+    <Content Include="Themes\Store\Content\img\swiper-1.jpg" />
+    <Content Include="Themes\Store\Content\img\swiper-2.jpg" />
+    <Content Include="Themes\Store\Content\img\swiper-3.jpg" />
+    <Content Include="Themes\Store\Content\img\swiper-4.jpg" />
+    <Content Include="Themes\Store\Content\img\swiper-45.jpg" />
+    <Content Include="Themes\Store\Content\img\swiper-button-next1.svg" />
+    <Content Include="Themes\Store\Content\img\swiper-button-next2.svg" />
+    <Content Include="Themes\Store\Content\img\swiper-button-next0.svg" />
+    <Content Include="Themes\Store\Content\img\swiper-button-next.png" />
+    <Content Include="Themes\Store\Content\img\swiper-button-next.svg" />
+    <Content Include="Themes\Store\Content\img\swiper-button-prev2.svg" />
+    <Content Include="Themes\Store\Content\img\swiper-preloader0.svg" />
+    <Content Include="Themes\Store\Content\img\swiper-preloader.svg" />
+    <Content Include="Themes\Store\Content\img\swiper-button-prev1.svg" />
+    <Content Include="Themes\Store\Content\img\swiper-button-prev0.svg" />
+    <Content Include="Themes\Store\Content\img\swiper-button-prev.png" />
+    <Content Include="Themes\Store\Content\img\tm_mainpic_player_loader.swf" />
+    <Content Include="Themes\Store\Content\img\website.jpg" />
+    <Content Include="Themes\Store\Content\img\wechat.png" />
+    <Content Include="Themes\Store\Content\img\western_union.jpg" />
+    <Content Include="Themes\Store\Content\img\xiezi.jpeg" />
+    <Content Include="Themes\Store\Content\img\swiper-button-prev.svg" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap-sprockets.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap.min.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\affix.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\alert.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\button.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\carousel.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\collapse.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\dropdown.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\modal.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\popover.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\scrollspy.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\tab.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\tooltip.js" />
+    <Content Include="Themes\Store\Content\js\bootstrap\bootstrap\transition.js" />
+    <Content Include="Themes\Store\Content\js\common.js" />
+    <Content Include="Themes\Store\Content\js\echo.js" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\capsule.css" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\capsule.js" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\1.jpg" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\1.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\1x1.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\2x1.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\bg.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\gel\body.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\gel\body_j.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\gel\body_s.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\gel\cap.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\gel\cap_j.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\gel\cap_s.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\metia\body.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\metia\body_j.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\metia\body_s.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\metia\cap.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\metia\cap_j.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\metia\cap_s.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\ent\body.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\ent\body_j.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\ent\body_s.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\ent\cap.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\ent\cap_j.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\ent\cap_s.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\pul\body.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\pul\body_j.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\pul\body_s.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\pul\cap.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\pul\cap_j.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\pul\cap_s.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\Veg\body.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\Veg\body_j.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\Veg\body_s.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\Veg\cap.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\Veg\cap_j.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\Veg\cap_s.png" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\jscolor.js" />
+    <Content Include="Themes\Store\Content\js\extend\CountryState.js" />
+    <Content Include="Themes\Store\Content\js\extend\delayClick.js" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\pako.js" />
+    <Content Include="Themes\Store\Content\js\extend\Fixing.es5.js">
+      <DependentUpon>Fixing.js</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\js\extend\Fixing.es5.min.js">
+      <DependentUpon>Fixing.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Themes\Store\Content\js\extend\Fixing.js" />
+    <Content Include="Themes\Store\Content\js\extend\jquery.lazyload.js" />
+    <Content Include="Themes\Store\Content\js\extend\jquery.min.js" />
+    <Content Include="Themes\Store\Content\js\extend\jquery.pin.js" />
+    <Content Include="Themes\Store\Content\js\extend\photoswipe-custom.js" />
+    <Content Include="Themes\Store\Content\js\extend\photoswipe-ui-default.js" />
+    <Content Include="Themes\Store\Content\js\extend\photoswipe.min.js" />
+    <Content Include="Themes\Store\Content\js\extend\print.js" />
+    <Content Include="Themes\Store\Content\js\extend\scrollTop.js" />
+    <Content Include="Themes\Store\Content\js\extend\sweetalert.min.js" />
+    <Content Include="Themes\Store\Content\js\extend\swiper.jquery.min.js" />
+    <Content Include="Themes\Store\Content\js\extend\verification.js" />
+    <Content Include="Themes\Store\Content\js\pages\aboutUs.js" />
+    <Content Include="Themes\Store\Content\js\pages\Addresses.js" />
+    <Content Include="Themes\Store\Content\js\pages\articleDetailsSwiper.js" />
+    <Content Include="Themes\Store\Content\js\pages\blogDetails.js" />
+    <Content Include="Themes\Store\Content\js\pages\blogList.js" />
+    <Content Include="Themes\Store\Content\js\extend\uploader.js" />
+    <Content Include="Themes\Store\Content\js\pages\CustomerSubscriptions.js" />
+    <Content Include="Themes\Store\Content\js\pages\euCookieLaw.js" />
+    <Content Include="Themes\Store\Content\js\pages\onepagecheckout.js" />
+    <Content Include="Themes\Store\Content\js\pages\productDialogDetails.js" />
+    <Content Include="Themes\Store\Content\js\pages\wishlist.js" />
+    <Content Include="Themes\Store\Content\js\pages\cart.js" />
+    <Content Include="Themes\Store\Content\js\pages\contact.js" />
+    <Content Include="Themes\Store\Content\js\pages\contactUs.js" />
+    <Content Include="Themes\Store\Content\js\pages\index.js" />
+    <Content Include="Themes\Store\Content\js\pages\login.js" />
+    <Content Include="Themes\Store\Content\js\pages\myAddressDetails.js" />
+    <Content Include="Themes\Store\Content\js\pages\myAddressList.js" />
+    <Content Include="Themes\Store\Content\js\pages\myChangePassword.js" />
+    <Content Include="Themes\Store\Content\js\pages\myInformation.js" />
+    <Content Include="Themes\Store\Content\js\pages\myOrderDetails.js" />
+    <Content Include="Themes\Store\Content\js\pages\myOrderList.js" />
+    <Content Include="Themes\Store\Content\js\pages\newPassword.js" />
+    <Content Include="Themes\Store\Content\js\pages\orderDetails.js" />
+    <Content Include="Themes\Store\Content\js\pages\productDetails.js" />
+    <Content Include="Themes\Store\Content\js\pages\productList.js" />
+    <Content Include="Themes\Store\Content\js\pages\register.js" />
+    <Content Include="Themes\Store\preview.jpg" />
+    <Content Include="Themes\Store\Views\Product\_PartialPluginProductDetail.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Common\Footer.cshtml" />
+    <Content Include="Views\Customer\_ExternalAuthentication.AssociateMessage.cshtml" />
+    <Content Include="Views\ExternalAuthentication\ExternalMethods.cshtml" />
+    <Content Include="Views\Customer\_ExternalAuthentication.Errors.cshtml" />
+    <Content Include="Views\Product\ProductTemplate.Grouped.cshtml" />
+    <Content Include="Views\Product\ProductTemplate.Simple.cshtml" />
+    <Content Include="Views\Product\_ProductDetailsPictures.cshtml" />
+    <Content Include="Views\Checkout\OnePageCheckout.cshtml" />
+    <Content Include="Views\Checkout\OpcShippingMethods.cshtml" />
+    <Content Include="Views\Checkout\OpcShippingAddress.cshtml" />
+    <Content Include="Views\Checkout\OpcBillingAddress.cshtml" />
+    <Content Include="Views\Checkout\OpcPaymentMethods.cshtml" />
+    <Content Include="Views\Checkout\OpcPaymentInfo.cshtml" />
+    <Content Include="Views\Checkout\OpcConfirmOrder.cshtml" />
+    <Content Include="Views\Shared\_Print.cshtml" />
+    <Content Include="Views\Customer\_CheckUsernameAvailability.cshtml" />
+    <Content Include="Views\Boards\ActiveDiscussionsSmall.cshtml" />
+    <Content Include="Views\Product\_BackInStockSubscription.cshtml" />
+    <Content Include="Views\BackInStockSubscription\SubscribePopup.cshtml" />
+    <Content Include="Views\BackInStockSubscription\CustomerSubscriptions.cshtml" />
+    <Content Include="App_Data\Pdf\FreeSerif.ttf" />
+    <Content Include="Views\Common\StoreThemeSelector.cshtml" />
+    <Content Include="Views\Shared\_Notifications.cshtml" />
+    <Content Include="Views\Customer\_CustomerAttributes.cshtml" />
+    <Content Include="Views\Shared\_AddressAttributes.cshtml" />
+    <Content Include="Views\Product\_RentalInfo.cshtml" />
+    <Content Include="Views\Common\ContactVendor.cshtml" />
+    <Content Include="Views\Boards\_ForumHeader.cshtml" />
+    <Content Include="Views\Product\_SKU_Man_GTIN_Ven.cshtml" />
+    <Content Include="Views\Product\_AddToWishlist.cshtml" />
+    <Content Include="Views\Shared\OldInternetExplorerWarning.cshtml" />
+    <Content Include="Views\Product\_DeliveryInfo.cshtml" />
+    <Content Include="Views\Product\_Availability.cshtml" />
+    <Content Include="Views\Catalog\_CatalogSelectors.cshtml" />
+    <Content Include="Views\Vendor\ApplyVendor.cshtml" />
+    <Content Include="Views\Product\_Discontinued.cshtml" />
+    <Content Include="Views\Common\Social.cshtml" />
+    <Content Include="Views\ShoppingCart\_EstimateShippingResult.cshtml" />
+    <Content Include="Views\Product\CustomerProductReviews.cshtml" />
+    <Content Include="Views\Vendor\Info.cshtml" />
+    <Content Include="Views\Common\Logo.cshtml" />
+    <Content Include="Views\Customer\EmailRevalidation.cshtml" />
+    <Content Include="Themes\Store\theme.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Themes\Store\Views\_ViewStart.cshtml" />
+    <Content Include="Themes\Store\Views\BackInStockSubscription\CustomerSubscriptions.cshtml" />
+    <Content Include="Themes\Store\Views\BackInStockSubscription\SubscribePopup.cshtml" />
+    <Content Include="Themes\Store\Views\Blog\BlogMonths.cshtml" />
+    <Content Include="Themes\Store\Views\Blog\BlogPost.cshtml" />
+    <Content Include="Themes\Store\Views\Blog\BlogTags.cshtml" />
+    <Content Include="Themes\Store\Views\Blog\List.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\_ActiveTopics.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\_CreateUpdatePost.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\_CreateUpdateTopic.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\_ForumGroup.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\_ForumHeader.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\_ForumPost.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\_SearchBox.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\ActiveDiscussions.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\ActiveDiscussionsSmall.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\CustomerForumSubscriptions.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\Forum.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\ForumBreadcrumb.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\ForumGroup.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\Index.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\LastPost.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\PostCreate.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\PostEdit.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\Search.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\Topic.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\TopicCreate.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\TopicEdit.cshtml" />
+    <Content Include="Themes\Store\Views\Boards\TopicMove.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\_CatalogSelectors.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\_FilterPriceBox.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\_FilterSpecsBox.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\CategoryNavigation.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\CategoryTemplate.ProductsInGridOrLines.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\HomepageCategories.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\ManufacturerAll.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\ManufacturerNavigation.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\ManufacturerTemplate.ProductsInGridOrLines.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\PopularProductTags.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\ProductsByTag.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\ProductTagsAll.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\Search.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\SearchBox.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\TopMenu.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\Vendor.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\VendorAll.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\VendorNavigation.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\BillingAddress.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\CheckoutProgress.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\Completed.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\Confirm.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\OnePageCheckout.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\OpcBillingAddress.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\OpcConfirmOrder.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\OpcPaymentInfo.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\OpcPaymentMethods.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\OpcShippingAddress.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\OpcShippingMethods.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\PaymentInfo.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\PaymentMethod.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\ShippingAddress.cshtml" />
+    <Content Include="Themes\Store\Views\Checkout\ShippingMethod.cshtml" />
+    <Content Include="Themes\Store\Views\Common\AdminHeaderLinks.cshtml" />
+    <Content Include="Themes\Store\Views\Common\ContactUs.cshtml" />
+    <Content Include="Themes\Store\Views\Common\ContactVendor.cshtml" />
+    <Content Include="Themes\Store\Views\Common\CurrencySelector.cshtml" />
+    <Content Include="Themes\Store\Views\Common\EuCookieLaw.cshtml" />
+    <Content Include="Themes\Store\Views\Common\Favicon.cshtml" />
+    <Content Include="Themes\Store\Views\Common\Footer.cshtml" />
+    <Content Include="Themes\Store\Views\Common\HeaderLinks.cshtml" />
+    <Content Include="Themes\Store\Views\Common\JavaScriptDisabledWarning.cshtml" />
+    <Content Include="Themes\Store\Views\Common\LanguageSelector.cshtml" />
+    <Content Include="Themes\Store\Views\Common\Logo.cshtml" />
+    <Content Include="Themes\Store\Views\Common\PageNotFound.cshtml" />
+    <Content Include="Themes\Store\Views\Common\Sitemap.cshtml" />
+    <Content Include="Themes\Store\Views\Common\Social.cshtml" />
+    <Content Include="Themes\Store\Views\Common\StoreClosed.cshtml" />
+    <Content Include="Themes\Store\Views\Common\StoreThemeSelector.cshtml" />
+    <Content Include="Themes\Store\Views\Common\TaxTypeSelector.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\_CheckUsernameAvailability.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\_CustomerAttributes.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\_ExternalAuthentication.AssociateMessage.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\_ExternalAuthentication.Errors.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\AccountActivation.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\AddressAdd.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\AddressEdit.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\Addresses.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\Avatar.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\ChangePassword.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\CustomerNavigation.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\DownloadableProducts.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\EmailRevalidation.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\Info.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\Login.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\PasswordRecovery.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\PasswordRecoveryConfirm.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\Register.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\RegisterResult.cshtml" />
+    <Content Include="Themes\Store\Views\Customer\UserAgreement.cshtml" />
+    <Content Include="Themes\Store\Views\ExternalAuthentication\ExternalMethods.cshtml" />
+    <Content Include="Themes\Store\Views\Home\Index.cshtml" />
+    <Content Include="Themes\Store\Views\Install\Index.cshtml" />
+    <Content Include="Themes\Store\Views\News\HomePageNews.cshtml" />
+    <Content Include="Themes\Store\Views\News\List.cshtml" />
+    <Content Include="Themes\Store\Views\News\NewsItem.cshtml" />
+    <Content Include="Themes\Store\Views\Newsletter\NewsletterBox.cshtml" />
+    <Content Include="Themes\Store\Views\Newsletter\SubscriptionActivation.cshtml" />
+    <Content Include="Themes\Store\Views\Order\CustomerOrders.cshtml" />
+    <Content Include="Themes\Store\Views\Order\CustomerRewardPoints.cshtml" />
+    <Content Include="Themes\Store\Views\Order\Details.cshtml" />
+    <Content Include="Themes\Store\Views\Order\ShipmentDetails.cshtml" />
+    <Content Include="Themes\Store\Views\Poll\_Poll.cshtml" />
+    <Content Include="Themes\Store\Views\Poll\HomePagePolls.cshtml" />
+    <Content Include="Themes\Store\Views\Poll\PollBlock.cshtml" />
+    <Content Include="Themes\Store\Views\PrivateMessages\Inbox.cshtml" />
+    <Content Include="Themes\Store\Views\PrivateMessages\Index.cshtml" />
+    <Content Include="Themes\Store\Views\PrivateMessages\SendPM.cshtml" />
+    <Content Include="Themes\Store\Views\PrivateMessages\SentItems.cshtml" />
+    <Content Include="Themes\Store\Views\PrivateMessages\ViewPM.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_AddToCart.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_AddToWishlist.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_Availability.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_BackInStockSubscription.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_CompareProductsButton.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_DeliveryInfo.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_Discontinued.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_DownloadSample.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_GiftCardInfo.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductAttributes.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductBreadcrumb.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductDetailsPictures.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductEmailAFriendButton.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductManufacturers.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductPrice.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductReviewHelpfulness.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductReviewOverview.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductSpecifications.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductTags.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ProductTierPrices.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_RentalInfo.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_ShareButton.cshtml" />
+    <Content Include="Themes\Store\Views\Product\_SKU_Man_GTIN_Ven.cshtml" />
+    <Content Include="Themes\Store\Views\Product\CompareProducts.cshtml" />
+    <Content Include="Themes\Store\Views\Product\CrossSellProducts.cshtml" />
+    <Content Include="Themes\Store\Views\Product\CustomerProductReviews.cshtml" />
+    <Content Include="Themes\Store\Views\Product\HomepageBestSellers.cshtml" />
+    <Content Include="Themes\Store\Views\Product\HomepageProducts.cshtml" />
+    <Content Include="Themes\Store\Views\Product\NewProducts.cshtml" />
+    <Content Include="Themes\Store\Views\Product\ProductEmailAFriend.cshtml" />
+    <Content Include="Themes\Store\Views\Product\ProductReviews.cshtml" />
+    <Content Include="Themes\Store\Views\Product\ProductsAlsoPurchased.cshtml" />
+    <Content Include="Themes\Store\Views\Product\ProductTemplate.Grouped.cshtml" />
+    <Content Include="Themes\Store\Views\Product\ProductTemplate.Simple.cshtml" />
+    <Content Include="Themes\Store\Views\Product\RecentlyViewedProducts.cshtml" />
+    <Content Include="Themes\Store\Views\Product\RecentlyViewedProductsBlock.cshtml" />
+    <Content Include="Themes\Store\Views\Product\RelatedProducts.cshtml" />
+    <Content Include="Themes\Store\Views\Profile\Index.cshtml" />
+    <Content Include="Themes\Store\Views\Profile\Info.cshtml" />
+    <Content Include="Themes\Store\Views\Profile\Posts.cshtml" />
+    <Content Include="Themes\Store\Views\ReturnRequest\CustomerReturnRequests.cshtml" />
+    <Content Include="Themes\Store\Views\ReturnRequest\ReturnRequest.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\_AddressAttributes.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\_ColumnsOne.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\_ColumnsTwo.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\_CreateOrUpdateAddress.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\_Notifications.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\_Print.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\_ProductBox.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\_Root.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\_Root.Head.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\Error.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\Head.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\Header.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\OldInternetExplorerWarning.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\_ButtonPaymentMethod.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\_CheckoutAttributes.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\_DiscountBox.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\_EstimateShippingResult.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\_GiftCardBox.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\_OrderReviewData.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\Cart.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\EmailWishlist.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\EstimateShipping.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\FlyoutShoppingCart.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\OrderSummary.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\OrderTotals.cshtml" />
+    <Content Include="Themes\Store\Views\ShoppingCart\Wishlist.cshtml" />
+    <Content Include="Themes\Store\Views\Topic\TopicBlock.cshtml" />
+    <Content Include="Themes\Store\Views\Topic\TopicDetails.cshtml" />
+    <Content Include="Themes\Store\Views\Vendor\ApplyVendor.cshtml" />
+    <Content Include="Themes\Store\Views\Vendor\Info.cshtml" />
+    <Content Include="Themes\Store\Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Themes\Store\Views\Widget\WidgetsByZone.cshtml" />
+    <Content Include="Themes\Store\Content\css\base.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_alerts.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_center-block.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_forms.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_grid.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_image.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_labels.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_opacity.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_panels.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_resize.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_size.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_alerts.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_badges.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_breadcrumbs.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_button-groups.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_buttons.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_carousel.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_close.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_code.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_component-animations.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_dropdowns.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_forms.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_glyphicons.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_grid.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_input-groups.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_jumbotron.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_labels.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_list-group.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_media.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_mixins.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_modals.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_navbar.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_navs.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_normalize.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_pager.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_pagination.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_panels.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_popovers.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_print.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_progress-bars.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_responsive-embed.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_responsive-utilities.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_scaffolding.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_tables.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_theme.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_thumbnails.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_tooltip.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_type.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_utilities.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_variables.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\bootstrap\_wells.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\_bootstrap-compass.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\_bootstrap-mincer.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\_bootstrap-sprockets.scss" />
+    <Content Include="Themes\Store\Content\css\bootstrap\_bootstrap.scss" />
+    <Content Include="Themes\Store\Content\css\extend\crumbs1.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_accountNumber.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_advertise.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_crumbs.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_footer.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_header.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_my.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_nav.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_order.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_photoswipe.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_photoswipeSkin.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_shop.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_sweetalert.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_swiper.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_toggle.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_variable.scss" />
+    <Content Include="Themes\Store\Content\css\fonts\iconfont.eot" />
+    <Content Include="Themes\Store\Content\css\fonts\iconfont.ttf" />
+    <Content Include="Themes\Store\Content\css\fonts\iconfont.woff" />
+    <Content Include="Themes\Store\Content\css\fonts\_iconfont.scss" />
+    <Content Include="Themes\Store\Content\css\pages\aboutUs.scss" />
+    <Content Include="Themes\Store\Content\css\pages\articleDetails.scss" />
+    <Content Include="Themes\Store\Content\css\pages\articleList.scss" />
+    <Content Include="Themes\Store\Content\css\pages\cart.scss" />
+    <Content Include="Themes\Store\Content\css\pages\contactUs.scss" />
+    <Content Include="Themes\Store\Content\css\pages\index.scss" />
+    <Content Include="Themes\Store\Content\css\pages\login.scss" />
+    <Content Include="Themes\Store\Content\css\pages\myAddressDetails.scss" />
+    <Content Include="Themes\Store\Content\css\pages\myAddressList.scss" />
+    <Content Include="Themes\Store\Content\css\pages\myChangePassword.scss" />
+    <Content Include="Themes\Store\Content\css\pages\myInformation.scss" />
+    <Content Include="Themes\Store\Content\css\pages\myOrderDetails.scss" />
+    <Content Include="Themes\Store\Content\css\pages\myOrderList.scss" />
+    <Content Include="Themes\Store\Content\css\pages\newPassword.scss" />
+    <Content Include="Themes\Store\Content\css\pages\orderDetails.scss" />
+    <Content Include="Themes\Store\Content\css\pages\productDetails.scss" />
+    <Content Include="Themes\Store\Content\css\pages\productList.scss" />
+    <Content Include="Themes\Store\Content\css\pages\register.scss" />
+    <Content Include="Themes\Store\Content\img\movie.ogg" />
+    <Content Include="Themes\Store\Content\img\Thumbs.db" />
+    <Content Include="Themes\Store\Content\css\extend\_adminTop.scss" />
+    <Content Include="Themes\Store\Views\Shared\_CartProductBox.cshtml" />
+    <Content Include="Themes\Store\Content\css\left.scss" />
+    <Content Include="Themes\Store\Content\css\extend\_notification.scss" />
+    <Content Include="Themes\Store\Views\Shared\_HomePageProductBox.cshtml" />
+    <Content Include="Themes\Store\Content\css\extend\_pageTitle.scss" />
+    <Content Include="Themes\Store\Content\css\pages\sitemap.scss" />
+    <Content Include="Themes\Store\Content\css\pages\Customer.scss" />
+    <Content Include="Themes\Store\Views\Product\ProductTemplate.Capsule.cshtml" />
+    <Content Include="Themes\Store\Views\Product\ProductTemplate.Filler.cshtml" />
+    <Content Include="Themes\Store\Views\Product\ProductTemplate.MetalFiller.cshtml" />
+    <Content Include="Themes\Store\Views\Product\ProductTemplate.Counter.cshtml" />
+    <Content Include="Themes\Store\Views\Topic\TopicDetailsSwiper.cshtml" />
+    <Content Include="Themes\Store\Content\css\pages\articleDetailsSwiper.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\base.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\_bootstrap-compass.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\_bootstrap-mincer.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\_bootstrap-sprockets.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\_bootstrap.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_alerts.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_badges.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_breadcrumbs.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_button-groups.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_buttons.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_carousel.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_close.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_code.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_component-animations.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_dropdowns.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_forms.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_glyphicons.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_grid.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_input-groups.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_jumbotron.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_labels.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_list-group.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_media.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_mixins.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_modals.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_navbar.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_navs.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_normalize.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_pager.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_pagination.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_panels.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_popovers.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_print.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_progress-bars.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_responsive-embed.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_responsive-utilities.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_scaffolding.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_tables.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_theme.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_thumbnails.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_tooltip.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_type.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_utilities.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_variables.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\_wells.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_alerts.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_center-block.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_forms.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_grid.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_image.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_labels.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_opacity.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_panels.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_resize.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_size.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\bootstrap\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_accountNumber.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_adminTop.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_advertise.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_crumbs.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_footer.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_header.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_my.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_nav.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_notification.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_order.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_pageTitle.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_photoswipe.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_photoswipeSkin.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_shop.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_sweetalert.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_swiper.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_toggle.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\_variable.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\extend\crumbs1.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\_iconfont.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\iconfont.eot" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\iconfont.ttf" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\iconfont.woff" />
+    <Content Include="Themes\Ipharmachine\Content\css\left.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\aboutUs.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\articleDetails.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\articleDetailsswiper.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\articleList.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\cart.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\contactUs.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\Customer.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\index.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\login.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myAddressDetails.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myAddressList.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myChangePassword.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myInformation.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myOrderDetails.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\myOrderList.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\newPassword.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\orderDetails.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\productDetails.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\productList.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\register.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\pages\sitemap.scss" />
+    <Content Include="Themes\Ipharmachine\Content\img\movie.ogg" />
+    <Content Include="Themes\Ipharmachine\Content\img\Thumbs.db" />
+    <Content Include="Themes\Ipharmachine\theme.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Views\_ViewStart.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\BackInStockSubscription\CustomerSubscriptions.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\BackInStockSubscription\SubscribePopup.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Blog\BlogMonths.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Blog\BlogPost.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Blog\BlogTags.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Blog\List.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\_ActiveTopics.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\_CreateUpdatePost.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\_CreateUpdateTopic.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\_ForumGroup.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\_ForumHeader.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\_ForumPost.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\_SearchBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\ActiveDiscussions.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\ActiveDiscussionsSmall.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\CustomerForumSubscriptions.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\Forum.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\ForumBreadcrumb.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\ForumGroup.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\Index.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\LastPost.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\PostCreate.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\PostEdit.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\Search.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\Topic.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\TopicCreate.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\TopicEdit.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Boards\TopicMove.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\_CatalogSelectors.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\_FilterPriceBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\_FilterSpecsBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\CategoryNavigation.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\CategoryTemplate.ProductsInGridOrLines.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\HomepageCategories.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\ManufacturerAll.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\ManufacturerNavigation.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\ManufacturerTemplate.ProductsInGridOrLines.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\PopularProductTags.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\ProductsByTag.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\ProductTagsAll.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\Search.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\SearchBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\TopMenu.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\Vendor.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\VendorAll.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\VendorNavigation.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\BillingAddress.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\CheckoutProgress.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\Completed.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\Confirm.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\OnePageCheckout.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\OpcBillingAddress.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\OpcConfirmOrder.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\OpcPaymentInfo.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\OpcPaymentMethods.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\OpcShippingAddress.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\OpcShippingMethods.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\PaymentInfo.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\PaymentMethod.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\ShippingAddress.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Checkout\ShippingMethod.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\AdminHeaderLinks.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\ContactUs.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\ContactVendor.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\CurrencySelector.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\EuCookieLaw.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\Favicon.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\Footer.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\HeaderLinks.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\JavaScriptDisabledWarning.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\LanguageSelector.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\Logo.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\PageNotFound.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\Sitemap.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\Social.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\StoreClosed.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\StoreThemeSelector.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Common\TaxTypeSelector.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\_CheckUsernameAvailability.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\_CustomerAttributes.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\_ExternalAuthentication.AssociateMessage.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\_ExternalAuthentication.Errors.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\AccountActivation.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\AddressAdd.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\AddressEdit.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\Addresses.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\Avatar.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\ChangePassword.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\CustomerNavigation.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\DownloadableProducts.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\EmailRevalidation.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\Info.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\Login.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\PasswordRecovery.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\PasswordRecoveryConfirm.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\Register.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\RegisterResult.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\UserAgreement.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ExternalAuthentication\ExternalMethods.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Home\Index.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Install\Index.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\News\HomePageNews.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\News\List.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\News\NewsItem.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Newsletter\NewsletterBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Newsletter\SubscriptionActivation.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Order\CustomerOrders.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Order\CustomerRewardPoints.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Order\Details.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Order\ShipmentDetails.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Poll\_Poll.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Poll\HomePagePolls.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Poll\PollBlock.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\PrivateMessages\Inbox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\PrivateMessages\Index.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\PrivateMessages\SendPM.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\PrivateMessages\SentItems.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\PrivateMessages\ViewPM.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_AddToCart.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_AddToWishlist.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_Availability.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_BackInStockSubscription.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_CompareProductsButton.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_DeliveryInfo.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_Discontinued.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_DownloadSample.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_GiftCardInfo.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductAttributes.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductBreadcrumb.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductDetailsPictures.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductEmailAFriendButton.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductManufacturers.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductPrice.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductReviewHelpfulness.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductReviewOverview.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductSpecifications.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductTags.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ProductTierPrices.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_RentalInfo.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_ShareButton.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_SKU_Man_GTIN_Ven.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\CompareProducts.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\CrossSellProducts.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\CustomerProductReviews.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\HomepageBestSellers.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\HomepageProducts.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\NewProducts.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\ProductEmailAFriend.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\ProductReviews.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\ProductsAlsoPurchased.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\ProductTemplate.Capsule.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\ProductTemplate.Counter.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\ProductTemplate.Filler.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\ProductTemplate.Grouped.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\ProductTemplate.MetalFiller.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\ProductTemplate.Simple.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\RecentlyViewedProducts.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\RecentlyViewedProductsBlock.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\RelatedProducts.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Profile\Index.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Profile\Info.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Profile\Posts.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ReturnRequest\CustomerReturnRequests.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ReturnRequest\ReturnRequest.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_AddressAttributes.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_CartProductBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_ColumnsOne.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_ColumnsTwo.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_CreateOrUpdateAddress.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_HomePageProductBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_Notifications.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_Print.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_ProductBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_Root.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_Root.Head.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\Error.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\Head.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\Header.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\OldInternetExplorerWarning.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\_ButtonPaymentMethod.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\_CheckoutAttributes.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\_DiscountBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\_EstimateShippingResult.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\_GiftCardBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\_OrderReviewData.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\Cart.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\EmailWishlist.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\EstimateShipping.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\FlyoutShoppingCart.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\OrderSummary.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\OrderTotals.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\ShoppingCart\Wishlist.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Topic\TopicBlock.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Topic\TopicDetails.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Topic\TopicDetailsSwiper.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Vendor\ApplyVendor.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Vendor\Info.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Themes\Ipharmachine\Views\Widget\WidgetsByZone.cshtml" />
+    <Content Include="Themes\Store\Content\css\preload.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\preload.scss" />
+    <Content Include="Themes\Store\Content\css\lazy-load.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\lazy-load.scss" />
+    <Content Include="Themes\Store\Views\Customer\_TimeZone.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Customer\_TimeZone.cshtml" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\bebas.eot" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\bebas.ttf" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\bebas.woff" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\bebas.woff2" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\bebas.scss" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\machines\iconfont.eot" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\machines\iconfont.ttf" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\machines\iconfont.woff" />
+    <Content Include="Themes\Ipharmachine\Content\css\fonts\machines\iconfont.woff2" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\CategoryTemplate.Canonical.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\ProductTemplate.Simple.Canonical.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\CategoryTemplate.ManualFiller.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Shared\_HomePagePosts.cshtml" />
+    <Content Include="Themes\Store\Views\Shared\_HomePagePosts.cshtml" />
+    <Content Include="Themes\Store\Views\Catalog\_MyFilterSpecsBox.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Catalog\_MyFilterSpecsBox.cshtml" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\gel\Thumbs.db" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\metia\Thumbs.db" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\Veg\Thumbs.db" />
+    <Content Include="Themes\Store\Views\Topic\TopicDetailsDesignCapsule.cshtml" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\pul\Thumbs.db" />
+    <Content Include="Themes\Store\Content\js\extend\design-capsule\img\ent\Thumbs.db" />
+    <Content Include="Themes\Store\Views\Topic\PartialContactUs.cshtml" />
+    <Content Include="Themes\Ipharmachine\Views\Product\_PartialPluginProductDetail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Nop.Core\Nop.Core.csproj">
+      <Project>{6BDA8332-939F-45B7-A25E-7A797260AE59}</Project>
+      <Name>Nop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Nop.Data\Nop.Data.csproj">
+      <Project>{CCD7F2C9-6A2C-4CF0-8E89-076B8FC0F144}</Project>
+      <Name>Nop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Nop.Services\Nop.Services.csproj">
+      <Project>{210541AD-F659-47DA-8763-16F36C5CD2F4}</Project>
+      <Name>Nop.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nop.Web.Framework\Nop.Web.Framework.csproj">
+      <Project>{75FD4163-333C-4DD5-854D-2EF294E45D94}</Project>
+      <Name>Nop.Web.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\DefaultClean\theme.config" />
+    <Content Include="Themes\DefaultClean\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Catalog\CategoryTemplate.ProductsInGridOrLines.cshtml" />
+    <Content Include="Views\Shared\_ProductBox.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Head.cshtml" />
+    <Content Include="Views\Shared\_ColumnsOne.cshtml" />
+    <Content Include="Views\Shared\_ColumnsTwo.cshtml" />
+    <Content Include="Views\Shared\_Root.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Customer\Login.cshtml" />
+    <Content Include="Views\Customer\Register.cshtml" />
+    <Content Include="Views\Customer\RegisterResult.cshtml" />
+    <Content Include="Views\Customer\Info.cshtml" />
+    <Content Include="Views\Customer\CustomerNavigation.cshtml" />
+    <Content Include="Views\Customer\Addresses.cshtml" />
+    <Content Include="Views\Customer\AddressAdd.cshtml" />
+    <Content Include="Views\Customer\AddressEdit.cshtml" />
+    <Content Include="Views\Shared\_CreateOrUpdateAddress.cshtml" />
+    <Content Include="Views\Order\CustomerRewardPoints.cshtml" />
+    <Content Include="Views\Customer\ChangePassword.cshtml" />
+    <Content Include="Views\Customer\Avatar.cshtml" />
+    <Content Include="Views\Catalog\CategoryNavigation.cshtml" />
+    <Content Include="Views\Catalog\_FilterPriceBox.cshtml" />
+    <Content Include="Views\Catalog\_FilterSpecsBox.cshtml" />
+    <Content Include="Views\Catalog\ManufacturerNavigation.cshtml" />
+    <Content Include="Views\Catalog\ManufacturerTemplate.ProductsInGridOrLines.cshtml" />
+    <Content Include="Views\Catalog\ManufacturerAll.cshtml" />
+    <Content Include="Views\Product\RelatedProducts.cshtml" />
+    <Content Include="Views\Product\_ShareButton.cshtml" />
+    <Content Include="Views\Product\_ProductManufacturers.cshtml" />
+    <Content Include="Views\Product\_ProductReviewOverview.cshtml" />
+    <Content Include="Views\Product\_ProductBreadcrumb.cshtml" />
+    <Content Include="Views\Product\ProductReviews.cshtml" />
+    <Content Include="Views\Product\_ProductSpecifications.cshtml" />
+    <Content Include="Views\Product\_ProductTierPrices.cshtml" />
+    <Content Include="Views\Product\_GiftCardInfo.cshtml" />
+    <Content Include="Views\Product\_ProductPrice.cshtml" />
+    <Content Include="Views\Product\_AddToCart.cshtml" />
+    <Content Include="Views\Product\_DownloadSample.cshtml" />
+    <Content Include="Views\Product\_ProductAttributes.cshtml" />
+    <Content Include="Views\ShoppingCart\Cart.cshtml" />
+    <Content Include="Views\Product\CrossSellProducts.cshtml" />
+    <Content Include="Views\ShoppingCart\EstimateShipping.cshtml" />
+    <Content Include="Views\Checkout\CheckoutProgress.cshtml" />
+    <Content Include="Views\ShoppingCart\_CheckoutAttributes.cshtml" />
+    <Content Include="Views\ShoppingCart\OrderTotals.cshtml" />
+    <Content Include="Views\ShoppingCart\Wishlist.cshtml" />
+    <Content Include="Views\ShoppingCart\OrderSummary.cshtml" />
+    <Content Include="Views\Checkout\ShippingAddress.cshtml" />
+    <Content Include="Views\Checkout\BillingAddress.cshtml" />
+    <Content Include="Views\Checkout\ShippingMethod.cshtml" />
+    <Content Include="Views\Checkout\PaymentMethod.cshtml" />
+    <Content Include="Views\Checkout\PaymentInfo.cshtml" />
+    <Content Include="Views\Checkout\Confirm.cshtml" />
+    <Content Include="Views\Checkout\Completed.cshtml" />
+    <Content Include="Views\Order\CustomerOrders.cshtml" />
+    <Content Include="Views\Customer\DownloadableProducts.cshtml" />
+    <Content Include="Views\Customer\UserAgreement.cshtml" />
+    <Content Include="Views\ReturnRequest\ReturnRequest.cshtml" />
+    <Content Include="Views\ReturnRequest\CustomerReturnRequests.cshtml" />
+    <Content Include="Views\Product\RecentlyViewedProducts.cshtml" />
+    <Content Include="Views\Product\RecentlyViewedProductsBlock.cshtml" />
+    <Content Include="Views\Product\NewProducts.cshtml" />
+    <Content Include="Views\Product\_ProductReviewHelpfulness.cshtml" />
+    <Content Include="Views\Product\_CompareProductsButton.cshtml" />
+    <Content Include="Views\Product\CompareProducts.cshtml" />
+    <Content Include="Views\Product\_ProductEmailAFriendButton.cshtml" />
+    <Content Include="Views\Product\ProductEmailAFriend.cshtml" />
+    <Content Include="Views\ShoppingCart\EmailWishlist.cshtml" />
+    <Content Include="Views\Customer\PasswordRecovery.cshtml" />
+    <Content Include="Views\Customer\PasswordRecoveryConfirm.cshtml" />
+    <Content Include="Views\Newsletter\NewsletterBox.cshtml" />
+    <Content Include="Views\Newsletter\SubscriptionActivation.cshtml" />
+    <Content Include="Views\Customer\AccountActivation.cshtml" />
+    <Content Include="Views\Common\ContactUs.cshtml" />
+    <Content Include="Views\Common\CurrencySelector.cshtml" />
+    <Content Include="Views\Common\HeaderLinks.cshtml" />
+    <Content Include="Views\Common\LanguageSelector.cshtml" />
+    <Content Include="Views\Catalog\TopMenu.cshtml" />
+    <Content Include="Views\Common\TaxTypeSelector.cshtml" />
+    <Content Include="Views\Blog\List.cshtml" />
+    <Content Include="Views\Blog\BlogTags.cshtml" />
+    <Content Include="Views\Blog\BlogMonths.cshtml" />
+    <Content Include="Views\Blog\BlogPost.cshtml" />
+    <Content Include="Views\News\HomePageNews.cshtml" />
+    <Content Include="Views\News\List.cshtml" />
+    <Content Include="Views\News\NewsItem.cshtml" />
+    <Content Include="Views\Topic\TopicBlock.cshtml" />
+    <Content Include="Views\Topic\TopicDetails.cshtml" />
+    <Content Include="Views\Common\Sitemap.cshtml" />
+    <Content Include="Views\Product\_ProductTags.cshtml" />
+    <Content Include="Views\Catalog\PopularProductTags.cshtml" />
+    <Content Include="Views\Catalog\ProductsByTag.cshtml" />
+    <Content Include="Views\Catalog\SearchBox.cshtml" />
+    <Content Include="Views\Catalog\Search.cshtml" />
+    <Content Include="Views\Product\HomepageBestSellers.cshtml" />
+    <Content Include="Views\Product\HomepageProducts.cshtml" />
+    <Content Include="Views\Catalog\HomepageCategories.cshtml" />
+    <Content Include="Views\ShoppingCart\FlyoutShoppingCart.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Widget\WidgetsByZone.cshtml" />
+    <Content Include="Views\Product\ProductsAlsoPurchased.cshtml" />
+    <Content Include="Views\Poll\_Poll.cshtml" />
+    <Content Include="Views\Poll\PollBlock.cshtml" />
+    <Content Include="Views\Poll\HomePagePolls.cshtml" />
+    <Content Include="Views\Boards\ActiveDiscussions.cshtml" />
+    <Content Include="Views\Boards\Forum.cshtml" />
+    <Content Include="Views\Boards\ForumGroup.cshtml" />
+    <Content Include="Views\Boards\Index.cshtml" />
+    <Content Include="Views\Boards\PostCreate.cshtml" />
+    <Content Include="Views\Boards\PostEdit.cshtml" />
+    <Content Include="Views\Boards\Search.cshtml" />
+    <Content Include="Views\Boards\Topic.cshtml" />
+    <Content Include="Views\Boards\TopicCreate.cshtml" />
+    <Content Include="Views\Boards\TopicEdit.cshtml" />
+    <Content Include="Views\Boards\TopicMove.cshtml" />
+    <Content Include="Views\Boards\_ActiveTopics.cshtml" />
+    <Content Include="Views\Boards\_CreateUpdatePost.cshtml" />
+    <Content Include="Views\Boards\_CreateUpdateTopic.cshtml" />
+    <Content Include="Views\Boards\ForumBreadcrumb.cshtml" />
+    <Content Include="Views\Boards\_ForumGroup.cshtml" />
+    <Content Include="Views\Boards\_ForumPost.cshtml" />
+    <Content Include="Views\Boards\LastPost.cshtml" />
+    <Content Include="Views\Boards\_SearchBox.cshtml" />
+    <Content Include="Views\Install\Index.cshtml" />
+    <Content Include="Views\PrivateMessages\Index.cshtml" />
+    <Content Include="Views\PrivateMessages\SendPM.cshtml" />
+    <Content Include="Views\PrivateMessages\ViewPM.cshtml" />
+    <Content Include="Views\PrivateMessages\Inbox.cshtml" />
+    <Content Include="Views\PrivateMessages\SentItems.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Profile\Info.cshtml" />
+    <Content Include="Views\Profile\Posts.cshtml" />
+    <Content Include="Views\Common\Favicon.cshtml" />
+    <Content Include="Views\Boards\CustomerForumSubscriptions.cshtml" />
+    <Content Include="Views\Order\ShipmentDetails.cshtml" />
+    <Content Include="Views\Common\JavaScriptDisabledWarning.cshtml" />
+    <Content Include="Views\Shared\_Root.Head.cshtml" />
+    <Content Include="Views\Catalog\ProductTagsAll.cshtml" />
+    <Content Include="Views\ShoppingCart\_DiscountBox.cshtml" />
+    <Content Include="Views\ShoppingCart\_GiftCardBox.cshtml" />
+    <Content Include="Views\ShoppingCart\_ButtonPaymentMethod.cshtml" />
+    <Content Include="Views\ShoppingCart\_OrderReviewData.cshtml" />
+    <Content Include="Views\Common\StoreClosed.cshtml" />
+    <Content Include="Themes\DefaultClean\Views\Shared\Head.cshtml" />
+    <Content Include="Views\Common\AdminHeaderLinks.cshtml" />
+    <Content Include="Views\Common\PageNotFound.cshtml" />
+    <Content Include="Views\Common\EuCookieLaw.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\GeoLite2-Country.mmdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Catalog\VendorNavigation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Catalog\Vendor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Catalog\VendorAll.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>15536</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:15536/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+		 Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <!-- And here we place our custom logic (below)
+  </Target> -->
+  <Target Name="ExcludeRootBinariesDeployment">
+    <ItemGroup>
+      <RootBinFiles Include="bin\*">
+        <InProject>false</InProject>
+      </RootBinFiles>
+    </ItemGroup>
+    <PropertyGroup>
+      <ExcludeFilesFromDeployment>
+		**\*.Debug.config;
+		**\*.Release.config;
+		**\obj\**;
+		**\bin\*.xml;
+		**\*.cs;
+		**\packages.config;
+		**\*.csproj;
+		**\*.csproj.user;
+		Administration\bin\**;
+		Administration\db_backups\*.bak;
+		App_Data\InstalledPlugins.txt;
+		App_Data\Settings.txt;
+		App_Data\Nop.Db.sdf;
+        App_Data\browscap.crawlersonly.xml;
+		bin\Nop.Admin.dll.config;
+		bin\Nop.Web.dll.config;
+		Content\Files\ExportImport\*.txt;
+		Content\Files\ExportImport\*.xml;
+		Content\Images\Thumbs\*.jpg;
+		Content\Images\Thumbs\*.jpeg;
+		Content\Images\Thumbs\*.png;
+		Content\Images\Thumbs\*.gif;
+		Properties\**\*;
+      </ExcludeFilesFromDeployment>
+    </PropertyGroup>
+  </Target>
+  <Target Name="ExcludeRootBinariesPackage" DependsOnTargets="ExcludeRootBinariesDeployment" BeforeTargets="ExcludeFilesFromPackage">
+    <ItemGroup>
+      <ExcludeFromPackageFiles Include="$(ExcludeFilesFromDeployment)" />
+    </ItemGroup>
+  </Target>
+  <Target Name="CopySqlCeBinaries">
+    <ItemGroup>
+      <SqlCeBinariesx86 Include="$(ProjectDir)..\..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\**\*" />
+      <SqlCeBinariesx64 Include="$(ProjectDir)..\..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(SqlCeBinariesx86)" DestinationFolder="$(OutputPath)\x86\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(SqlCeBinariesx64)" DestinationFolder="$(OutputPath)\amd64\%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <PropertyGroup>
+    <PluginsBinDirectory>$(ProjectDir)\Plugins\Bin\</PluginsBinDirectory>
+  </PropertyGroup>
+  <Target Name="CreatePluginsBinDirectory">
+    <MakeDir Directories="$(PluginsBinDirectory)" />
+    <!-- Now copy an empty file from \Content\Files to ensure that \Plugins\bin\ is also deployed-->
+    <Copy SourceFiles="$(ProjectDir)Content\Files\Index.htm" DestinationFolder="$(ProjectDir)Plugins\bin\" ContinueOnError="true" />
+  </Target>
+  <Target Name="AfterBuild" DependsOnTargets="MvcBuildViews">
+    <CallTarget Targets="ExcludeRootBinariesDeployment" />
+    <CallTarget Targets="CopySqlCeBinaries" />
+    <CallTarget Targets="CreatePluginsBinDirectory" />
+  </Target>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+</Project>

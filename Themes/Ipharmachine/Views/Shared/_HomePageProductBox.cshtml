@@ -1,0 +1,79 @@
+﻿@model ProductOverviewModel
+@using Nop.Core
+@using Nop.Core.Caching
+@using Nop.Core.Domain.Catalog
+@using Nop.Core.Domain.Orders
+@using Nop.Core.Domain.Tax
+@using Nop.Core.Infrastructure
+@using Nop.Services.Catalog
+@using Nop.Services.Customers
+@using Nop.Services.Directory
+@using Nop.Services.Discounts
+@using Nop.Web.Models.Catalog;
+@using Nop.Services.Configuration;
+@using System.Text.RegularExpressions;
+@{
+    var pc = EngineContext.Current.Resolve<IPriceCalculationService>();
+    var priceFormatter = EngineContext.Current.Resolve<IPriceFormatter>();
+    var currencyService = EngineContext.Current.Resolve<ICurrencyService>();
+    var product = EngineContext.Current.Resolve<IProductService>();
+    var workContext = EngineContext.Current.Resolve<IWorkContext>();
+    var p = product.GetProductById(Model.Id);
+
+    string discountName = null;
+    List<DiscountForCaching> dl;
+    decimal a;
+    string price;
+    if (!p.CallForPrice)
+    {
+        price = priceFormatter.FormatPrice(
+            currencyService.ConvertFromPrimaryStoreCurrency(pc.GetFinalPrice(p, workContext.CurrentCustomer, 0M, true, 1, null, null, out a, out dl), workContext.WorkingCurrency));
+        if (dl != null && dl.Count > 0)
+        {
+            discountName = dl[0].Name;
+        }
+    }
+    else
+    {
+        price = Model.ProductPrice.Price;
+    }
+
+
+
+
+}
+
+<div class="item-pic">
+    @{
+        var settingService = EngineContext.Current.Resolve<ISettingService>();
+        var cdnAddress = settingService.GetSetting("maxcdnsetting.cdnaddress").Value;
+    }
+    <a href="@Url.RouteUrl("Product", new {SeName = Model.SeName})" title="@Model.DefaultPictureModel.Title">
+        <img alt="@Model.DefaultPictureModel.AlternateText" class="lazyload" src="@(cdnAddress==""?"":cdnAddress)/Themes/Ipharmachine/Content/images/loading.gif" data-original="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title" />
+    </a>
+</div>
+<a href="@Url.RouteUrl("Product", new {SeName = Model.SeName})" class="item-name">@Model.Name</a>
+<div class="item-inner">
+    <div class="price actual">
+        <span class="actual-price">@Html.Raw(string.IsNullOrWhiteSpace(price) ? "&nbsp;" : price)</span>
+        @if (!String.IsNullOrEmpty(Model.ProductPrice.OldPrice))
+        {
+            if (decimal.Compare(decimal.Parse(Regex.Replace(Model.ProductPrice.OldPrice, @"[^\d.\d]", "")), decimal.Parse(Regex.Replace(Model.ProductPrice.Price, @"[^\d.\d]", ""))) > 0)
+            {
+                <span class="old-price">@Model.ProductPrice.OldPrice</span>
+            }
+        }
+    </div>
+    @*    *@
+    @*    <span class="stock-number">10,000pcs</span>*@
+</div>
+@if (discountName != null)
+{
+    <div class="item-ribbon">
+        <span>@discountName</span>
+    </div>
+
+}
+
+
+

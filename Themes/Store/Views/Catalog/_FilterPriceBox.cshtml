@@ -1,0 +1,71 @@
+﻿@model CatalogPagingFilteringModel.PriceRangeFilterModel
+@using Nop.Web.Models.Catalog;
+@{
+    var selectedItem = Model.Items.FirstOrDefault(x => x.Selected);
+}
+@functions
+{
+
+    string FormatPriceRangeText(CatalogPagingFilteringModel.PriceRangeFilterItem filterItem)
+    {
+        string rangeText = "";
+        if (String.IsNullOrWhiteSpace(filterItem.From))
+        {
+            rangeText = string.Format(T("Filtering.PriceRangeFilter.Under").Text, filterItem.To);
+        }
+        else if (String.IsNullOrWhiteSpace(filterItem.To))
+        {
+            rangeText = string.Format(T("Filtering.PriceRangeFilter.Over").Text, filterItem.From);
+        }
+        else
+        {
+            rangeText = string.Format("{0} - {1}", filterItem.From, filterItem.To);
+        }
+        return rangeText;
+    }
+
+}
+@helper FormatPriceRangeHtml(CatalogPagingFilteringModel.PriceRangeFilterItem filterItem)
+{
+    string rangeText = "";
+    if (String.IsNullOrWhiteSpace(filterItem.From))
+    {
+        rangeText = string.Format(T("Filtering.PriceRangeFilter.Under").Text, string.Format("<span class=\"PriceRange\">{0}</span>", filterItem.To));
+    }
+    else if (String.IsNullOrWhiteSpace(filterItem.To))
+    {
+        rangeText = string.Format(T("Filtering.PriceRangeFilter.Over").Text, string.Format("<span class=\"PriceRange\">{0}</span>", filterItem.From));
+    }
+    else
+    {
+        rangeText = string.Format("<span class=\"PriceRange\">{0}</span> - <span class=\"PriceRange\">{1}</span>", filterItem.From, filterItem.To);
+    }
+    <text>@Html.Raw(rangeText)</text>
+}
+@if (Model.Enabled)
+{
+
+
+    <div class="product-toggle hidden-sm hidden-xs" data-toggle="leftbox">
+        <div class="toggle-title">
+            <strong class="toggle-strong">@T("Filtering.PriceRangeFilter")</strong>
+            @if (Model.Items.Any(x => x.Selected))
+            {
+                <a class="iconfont icon-icondel" href="@Model.RemoveFilterUrl"></a>
+            }
+        </div>
+        <ul class="toggle-list">
+            @foreach (var item in Model.Items)
+            {
+
+                <li @(Html.Raw(item.Selected ? " class=\"active\"" : ""))><a href="@(item.Selected?Model.RemoveFilterUrl:item.FilterUrl)">@FormatPriceRangeHtml(item)</a></li>
+                if (item.Selected)
+                {
+                    var title = FormatPriceRangeText(item).ToString();
+                    Html.AddTitleParts(title);
+                    Html.AddMetaDescriptionParts(title);
+                }
+            }
+        </ul>
+    </div>
+}

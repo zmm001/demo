@@ -1,0 +1,7130 @@
+{
+  "A": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 116.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 141.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 167.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 193.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 219.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 244.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 270.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 295.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 320.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 345.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 369.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 392.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 415.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 438.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 461.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 484.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 507.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 530.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 553.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 576.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 594.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 612.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 629.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 647.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 664.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 682.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 700.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 717.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 735.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 752.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 770.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 788.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 805.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 823.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 840.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 858.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 876.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 893.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 911.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 928.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 946.55
+    },
+    {
+      "UnitPrice": 46.2,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 40.15,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 40.15,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 39.05,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 36.85,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "B": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 162.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 199.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 235.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 271.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 308
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 344.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 381.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 418.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 455.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 492.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 526.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 560.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 594.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 628.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 662.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 696.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 730.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 765.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 799.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 833.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 862.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 892.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 922.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 952.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 981.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 1011.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 1041.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 1070.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 1100.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 1130.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 1159.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 1189.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 1219.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 1249.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1278.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1308.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1338.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1367.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1397.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1427.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1456.95
+    },
+    {
+      "UnitPrice": 79.2,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 73.15,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 72.6,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 72.05,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 67.1,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "D": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 173.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 212.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 252.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 292.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 331.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 369.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 407.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 445.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 483.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 521.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 559.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 598.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 636.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 675.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 713.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 752.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 790.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 829.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 867.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 906.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 943.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 981.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 1018.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 1056
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 1093.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 1130.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 1168.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 1205.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 1243
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 1280.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 1317.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 1355.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 1392.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 1430
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1467.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1504.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1542.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1579.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1617
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1654.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1691.8
+    },
+    {
+      "UnitPrice": 83.6,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 80.3,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 79.75,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 78.1,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 76.45,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "E": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 175.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 231.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 287.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 343.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 399.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 452.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 504.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 556.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 608.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 661.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 708.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 756.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 804.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 852.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 900.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 948.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 996.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 1043.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 1091.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 1139.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 1185.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 1230.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 1276.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 1322.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 1367.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 1413.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 1459.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 1504.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 1550.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 1596.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 1641.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 1687.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 1733.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 1778.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1824.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1870
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1915.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1961.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 2006.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 2052.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 2098.25
+    },
+    {
+      "UnitPrice": 102.85,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 101.75,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 101.2,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 100.65,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 100.65,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "F": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 136.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 169.64
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 204.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 239.77
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 274.83
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 268.78
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 301.36
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 333.94
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 366.52
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 399.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 410.02
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 437.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 465.66
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 493.48
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 521.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 549.12
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 576.94
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 604.76
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 632.58
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 660.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 658
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 681
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 704
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 727
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 750
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 773
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 796
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 819
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 842
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 865
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 888
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 911
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 934
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 957
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 980
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1003
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1026
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1049
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1072
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1095
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1118
+    },
+    {
+      "UnitPrice": 46.62,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 45.99,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 43.6,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 40.66,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 39.33,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "G": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 237.16
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 230.18
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 277.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 324.02
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 370.94
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 369
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 410.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 452.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 494.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 535.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 577.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 618.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 660
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 701.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 742.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 784.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 825.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 867
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 908.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 949.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 990.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 1031.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 1072.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 1113
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 1153.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 1194.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 1235.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 1276.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 1317
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 1357.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 1398.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 1439.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 1480.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 1521
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1561.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1602.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1643.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1684.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1725
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1765.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1806.6
+    },
+    {
+      "UnitPrice": 86.4,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 85.2,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 84,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 82.5,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 103.78,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "H": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 262.33
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 233.24
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 282.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 331.16
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 380.12
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 378.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 421.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 464.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 507
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 549.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 588.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 627.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 666
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 704.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 743.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 782.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 820.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 859.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 898.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 936.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 971.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 1005.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 1039.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 1073.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 1107.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 1142.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 1176.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 1210.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 1244.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 1278.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 1313.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 1347.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 1381.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 1415.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1449.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1484.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1518.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1552.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1586.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1620.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1655.1
+    },
+    {
+      "UnitPrice": 87.3,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 85.5,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 84.9,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 84.3,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 131.1,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "M": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 149.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 177.21
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 213.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 250.47
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 287.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 277.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 310.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 344.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 378
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 411.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 362.71
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 387.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 411.93
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 436.54
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 461.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 485.76
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 510.37
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 534.98
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 559.59
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 584.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 552.72
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 572.04
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 591.36
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 610.68
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 630
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 649.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 668.64
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 687.96
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 707.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 726.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 745.92
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 765.24
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 784.56
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 803.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 823.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 842.52
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 861.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 881.16
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 900.48
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 919.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 939.12
+    },
+    {
+      "UnitPrice": 46.62,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 43.8,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 43.6,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 42.8,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 41.4,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "N": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 132.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 173.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 215.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 256.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 297.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 301.01
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 338.21
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 375.41
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 412.61
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 449.81
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 424.71
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 457.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 490.59
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 523.53
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 556.47
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 589.41
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 622.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 655.29
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 688.23
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 721.17
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 720.72
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 746.98
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 773.24
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 799.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 825.76
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 852.02
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 878.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 904.54
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 930.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 957.06
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 983.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 1009.58
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 1035.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 1062.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1088.36
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1114.62
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1140.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1167.14
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1193.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1219.66
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1245.92
+    },
+    {
+      "UnitPrice": 53.13,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 49.94,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 47.04,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 45.57,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 44.44,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "O": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 144.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 166.47
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 200.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 235.29
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 269.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 267.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 299.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 332.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 364.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 396.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 380.21
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 406.01
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 431.81
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 457.61
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 483.41
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 509.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 535
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 560.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 586.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 612.39
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 631.68
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 653.76
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 675.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 697.92
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 720
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 742.08
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 764.16
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 786.24
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 808.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 830.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 852.48
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 874.56
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 896.64
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 918.72
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 940.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 962.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 984.96
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1007.04
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1029.12
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1051.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1073.28
+    },
+    {
+      "UnitPrice": 44.4,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 43.8,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 43.6,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 42.8,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 41.4,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "P": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 133.44
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 159.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 193.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 227.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 261.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 233.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 257.04
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 280.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 304.56
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 328.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 322.41
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 343.86
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 365.31
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 386.76
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 408.21
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 429.66
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 451.11
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 472.56
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 494.01
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 515.46
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 487.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 507
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 526.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 545.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 564.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 583.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 603
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 622.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 641.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 660.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 679.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 699
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 718.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 737.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 756.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 775.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 795
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 814.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 833.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 852.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 871.8
+    },
+    {
+      "UnitPrice": 38.88,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 35.62,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 34,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 26.2,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 24.4,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "Q": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 133.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 133.94
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 158.36
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 182.78
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 207.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 181.83
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 201.26
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 220.69
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 240.12
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 259.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 248.82
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 264.94
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 281.06
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 297.18
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 313.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 329.42
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 345.54
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 361.66
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 377.78
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 393.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 313.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 324.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 335.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 346.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 357
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 367.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 378.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 389.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 400.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 411
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 421.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 432.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 443.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 454.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 465
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 475.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 486.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 497.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 508.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 519
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 529.8
+    },
+    {
+      "UnitPrice": 28.8,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 26.6,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 26.4,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 26.2,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 24.4,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "R": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 109.52
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 130.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 154.08
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 177.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 201.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 188.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 208.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 228.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 248.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 268.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 258.39
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 275.13
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 291.87
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 308.61
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 325.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 342.09
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 358.83
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 375.57
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 392.31
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 409.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 407.94
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 421.98
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 436.02
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 450.06
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 464.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 478.14
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 492.18
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 506.22
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 520.26
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 534.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 548.34
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 562.38
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 576.42
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 590.46
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 604.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 618.54
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 632.58
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 646.62
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 660.66
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 674.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 688.74
+    },
+    {
+      "UnitPrice": 28.8,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 26.6,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 26.4,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 26.2,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 24.4,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "S": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 107.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 127.71
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 151.47
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 175.23
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 198.99
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 194.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 214.89
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 234.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 254.91
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 274.92
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 264.68
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 282.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 301.08
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 319.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 337.48
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 355.68
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 373.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 392.08
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 410.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 428.48
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 394.68
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 410.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 425.96
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 441.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 457.24
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 472.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 488.52
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 504.16
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 519.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 535.44
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 551.08
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 566.72
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 582.36
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 598
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 613.64
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 629.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 644.92
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 660.56
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 676.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 691.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 707.48
+    },
+    {
+      "UnitPrice": 38,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 36.5,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 34.8,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 28.4,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 27.8,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "T": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 107.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 127.71
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 151.47
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 175.23
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 198.99
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 194.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 214.89
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 234.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 254.91
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 274.92
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 274.86
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 293.76
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 312.66
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 331.56
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 350.46
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 369.36
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 388.26
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 407.16
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 426.06
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 444.96
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 446.16
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 463.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 481.52
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 499.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 516.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 534.56
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 552.24
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 569.92
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 587.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 605.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 622.96
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 640.64
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 658.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 676
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 693.68
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 711.36
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 729.04
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 746.72
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 764.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 782.08
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 799.76
+    },
+    {
+      "UnitPrice": 38,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 36.5,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 34.8,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 28.4,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 27.8,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "U": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 175.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 231.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 287.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 343.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 399.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 452.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 504.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 556.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 608.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 661.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 708.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 756.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 804.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 852.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 900.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 948.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 996.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 1043.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 1091.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 1139.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 1185.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 1230.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 1276.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 1322.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 1367.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 1413.5
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 1459.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 1504.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 1550.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 1596.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 1641.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 1687.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 1733.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 1778.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1824.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1870
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1915.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1961.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 2006.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 2052.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 2098.25
+    },
+    {
+      "UnitPrice": 102.85,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 101.75,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 101.2,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 100.65,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 100.65,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "V": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 116.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 141.9
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 167.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 193.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 219.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 244.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 270.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 295.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 320.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 345.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 369.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 392.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 415.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 438.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 461.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 484.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 507.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 530.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 553.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 576.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 594.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 612.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 629.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 647.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 664.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 682.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 700.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 717.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 735.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 752.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 770.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 788.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 805.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 823.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 840.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 858.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 876.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 893.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 911.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 928.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 946.55
+    },
+    {
+      "UnitPrice": 46.2,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 40.15,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 40.15,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 39.05,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 36.85,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "X": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 162.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 199.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 235.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 271.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 308
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 344.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 381.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 418.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 455.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 492.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 526.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 560.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 594.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 628.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 662.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 696.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 730.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 765.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 799.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 833.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 862.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 892.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 922.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 952.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 981.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 1011.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 1041.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 1070.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 1100.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 1130.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 1159.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 1189.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 1219.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 1249.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1278.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1308.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1338.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1367.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1397.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1427.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1456.95
+    },
+    {
+      "UnitPrice": 79.2,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 73.15,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 72.6,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 72.05,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 67.1,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "Y": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 162.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 199.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 235.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 271.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 308
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 344.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 381.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 418.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 455.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 492.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 526.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 560.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 594.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 628.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 662.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 696.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 730.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 765.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 799.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 833.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 862.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 892.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 922.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 952.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 981.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 1011.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 1041.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 1070.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 1100.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 1130.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 1159.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 1189.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 1219.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 1249.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1278.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1308.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1338.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1367.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1397.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1427.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1456.95
+    },
+    {
+      "UnitPrice": 79.2,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 73.15,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 72.6,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 72.05,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 67.1,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "Z": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 162.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 199.1
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 235.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 271.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 308
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 344.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 381.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 418.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 455.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 492.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 526.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 560.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 594.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 628.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 662.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 696.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 730.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 765.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 799.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 833.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 862.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 892.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 922.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 952.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 981.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 1011.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 1041.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 1070.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 1100.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 1130.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 1159.95
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 1189.65
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 1219.35
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 1249.05
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1278.75
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1308.45
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1338.15
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1367.85
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1397.55
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1427.25
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1456.95
+    },
+    {
+      "UnitPrice": 79.2,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 73.15,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 72.6,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 72.05,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 67.1,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "1": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 119.04
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 156.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 194.56
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 232.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 270.08
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 269.92
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 303.52
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 337.12
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 370.72
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 404.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 407.16
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 438.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 470.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 502.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 534.04
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 565.76
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 597.48
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 629.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 660.92
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 692.64
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 661.68
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 684
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 706.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 728.64
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 750.96
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 773.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 795.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 817.92
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 840.24
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 862.56
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 884.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 907.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 929.52
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 951.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 974.16
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 996.48
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1018.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1041.12
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1063.44
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1085.76
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1108.08
+    },
+    {
+      "UnitPrice": 47.67,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 45.36,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 42,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 40,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 37.4,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ],
+  "2": [
+    {
+      "UnitPrice": 0,
+      "MinWeight": 0,
+      "MaxWeight": 500,
+      "Unit": 500,
+      "FixedPrice": 121.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 500,
+      "MaxWeight": 1000,
+      "Unit": 500,
+      "FixedPrice": 159.04
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1000,
+      "MaxWeight": 1500,
+      "Unit": 500,
+      "FixedPrice": 196.8
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 1500,
+      "MaxWeight": 2000,
+      "Unit": 500,
+      "FixedPrice": 234.56
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2000,
+      "MaxWeight": 2500,
+      "Unit": 500,
+      "FixedPrice": 272.32
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 2500,
+      "MaxWeight": 3000,
+      "Unit": 500,
+      "FixedPrice": 271.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3000,
+      "MaxWeight": 3500,
+      "Unit": 500,
+      "FixedPrice": 305.48
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 3500,
+      "MaxWeight": 4000,
+      "Unit": 500,
+      "FixedPrice": 339.08
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4000,
+      "MaxWeight": 4500,
+      "Unit": 500,
+      "FixedPrice": 372.68
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 4500,
+      "MaxWeight": 5000,
+      "Unit": 500,
+      "FixedPrice": 406.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5000,
+      "MaxWeight": 5500,
+      "Unit": 500,
+      "FixedPrice": 408.98
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 5500,
+      "MaxWeight": 6000,
+      "Unit": 500,
+      "FixedPrice": 440.7
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6000,
+      "MaxWeight": 6500,
+      "Unit": 500,
+      "FixedPrice": 472.42
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 6500,
+      "MaxWeight": 7000,
+      "Unit": 500,
+      "FixedPrice": 504.14
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7000,
+      "MaxWeight": 7500,
+      "Unit": 500,
+      "FixedPrice": 535.86
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 7500,
+      "MaxWeight": 8000,
+      "Unit": 500,
+      "FixedPrice": 567.58
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8000,
+      "MaxWeight": 8500,
+      "Unit": 500,
+      "FixedPrice": 599.3
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 8500,
+      "MaxWeight": 9000,
+      "Unit": 500,
+      "FixedPrice": 631.02
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9000,
+      "MaxWeight": 9500,
+      "Unit": 500,
+      "FixedPrice": 662.74
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 9500,
+      "MaxWeight": 10000,
+      "Unit": 500,
+      "FixedPrice": 694.46
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10000,
+      "MaxWeight": 10500,
+      "Unit": 500,
+      "FixedPrice": 665.28
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 10500,
+      "MaxWeight": 11000,
+      "Unit": 500,
+      "FixedPrice": 689.52
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11000,
+      "MaxWeight": 11500,
+      "Unit": 500,
+      "FixedPrice": 713.76
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 11500,
+      "MaxWeight": 12000,
+      "Unit": 500,
+      "FixedPrice": 738
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12000,
+      "MaxWeight": 12500,
+      "Unit": 500,
+      "FixedPrice": 762.24
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 12500,
+      "MaxWeight": 13000,
+      "Unit": 500,
+      "FixedPrice": 786.48
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13000,
+      "MaxWeight": 13500,
+      "Unit": 500,
+      "FixedPrice": 810.72
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 13500,
+      "MaxWeight": 14000,
+      "Unit": 500,
+      "FixedPrice": 834.96
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14000,
+      "MaxWeight": 14500,
+      "Unit": 500,
+      "FixedPrice": 859.2
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 14500,
+      "MaxWeight": 15000,
+      "Unit": 500,
+      "FixedPrice": 883.44
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15000,
+      "MaxWeight": 15500,
+      "Unit": 500,
+      "FixedPrice": 907.68
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 15500,
+      "MaxWeight": 16000,
+      "Unit": 500,
+      "FixedPrice": 931.92
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16000,
+      "MaxWeight": 16500,
+      "Unit": 500,
+      "FixedPrice": 956.16
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 16500,
+      "MaxWeight": 17000,
+      "Unit": 500,
+      "FixedPrice": 980.4
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17000,
+      "MaxWeight": 17500,
+      "Unit": 500,
+      "FixedPrice": 1004.64
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 17500,
+      "MaxWeight": 18000,
+      "Unit": 500,
+      "FixedPrice": 1028.88
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18000,
+      "MaxWeight": 18500,
+      "Unit": 500,
+      "FixedPrice": 1053.12
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 18500,
+      "MaxWeight": 19000,
+      "Unit": 500,
+      "FixedPrice": 1077.36
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19000,
+      "MaxWeight": 19500,
+      "Unit": 500,
+      "FixedPrice": 1101.6
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 19500,
+      "MaxWeight": 20000,
+      "Unit": 500,
+      "FixedPrice": 1125.84
+    },
+    {
+      "UnitPrice": 0,
+      "MinWeight": 20000,
+      "MaxWeight": 20500,
+      "Unit": 500,
+      "FixedPrice": 1150.08
+    },
+    {
+      "UnitPrice": 48.51,
+      "MinWeight": 20500,
+      "MaxWeight": 44000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 45.4,
+      "MinWeight": 44000,
+      "MaxWeight": 70000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 44.8,
+      "MinWeight": 70000,
+      "MaxWeight": 99000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 43.4,
+      "MinWeight": 99000,
+      "MaxWeight": 299000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    },
+    {
+      "UnitPrice": 40.4,
+      "MinWeight": 299000,
+      "MaxWeight": 10000000,
+      "Unit": 1000,
+      "FixedPrice": 0
+    }
+  ]
+}

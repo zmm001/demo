@@ -1,0 +1,26 @@
+﻿.admin-header-links {
+    background-color: #f60;
+    text-align: center;
+    color: #eee;
+    * {
+        display: inline-block;
+        margin: 0 10px;
+        line-height: 35px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .impersonate {
+        display: inline-block;
+
+        a {
+            background-color: #555;
+            padding: 0 15px;
+            &:hover {
+                background-color: #666;
+
+            }
+        }
+    }
+}
+
+

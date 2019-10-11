@@ -1,0 +1,24 @@
+﻿@{
+
+    Layout = "~/Administration/Views/Shared/_AdminPopupLayout.cshtml";
+
+}
+@model Nop.Plugin.Widgets.Customized.Models.WidgetsCustomizedRecordModel
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-header clearfix">
+        <h1 class="pull-left">
+            @T("Admin.Common.Edit")
+        </h1>
+        <div class="pull-right">
+            <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" />
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="form-horizontal">
+            @Html.Partial("~/Plugins/Widgets.Customized/Views/WidgetsCustomized/_CreateOrUpdate.cshtml", Model)
+        </div>
+    </div>
+}

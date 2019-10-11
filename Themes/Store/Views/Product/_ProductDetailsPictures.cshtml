@@ -1,0 +1,64 @@
+﻿@model ProductDetailsModel
+@using Nop.Core
+@using Nop.Core.Caching
+@using Nop.Core.Infrastructure
+@using Nop.Services.Catalog
+@using Nop.Services.Discounts
+@using Nop.Web.Models.Catalog;
+@{
+    var pc = EngineContext.Current.Resolve<IPriceCalculationService>();
+    var cache = EngineContext.Current.Resolve<ICacheManager>();
+    var product = EngineContext.Current.Resolve<IProductService>();
+    var _workContext = EngineContext.Current.Resolve<IWorkContext>();
+    var key = string.Format("Nop.pres.product.item-promotion-{0}-{1}", Model.Id, _workContext.CurrentCustomer.Id);
+    var discountName = cache.Get(key, () =>
+    {
+        var p = product.GetProductById(Model.Id);
+        List<DiscountForCaching> dl;
+        decimal a;
+        pc.GetFinalPrice(p, _workContext.CurrentCustomer, 0M, true, 1, null, null, out a, out dl);
+        if (dl != null && dl.Count > 0)
+        {
+            return dl[0].Name;
+        }
+        return null;
+    });
+}
+<div class="big-picture hidden-sm hidden-xs">
+    <div id="small-box">
+        <img id="small-picture" alt="@Model.DefaultPictureModel.AlternateText" title="@Model.DefaultPictureModel.Title" src="@Model.DefaultPictureModel.ImageUrl" itemprop="image" />
+        <div id="move-box"></div>
+        @if (discountName != null)
+        {
+            <div class="big-ribbon">
+                <span>@discountName</span>
+            </div>
+
+        }
+    </div>
+</div>
+
+<div id="big-box">
+    <img src="@Model.DefaultPictureModel.FullSizeImageUrl" alt="@Model.DefaultPictureModel.Title" />
+</div>
+
+
+<div class="swiper-container small-picture photoswipe">
+    <div class="swiper-wrapper">
+        @for (var i = 0; i < Model.PictureModels.Count; i++)
+        {
+            var picture = Model.PictureModels[i];
+            <a class="swiper-slide@(i==0?" swiper-slide-hover":"")" href="@picture.FullSizeImageUrl" data-size="1600x1600"
+               data-med="@picture.FullSizeImageUrl"
+               data-med-size="1024x1024">
+                <div>
+                    <img src="@picture.ThumbImageUrl"
+                         data-spic="@picture.ImageUrl"
+                         data-bpic="@picture.FullSizeImageUrl" />
+                </div>
+            </a>
+
+        }
+    </div>
+    <div class="swiper-pagination visible-sm-block visible-xs-block"></div>
+</div>

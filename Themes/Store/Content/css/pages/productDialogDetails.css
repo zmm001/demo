@@ -1,0 +1,112 @@
+﻿.pop-content {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    opacity: 1;
+}
+
+.pop-box {
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 15%;
+    z-index: 1000;
+    padding: 20px;
+    background: white;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+#contactus_dialog .close { /*关闭按钮*/
+    position: absolute;
+    top: -28px;
+    right: -28px;
+    width: 40px;
+    height: 40px;
+    margin: 7px;
+    background: #fff url(/Themes/Store/Content/img/close.png) center no-repeat;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#contactus_dialog .product-review-links { /*评论不显示*/
+    display: none;
+}
+
+@media screen and (max-width: 420px) {
+    #contactus_dialog {
+        display: none;
+    }
+
+        #contactus_dialog .pop-box {
+            width: 300px;
+            top: 10%;
+        }
+
+        #contactus_dialog .main-product-infomation .swiper-container {
+            width: 100px;
+            height: 100px;
+        }
+
+        #contactus_dialog #capsuleSelect .shopping-product-text {
+            margin: 5px 0 0;
+        }
+
+        #contactus_dialog #capsuleSelect .shopping-product-price {
+            margin-bottom: 10px;
+        }
+
+        #contactus_dialog #capsuleSelect .product-attributes dt {
+            margin-bottom: 0;
+            min-width: 35px;
+            margin-right: 0;
+        }
+
+        #contactus_dialog #capsuleSelect .product-attributes dd {
+            margin-bottom: 10px;
+            float: right;
+        }
+}
+
+@media screen and (max-width: 768px) {
+    #contactus_dialog {
+        display: none;
+    }
+
+        #contactus_dialog .pop-box {
+            top: 6%;
+        }
+
+        #contactus_dialog .main-product-infomation .swiper-container {
+            width: 250px;
+            height: 250px;
+        }
+}
+
+@media screen and (max-width: 992px) {
+    #contactus_dialog {
+        display: none;
+    }
+
+        #contactus_dialog .pop-box {
+            width: 90%
+        }
+
+        #contactus_dialog .main-product-infomation .swiper-container {
+        }
+}
+
+.pop-content .product-attributes dd, .product-attributes .attribute-data {
+    width: 650px;
+}
+
+@media screen and (max-width: 1299px) {
+    .pop-content .product-attributes dd, .product-attributes .attribute-data {
+        width: 480px;
+    }
+}

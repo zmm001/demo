@@ -1,0 +1,131 @@
+﻿@import "../bootstrap/bootstrap/variables";
+@import "../extend/variable";
+@import "../extend/accountNumber";
+
+.order-list, .address-list, .product-review-item, .reward-points-history, .page-body {
+    .section, .review-item-head {
+        position: relative;
+    }
+
+    .product-review-box {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 19px * 5;
+        height: 14px;
+        margin: (36px - 14px) / 2;
+        background: url(/Themes/Store/Content/images/rating1.png) repeat-x 0 50%;
+
+        .rating {
+            background: url(/Themes/Store/Content/images/rating2.png) repeat-x 0 50%;
+            height: 100%;
+        }
+    }
+
+    .title, .review-item-head {
+        font-size: 18px;
+        line-height: 2em;
+        text-indent: 11px;
+    }
+
+    .name {
+        display: none;
+    }
+
+    .review-content, .info, .details {
+        background-color: #f9f9f9;
+        border: 1px solid #e8e8e8;
+        box-shadow: 0 0 2px rgba(0,0,0,.3);
+        border-radius: 2px;
+        background:#fff;
+        padding: 10px;
+        list-style: none;
+        font-size: 14px;
+        line-height: 1.6em;
+    }
+
+    .review-text {
+        max-width: 600px;
+    }
+
+    .comms {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 36px;
+
+        input {
+            display: inline-block;
+            margin: 8px 0 0 10px;
+            border: none;
+            padding: 0 0 0 18px;
+            font-size: 14px;
+            color: #333;
+            height: 20px;
+        }
+
+        .edit-address-button {
+            background: url(/Themes/Store/Content/images/edit.png) left center no-repeat;
+        }
+
+        .delete-address-button {
+            background: url(/Themes/Store/Content/images/remove.png) left center no-repeat;
+        }
+
+        .return-items-button {
+            background: url(/Themes/Store/Content/images/return.png) left center no-repeat;
+        }
+
+        .order-details-button {
+            background: url(/Themes/Store/Content/images/details.png) left center no-repeat;
+        }
+    }
+}
+
+.table-containter {
+    font-size: 14px;
+
+    th {
+        text-align: center;
+    }
+
+    .product {
+        text-align: left;
+    }
+
+    .unit-price, .quantity {
+        width: 120px;
+
+        @media(max-width:$screen-xs-max) {
+            width: 80px;
+        }
+    }
+}
+
+.result, .no-data, .reward-points-overview, .description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 2px rgba(0,0,0,.3);
+    border-radius: 2px;
+    background:#fff;
+    padding: 10px;
+}
+
+.pager {
+    margin: 10px 0 5px;
+
+    li {
+        > a, > span {
+            line-height: $pager-height - 2px;
+            padding: 0 15px;
+            min-width: $pager-height*2;
+            border-radius: $pager-height;
+        }
+
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

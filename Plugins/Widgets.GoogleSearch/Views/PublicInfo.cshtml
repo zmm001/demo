@@ -1,0 +1,61 @@
+﻿@using Nop.Web.Models.Common;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI
+@using Nop.Web.Models.Catalog;
+@using Nop.Core
+@using Nop.Core.Domain.Seo;
+@using System.Globalization
+@using Nop.Core.Infrastructure;
+@using Newtonsoft.Json;
+@using System;
+@using Nop.Services.Directory
+@model Nop.Plugin.Widgets.GoogleSearch.Models.ConfigurationModel
+
+<!--product breadcrumb-->
+@{
+
+//Html.AddScriptParts(ResourceLocation.Foot, "123456");
+}
+@{
+    var imgs =Html.Raw( JsonConvert.SerializeObject(Model.Image));
+    var offers = Html.Raw(JsonConvert.SerializeObject(Model.Offers));
+    var serizlizeObj = JsonConvert.SerializeObject(Model.Reviews);
+    var replaceObj = serizlizeObj.Replace("type", "@type");
+    var reviewss =Html.Raw(replaceObj);
+}
+@if (Model != null)
+{
+    <script type="application/ld+json">
+        {
+        "@@context": "https://schema.org/",
+        "@@type": "Product",
+        "name": "@Model.Name",
+        "image": @imgs,
+        "description":"@Model.Descript",
+        "sku": "@Model.Sku",
+        "mpn": "@Model.Mpn",
+        "brand": {
+        "@@type": "Thing",
+        "name": "@Model.Brand"
+        },
+        "review":@reviewss,
+        "aggregateRating": {
+        "@@type": "AggregateRating",
+        "ratingValue": "@Model.RatingValue",
+        "reviewCount": "@Model.ReviewCount"
+        },
+        "offers": @offers
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+        "@@context": "http://schema.org",
+        "@@type": "WebSite",
+        "name": "@Model.Brand",
+        "url": "@Model.WebSiteUrl"
+        }
+    </script>
+}
+
+

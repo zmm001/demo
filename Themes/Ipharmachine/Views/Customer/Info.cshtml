@@ -1,0 +1,417 @@
+﻿@model CustomerInfoModel
+@using Nop.Web.Models.Customer;
+@using Nop.Core;
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Account").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-account-page");
+    Html.AppendPageCssClassParts("html-customer-info-page");
+
+    Html.AddCssFileParts("~/Themes/Ipharmachine/Content/css/pages/customer.css");
+}
+@section left
+{
+    @Html.Action("CustomerNavigation", "Customer", new { selectedTabId = CustomerNavigationEnum.Info })
+}
+<div class="account-number">
+    <h1 class="account-title">@T("Account.MyAccount") - @T("Account.CustomerInfo")</h1>
+    @{
+        var validationSummary = Html.ValidationSummary(true);
+    }
+    @if (!MvcHtmlString.IsNullOrEmpty(validationSummary))
+    {
+    <div class="message-error">@validationSummary</div> 
+    }
+    @using (Html.BeginForm("Info", "Customer", FormMethod.Post, new { @class = "form-horizontal account-submit" })) { 
+        @Html.AntiForgeryToken()
+        <strong class="box-title">@T("Account.YourPersonalDetails")</strong>
+        <div class="form-container">
+            @if (Model.GenderEnabled)
+            {
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">@T("Account.Fields.Gender"):</label>
+                    <div class="col-sm-4 radio-inner">
+                        <label class="radio-inline">
+                            @Html.RadioButton("Gender", "M", (Model.Gender == "M"), new { id = "gender-male" }) @T("Account.Fields.Gender.Male")
+                        </label>
+                        <label class="radio-inline">
+                            @Html.RadioButton("Gender", "F", (Model.Gender == "F"), new { id = "gender-female" }) @T("Account.Fields.Gender.Female")
+                        </label>
+                    </div>
+                </div>
+            }
+
+            <div class="form-group">
+                <label for="@Html.IdFor(m=>m.FirstName)" class="col-sm-4 control-label">@Html.RequiredHint() @Html.DisplayNameFor(m => m.FirstName):</label>
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control inputs" })
+                    <div class="error tips">@Html.ValidationMessageFor(model => model.FirstName)</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="@Html.IdFor(m=>m.LastName)" class="col-sm-4 control-label">@Html.RequiredHint() @Html.DisplayNameFor(m => m.LastName):</label>
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(model => model.LastName, new { @class = "form-control inputs" })
+                    <div class="error tips">@Html.ValidationMessageFor(model => model.LastName)</div>
+                </div>
+            </div>
+            @if (Model.DateOfBirthEnabled)
+            {
+                <div class="form-group" id="date">
+                    <label class="col-sm-4 control-label">
+                        @if (Model.DateOfBirthRequired)
+                        {
+                            @Html.RequiredHint()
+                        }
+                        @T("Account.Fields.DateOfBirth"):
+                    </label>
+                    <div class="col-sm-5">
+                        @Html.DatePickerDropDowns(Html.FieldNameFor(x => x.DateOfBirthDay),
+                            Html.FieldNameFor(x => x.DateOfBirthMonth),
+                            Html.FieldNameFor(x => x.DateOfBirthYear),
+                            DateTime.Now.Year - 110,
+                            DateTime.Now.Year,
+                            Model.DateOfBirthDay,
+                            Model.DateOfBirthMonth,
+                            Model.DateOfBirthYear, true, new
+                            {
+                                @class = "form-control inputs selects"
+                            })
+                        <div class="error tips">
+                            @Html.ValidationMessageFor(model => model.DateOfBirthDay)
+                            @Html.ValidationMessageFor(model => model.DateOfBirthMonth)
+                            @Html.ValidationMessageFor(model => model.DateOfBirthYear)
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="form-group">
+                <label for="@Html.IdFor(m=>m.Email)" class="col-sm-4 control-label">@Html.RequiredHint() @Html.DisplayNameFor(m => m.Email):</label>
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control inputs" })
+                    <div class="error tips">@Html.ValidationMessageFor(model => model.Email)</div>
+                </div>
+            </div>
+            @if (!String.IsNullOrEmpty(Model.EmailToRevalidate)) {
+                <div class="form-group">
+                    <label for="@Html.IdFor(m=>m.EmailToRevalidate)" class="col-sm-4 control-label">@Html.DisplayNameFor(m => m.EmailToRevalidate):</label>
+                    <div class="col-sm-4">
+                        <span class="email-to-revalidate">@Model.EmailToRevalidate</span>
+                        <span class="email-to-revalidate-note"><em>@T("Account.Fields.EmailToRevalidate.Note")</em></span>
+                    </div>
+                </div>
+            }
+
+            @if (Model.UsernamesEnabled)
+            {
+                if (Model.AllowUsersToChangeUsernames) {
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.Username)" class="col-sm-4 control-label">@Html.RequiredHint() @Html.DisplayNameFor(m => m.Username):</label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.Username, new {@class = "form-control inputs"})
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.Username)</div>
+                        </div>
+                    </div>
+                } else {
+                    <label for="@Html.IdFor(m => m.Username)" class="col-sm-4 control-label">@Html.RequiredHint() @Html.DisplayNameFor(m => m.Username):</label>
+                    <div class="col-sm-4">@Model.Username</div>
+                }
+            }
+        </div>
+
+        if (Model.CompanyEnabled || Model.DisplayVatNumber)
+        {
+            <strong class="box-title">@T("Account.CompanyDetails")</strong>
+            <div class="form-container">
+                @if (Model.CompanyEnabled)
+                {
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.Company)" class="col-sm-4 control-label">
+                            @if (Model.CompanyRequired)
+                            {
+                                @Html.RequiredHint()
+                            }
+                            @Html.DisplayNameFor(m => m.Company):
+                        </label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.Company, new { @class = "form-control inputs" })
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.Company)</div>
+                        </div>
+                    </div>
+                }
+                @if (Model.DisplayVatNumber)
+                {
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.VatNumber)" class="col-sm-4 control-label">
+                            @Html.DisplayNameFor(m => m.VatNumber):
+                        </label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.VatNumber, new { @class = "form-control inputs" })
+                            <div class="error tips"><em>@T("Account.Fields.VatNumber.Note")</em></div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        if (Model.StreetAddressEnabled || Model.StreetAddress2Enabled || Model.ZipPostalCodeEnabled || Model.CityEnabled || Model.CountryEnabled)
+        {
+
+            <strong class="box-title">@T("Account.YourAddress")</strong>
+            <div class="form-container">
+                @if (Model.StreetAddressEnabled)
+                {
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.StreetAddress)" class="col-sm-4 control-label">
+                            @if (Model.StreetAddressRequired)
+                            {
+                                @Html.RequiredHint()
+                            }
+                            @Html.DisplayNameFor(m => m.StreetAddress):
+                        </label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.StreetAddress, new { @class = "form-control inputs" })
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.StreetAddress)</div>
+                        </div>
+                    </div>
+                }
+                @if (Model.StreetAddress2Enabled)
+                {
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.StreetAddress2)" class="col-sm-4 control-label">
+                            @if (Model.StreetAddress2Required)
+                            {
+                                @Html.RequiredHint()
+                            }
+                            @Html.DisplayNameFor(m => m.StreetAddress2):
+                        </label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.StreetAddress2, new { @class = "form-control inputs" })
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.StreetAddress2)</div>
+                        </div>
+                    </div>
+                }
+                @if (Model.ZipPostalCodeEnabled)
+                {
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.ZipPostalCode)" class="col-sm-4 control-label">
+                            @if (Model.ZipPostalCodeRequired)
+                            {
+                                @Html.RequiredHint()
+                            }
+                            @Html.DisplayNameFor(m => m.ZipPostalCode):
+                        </label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.ZipPostalCode, new { @class = "form-control inputs" })
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.ZipPostalCode)</div>
+                        </div>
+                    </div>
+                }
+                @if (Model.CityEnabled)
+                {
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.City)" class="col-sm-4 control-label">
+                            @if (Model.CityRequired)
+                            {
+                                @Html.RequiredHint()
+                            }
+                            @Html.DisplayNameFor(m => m.City):
+                        </label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.City, new { @class = "form-control inputs" })
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.City)</div>
+                        </div>
+                    </div>
+                }
+                @if (Model.CountryEnabled)
+                {
+
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.CountryId)" class="col-sm-4 control-label">
+                            @if (Model.CountryRequired)
+                            {
+                                @Html.RequiredHint()
+                            }
+                            @Html.DisplayNameFor(m => m.CountryId):
+                        </label>
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries, new Dictionary<string, object> {
+                                {"class","form-control inputs" },
+                                {"data-state",Html.IdFor(m => m.StateProvinceId) },
+                                {"data-url", Url.RouteUrl("GetStatesByCountryId")}
+                            })
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.CountryId)</div>
+                        </div>
+                    </div>
+                }
+                @if (Model.CountryEnabled && Model.StateProvinceEnabled)
+                {
+                    Html.AppendScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/extend/CountryState.js");
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.StateProvinceId)" class="col-sm-4 control-label">
+                            @if (Model.StateProvinceRequired)
+                            {
+                                @Html.RequiredHint()
+                            }
+                            @Html.DisplayNameFor(m => m.StateProvinceId):
+                        </label>
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(model => model.StateProvinceId, Model.AvailableStates, new { @class = "form-control inputs" })
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.StateProvinceId)</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        if (Model.PhoneEnabled || Model.FaxEnabled)
+        {
+            <strong class="box-title">@T("Account.YourContactInformation")</strong>
+            <div class="form-container">
+                @if (Model.PhoneEnabled)
+                {
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.Phone)" class="col-sm-4 control-label">
+                            @if (Model.PhoneRequired)
+                            {
+                                @Html.RequiredHint()
+                            }
+                            @Html.DisplayNameFor(m => m.Phone):
+                        </label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control inputs" })
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.Phone)</div>
+                        </div>
+                    </div>
+                }
+                @if (Model.FaxEnabled)
+                {
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.Fax)" class="col-sm-4 control-label">
+                            @if (Model.FaxRequired)
+                            {
+                                @Html.RequiredHint()
+                            }
+                            @Html.DisplayNameFor(m => m.Fax):
+                        </label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.Fax, new { @class = "form-control inputs" })
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.Fax)</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        if (Model.NewsletterEnabled || Model.CustomerAttributes.Count > 0)
+        {
+            <strong class="box-title">@T("Account.Options")</strong>
+            <div class="form-container">
+                @if (Model.NewsletterEnabled)
+                {
+                    <div class="form-group">
+                        <label for="@Html.IdFor(m => m.Newsletter)" class="col-sm-4 control-label">
+                            @Html.DisplayNameFor(m => m.Newsletter):
+                        </label>
+                        <div class="col-sm-4 radio-inner">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(model => model.Newsletter)
+                            </div>
+                            <div class="error tips">@Html.ValidationMessageFor(model => model.Newsletter)</div>
+                        </div>
+                    </div>
+                }
+                @if (Model.CustomerAttributes.Count > 0)
+                {
+                    @Html.Partial("_CustomerAttributes", Model.CustomerAttributes)
+                }
+            </div>
+        }
+
+        if (Model.AllowCustomersToSetTimeZone)
+        {
+            <strong class="box-title">@T("Account.Preferences")</strong>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="@Html.IdFor(m => m.TimeZoneId)" class="col-sm-4 control-label">
+                        @Html.DisplayNameFor(m => m.TimeZoneId):
+                    </label>
+                    <div class="col-sm-4">
+                        @Html.Partial("_TimeZone", new { ClassName = "form-control inputs", Model.AvailableTimeZones })
+
+                        <div class="error tips">@Html.ValidationMessageFor(model => model.TimeZoneId)</div>
+                    </div>
+                </div>
+            </div>
+        }
+        if (Model.NumberOfExternalAuthenticationProviders > 0)
+        {
+            <div class="fieldset">
+                <div class="title">
+                    <strong>@T("Account.AssociatedExternalAuth")</strong>
+                </div>
+                @if (Model.AssociatedExternalAuthRecords.Count > 0)
+                {
+                    //existing associated external records
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <colgroup>
+                                <col />
+                                <col />
+                                <col />
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th class="auth-method-name">
+                                    @T("Account.AssociatedExternalAuth.AuthMethodName")
+                                </th>
+                                <th class="email">
+                                    @T("Account.AssociatedExternalAuth.Email")
+                                </th>
+                                <th class="external-id">
+                                    @T("Account.AssociatedExternalAuth.ExternalIdentifier")
+                                </th>
+                                <th class="remove">
+                                    @T("Account.AssociatedExternalAuth.Remove")
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var item in Model.AssociatedExternalAuthRecords)
+                            {
+                                <tr>
+                                    <td class="auth-method-name">
+                                        @item.AuthMethodName
+                                    </td>
+                                    <td class="email">
+                                        @item.Email
+                                    </td>
+                                    <td class="external-id">
+                                        @CommonHelper.EnsureMaximumLength(item.ExternalIdentifier, 40, "...")
+                                    </td>
+                                    <td class="remove">
+                                        <a href="#" onclick="return removeexternalassociation(@item.Id)">@T("Account.AssociatedExternalAuth.Remove")</a>
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+                @if (Model.NumberOfExternalAuthenticationProviders > Model.AssociatedExternalAuthRecords.Count)
+                {
+                    //we can add more external records
+                    <div class="form-fields add-more-external-records">
+                        @T("Account.AssociatedExternalAuth.AddMoreRecords") <a href="@Url.RouteUrl("Login", null, "http")">@Url.RouteUrl("Login", null, "http")</a>
+                    </div>
+                }
+            </div>
+        }
+        <input type="submit" id="submit" class="buttons" role="button" value="@T("Common.Save")" />
+
+    }
+</div>
+
+

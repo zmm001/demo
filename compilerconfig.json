@@ -1,0 +1,286 @@
+﻿[
+  {
+    "outputFile": "Themes/Store/Content/css/base.css",
+    "inputFile": "Themes/Store/Content/css/base.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/index.css",
+    "inputFile": "Themes/Store/Content/css/pages/index.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/productList.css",
+    "inputFile": "Themes/Store/Content/css/pages/productList.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/left.css",
+    "inputFile": "Themes/Store/Content/css/left.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/productDetails.css",
+    "inputFile": "Themes/Store/Content/css/pages/productDetails.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/contactUs.css",
+    "inputFile": "Themes/Store/Content/css/pages/contactUs.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/articleList.css",
+    "inputFile": "Themes/Store/Content/css/pages/articleList.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/articleDetails.css",
+    "inputFile": "Themes/Store/Content/css/pages/articleDetails.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/cart.css",
+    "inputFile": "Themes/Store/Content/css/pages/cart.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/sitemap.css",
+    "inputFile": "Themes/Store/Content/css/pages/sitemap.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/login.css",
+    "inputFile": "Themes/Store/Content/css/pages/login.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/register.css",
+    "inputFile": "Themes/Store/Content/css/pages/register.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/Customer.css",
+    "inputFile": "Themes/Store/Content/css/pages/Customer.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/myOrderDetails.css",
+    "inputFile": "Themes/Store/Content/css/pages/myOrderDetails.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/orderDetails.css",
+    "inputFile": "Themes/Store/Content/css/pages/orderDetails.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/pages/articleDetailsSwiper.css",
+    "inputFile": "Themes/Store/Content/css/pages/articleDetailsSwiper.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/base.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/base.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/index.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/index.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/productList.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/productList.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/left.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/left.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/productDetails.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/productDetails.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/contactUs.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/contactUs.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/articleList.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/articleList.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/articleDetails.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/articleDetails.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/cart.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/cart.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/sitemap.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/sitemap.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/login.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/login.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/register.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/register.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/Customer.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/Customer.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/myOrderDetails.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/myOrderDetails.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/orderDetails.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/orderDetails.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/articleDetailsSwiper.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/articleDetailsSwiper.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/myAddressDetails.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/myAddressDetails.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/newPassword.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/newPassword.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/myInformation.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/myInformation.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/myChangePassword.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/myChangePassword.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/myAddressList.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/myAddressList.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/aboutUs.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/aboutUs.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/pages/myOrderList.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/pages/myOrderList.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/preload.css",
+    "inputFile": "Themes/Store/Content/css/preload.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/preload.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/preload.scss"
+  },
+  {
+    "outputFile": "Themes/Store/Content/css/lazy-load.css",
+    "inputFile": "Themes/Store/Content/css/lazy-load.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/lazy-load.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/lazy-load.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/base.css",
+    "inputFile": "Themes/AcryliCN/Content/css/base.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/lazy-load.css",
+    "inputFile": "Themes/AcryliCN/Content/css/lazy-load.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/left.css",
+    "inputFile": "Themes/AcryliCN/Content/css/left.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/preload.css",
+    "inputFile": "Themes/AcryliCN/Content/css/preload.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/sitemap.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/sitemap.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/register.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/register.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/productList.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/productList.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/productDetails.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/productDetails.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/orderDetails.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/orderDetails.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/newPassword.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/newPassword.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/myOrderList.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/myOrderList.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/myOrderDetails.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/myOrderDetails.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/myInformation.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/myInformation.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/myChangePassword.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/myChangePassword.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/myAddressList.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/myAddressList.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/myAddressDetails.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/myAddressDetails.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/login.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/login.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/index.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/index.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/Customer.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/Customer.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/contactUs.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/contactUs.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/cart.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/cart.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/articleList.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/articleList.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/articleDetailsswiper.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/articleDetailsswiper.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/articleDetails.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/articleDetails.scss"
+  },
+  {
+    "outputFile": "Themes/AcryliCN/Content/css/pages/aboutUs.css",
+    "inputFile": "Themes/AcryliCN/Content/css/pages/aboutUs.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/fonts/bebas.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/fonts/bebas.scss"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/fonts/machines/iconfont.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/fonts/machines/iconfont.sass"
+  },
+  {
+    "outputFile": "Themes/Ipharmachine/Content/css/fonts/machines/iconfont.css",
+    "inputFile": "Themes/Ipharmachine/Content/css/fonts/machines/iconfont.scss"
+  }
+]

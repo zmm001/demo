@@ -1,0 +1,41 @@
+﻿@model CustomerAddressEditModel
+@using Nop.Web.Models.Customer;
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Account").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-account-page");
+    Html.AppendPageCssClassParts("html-address-edit-page");
+    Html.AddCssFileParts("~/Themes/Store/Content/css/pages/customer.css");
+}
+@section left
+{
+    @Html.Action("CustomerNavigation", "Customer", new { selectedTabId = CustomerNavigationEnum.Addresses })
+}
+
+
+<div class="account-number">
+    <h1 class="account-title">
+        @T("Account.MyAccount") - @T("Account.CustomerAddresses.Edit")
+    </h1>
+    @{
+        var validationSummary = Html.ValidationSummary(true);
+    }
+    @if (!MvcHtmlString.IsNullOrEmpty(validationSummary))
+    {
+        <div class="message-error">@validationSummary</div>
+    }
+    @using (Html.BeginForm("AddressEdit", "Customer", FormMethod.Post, new { @class = "form-horizontal account-submit" }))
+    {
+
+        @Html.AntiForgeryToken()
+        var dataDictAddress = new ViewDataDictionary();
+        //Merge ModelState (required for validation)
+        dataDictAddress.ModelState.Merge(ViewData.ModelState);
+        dataDictAddress.TemplateInfo.HtmlFieldPrefix = "Address";
+        @Html.Partial("_CreateOrUpdateAddress", Model.Address, dataDictAddress)
+        <input type="submit" id="submit" class="buttons" role="button" value="@T("Common.Save")" />
+    }
+</div>

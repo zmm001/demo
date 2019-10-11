@@ -1,0 +1,79 @@
+﻿@using Nop.Core
+@using Nop.Core.Domain.Seo
+@using Nop.Core.Infrastructure
+@using Nop.Services.Localization
+@using Nop.Services.Topics
+@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    var t = EngineContext.Current.Resolve<ITopicService>();
+    var s = EngineContext.Current.Resolve<IStoreContext>();
+    var homeTopic = t.GetTopicBySystemName("IpharmachineHomePageText", s.CurrentStore.Id);
+    var seoSettings = EngineContext.Current.Resolve<SeoSettings>();
+
+
+    Html.AddTitleParts(!String.IsNullOrEmpty(homeTopic.MetaTitle) ? homeTopic.MetaTitle : homeTopic.Title);
+    Html.AddMetaDescriptionParts(homeTopic.MetaDescription);
+    Html.AddMetaKeywordParts(homeTopic.MetaKeywords);
+    if (seoSettings.CanonicalUrlsEnabled)
+    {
+        Html.AddCanonicalUrlParts(string.IsNullOrEmpty(Request.Url.Query) ? Request.Url.AbsoluteUri : Request.Url.AbsoluteUri.Replace(Request.Url.Query, ""));
+    }
+    if (seoSettings.OpenGraphMetaTags)
+    {
+        var storeName = EngineContext.Current.Resolve<IStoreContext>().CurrentStore.GetLocalized(x => x.Name);
+        Html.AddHeadCustomParts("<meta property=\"og:type\" content=\"product\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:title\" content=\"" + Html.Encode(homeTopic.Title) + "\" />");
+
+        Html.AddHeadCustomParts("<meta property=\"og:description\" content=\"" + Html.Encode(homeTopic.MetaDescription) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:url\" content=\"" + Request.Url.AbsoluteUri + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:site_name\" content=\"" + Html.Encode(storeName) + "\" />");
+    }
+
+    //Twitter META tags
+    if (seoSettings.TwitterMetaTags)
+    {
+        var storeName = EngineContext.Current.Resolve<IStoreContext>().CurrentStore.GetLocalized(x => x.Name);
+        Html.AddHeadCustomParts("<meta property=\"twitter:card\" content=\"summary\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:site\" content=\"" + Html.Encode(storeName) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:title\" content=\"" + Html.Encode(homeTopic.Title) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:description\" content=\"" + Html.Encode(homeTopic.MetaDescription) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:url\" content=\"" + Request.Url.AbsoluteUri + "\" />");
+    }
+    //page class
+    Html.AppendPageCssClassParts("html-home-page");
+    Html.AddCssFileParts("~/Themes/Ipharmachine/Content/css/pages/index.css");
+    Html.AddCssFileParts("~/Themes/Ipharmachine/Content/css/left.css");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Themes/Ipharmachine/Content/js/pages/index.js");
+
+}
+<div class="main">
+    @Html.Widget("home_page_top")
+    <div class="main-content-wrapper">
+        <div class="container">
+            <div class="row" id="outerContainer">
+               
+                <div class="col-xs-12 col-right content-goods">
+                    @Html.Action("TopicBlock", "Topic", new {systemName = "IpharmachineHomePageText" })
+                    @Html.Widget("home_page_before_categories")
+                    @Html.Action("HomepageCategories", "Catalog")
+                    @Html.Widget("home_page_before_products")
+                    @Html.Action("HomepageProducts", "Product")
+                    @Html.Widget("home_page_before_best_sellers")
+                    @Html.Action("HomepageBestSellers", "Product")
+                    @Html.Widget("home_page_after_best_sellers")
+                </div>
+                <div class="col-left hidden-sm hidden-xs" data-toggle="fixing" data-fixing='{"marginTop":52}'>
+                    @Html.Action("CategoryNavigation", "Catalog", new { currentCategoryId = 0, currentProductId = 0 })
+                    @Html.Action("PopularProductTags", "Catalog")
+                    @Html.Action("RecentlyViewedProductsBlock", "Product", new { productThumbPictureSize = 100 })
+                    @Html.Action("TopicBlock", "Topic", new { systemName = "LeftAdvisement" })
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Widget("home_page_before_news")
+    @Html.Action("HomePageNews", "News")
+    @Html.Partial("_HomePagePosts")
+    @Html.Widget("home_page_bottom")
+</div>

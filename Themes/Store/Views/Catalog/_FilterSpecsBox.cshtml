@@ -1,0 +1,37 @@
+﻿@model CatalogPagingFilteringModel.SpecificationFilterModel
+@using Nop.Web.Models.Catalog;
+@{
+    
+    var notFilteredItemsGroups = Model.NotFilteredItems.Union(Model.AlreadyFilteredItems).OrderBy(x=>x.SpecificationAttributeOptionName).GroupBy(x => x.SpecificationAttributeName).OrderBy(x=>x.Key).ToList();
+
+}
+@if (Model.Enabled)
+{
+    
+    foreach (var group in notFilteredItemsGroups)
+    {
+        var groupList = group.ToList();
+        <div class="product-toggle hidden-sm hidden-xs" data-toggle="leftbox">
+            <div class="toggle-title">
+                <strong class="toggle-strong">@groupList[0].SpecificationAttributeName</strong>
+                <span class="iconfont icon-jia"></span>
+            </div>
+            <ul class="toggle-list">
+                
+                @foreach (var spec in groupList)
+                {
+                    if (string.IsNullOrEmpty(spec.FilterUrl))
+                    {
+                        <li class="active"><a href="@Model.RemoveFilterUrl">@spec.SpecificationAttributeOptionName</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@spec.FilterUrl">@spec.SpecificationAttributeOptionName</a></li>
+                    }
+                }
+            </ul>
+        </div>
+    }
+
+
+}

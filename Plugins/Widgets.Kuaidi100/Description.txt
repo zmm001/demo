@@ -1,0 +1,9 @@
+﻿Group: Widgets
+FriendlyName: Kuaidi 100
+SystemName: Widgets.Kuaidi
+Version: 1.11
+SupportedVersions: 3.90
+Author: Capsulcn team
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.Kuaidi100.dll
+Description: The main function of this plugin is to query the courier and synchronize the completed orders.

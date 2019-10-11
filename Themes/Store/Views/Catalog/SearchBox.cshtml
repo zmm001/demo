@@ -1,0 +1,14 @@
+﻿@model SearchBoxModel
+@using Nop.Web.Models.Catalog;
+@using (Html.BeginRouteForm("ProductSearch", FormMethod.Get, new { id = "small-search-box-form" }))
+{
+    //todo 搜索结果未提交
+    //todo 搜索结果未智能提示
+    <input type="text" class="search-text" name="q" placeholder="@T("Search.SearchBox.Tooltip")" value="@Request["q"]" />
+        <div class="search-inner">
+            @Html.Widget("searchbox_before_search_button")
+            <input type="submit" class="search-btn" value="@T("Search.Button")" /><span class="iconfont icon-sousuo"></span>
+        </div>
+        @Html.Widget("searchbox")
+
+}

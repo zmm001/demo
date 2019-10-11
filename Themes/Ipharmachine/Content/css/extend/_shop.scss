@@ -1,0 +1,101 @@
+.goods-products {
+    @media (max-width: $screen-xs-max) {
+        text-align: center;
+    }
+
+    .products-title {
+        display: block;
+        font-weight: 300;
+        font-size: $fs-content-goods-catalogs-title;
+        line-height: 32px;
+        padding: 8px 0;
+        border-bottom: 1px dashed $auxiliary-color;
+        margin-bottom: $mb-content-goods-products-title;
+    }
+
+    .products-box-wrapper {
+        .row {
+            @media(max-width: $screen-sm-max) {
+                margin: 0 -7px;
+            }
+        }
+
+        .mycol {
+            padding: 2px;
+
+            @media (max-width: 768px) and (min-width: 530px) {
+                width: 252px;
+                position: relative;
+                left: 50%;
+                @include translateX(-100%);
+            }
+        }
+
+        .box-item {
+            overflow: hidden;
+            background-color: $b-goods-box-item;
+            position: relative;
+            border: 1px solid $bo-goods-box-item;
+            border-radius:2px;
+
+            .item-pic {
+                background: #fff;
+                margin-bottom: 5px;
+                @include image-box(100%);
+                display:block;
+            }
+
+            .item-name {
+                display: block;
+                font-size: 14px;
+                height: 40px;
+                line-height: 20px;
+                padding: 0 5px;
+                overflow: hidden;
+                font-weight: normal;
+                text-align: center;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                color: $c-content-goods-item-name-a;
+            }
+
+            .item-inner {
+                text-align: center;
+                margin-bottom: 5px;
+                line-height: 20px;
+
+                .old-price {
+                    font-size: $fs-content-goods-item-inner-big-price;
+                    color: $main-color;
+                    font-weight: 700;
+                    line-height: 20px;
+                }
+
+                .actual-price {
+                    font-size: $fs-content-goods-item-inner-smail-price;
+                    color: $c-content-goods-item-inner-actual-price;
+                    line-height: 20px;
+                }
+
+                .actual {
+                    .old-price {
+                        font-size: $fs-content-goods-item-inner-smail-price;
+                        text-decoration: line-through;
+                    }
+
+                    .actual-price {
+                        font-size: $fs-content-goods-item-inner-big-price;
+                        color: $c-content-goods-item-inner-actual-price;
+                    }
+                }
+
+                .stock-number {
+                    color: #999;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

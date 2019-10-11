@@ -1,0 +1,9 @@
+﻿Group: Widgets
+FriendlyName: ProductLabel
+SystemName: Widgets.ProductLabel
+Version: 1.00
+SupportedVersions: 3.90
+Author: zhangmingmin
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.ProductLabel.dll
+Description: This plugin allows you to change the content of the product label

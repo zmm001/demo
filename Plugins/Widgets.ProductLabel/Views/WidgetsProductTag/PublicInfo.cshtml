@@ -1,0 +1,13 @@
+﻿@model Nop.Plugin.Widgets.ProductLabel.Models.ProductLabelViewModel
+@{
+    Layout = "";
+}
+@using Nop.Web.Framework.UI
+
+@{
+    Html.AddTitleParts(Model.MetaTitle);
+    Html.AddMetaDescriptionParts(Model.MetaDescription);
+}
+@Html.Raw(Model.Content)
+
+

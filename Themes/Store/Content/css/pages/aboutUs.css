@@ -1,0 +1,107 @@
+﻿@charset "UTF-8";
+/*
+ *  b- 为background
+ *  c- 为color
+ *  bo- 为border-color
+ *  r- 为  rotate
+ *  br- 为 border-radius
+ *  bx- 为 box-shadow
+ *  mb- 为 margin-bottom
+ *  fs- 为 font-size
+ * */
+/*
+ * login
+ * register
+ * giveme
+ * my系列
+ * l-s
+ */
+/*$ribbon-bckaground-color: rgba(231, 76, 60, 1);
+$ribbon-color: #fff;
+$ribbon-line-height: 2.4;
+
+$ribbon-padding: 0 1.6em;
+$item-ribbon-line-height: 30px;
+$item-ribbon-w: $item-ribbon-line-height * 4;*/
+.giveme .giveme-title {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1; }
+  @media (max-width: 991px) {
+    .giveme .giveme-title {
+      font-size: 24px; } }
+  @media (max-width: 767px) {
+    .giveme .giveme-title {
+      font-size: 20px; } }
+
+.giveme .container {
+  padding: 0; }
+
+.giveme .tabs {
+  margin: 10px 0; }
+  .giveme .tabs .col-xs-6 {
+    font-size: 20px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid #27ae60; }
+    @media (max-width: 1199px) {
+      .giveme .tabs .col-xs-6 {
+        font-size: 18px; } }
+    @media (max-width: 992px) {
+      .giveme .tabs .col-xs-6 {
+        font-size: 16px; } }
+    .giveme .tabs .col-xs-6:first-child {
+      border-right: 1px solid #27ae60; }
+    .giveme .tabs .col-xs-6:last-child {
+      border-right: 1px solid #fff; }
+    .giveme .tabs .col-xs-6 > a {
+      display: block;
+      color: #7f8c8d; }
+  .giveme .tabs .active {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #27ae60;
+    border-right: 1px solid #27ae60; }
+    .giveme .tabs .active > a {
+      color: #27ae60; }
+
+.giveme .tab-content {
+  font-size: 14px;
+  line-height: 28px; }
+  .giveme .tab-content .webshow .webshow-pic {
+    max-width: 100%;
+    float: left;
+    border: 2px solid #27ae60;
+    padding: 5px;
+    margin: 0 10px 10px 0;
+    border-radius: 10px; }
+    @media (max-width: 767px) {
+      .giveme .tab-content .webshow .webshow-pic {
+        float: none;
+        margin: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; } }
+  @media (max-width: 767px) {
+    .giveme .tab-content .webshow .webshow-inner {
+      padding: 10px; } }
+  .giveme .tab-content .companyshow {
+    text-align: center; }
+    .giveme .tab-content .companyshow .companyshow-pic {
+      max-width: 100%;
+      border: 2px solid #27ae60;
+      padding: 5px;
+      border-radius: 10px; }
+    @media (max-width: 767px) {
+      .giveme .tab-content .companyshow .companyshow-inner {
+        padding: 10px; } }
+    .giveme .tab-content .companyshow .text-right {
+      display: block; }
+
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important; }
+

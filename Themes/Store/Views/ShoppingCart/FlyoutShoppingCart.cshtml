@@ -1,0 +1,83 @@
+﻿@model MiniShoppingCartModel
+@using Nop.Web.Models.ShoppingCart;
+@using Nop.Services.Configuration;
+@using Nop.Core.Infrastructure
+@using Nop.Core
+
+<div class="header-shopping-wrapper">
+    <a href="@Url.RouteUrl("ShoppingCart")" class="shopping-linkage">
+        <span class="iconfont icon-gouwucheman"></span>
+        <div class="shopping-inner">
+            <span class="inner-label">@T("ShoppingCart")</span>
+            <span class="inner-sum">@T("ShoppingCart.HeaderQuantity", Model.TotalProducts)</span>
+        </div>
+    </a>
+    <div class="shopping-cart">
+        <div class="cart-count">
+            @if (Model.TotalProducts == 0)
+            {
+                @T("ShoppingCart.Mini.NoItems")
+            }
+            else
+            {
+                @Html.Raw(string.Format(T("ShoppingCart.Mini.ItemsText").Text, string.Format("<a href=\"{0}\">{1}</a>", Url.RouteUrl("ShoppingCart"), string.Format(T("ShoppingCart.Mini.Items").Text, Model.TotalProducts))))
+            }
+        </div>
+        @if (Model.TotalProducts > 0)
+        {
+            <ul class="cart-item">
+                @for (var i = 0; i < Model.Items.Count; i++)
+                {
+                    var item = Model.Items[i];
+                    <li class="clearfix">
+                        @{
+                            var settingService = EngineContext.Current.Resolve<ISettingService>();
+                            var cdnAddress = settingService.GetSetting("maxcdnsetting.cdnaddress").Value;
+                        }
+                        <a class="item-pictures" href="@Url.RouteUrl("Product", new { SeName = item.ProductSeName })" title="@item.Picture.Title">
+                            <img alt="@item.Picture.AlternateText" class="lazyload" src="@(cdnAddress==""?"":cdnAddress)/Themes/Store/Content/images/loading.gif" data-original="@item.Picture.ImageUrl" title="@item.Picture.Title" />
+                        </a>
+                        <div class="item-product">
+                            <a href="@Url.RouteUrl("Product", new { SeName = item.ProductSeName })" class="product-name">@item.ProductName</a>
+                            @*todo 小购物车的属性没有设置*@
+                            @if (!String.IsNullOrEmpty(item.AttributeInfo))
+                            {
+                                <p class="attributes">
+                                    @Html.Raw(item.AttributeInfo)
+                                </p>
+                            }
+                            <p class="product-price"><span class="text">@T("ShoppingCart.Mini.UnitPrice"): </span><span class="prices">@item.UnitPrice</span></p>
+                            <p class="product-quantify"><span class="text">@T("ShoppingCart.Mini.Quantity"): </span><span class="quantifys">@item.Quantity</span></p>
+                        </div>
+                    </li>
+
+                }
+            </ul>
+            @*todo js 脚本 setLocation 函数*@
+            @*todo Checkout 按钮的样式未调整*@
+            <div class="cart-totals"><span class="text">@T("ShoppingCart.Totals.SubTotal"): </span><span class="price">@Model.SubTotal</span></div>
+            <div class="cart-btn">
+                @if (Model.DisplayShoppingCartButton)
+                {
+                    <input type="button" value="@T("ShoppingCart.Mini.ViewCart")" class="btn btn-default btn-go" role="button" onclick="setLocation('@(Url.RouteUrl("ShoppingCart"))')" />
+
+                }
+                @if (Model.DisplayCheckoutButton)
+                {
+                    var checkoutUrl = "";
+                    if (Model.AnonymousCheckoutAllowed && Model.CurrentCustomerIsGuest)
+                    {
+                        checkoutUrl = Url.RouteUrl("LoginCheckoutAsGuest", new { returnUrl = Url.RouteUrl("ShoppingCart") });
+                    }
+                    else
+                    {
+                        checkoutUrl = Url.RouteUrl("Checkout");
+                    }
+                    <input type="button" value="@T("Checkout.Button")" class="btn btn-default btn-go" role="button" onclick="setLocation('@checkoutUrl')" />
+                }
+            </div>
+
+        }
+
+    </div>
+</div>

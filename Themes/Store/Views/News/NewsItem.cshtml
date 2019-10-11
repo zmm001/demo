@@ -1,0 +1,38 @@
+﻿@model NewsItemModel
+@using Nop.Web.Models.News;
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
+    if (canonicalUrlsEnabled)
+    {
+        Html.AddCanonicalUrlParts(string.IsNullOrEmpty(Request.Url.Query) ? Request.Url.AbsoluteUri : Request.Url.AbsoluteUri.Replace(Request.Url.Query, ""));
+    }
+
+    //title
+    Html.AddTitleParts(!String.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Title);
+    //meta
+    Html.AddMetaDescriptionParts(Model.MetaDescription);
+    Html.AddMetaKeywordParts(Model.MetaKeywords);
+    //page class
+    Html.AppendPageCssClassParts("html-news-item-page");
+
+    Html.AddCssFileParts("~/Themes/Store/Content/css/pages/articleDetails.css");
+}
+
+<div class="article-details">
+    <h1 class="details-title">@Model.Title</h1>
+    <span class="details-date">-@Model.CreatedOn.ToString("D")</span>
+</div>
+@Html.Widget("newsitem_page_before_body", Model.Id)
+<div class="article-content">
+    @Html.Widget("blogpost_page_before_body", Model.Id)
+    <div class="article-body">
+        @Html.Raw(Model.Full)
+    </div>
+    @Html.Widget("newsitem_page_before_comments", Model.Id)
+</div>
+@Html.Widget("newsitem_page_after_comments", Model.Id)
+

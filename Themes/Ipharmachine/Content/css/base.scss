@@ -1,0 +1,83 @@
+
+// Core variables and mixins
+@import "bootstrap/bootstrap/variables";
+
+@import "bootstrap/bootstrap/mixins";
+// Reset and dependencies
+@import "bootstrap/bootstrap/normalize";
+@import "bootstrap/bootstrap/print";
+// Core CSS
+@import "bootstrap/bootstrap/scaffolding";
+@import "bootstrap/bootstrap/type";
+@import "bootstrap/bootstrap/grid";
+
+// Components
+@import "bootstrap/bootstrap/component-animations";
+
+@import "bootstrap/bootstrap/input-groups";
+
+
+
+@import "bootstrap/bootstrap/list-group";
+
+
+// Utility classes
+@import "bootstrap/bootstrap/utilities";
+@import "bootstrap/bootstrap/responsive-utilities";
+
+@import "extend/variable";
+@import "extend/adminTop";
+@import "extend/header";
+@import "extend/nav";
+@import "extend/notification";
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+body {
+    font-size: 12px;
+    font-weight: normal;
+    font-family: 'Exo 2',Arial;
+    height: 100%;
+    background: $body-background; 
+}
+.main,
+.product-list {
+    @media(max-width:$screen-xs-max) {
+        overflow: hidden;
+    }
+}
+.col-left {
+    @include make-md-column(2.5);
+    padding-top: $grid-gutter-width; 
+}
+.col-right {
+    @include make-md-column(9.5);
+    float: right !important; 
+    padding-top: $grid-gutter-width;
+}
+.item-ribbon {
+    @include ribbon;
+} 
+.message-error {
+    font-size: 14px;
+    color: $brand-danger;
+
+    ul {
+        text-align: left;
+    }
+}
+#backTop {
+    display: none;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+
+    .iconfont {
+        font-size: 45px;
+    }
+}
+.header-top, .header-search-wrapper {
+    display: inherit;
+}

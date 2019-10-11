@@ -1,0 +1,102 @@
+@import "../bootstrap/bootstrap/variables";
+@import "../extend/variable";
+.giveme{
+  .giveme-title{
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $bo-l-s-title;
+    @media (max-width : $screen-sm-max){
+      font-size: $fs-sm-l-s-title;    
+    }
+    @media (max-width : $screen-xs-max){
+      font-size: $fs-xs-l-s-title;
+    }
+  }
+  .container{
+    padding: 0;
+  }
+  .tabs{
+    margin: 10px 0;
+    .col-xs-6{
+      font-size: 20px;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+      border-bottom: 1px solid $main-color;
+      @media(max-width:$screen-md-max){
+        font-size: 18px;
+      }
+      @media(max-width:$screen-md-min){
+        font-size: 16px;
+      }
+      &:first-child{
+        border-right: 1px solid $main-color;
+      }
+      &:last-child{
+        border-right: 1px solid #fff;
+      }
+      >a{
+        display: block;
+        color: $c-giveme-a;
+      }
+    }
+    .active{
+      border-bottom: 1px solid #fff;
+      border-top: 1px solid $main-color;
+      border-right: 1px solid $main-color;
+      >a{
+        color: $main-color;
+      }
+    }
+  }
+  .tab-content{
+    font-size: 14px;
+    line-height: 28px;
+    .webshow{
+      .webshow-pic{
+        max-width: 100%;
+        float: left;
+        border: 2px solid $main-color;
+        padding: 5px;
+        margin: 0 10px 10px 0;
+        border-radius: 10px;
+        @media(max-width:$screen-xs-max){
+          float: none;
+          margin: 0;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .webshow-inner{
+        @media(max-width:$screen-xs-max){
+          padding: 10px;
+        }
+      }
+    }
+    .companyshow{
+      text-align: center;
+      .companyshow-pic{
+        max-width: 100%;
+        border: 2px solid $main-color;
+        padding: 5px;
+        border-radius: 10px;
+      }
+      .companyshow-inner{
+        @media(max-width:$screen-xs-max){
+          padding: 10px;
+        }  
+      }
+      .text-right{
+        display: block;
+      }
+    }
+  }
+}
+.swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+}

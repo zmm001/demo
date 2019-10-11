@@ -1,0 +1,46 @@
+﻿
+@using Nop.Web.Framework.UI
+
+@helper RenderSliderLine(string pictureUrl, string text, string link, bool lazyLoad = true)
+{
+    if (!string.IsNullOrEmpty(pictureUrl))
+    {
+        <div class="swiper-slide">
+            @if (!string.IsNullOrEmpty(link))
+            {
+            <a href="@link">
+                @Content(pictureUrl,text,lazyLoad)
+            </a>
+            }
+            else
+            {
+                @Content(pictureUrl,text,lazyLoad)
+            }
+        </div>
+    }
+}
+@helper Content(string pictureUrl, string text, bool lazyLoad )
+{
+    if (lazyLoad)
+     {
+         <img data-src="@pictureUrl" class="swiper-lazy" title="@text" />
+         <div class="swiper-lazy-preloader"></div>
+     }
+     else
+     {
+         <img src="@pictureUrl" title="@text" />
+
+     }
+}
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        @RenderSliderLine(Model.Picture1Url, Model.Text1, Model.Link1,false)
+        @RenderSliderLine(Model.Picture2Url, Model.Text2, Model.Link2)
+        @RenderSliderLine(Model.Picture3Url, Model.Text3, Model.Link3)
+        @RenderSliderLine(Model.Picture4Url, Model.Text4, Model.Link4)
+        @RenderSliderLine(Model.Picture5Url, Model.Text5, Model.Link5)
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>

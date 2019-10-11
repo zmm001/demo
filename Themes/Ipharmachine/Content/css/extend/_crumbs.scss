@@ -1,0 +1,38 @@
+.crumbs{
+  font-size: 14px;
+  margin-bottom: 0;
+  @media(max-width:$screen-md-min){
+    >li{
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+  .link{
+    color: $main-color;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .delimiter{
+    margin-left: 5px;
+  }
+}
+#goBack {
+    position: fixed;
+    left: 10px;
+    top: 190px;
+
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    background:rgba(0,0,0,.1) no-repeat 50% 50%;
+    
+    background-image: url(/Themes/Ipharmachine/Content/img/back.png);
+    &.home {
+        background-image: url(/Themes/Ipharmachine/Content/img/home.png);
+    }
+
+    z-index: 999;
+    cursor: pointer;
+    display: inline-block;
+}

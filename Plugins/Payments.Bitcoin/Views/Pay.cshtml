@@ -1,0 +1,27 @@
+﻿@using Nop.Core.Infrastructure
+@using Nop.Web.Framework.Themes
+@using Nop.Web.Framework.UI
+@model Nop.Plugin.Payments.Bitcoin.Models.PayModel
+
+@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    Html.AddCssFileParts("~/Plugins/Payments.Bitcoin/Content/css/bitcoin.css");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Plugins/Payments.Bitcoin/Content/js/jquery.qrcode.min.js");
+    Html.AddScriptParts(ResourceLocation.Foot, "~/Plugins/Payments.Bitcoin/Content/js/bitcoin.js");
+
+}
+<div class="article-details">
+    <h1 class="topic-title">@T("Plugins.Payment.Bitcoin.title", Model.Id)</h1>
+</div>
+<div class="article-content container">
+    <div class="article-body">
+        <p id="plugins-bitcoin" data-id="@Model.Id" data-address="@Model.Address" data-price="@Model.Price" data-currency="@Model.Currency"></p>
+        <p>
+            <input type="text" id="plugins-bitcoin-text" />
+        </p>
+        <p>@T("Plugins.Payment.Bitcoin.description", Model.Address, Model.Price, Model.AdditionalFee)</p>
+
+        <input type="button" value="@T("Plugins.Payment.Bitcoin.Complited")" class="buttons" onclick="setLocation('@Url.RouteUrl("OrderDetails", new { orderId = Model.Id })')" />
+    </div>
+</div>
+

@@ -1,0 +1,22 @@
+﻿@model CurrencySelectorModel
+@using Nop.Web.Models.Common;
+@using Nop.Core;
+@using Nop.Core.Domain.Customers
+@using Nop.Core.Infrastructure;
+@{
+    var _workContext = EngineContext.Current.Resolve<IWorkContext>();
+}
+@if (Model.AvailableCurrencies.Count > 1 && !_workContext.CurrentCustomer.IsSearchEngineAccount()) {
+    var webHelper = EngineContext.Current.Resolve<IWebHelper>();
+    //todo 货币链接跳转无效
+    <div class="selectors-select">
+        <span class="selectros-text">@((Model.AvailableCurrencies.FirstOrDefault(c => c.Id == Model.CurrentCurrencyId) ?? Model.AvailableCurrencies.First()).CurrencySymbol)</span>
+        <ul class="selectros-list">
+            @foreach (var c in Model.AvailableCurrencies) {
+                <li><a href="@webHelper.ModifyQueryString(Url.RouteUrl("ChangeCurrency", new {customercurrency = c.Id}), "returnurl=" + HttpUtility.UrlEncode(HttpContext.Current.Request.RawUrl), null)">
+                    @c.CurrencySymbol @c.Name
+                </a></li>
+            }
+        </ul>
+    </div>
+}

@@ -1,0 +1,29 @@
+﻿.page-title {
+    h1 {
+        font-size: 24px;
+        color: #000;
+        margin-top: 3px;
+        padding-bottom: 8px;
+        border-bottom: dashed 1px $c-article-lists-body;
+
+        @media(max-width:$screen-xs-max) {
+            text-align: center;
+        }
+    }
+    .center{
+        text-align:center;
+    }
+
+    .link-rss {
+        float: right;
+        text-indent: -99em;
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+        background: url(/Themes/Ipharmachine/Content/img/rss-icon.png) no-repeat;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}

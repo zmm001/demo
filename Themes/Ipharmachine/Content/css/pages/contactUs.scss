@@ -1,0 +1,1190 @@
+@import "../bootstrap/bootstrap/variables";
+@import "../extend/variable";
+@import "../extend/accountNumber";
+.textarea{
+  min-height: 150px;
+}
+.result{
+    font-size:14px;
+    text-align:center;
+    margin:0 auto 10px 0;
+    line-height:2em;
+}
+
+.mains {
+    border: 1px solid;
+
+
+    .contact-us {
+        border: 1px solid red;
+        width: 100%;
+        height: 300px;
+
+
+        .left {
+            display: inline-block;
+            float: left;
+
+            .bg-img {
+                width: 100%;
+                height: 80px;
+                background: url(../../images/contactus/contactup-bg.png) no-repeat 20%;
+            }
+
+            .contact {
+            }
+
+            .register {
+            }
+        }
+
+        .right {
+            display: inline-block;
+            float: right;
+            background: url(../../images/contactus/bg.png) no-repeat right;
+        }
+    }
+
+    .skyper-us {
+        background-color: #F7F7F7;
+        width: 100%;
+        height: 700px;
+        border: 1px solid green;
+    }
+
+    .find-me {
+        border: 1px solid blue;
+        width: 100%;
+        height: 333px;
+        background: url(../../images/contactus/map.png) no-repeat center;
+    }
+}
+
+/**
+    大屏幕(电脑):>1200px
+*/
+.container-fluid {
+    .result {
+        margin: 0;
+    }
+    /*上*/
+    .shang {
+        background: url(../../images/contactus/1920/nipic_bg.png) no-repeat;
+        background-color: $background-colo-us;
+        background-position: top right;
+        background-size: 63% auto;
+        /*上左*/
+        .left-contact {
+            margin-bottom: 117px;
+
+            .contact-top {
+                padding-top: 39px;
+                text-align: right;
+
+                .p1 {
+                    /*height: 40px;*/
+                    font-size: 25px;
+                    font-family: Bebas;
+                    font-weight: bold;
+                    color: rgba(33,165,174,1);
+                    word-spacing: 4px;
+                }
+
+                .p2 {
+                    /*height: 60px;*/
+                    font-size: 40px;
+                    font-family: Bebas;
+                    font-weight: 400;
+                    color: rgba(62,62,62,1);
+                    word-spacing: 4px;
+                }
+
+                .p3 {
+                    width: 380px;
+                    font-size: 15px;
+                    font-family: BastardusSans;
+                    font-weight: 400;
+                    color: rgba(83,83,83,1);
+                    word-spacing: 4px;
+                    padding-bottom: 13px;
+                }
+            }
+
+            .form-container {
+                border: 1px solid #21A5AE;
+                border-radius: 14px;
+                position: relative;
+                padding: 0 0 40px 0;
+
+                .form-group {
+                    .form-control {
+                        -webkit-box-shadow: unset;
+                        box-shadow: unset;
+                    }
+
+                    margin: 10px 0 0 0;
+                    position: relative;
+
+                    .fullname {
+                        position: absolute;
+                        z-index: 1;
+                        top: 2px;
+                        left: 15px;
+                    }
+
+                    .fullname-input {
+                        margin: 0 auto;
+                        padding-left: 50px;
+                        text-align: center;
+                    }
+
+                    .youxiang {
+                        position: absolute;
+                        z-index: 1;
+                        top: 2px;
+                        left: 15px;
+                    }
+
+                    .youxiang-input {
+                        margin: 0 auto;
+                        padding-left: 95px;
+                        text-align: center;
+                    }
+
+                    .enquiry {
+                        position: absolute;
+                        z-index: 1;
+                        top: 2px;
+                        left: 15px;
+                    }
+
+                    .enquiry-input {
+                        margin: 0 auto;
+                        padding-left: 60px;
+                        text-align: center;
+                    }
+                }
+
+                input, textarea {
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                    width: 90%;
+                    border-color: #21A5AE;
+                }
+
+                .tipfont {
+                    color: #21A5AE;
+                }
+            }
+
+
+
+            .lianxifangshi {
+                > ul {
+                    list-style: none;
+                    float: unset;
+                    padding-inline-start: 0;
+                }
+
+                li {
+                    width: 371px;
+                    height: 34px;
+                    margin-bottom: 33px;
+                    text-align: justify;
+
+                    .mg-right {
+                        /*margin-right: 90px;*/
+                        margin-right: 40px;
+                    }
+                    /*标签*/
+                    .inline-block {
+                        display: inline-block;
+
+                        .sHeight {
+                            height: 34px;
+                        }
+
+                        .textcolor-top {
+                            color: #C2C2C2;
+                        }
+
+                        .textcolor-bottom {
+                            color: #21A5AE;
+                        }
+
+                        .font-align {
+                            /*font-size: 12px;*/
+                            font-size: 15px;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+
+            .account-box-container {
+                clear: both;
+                width: 380px;
+                text-align: right;
+            }
+
+            .sumitButton {
+                height: 20px;
+                line-height: 10px;
+                border-radius: 9px;
+                position: relative;
+                display: block;
+                margin: 0 auto;
+                margin-top: -12px;
+            }
+
+            .sumitButton:hover {
+                background-color: #21a5ae;
+            }
+
+            .col-right::after {
+                position: absolute;
+                content: "";
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                border-right: 2px solid #0f0;
+                border-bottom: 2px solid #0f0;
+                transform: rotate(-45deg);
+                top: 40px;
+                right: 40px;
+            }
+        }
+        /*上右*/
+        .right-contact {
+            background: url(../../images/contactus/bg.png) no-repeat 50% 50%
+        }
+    }
+
+    h2 { // 控制后台标题不显示
+        display: none;
+    }
+    /*中*/
+    .zhong {
+        .mg-top-bottom {
+            margin-top: 53px;
+            margin-bottom: 33px;
+
+            .p1 {
+                /*height: 40px;*/
+                font-size: 25px;
+                font-family: Bebas;
+                font-weight: bold;
+                color: rgba(33,165,174,1);
+                word-spacing: 4px;
+            }
+
+            .p2 {
+                /*height: 60px;*/
+                font-size: 40px;
+                font-family: Bebas;
+                font-weight: 400;
+                color: rgba(62,62,62,1);
+                word-spacing: 4px;
+            }
+
+            .p3 {
+                font-size: 15px;
+                font-family: BastardusSans;
+                font-weight: 400;
+                color: rgba(83,83,83,1);
+                word-spacing: 4px;
+            }
+        }
+
+        .box-item {
+            overflow: hidden;
+            border-radius: 2px;
+
+            .item-pic {
+                margin-bottom: 5px;
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-bottom: 230px;
+                display: block;
+                border-radius: 50%;
+            }
+
+            .item-inner {
+                text-align: center;
+                margin-bottom: 5px;
+                line-height: 20px;
+                padding-right: 60px;
+            }
+
+            .item-ribbon {
+                background-color: #21A5AE;
+                border-radius: 0 0 100px 100px;
+                width: 60%;
+                transform: translate(0, 0) rotate(0);
+                top: unset;
+                bottom: 2px;
+                left: 35px;
+            }
+
+            .item-label {
+                background-color: #21A5AE;
+                width: 83px;
+                margin-bottom: 9px;
+                border-radius: 7px;
+                height: 22px;
+                line-height: 22px;
+
+                .item-text {
+                    display: inline-block;
+                    color: #fff;
+                    font-size: 14px;
+                }
+            }
+
+            .item-contact {
+                .top-menu {
+                    list-style: none;
+                    padding-inline-start: 0;
+                    margin-block-start: 0;
+                    text-align: left;
+
+                    li {
+                        padding: 7px 80px 7px 0px;
+                        font-size: 14px;
+
+                        .aligement {
+                            vertical-align: super;
+                        }
+
+                        .show480 {
+                            display: none;
+                        }
+
+                        a {
+                            color: #535353;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*下*/
+    .xia {
+        background: url(../../images/contactus/1920/map.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+        background-color: $background-colo-us;
+
+        .row {
+            margin-bottom: 40px;
+        }
+
+        .findme {
+            margin-top: 32px;
+            display: flex;
+
+            p {
+                height: 36px;
+                font-size: 40px;
+                font-family: Bebas;
+                font-weight: 400;
+                color: rgba(62,62,62,1);
+                word-spacing: 4px;
+            }
+        }
+
+        .contactinformation {
+            .country {
+                display: inline-block;
+                vertical-align: text-bottom;
+                margin-left: -140px;
+                margin-top: 60px;
+            }
+
+            > ul {
+                list-style: none;
+                display: inline-block;
+                text-align: left;
+                /*vertical-align: text-bottom;*/
+                margin-bottom: 20px;
+            }
+
+            li {
+                .text-aligement {
+                    vertical-align: super;
+                    padding-left: 2px;
+                }
+
+                .chinatext {
+                    font-size: 25px;
+                    font-family: Bebas;
+                    font-weight: 400;
+                    color: rgba(69,70,70,1);
+                    word-spacing: 4px;
+                }
+
+                .ustext {
+                    height: 24px;
+                    font-size: 25px;
+                    font-family: Bebas;
+                    font-weight: 400;
+                    color: rgba(69,70,70,1);
+                    word-spacing: 4px;
+                }
+            }
+        }
+    }
+    // 自定义容器
+    .main {
+        width: $screen-width;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 0 auto;
+        float: none;
+    }
+}
+
+/**
+    480,手机匹配样式
+*/
+@media only screen  and (max-width: $screen-xs) {
+    .account-number {
+        .row {
+            margin:0 -5px 0 -5px;
+        }
+    }
+    .container-fluid {
+        .main {
+            padding: 0;
+            width: 100%;
+            margin: 0;
+        }
+
+        .shang {
+            background: url(../../images/contactus/1920/phone.png) no-repeat;
+            background-size: auto;
+            background-position: top right;
+            background-color: $background-colo-us;
+
+            .xs-hide {
+                display: none;
+            }
+
+            .mycol {
+                width: 100% !important;
+            }
+
+            .left-contact {
+                height: auto !important;
+                margin-bottom: 20px;
+
+                .contact-top {
+                    margin-top: 0.16rem;
+                    padding: 0 0 0 0.34rem;
+
+                    p {
+                        margin-bottom: 0;
+                    }
+
+                    .p1 {
+                        height: 0.38rem;
+                        font-size: 0.2rem;
+                        font-family: Bebas;
+                        font-weight: bold;
+                        color: rgba(33,165,174,1);
+                    }
+
+                    .p2 {
+                        height: 0.68rem;
+                        font-size: 0.46rem;
+                        font-family: Bebas;
+                        font-weight: 400;
+                        color: rgba(62,62,62,1);
+                    }
+
+                    .p3 {
+                        width: 50%;
+                        height: 1.12rem;
+                        font-size: 0.22rem;
+                        font-family: BastardusSans;
+                        font-weight: 400;
+                        color: rgba(83,83,83,1);
+                        word-spacing: unset;
+                    }
+                }
+
+                .lianxifangshi {
+                    padding-left: 0.34rem !important;
+
+                    > ul {
+                        clear: both;
+                        margin-block-start: 0;
+                        margin-block-end: 0;
+                        padding-inline-start: 0;
+                    }
+
+                    li {
+                        height: unset;
+                        margin-bottom: unset;
+
+                        .font-align {
+                            font-size: 12px !important;
+                        }
+
+                        .icon_contactus-shouji-banping:before, .icon_contactus-youjian01:before, .icon_contactus-dianhua02:before, .icon_contactus-skype1:before {
+                            font-size: 20px;
+                        }
+
+                        > div {
+                            display: block !important;
+                        }
+                    }
+                }
+
+                .account-box-container {
+                    width: 100%;
+                    padding: 0.2rem 0.36rem 0 0.36rem;
+                }
+
+                .sumitButton {
+                    width: 0.48rem !important;
+                    border-radius: 0.14rem !important;
+                }
+
+                input, textarea {
+                    width: 100%;
+                }
+
+                .form-container {
+                    .form-group {
+                        position: relative;
+                    }
+
+                    .fullname, .youxiang, .enquiry {
+                        z-index: 1;
+                        position: absolute;
+                        top: 0.16rem !important;
+                        left: 0.3rem !important;
+                    }
+                }
+            }
+        }
+
+        .zhong {
+            .mg-top-bottom {
+                margin: 0.26rem 0 0.24rem 0.1rem;
+
+                p {
+                    margin: 0;
+                }
+
+                .p1 {
+                    font-size: 0.28rem;
+                }
+
+                .p2 {
+                    font-size: 0.46rem;
+                }
+
+                .p3 {
+                    font-size: 0.22rem;
+                    word-spacing: unset;
+                    margin-bottom: 0;
+                }
+            }
+
+            .box-item {
+                .item-pic {
+                    padding-bottom: 2.36rem;
+
+                    .img-responsive {
+                        width: 118px;
+                        height: 118px;
+                        display: inline-block;
+                    }
+
+                    div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            width: 2.36rem;
+                            height: 2.36rem;
+                        }
+                    }
+                }
+
+                .item-inner {
+                    padding-right: 0px;
+
+                    p {
+                        text-align: unset;
+                    }
+                }
+
+                .item-label {
+                    background-color: #21A5AE;
+                    width: 1.2rem;
+                    margin-bottom: 0px;
+                    border-radius: 0.14rem;
+                    margin: 0 auto;
+                }
+
+                .item-contact {
+                    .top-menu {
+                        padding-left: 0.2rem !important;
+
+                        li {
+                            padding: 0.14rem 0px 0.14rem 0px;
+                            margin-bottom: -0.20rem;
+
+                            .aligement {
+                                vertical-align: unset;
+                            }
+
+                            .icon_contactus-network {
+                                display: none;
+                            }
+
+                            .icon_contactus-youjian03 {
+                                display: none;
+                            }
+
+                            .hide-icon {
+                                display: none;
+                            }
+
+                            .show480 {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .xia {
+            height: auto;
+            margin: 0 -5px 0 -5px;
+
+            .row {
+                margin: 0 0 0.20rem 0;
+
+                .mycol {
+                    padding: 0;
+                    padding-left: 0.20rem;
+
+                    .row {
+                        margin-left: 0 !important;
+                        margin-right: 0 !important;
+
+                        .mycol {
+                            margin-left: 0;
+                        }
+                    }
+
+                    .contactinformation {
+                        .country {
+                            float: left;
+                            padding-bottom: 0.48rem;
+                            display: inline-block;
+                            vertical-align: text-bottom;
+                            margin: 0.30rem 0 0 0;
+
+                            img {
+                                width: 0.88rem;
+                                height: 0.88rem;
+                            }
+                        }
+
+                        > ul {
+                            padding-inline-start: 0;
+                            margin-block-start: 0;
+                            margin-block-end: 0;
+
+                            .contact-hide {
+                                max-width: 120px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                        }
+
+                        li {
+                            .text-aligement {
+                                vertical-align: text-bottom;
+                                padding-left: 2px;
+                            }
+
+                            .icon_contactus-youjian-blue:before, .icon_contactus-youjian-red:before, .icon_contactus-dianhua-blue:before, .icon_contactus-dianhua-red:before, .icon_contactus-weizhi-red:before, .icon_contactus-weizhi-blue:before {
+                                font-size: 15px;
+                            }
+
+                            .ustext {
+                                font-size: 0.22rem;
+                                font-family: Bebas;
+                                font-weight: 400;
+                                color: rgba(69,70,70,1);
+                                height: 0.18rem;
+                            }
+
+                            .chinatext {
+                                height: 0.54rem;
+                                font-size: 0.22rem;
+                                font-family: Bebas;
+                                font-weight: 400;
+                                color: rgba(69,70,70,1);
+                            }
+
+                            img {
+                                width: 5.26rem;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .findme {
+                margin-top: 0.12rem;
+                margin-left: 0.20rem;
+
+                p {
+                    height: 0.7rem;
+                    font-size: 0.46rem;
+                    font-family: Bebas;
+                    font-weight: 400;
+                    color: rgba(62,62,62,1);
+                }
+            }
+        }
+    }
+    }
+
+/**
+    超小屏幕(手机):480-768px 
+*/
+@media only screen and (min-width: $screen-xs) and (max-width:$screen-sm) {
+    .container-fluid {
+        .main {
+            margin: 0 auto !important;
+            padding: 0;
+            width: 720px !important;
+            margin: 0px;
+        }
+
+        .shang {
+            background-size: 57% auto;
+
+            .left-contact {
+                height: unset;
+
+                .contact-top {
+                    padding-top: 10px;
+
+                    .p1 {
+                        height: unset;
+                        font-size: 20px;
+                    }
+
+                    .p2 {
+                        height: unset;
+                        font-size: 35px;
+                    }
+
+                    .p3 {
+                        font-size: 10px;
+                        word-spacing: 0;
+                        width: 300px;
+                        padding-bottom: 10px;
+                    }
+                }
+
+                .lianxifangshi {
+                    > ul {
+                        li {
+                            .font-align {
+                                font-size: 12px !important;
+                            }
+
+                            margin-bottom: 20px;
+
+                            .mg-right {
+                                margin-right: 22px;
+                            }
+                        }
+                    }
+                }
+
+                .account-box-container {
+                    width: unset;
+                    padding-bottom: 20px;
+                }
+
+                .form-container {
+                    .form-group {
+                        .fullname, .youxiang, .enquiry {
+                            top: 8px;
+                            left: 40px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .zhong {
+            .mg-top-bottom {
+                margin:18px 0 11px 0;
+
+                .p1 {
+                    font-size: 20px;
+                }
+
+                .p2 {
+                    font-size: 35px;
+                }
+
+                .p3 {
+                    font-size: 10px;
+                    word-spacing: 0;
+                }
+            }
+
+            .row {
+                margin: 0 0;
+            }
+
+            .box-item {
+                .item-pic {
+                    div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+
+                .item-inner {
+                    padding-right: 0;
+
+                    p {
+                        text-align: unset;
+                    }
+                }
+
+                .item-label {
+                    margin: 0 auto;
+                }
+
+                .item-contact {
+                    .top-menu {
+                        display: inline-block;
+                        margin: 0 auto;
+
+                        li {
+                            padding: 7px 0 7px 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .xia {
+            .findme {
+                margin-top: 10px;
+
+                p {
+                    font-size: 35px;
+                }
+            }
+
+            .row {
+                margin: 0;
+                margin-bottom: 20px;
+            }
+
+            .contactinformation {
+                .country {
+                    margin:20px 0 0 0;
+                    img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+
+                > ul {
+                    li {
+                        .ustext {
+                            font-size: 15px;
+                            height: 14px;
+                        }
+
+                        .chinatext {
+                            font-size: 15px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+    小屏幕(平板):768-992px
+*/
+@media only screen and (min-width: $screen-sm) and (max-width:$screen-md) {
+    .container-fluid {
+        .main {
+            margin: 0 auto !important;
+            padding: 0;
+            width: 740px !important;
+            margin: 0px;
+        }
+
+        .shang {
+            background-size: 60% auto;
+            margin: 0 -5px 0 -5px;
+
+            .left-contact {
+                height: unset;
+                margin-bottom: 20px;
+
+                .contact-top {
+                    padding-top: 16px;
+
+                    .p1, .p2 {
+                        margin-bottom: 0;
+                    }
+
+                    .p3 {
+                        word-spacing: 0;
+                        margin-bottom: 0;
+                        padding-bottom: 12px;
+                    }
+                }
+
+                .form-container {
+                    .form-group {
+                        .fullname, .youxiang, .enquiry {
+                            top: 0px;
+                        }
+                    }
+                }
+
+                .lianxifangshi {
+                    > ul {
+                        li {
+                            margin-bottom: 20px;
+
+                            .font-align {
+                                font-size: 12px !important;
+                            }
+
+                            .icon_contactus-shouji-banping:before, .icon_contactus-youjian01:before, .icon_contactus-dianhua02:before, .icon_contactus-skype1:before {
+                                font-size: 20px;
+                            }
+
+                            .mg-right {
+                                margin-right: 45px;
+                            }
+                        }
+                    }
+                }
+
+                .account-box-container {
+                    margin-bottom: 20px;
+                    padding-top: 20px;
+                }
+            }
+        }
+
+        .zhong {
+            .mg-top-bottom {
+                margin: 16px 0 12px 0;
+            }
+
+            .row {
+                .box-item {
+                    .item-pic {
+                        padding-bottom: 180px;
+                    }
+
+                    .item-contact {
+                        > ul {
+                            li {
+                                padding: 7px 0 7px 0px;
+
+                                .icon_contactus-network:before, .icon_contactus-youjian03:before, .icon_contactus-skype3:before, .icon_contactus-test:before {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .xia {
+            margin: 0 -5px 0 -5px;
+
+            .contactinformation {
+
+                > ul {
+                    margin-bottom: 0;
+                }
+
+                li {
+                    .icon_contactus-youjian-blue:before, .icon_contactus-youjian-red:before, .icon_contactus-dianhua-blue:before, .icon_contactus-dianhua-red:before, .icon_contactus-weizhi-red:before, .icon_contactus-weizhi-blue:before {
+                        font-size: 20px;
+                    }
+
+                    .text-aligement {
+                        vertical-align: text-bottom;
+                        padding-left: 2px;
+                    }
+                }
+            }
+
+            .findme {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+/**
+    中等屏幕(电脑):992-1300px
+*/
+
+@media only screen and (min-width: $screen-md) and (max-width:$screen-lg) {
+    .container-fluid {
+        .main {
+            margin: 0 auto !important;
+            padding: 0;
+            width: 980px !important;
+            margin: 0px;
+        }
+
+        .shang {
+            background-size: 60% auto;
+
+            .mycol {
+                .left-contact {
+                    height: unset;
+                    margin-bottom: 0;
+
+                    .contact-top {
+                        padding-top: 0.073rem;
+
+                        .p1 {
+                            font-size: 20px;
+                            margin: 0;
+                        }
+
+                        .p2 {
+                            font-size: 35px;
+                            margin: 0;
+                        }
+
+                        .p3 {
+                            font-size: 10px;
+                            word-spacing: 0;
+                            padding-bottom: 0;
+                        }
+                    }
+
+                    .lianxifangshi {
+                        > ul {
+                            li {
+                                .mg-right {
+                                    margin-right: 90px;
+                                }
+
+                                .font-align {
+                                    font-size: 12px;
+                                }
+
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+
+                    .account-box-container {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+
+        .zhong {
+            .mg-top-bottom {
+                margin:27px 0 17px 0;
+
+                .p1 {
+                    font-size: 20px;
+                }
+
+                .p2 {
+                    font-size: 35px;
+                }
+
+                .p3 {
+                    word-spacing: 0;
+                }
+            }
+
+            .row {
+                .box-item {
+                    .item-contact {
+                        > ul {
+                            li {
+                                padding: 7px 0 7px 0px;
+
+                                .icon_contactus-network:before, .icon_contactus-youjian03:before, .icon_contactus-skype3:before, .icon_contactus-test:before {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .xia {
+            .mycol {
+                .findme {
+                    margin-top: 20px;
+
+                    p {
+                        font-size: 35px;
+                    }
+                }
+            }
+
+            .contactinformation {
+                > ul {
+                    li {
+                        .icon_contactus-youjian-blue:before, .icon_contactus-youjian-red:before, .icon_contactus-dianhua-blue:before, .icon_contactus-dianhua-red:before, .icon_contactus-weizhi-red:before, .icon_contactus-weizhi-blue:before {
+                            font-size: 20px;
+                        }
+
+                        .text-aligement {
+                            vertical-align: text-bottom;
+                            padding-left: 2px;
+                        }
+
+                        .ustext,.chinatext {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

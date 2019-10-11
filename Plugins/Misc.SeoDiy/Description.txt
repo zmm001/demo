@@ -1,0 +1,8 @@
+﻿Group: Misc
+FriendlyName: SEO自定义插件.
+SystemName: Misc.SeoDiy
+Version: 1.00
+SupportedVersions: 3.90
+Author: CapsulCN IT
+DisplayOrder: 1
+FileName: Nop.Plugin.Misc.SeoDiy.dll

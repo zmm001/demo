@@ -1,0 +1,38 @@
+﻿
+<header class="header">
+    @Html.Widget("header")
+    <div class="header-top">
+        <div class="container clearfix">
+            @Html.Action("FlyoutShoppingCart", "ShoppingCart")
+            <div class="header-link-wrapper">
+                <ul class="list-inline link-list">
+                    @Html.Action("HeaderLinks", "Common")
+                    @Html.Action("AdminHeaderLinks", "Common")
+                </ul>
+            </div>
+
+            <div class="header-selectors-wrapper">
+                @Html.Action("TaxTypeSelector", "Common")
+                @Html.Action("CurrencySelector", "Common")
+                @Html.Action("LanguageSelector", "Common")
+                @Html.Widget("header_selectors")
+                <a id="selectros-all" href="javascript:;"></a>
+            </div>
+            <!--header-selectors-wrapper end-->
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    @Html.Action("Logo", "Common")
+                </div>
+                <div class="col-md-6 col-xs-12 clearfix search-container">
+                    <div class="header-search-wrapper">
+                        @Html.Action("SearchBox", "Catalog")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

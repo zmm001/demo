@@ -1,0 +1,28 @@
+﻿@model NewsletterBoxModel
+@using Nop.Web.Models.Newsletter;
+
+<h3 class="top-title greens">@T("Newsletter.Title")</h3>
+<div class="top-newsletter" id="newsletter-box"  data-allowed ="@(Model.AllowToUnsubscribe?"true":"false")" data-url="@Url.RouteUrl("SubscribeNewsletter")">
+    @Html.TextBoxFor(x => x.NewsletterEmail, new { id = "newsletter-email", @class = "newsletter-text", placeholder = T("Newsletter.Email.Placeholder") })
+    <div class="newsletter-inner">
+        <input type="button" id="newsletter-subscribe-button" class="newsletter-btn" value="@T(Model.AllowToUnsubscribe ? "Newsletter.Options.Send" : "Newsletter.Options.Subscribe")" /><span class="iconfont icon-dingyue"></span>
+    </div>
+    @if (Model.AllowToUnsubscribe)
+    {
+        <div class="options">
+            <span class="subscribe">
+                <input id="newsletter_subscribe" type="radio" value="newsletter_subscribe" name="newsletter_block" checked="checked" />
+                <label for="newsletter_subscribe">@T("Newsletter.Options.Subscribe")</label>
+            </span>
+            <span class="unsubscribe">
+                <input id="newsletter_unsubscribe" type="radio" value="newsletter_unsubscribe" name="newsletter_block" />
+                <label for="newsletter_unsubscribe">@T("Newsletter.Options.Unsubscribe")</label>
+            </span>
+        </div>
+    }
+    <div class="newsletter-validation">
+        <span id="subscribe-loading-progress" style="display: none;" class="please-wait">@T("Common.Wait...")</span>
+        @Html.ValidationMessageFor(x => x.NewsletterEmail)
+    </div>
+</div>
+<div class="newsletter-result" id="newsletter-result-block"></div>

@@ -1,0 +1,57 @@
+﻿@using Nop.Web.Models.Common;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI
+@using Nop.Web.Models.Catalog;
+@using Nop.Core
+@using Nop.Core.Domain.Seo;
+@using System.Globalization
+@using Nop.Core.Infrastructure;
+@using Newtonsoft.Json;
+@using System;
+@using Nop.Services.Directory
+@model Nop.Plugin.Widgets.GoogleSearch.Models.BlogConfigurationModel
+
+<!--product breadcrumb-->
+
+@{
+    var publisher = Html.Raw( JsonConvert.SerializeObject(Model.publisher));
+    var about = Html.Raw( JsonConvert.SerializeObject(Model.about));
+    var serizlizeObj = JsonConvert.SerializeObject(Model.review);
+    var replaceObj = serizlizeObj.Replace("type", "@type");
+     var reviewss =Html.Raw(replaceObj);
+}
+
+    <script type="application/ld+json">
+        {
+        "@@context": "https://schema.org/",
+        "@@type": "Article",
+        "author": "@Model.author",
+        "datePublished": "@Model.datePublished",
+        "dateModified":"@Model.dateModified",
+        "publisher": @publisher,
+        "headline": "@Model.headline",
+        "image": "@Model.image",
+        "articleBody":"@Model.articleBody",
+        "name":"@Model.name",
+        "wordCount":"@Model.wordCount",
+        "about":@about,
+        "accountablePerson":"@Model.accountablePerson",
+        "isAccessibleForFree":"@Model.isAccessibleForFree",
+        "text":"@Model.text",
+        "thumbnailUrl":"@Model.thumbnailUrl",
+        "alternativeHeadline":"@Model.alternativeHeadline",
+        "dateCreated":"@Model.dateCreated",
+        "discussionUrl":"@Model.discussionUrl",
+        "editor":"@Model.editor",
+        "inLanguage":"@Model.inLanguage",
+        @*"review":@reviewss,
+        "aggregateRating":{
+        "@@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "@Model.commentCount"
+        },*@
+        "keywords":"@Model.keywords",
+        "sourceOrganization": "@Model.sourceOrganization"
+        }
+    </script>
+

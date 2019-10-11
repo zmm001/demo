@@ -1,0 +1,43 @@
+.my{
+   margin: 20px 0 10px;
+   overflow: hidden;
+  .col-md-2{
+    width: 21%;
+    @media (max-width: $screen-sm-max){
+      width: 100%;
+    }
+  }
+  .col-md-10{
+    width: 78%;
+    @media (max-width: $screen-sm-max){
+      width: 100%
+    }
+    .account-number{
+      @media(max-width:$screen-md-min){
+        margin-left: -5px;
+        margin-right: -5px;  
+        .row{
+            margin: 0 -5px;
+        }   
+      }
+    }
+    .account-title{
+      text-align: left;
+      font-size: 24px;
+      margin: 0;
+      @media(max-width:$screen-md-min){
+        text-align: center;
+        margin: 10px 0;
+      }
+      @media (max-width : $screen-sm-max){
+        font-size: $fs-sm-l-s-title;
+      }
+      @media (max-width : $screen-xs-max){
+        font-size: $fs-xs-l-s-title;
+      }
+    }
+    .selects{
+      width: 29.9%!important;
+    }
+  }
+}

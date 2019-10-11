@@ -1,0 +1,165 @@
+.advertise-wrapper{
+  border: 2px solid $main-color;
+  background-color: $main-color;
+  color: #fff;
+  -webkit-border-radius: $br-advertise-wrapper;
+  -moz-border-radius: $br-advertise-wrapper;
+  border-radius: $br-advertise-wrapper;
+}
+.advertise-placeholder{
+  position: relative;
+}
+.advertise-padding{
+  padding: 0 0 10px;
+  &:last-child{padding:0;}
+}
+.advertise-smail{
+  text-align: center;
+  font-size: 18px;
+  padding: 8px 15px;
+  .smail-title{
+    margin-bottom: 0
+    }
+  .smail-text{
+    font-size: 12px;
+    }
+}
+.advertise-url{
+    img{
+        width: 100%;
+    }
+
+    .unloading {
+        padding: 43.7%;
+    }
+}
+.leftContactus {
+    .box-item {
+        margin: 10px 0;
+        border-radius: 5px;
+        padding-bottom: 5px;
+        border: 2px solid $main-color;
+        background-color: $main-color;
+        color: #fff;
+    }
+
+    .item-inner {
+        padding: 10px;
+
+        h4 {
+            text-align: center;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .item-contact {
+        ul {
+            list-style: none;
+            padding-inline-start: 10px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+            height: 25px;
+            line-height: 25px;
+        }
+
+        a {
+            color: #fff;
+        }
+
+        .aligement {
+            vertical-align: super;
+        }
+    }
+
+    .langage-tag {
+        display: inline-block;
+        line-height: 1.5;
+        text-align: center;
+        background: #fff;
+        color: $main-color;
+        padding: 2px 8px;
+        border-radius: 4px;
+
+        & + .langage-tag {
+            margin-left: 4px;
+        }
+    }
+
+    .span-text {
+        vertical-align: middle;
+        padding-right: 5px;
+    }
+
+    .account-box-container {
+        border: 2px solid $main-color;
+        border-radius: 5px;
+        padding: 0 10px;
+    }
+
+    h4 {
+        text-align: center;
+        color: #fff;
+        background: $main-color;
+        padding: 10px;
+        margin: 0 -10px;
+    }
+
+    .form-group {
+        margin: 0 0 5px 0;
+
+        label {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        div {
+            width: 100%;
+        }
+    }
+
+    .required {
+        color: red;
+    }
+
+    .textarea {
+        max-width: 100%;
+        height: 100px;
+        min-height: 100px;
+        max-height: 300px;
+        resize: vertical;
+    }
+
+    .field-validation-error {
+        color: red;
+        padding-top: 5px;
+    }
+
+    input {
+        text-align: center;
+    }
+
+    .buttons {
+        display: block;
+        margin: 20px -10px 0;
+        color: #fff;
+        width: auto;
+        border: none;
+        border-top: 1px solid #fefefe;
+
+        input {
+            background-color: $main-color;
+            border: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            line-height: 2em;
+        }
+    }
+}

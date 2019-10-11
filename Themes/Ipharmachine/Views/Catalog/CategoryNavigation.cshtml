@@ -1,0 +1,137 @@
+﻿@model CategoryNavigationModel
+@using Nop.Web.Models.Catalog;
+
+@functions {
+
+    public CategorySimpleModel GetCategory()
+    {
+        if (Model.CurrentCategoryId == 0)
+            return null;
+
+
+        foreach (var category in Model.Categories)
+        {
+
+            var thisCategory = GetCategory(category, null);
+            if (thisCategory != null)
+                return thisCategory;
+        }
+
+        return null;
+    }
+    public CategorySimpleModel GetCategory(CategorySimpleModel category, CategorySimpleModel parent)
+    {
+
+        if (category.Id == Model.CurrentCategoryId)
+        {
+            if (category.SubCategories.Count == 0)
+            {
+                return parent;
+            }
+            return category;
+        }
+
+        foreach (var subCategory in category.SubCategories)
+        {
+
+            var thisCategory = GetCategory(subCategory, category);
+            if (thisCategory != null) return thisCategory;
+        }
+        return null;
+    }
+
+}
+@helper RenderCatagory(CategorySimpleModel category, int level)
+{
+    <li>
+        <a href="@Url.RouteUrl("Category",new { SeName=category.SeName})">
+            @category.Name
+            @if (category.NumberOfProducts.HasValue)
+            {
+                <text> </text>@T("Categories.TotalProducts", category.NumberOfProducts.Value)
+            }
+        </a>
+
+    </li>
+}
+@if (Model.Categories.Count > 0)
+{
+    var parentCategory = GetCategory();
+
+
+    if (parentCategory != null)
+    {
+        @*        <div class="left-title hidden-xs hidden-sm">*@
+        @*            @T("Categories")*@
+        @*        </div>*@
+        <div class="product-toggle hidden-sm hidden-xs" data-toggle="leftbox">
+            <div class="toggle-title">
+                <strong class="toggle-strong"><a href="@Url.RouteUrl("Category", new { SeName = parentCategory.SeName })">@parentCategory.Name</a></strong>
+            </div>
+            <ul class="toggle-list" id="aaa">
+                @foreach (var category in parentCategory.SubCategories)
+                {
+                    <li@(Html.Raw(category.Id==Model.CurrentCategoryId?" class=\"active\"":""))>
+                        <a href="@Url.RouteUrl("Category", new { SeName = category.SeName })">
+                            @category.Name
+                            @if (category.NumberOfProducts.HasValue)
+                            {
+                                <text> </text>@T("Categories.TotalProducts", category.NumberOfProducts.Value)
+                            }
+                        </a>
+                        @{
+                            var subCategories = category.SubCategories.Where(x => x.IncludeInTopMenu).ToList();
+                            if (subCategories.Count > 0)
+                            {
+                                <ul class="pc-navigation-linkage">
+                                    @foreach (var item in subCategories)
+                                    {
+                                        @RenderCatagory(item, 1)
+                                    }
+                                </ul>
+                                <span class="iconfont icon-left-angle navigation-next"></span>
+                            }
+                        }
+                        </li>
+                    }
+        </ul>
+    </div>
+}
+else
+{
+    <div class="product-toggle hidden-sm hidden-xs" data-toggle="leftbox">
+        <div class="toggle-title">
+            <strong class="toggle-strong">@T("Categories")</strong>
+        </div>
+        <ul class="toggle-list" id="bbb">
+            @foreach (var category in Model.Categories)
+            {
+                <li@(Html.Raw(category.Id==Model.CurrentCategoryId?" class=\"active\"":""))>
+                    <a href="@Url.RouteUrl("Category", new { SeName = category.SeName })">
+                        @category.Name
+                        @if (category.NumberOfProducts.HasValue)
+                        {
+                            <text> </text>@T("Categories.TotalProducts", category.NumberOfProducts.Value)
+                        }
+                    </a>
+                    @{
+                        var subCategories = category.SubCategories.Where(x => x.IncludeInTopMenu).ToList();
+                        if (subCategories.Count > 0)
+                        {
+                            <ul class="pc-navigation-linkage">
+                                @foreach (var item in subCategories)
+                                {
+                                    @RenderCatagory(item, 0)
+                                }
+                            </ul>
+                            <span class="iconfont icon-left-angle navigation-next"></span>
+                        }
+                    }
+                    </li>
+                }
+    </ul>
+</div>
+
+}
+
+}

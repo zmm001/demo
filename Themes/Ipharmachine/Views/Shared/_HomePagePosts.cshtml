@@ -1,0 +1,38 @@
+﻿@using Nop.Core
+@using Nop.Core.Infrastructure
+@using Nop.Services.Blogs
+@using Nop.Services.Helpers
+@using Nop.Services.Seo
+@{
+    var workContent = EngineContext.Current.Resolve<IWorkContext>();
+    var storeContent = EngineContext.Current.Resolve<IStoreContext>();
+    var  dateTimeHelper = EngineContext.Current.Resolve<IDateTimeHelper>();
+    
+    var blogService = EngineContext.Current.Resolve<IBlogService>();
+    var posts = blogService.GetAllBlogPosts(storeContent.CurrentStore.Id, workContent.WorkingLanguage.Id, pageSize: 6);
+}
+
+
+@if (posts.Count > 0)
+{
+    <div class="main-news-wrapper">
+        <div class="container">
+            <div class="main-title">@T("Blog")</div>
+            <div class="row">
+                @foreach (var item in posts)
+                {
+                    <div class="mycol col-xs-12 col-sm-6 col-md-4">
+
+                        <div class="news-box">
+                            <a class="news-title" href="@Url.RouteUrl("BlogPost", new { SeName = item.GetSeName() })">@item.Title</a>
+                            <p class="new-date">-@dateTimeHelper.ConvertToUserTime(item.StartDateUtc ?? item.CreatedOnUtc, DateTimeKind.Utc).ToString("D")</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+}
